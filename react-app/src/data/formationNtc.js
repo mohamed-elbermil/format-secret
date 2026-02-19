@@ -15,7 +15,7 @@ export const formationNtcData = [
     title: 'NTC - Négociateur Technico Commercial',
     infoItems: [
       'En alternance : 12 mois',
-      'En formation continue : 740h en centre + 210h en stage',
+      'En formation continue : 525h en centre + 1295h en stage',
     ],
     // Hero
     heroTitle: 'Votre métier d’avenir en tant que Négociateur Technico Commercial ',
