@@ -1,0 +1,87 @@
+import React from 'react'
+import { useParams, Navigate } from 'react-router-dom'
+import { getFormationNtcBySlug, getFormationNtcById } from '../data/formationNtc'
+import ContactSection from '../components/sections/ContactSection'
+import FormationDetailHero from '../components/formation-detail/FormationDetailHero'
+import FormationDetailIntro from '../components/formation-detail/FormationDetailIntro'
+import FormationDetailObjectives from '../components/formation-detail/FormationDetailObjectives'
+import FormationDetailDefinition from '../components/formation-detail/FormationDetailDefinition'
+import FormationDetailMissions from '../components/formation-detail/FormationDetailMissions'
+import FormationDetailProgram from '../components/formation-detail/FormationDetailProgram'
+import FormationDetailDebouches from '../components/formation-detail/FormationDetailDebouches'
+import FormationDetailFinancement from '../components/formation-detail/FormationDetailFinancement'
+import FormationDetailContenu from '../components/formation-detail/FormationDetailContenu'
+import FormationDetailTestimonials from '../components/formation-detail/FormationDetailTestimonials'
+import FormationDetailFooter from '../components/formation-detail/FormationDetailFooter'
+
+/**
+ * Page générique calquée sur la maquette de référence.
+ * Même structure pour toutes les formations NTC, seuls les textes (données) changent.
+ */
+export default function FormationNtcPage() {
+  const { slug } = useParams()
+  const formation = slug
+    ? getFormationNtcBySlug(slug) || getFormationNtcById(slug)
+    : null
+
+  if (!formation) {
+    return <Navigate to="/formations" replace />
+  }
+
+  return (
+    <>
+      <FormationDetailHero
+        heroTitle={formation.heroTitle}
+        heroSubtitle={formation.heroSubtitle}
+        heroCtaText={formation.heroCtaText}
+        heroImage={formation.heroImage || formation.image}
+        heroImageAlt={formation.imageAlt}
+      />
+
+      <FormationDetailIntro
+        tags={formation.tags}
+        introTitle={formation.introTitle}
+        introDescription={formation.introDescription}
+      />
+
+      <FormationDetailObjectives objectives={formation.objectives} />
+
+      <FormationDetailDefinition
+        definitionTitle={formation.definitionTitle}
+        definitionText={formation.definitionText}
+      />
+
+      <FormationDetailMissions missions={formation.missions} />
+
+      <FormationDetailProgram
+        programTitle={formation.programTitle}
+        programColumns={formation.programColumns}
+      />
+
+      <FormationDetailDebouches
+        debouchesTitle={formation.debouchesTitle}
+        debouchesContent={formation.debouchesContent}
+        debouchesList={formation.debouchesList}
+      />
+
+      <FormationDetailFinancement
+        financementTitle={formation.financementTitle}
+        financementContent={formation.financementContent}
+      />
+
+      <FormationDetailContenu
+        contenuTitle={formation.contenuTitle}
+        contenuBlocs={formation.contenuBlocs}
+      />
+
+      <FormationDetailTestimonials
+        testimonialsTitle={formation.testimonialsTitle}
+        testimonials={formation.testimonials}
+      />
+
+      <FormationDetailFooter footerLinks={formation.footerLinks} />
+
+      <ContactSection />
+    </>
+  )
+}
