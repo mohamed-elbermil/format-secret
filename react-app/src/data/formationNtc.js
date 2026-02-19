@@ -111,13 +111,13 @@ export const formationNtcData = [
     introTitle: 'Assistant de direction',
     introDescription: 'Un parcours intensif pour maîtriser la vente technique et la négociation en contexte B2B, de la prospection à la fidélisation client.',
     objectives: [
-      { icon: 'fas fa-bullseye', text: 'Maîtriser la prospection commerciale B2B' },
-      { icon: 'fas fa-search', text: 'Développer votre expertise technique produit' },
-      { icon: 'fas fa-chart-line', text: 'Optimiser votre taux de conversion' },
-      { icon: 'fas fa-handshake', text: 'Construire un réseau professionnel solide' },
+      { icon: 'fas fa-bullseye', text: 'Passer de l\'Exécution à la Stratégie' },
+      { icon: 'fas fa-search', text: 'Maîtriser le Système d\'Acquisition Hybride' },
+      { icon: 'fas fa-chart-line', text: 'Devenir un Closer Technique en Contexte B2B' },
+      { icon: 'fas fa-handshake', text: 'Piloter l\'Efficacité Opérationnelle par la Joie' },
     ],
     definitionTitle: "Qu'est-ce qu'un <br><strong>assistant de direction ?</strong>",
-    definitionText: 'Le négociateur technico-commercial B2B accompagne les entreprises dans leurs achats de biens ou de services. Il combine une forte compétence technique sur son offre et des compétences commerciales pour conseiller et convaincre les décideurs.',
+    definitionText: "L'assistant de direction stratégique est le bras droit opérationnel qui maximise la performance du dirigeant. Il allie la maîtrise de l'IA pour automatiser les systèmes et une vision business pour piloter les projets et fluidifier la prise de décision.",
     missions: [
       { number: 1, title: 'Prospecter', description: 'Identifier les entreprises cibles et les décideurs, planifier les actions de prospection.' },
       { number: 2, title: 'Négocier', description: 'Préparer et conduire les négociations, construire des offres sur mesure.' },
