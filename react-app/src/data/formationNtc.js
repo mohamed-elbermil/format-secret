@@ -37,6 +37,7 @@ export const formationNtcData = [
     definitionTitle: "Qu'est-ce qu'un <br><strong>négociateur technico-commercial ?</strong>",
     definitionText: 'Le négociateur technico-commercial est un professionnel de la vente qui maîtrise à la fois les aspects techniques des produits ou services qu\'il propose et les techniques de vente. Il prospecte, conseille, négocie et fidélise la clientèle en s\'appuyant sur une connaissance fine du marché et des besoins clients.',
     // Missions (6 cartes numérotées)
+    missionsTitle: "Quelles sont les missions d'un <br /><strong>négociateur technico-commercial ?</strong>",
     missions: [
       { number: 1, title: 'Prospecter', description: 'Identifier et qualifier des leads, développer un portefeuille clients et générer des opportunités commerciales.' },
       { number: 2, title: 'Négocier', description: 'Conduire les négociations commerciales, préparer les offres et conclure les ventes dans le respect des objectifs.' },
@@ -64,6 +65,13 @@ export const formationNtcData = [
         'Éthique et déontologie commerciale',
         'Projet professionnel et certification',
       ],
+    ],
+    prerequisitesTitle: 'Les <strong>pré-requis</strong> ?',
+    prerequisitesList: [
+      'Avoir validé un diplôme de niveau 4',
+      'Ou avoir un niveau Terminale',
+      'Ou avoir un diplôme de niveau 3 avec deux ans d’expérience professionnelle',
+      'Ou avoir un niveau Seconde ou Première avec deux ans d’expérience professionnelle',
     ],
     // Débouchés
     debouchesTitle: 'Débouchés',
@@ -118,6 +126,7 @@ export const formationNtcData = [
     ],
     definitionTitle: "Qu'est-ce qu'un <br><strong>assistant de direction ?</strong>",
     definitionText: "L'assistant de direction stratégique est le bras droit opérationnel qui maximise la performance du dirigeant. Il allie la maîtrise de l'IA pour automatiser les systèmes et une vision business pour piloter les projets et fluidifier la prise de décision.",
+    missionsTitle: "Quelles sont les missions d'un <br /><strong>assistant de direction ?</strong>",
     missions: [
       { number: 1, title: 'Prospecter', description: 'Identifier les entreprises cibles et les décideurs, planifier les actions de prospection.' },
       { number: 2, title: 'Négocier', description: 'Préparer et conduire les négociations, construire des offres sur mesure.' },
@@ -130,6 +139,12 @@ export const formationNtcData = [
     programColumns: [
       ['Prospection B2B', 'Stratégie commerciale', 'Relation client', 'Négociation avancée', 'Droit des contrats', 'Communication'],
       ['Qualification des leads', 'Argumentation technique', 'CRM et pipeline', 'Closing et conclusion', 'Éthique commerciale', 'Certification'],
+    ],
+    prerequisitesTitle: 'Les <strong>pré-requis</strong> ?',
+    prerequisitesList: [
+      'Niveau bac ou expérience équivalente',
+      'Maîtrise des outils bureautiques',
+      'Motivation et projet professionnel cohérent',
     ],
     debouchesTitle: 'Débouchés',
     debouchesContent: '<p>Chargé d\'affaires, Commercial B2B, Account Manager, Business Developer, Ingénieur commercial dans tous les secteurs d\'activité.</p>',
@@ -179,6 +194,7 @@ export const formationNtcData = [
     ],
     definitionTitle: "Qu'est-ce qu'un <br><strong>responsable de petite et moyenne structure ?</strong>",
     definitionText: 'Le négociateur technico-commercial en contexte digital prospecte et vend à distance via le téléphone, la visioconférence et les canaux digitaux. Il s\'appuie sur les CRM et les outils numériques pour piloter son activité et fidéliser ses clients.',
+    missionsTitle: "Quelles sont les missions d'un <br /><strong>responsable de petite et moyenne structure ?</strong>",
     missions: [
       { number: 1, title: 'Prospecter', description: 'Prospection multicanal (téléphone, email, réseaux), qualification des leads à distance.' },
       { number: 2, title: 'Négocier', description: 'Négociation par visio et téléphone, envoi d\'offres et suivi digital.' },
@@ -191,6 +207,12 @@ export const formationNtcData = [
     programColumns: [
       ['Vente à distance', 'Outils digitaux', 'CRM et pipeline', 'Communication écrite et orale', 'Réseaux sociaux pro', 'Droit et déontologie'],
       ['Prospection téléphonique', 'Visioconférence', 'E-mailing commercial', 'Closing à distance', 'Projet et certification', 'Insertion professionnelle'],
+    ],
+    prerequisitesTitle: 'Les <strong>pré-requis</strong> ?',
+    prerequisitesList: [
+      'Appétence pour les outils digitaux',
+      'Bonne expression orale et écrite',
+      'Accès à un ordinateur et une connexion Internet',
     ],
     debouchesTitle: 'Débouchés',
     debouchesContent: '<p>Commercial sédentaire, Téléconseiller, Chargé de clientèle, Account Manager à distance, Business Developer digital.</p>',

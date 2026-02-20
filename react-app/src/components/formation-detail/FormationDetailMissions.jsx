@@ -1,11 +1,15 @@
 import React from 'react'
 
-export default function FormationDetailMissions({ missions }) {
+export default function FormationDetailMissions({ missionsTitle, missions }) {
   if (!missions?.length) return null
   return (
     <section className="formation-ref-missions">
       <div className="container">
-        <h2>Quelles sont les missions d'un <br /><strong>négociateur technico-commercial ?</strong></h2>
+        {missionsTitle ? (
+          <h2 dangerouslySetInnerHTML={{ __html: missionsTitle }} />
+        ) : (
+          <h2>Quelles sont les missions ?</h2>
+        )}
         <div className="formation-ref-missions-grid">
           {missions.map((m, i) => (
             <div key={i} className="formation-ref-mission-card">

@@ -8,6 +8,7 @@ import FormationDetailObjectives from '../components/formation-detail/FormationD
 import FormationDetailDefinition from '../components/formation-detail/FormationDetailDefinition'
 import FormationDetailMissions from '../components/formation-detail/FormationDetailMissions'
 import FormationDetailProgram from '../components/formation-detail/FormationDetailProgram'
+import FormationDetailPrerequisites from '../components/formation-detail/FormationDetailPrerequisites'
 import FormationDetailDebouches from '../components/formation-detail/FormationDetailDebouches'
 import FormationDetailFinancement from '../components/formation-detail/FormationDetailFinancement'
 import FormationDetailContenu from '../components/formation-detail/FormationDetailContenu'
@@ -51,11 +52,19 @@ export default function FormationNtcPage() {
         definitionText={formation.definitionText}
       />
 
-      <FormationDetailMissions missions={formation.missions} />
+      <FormationDetailMissions
+        missionsTitle={formation.missionsTitle}
+        missions={formation.missions}
+      />
 
       <FormationDetailProgram
         programTitle={formation.programTitle}
         programColumns={formation.programColumns}
+      />
+
+      <FormationDetailPrerequisites
+        prerequisitesTitle={formation.prerequisitesTitle}
+        prerequisitesList={formation.prerequisitesList}
       />
 
       <FormationDetailDebouches

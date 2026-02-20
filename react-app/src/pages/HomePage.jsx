@@ -19,19 +19,17 @@ export default function HomePage() {
 
   return (
     <>
-      <section className="hero">
-        <Container>
+      <section className="hero hero-index">
+        <Container className='index'>
           <div className="hero-content">
             <h1>FORMASECRET,<br />Votre succès, c'est notre secret !</h1>
             <p>Organisme de formation expert en efficacité professionnelle, management et vente</p>
             <div className="cta-buttons">
               <Link to="/formations" className="cta-button primary">Découvrir nos formations</Link>
-              <Link to="/#contact" className="cta-button secondary">Nous contacter</Link>
             </div>
+            <img src="/assets/images/hero-people.png" alt="" />
           </div>
-          <div className="hero-image">
-            <img src="/assets/images/pexels-photo-1438081.jpeg" alt="Formation professionnelle FormaSecret" />
-          </div>
+          
         </Container>
       </section>
 
