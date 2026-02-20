@@ -1,5 +1,6 @@
 import React, { useState } from 'react'
 import { Link } from 'react-router-dom'
+import Button from '../components/ui/Button'
 import Container from '../components/layout/Container'
 import FormationBlockCard from '../components/cards/FormationBlockCard'
 import FormationModal from '../components/formations/FormationModal'
@@ -35,7 +36,7 @@ export default function FormationsPage() {
             <div className="hero-text">
               <h1>Nos Formations Professionnelles</h1>
               <p>Des programmes sur mesure pour développer vos compétences et booster votre carrière</p>
-              <Link to="/#contact" className="cta-button">Contactez-nous</Link>
+              <Button to="/#contact" variant="primary" size="md">Contactez-nous</Button>
             </div>
             <div className="hero-visual">
               <div className="hero-icon icon-1"><i className="fas fa-graduation-cap" /></div>
@@ -83,7 +84,7 @@ export default function FormationsPage() {
               <p className="text-justify"><strong>FormaSecret accompagne les entreprises avec des formations entièrement personnalisées, conçues pour répondre précisément à leurs enjeux opérationnels et humains.</strong> Au-delà de notre catalogue, nous développons des dispositifs sur mesure, adaptés à vos objectifs, à votre organisation et au niveau de vos équipes.</p>
               <p className="text-justify">Que vous souhaitiez renforcer des compétences clés, accompagner un changement interne ou structurer un parcours de montée en compétences, <strong>nos formateurs experts créent des programmes ciblés et immédiatement applicables.</strong> Chaque parcours est pensé pour optimiser l'apprentissage, favoriser l'adhésion et garantir un impact concret sur le terrain.</p>
               <p className="text-justify">Avec FormaSecret, bénéficiez d'une <strong>approche flexible, experte et orientée résultats</strong>, entièrement dédiée à la réussite de vos collaborateurs et à la performance de votre entreprise.</p>
-              <div className="contact-btn-sur-mesure"><Link to="/#contact">Contactez Nous</Link></div>
+              <div className="contact-btn-sur-mesure"><Button to="/#contact" variant="primary" size="md">Contactez Nous</Button></div>
             </div>
           </div>
         </Container>

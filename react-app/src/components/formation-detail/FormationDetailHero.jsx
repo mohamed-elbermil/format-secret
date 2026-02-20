@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import Button from '../ui/Button'
 
 export default function FormationDetailHero({ heroTitle, heroSubtitle, heroCtaText, heroImage, heroImageAlt }) {
   return (
@@ -11,9 +11,7 @@ export default function FormationDetailHero({ heroTitle, heroSubtitle, heroCtaTe
         <div className="formation-ref-hero-content">
           <h1>{heroTitle}</h1>
           <p className="formation-ref-hero-subtitle">{heroSubtitle}</p>
-          <Link to="/#contact" className="formation-ref-cta-primary">
-            {heroCtaText}
-          </Link>
+          <Button to="/#contact" variant="dark" size="md">{heroCtaText}</Button>
         </div>
       </div>
     </section>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { formations } from '../../data/formations'
+import Button from '../ui/Button'
 
 export default function FormationModal({ formationKey, onClose }) {
   const [calendarVisible, setCalendarVisible] = useState(false)
@@ -33,17 +34,19 @@ export default function FormationModal({ formationKey, onClose }) {
           <div className="modal-description">
             <p dangerouslySetInnerHTML={{ __html: formation.description }} />
             <div className="modal-buttons">
-              <a className="modal-btn" href={formation.pdf} target="_blank" rel="noopener noreferrer">Télécharger PDF</a>
-              <button type="button" className="modal-btn" onClick={toggleCalendar}>
+              <Button href={formation.pdf} variant="primary" size="sm">Télécharger PDF</Button>
+              <Button type="button" variant="outline" size="sm" fullWidth onClick={toggleCalendar}>
                 {calendarVisible ? 'Masquer les sessions' : 'Voir les sessions'}
-              </button>
+              </Button>
             </div>
           </div>
           <div className="modal-calendar" id="calendarContainer" style={{ display: calendarVisible ? 'block' : 'none' }}>
             {calendarVisible && !isMobile && (
               <>
                 <iframe src={formation.calendar} title="Calendrier" frameBorder="0" scrolling="no" />
-                <a href="/#contact" className="calendar-cta-button">Je m'inscris à cette session de formation</a>
+                <Button href="/#contact" variant="primary" size="sm" className="calendar-cta-button" fullWidth>
+                  Je m'inscris à cette session de formation
+                </Button>
               </>
             )}
           </div>

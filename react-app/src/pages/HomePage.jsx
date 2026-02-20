@@ -25,7 +25,7 @@ export default function HomePage() {
             <h1>FORMASECRET,<br />Votre succès, c'est notre secret !</h1>
             <p>Organisme de formation expert en efficacité professionnelle, management et vente</p>
             <div className="cta-buttons">
-              <Link to="/formations" className="cta-button primary">Découvrir nos formations</Link>
+              <Link to="/formations" className="cta-button primary button-picto"><i class="fa-solid fa-arrow-right"></i>Découvrir nos formations</Link>
             </div>
             <img src="/assets/images/hero-people.png" alt="" />
           </div>
