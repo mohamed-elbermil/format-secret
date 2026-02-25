@@ -11,7 +11,6 @@ import FormationDetailProgram from '../components/formation-detail/FormationDeta
 import FormationDetailPrerequisites from '../components/formation-detail/FormationDetailPrerequisites'
 import FormationDetailDebouches from '../components/formation-detail/FormationDetailDebouches'
 import FormationDetailFinancement from '../components/formation-detail/FormationDetailFinancement'
-import FormationDetailContenu from '../components/formation-detail/FormationDetailContenu'
 import FormationDetailTestimonials from '../components/formation-detail/FormationDetailTestimonials'
 import FormationDetailFooter from '../components/formation-detail/FormationDetailFooter'
 
@@ -71,16 +70,13 @@ export default function FormationNtcPage() {
         debouchesTitle={formation.debouchesTitle}
         debouchesContent={formation.debouchesContent}
         debouchesList={formation.debouchesList}
+        debouchesCards={formation.debouchesCards}
       />
 
       <FormationDetailFinancement
         financementTitle={formation.financementTitle}
         financementContent={formation.financementContent}
-      />
-
-      <FormationDetailContenu
-        contenuTitle={formation.contenuTitle}
-        contenuBlocs={formation.contenuBlocs}
+        financementItems={formation.financementItems}
       />
 
       <FormationDetailTestimonials
