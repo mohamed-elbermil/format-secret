@@ -425,17 +425,13 @@ nav {
 }
 
 .service-card {
-    background-color: #ffffff;
+background-color: #ffffff;
     border-radius: 15px;
     overflow: hidden;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
     transition: all 0.3s ease;
+    border: solid 1px #333249;
 }
 
-.service-card:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
-}
 
 .service-image {
     height: 200px;
@@ -455,8 +451,9 @@ nav {
 
 .service-card h3 {
     font-size: 1.5rem;
-    color: #f7ab3f;
     margin: 20px 20px 10px;
+    color: #333249;
+    text-align: center;
 }
 
 .service-card p {
@@ -3000,9 +2997,9 @@ section h2 {
 
 .formation-block-info {
     display: flex;
-    flex-direction: column;
     gap: 12px;
     margin-top: auto;
+    flex-wrap: wrap;
 }
 
 .formation-info-item {
@@ -3011,6 +3008,11 @@ section h2 {
     gap: 10px;
     color: #333249;
     font-size: 0.95rem;
+    background: #f7ab3f3b;
+    padding: 6px 14px;
+    justify-content: center;
+    align-items: center;
+    border-radius: 64px;
 }
 
 .formation-info-item i {
