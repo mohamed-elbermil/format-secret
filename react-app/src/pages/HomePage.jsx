@@ -9,6 +9,10 @@ import { services } from '../data/services'
 import { advantages } from '../data/advantages'
 import { keyFigures } from '../data/figures'
 import heroPeople from '../assets/images/hero-people.png'
+import imgAnalyse from '../assets/images/pexels-photo-2977547.jpeg'
+import imgProjet from '../assets/images/pexels-photo-5915194.jpeg'
+import imgParcours from '../assets/images/pexels-photo-3184465.jpeg'
+import imgFinancement from '../assets/images/pexels-photo-8062280.jpeg'
 
 export default function HomePage() {
   const location = useLocation()
@@ -49,6 +53,40 @@ export default function HomePage() {
       <section className="presentation">
         <Container>
          <iframe width="560" height="315" src="https://www.youtube.com/embed/xiUDHScv1QY?si=6UO6GMfZRvFF41J3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+        </Container>
+      </section>
+      
+      <section className="orientation">
+        <Container>
+          <h2>Faire un bilan d’orientation</h2>
+          <p className="orientation-subtitle">Gratuit et sans engagement</p>
+          <div className="orientation-images">
+            <img src={imgAnalyse} alt="Analyse de votre parcours" />
+            <img src={imgProjet} alt="Définition de votre projet" />
+            <img src={imgParcours} alt="Présentation de parcours personnalisés" />
+            <img src={imgFinancement} alt="Étude de vos solutions de financement" />
+          </div>
+          <div className="orientation-steps">
+            <div className="orientation-step">
+              <div className="orientation-step-title">1. Analyse de votre parcours</div>
+              <div className="orientation-step-time"><i className="fa-regular fa-clock"></i> 10 min</div>
+            </div>
+            <div className="orientation-step">
+              <div className="orientation-step-title">2. Définition de votre projet</div>
+              <div className="orientation-step-time"><i className="fa-regular fa-clock"></i> 5 min</div>
+            </div>
+            <div className="orientation-step">
+              <div className="orientation-step-title">3. Présentation du/des parcours personnalisé(s)</div>
+              <div className="orientation-step-time"><i className="fa-regular fa-clock"></i> 10 min</div>
+            </div>
+            <div className="orientation-step">
+              <div className="orientation-step-title">4. Étude de vos solutions de financement</div>
+              <div className="orientation-step-time"><i className="fa-regular fa-clock"></i> 5 min</div>
+            </div>
+          </div>
+          <div className="orientation-cta">
+            <Link to="/#contact" className="cta-button-picto-2"><i className="fa-solid fa-calendar-check"></i>Je prends rendez-vous</Link>
+          </div>
         </Container>
       </section>
 
