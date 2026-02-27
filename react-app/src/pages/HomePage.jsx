@@ -27,7 +27,8 @@ export default function HomePage() {
             <div className="cta-buttons">
               <Link to="/formations" className="cta-button-picto"><i class="fa-solid fa-arrow-right"></i>Découvrir nos formations</Link>
             </div>
-            <img src="/assets/images/hero-people.png" alt="" />
+            <span className="recommend"><i class="fa-solid fa-star"></i>98% de nos .. recommendent nos formation</span><br />
+            <img src="/assets/images/hero-people.png" alt="people" />
           </div>
           
         </Container>
