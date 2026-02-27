@@ -8,6 +8,7 @@ import ContactSection from '../components/sections/ContactSection'
 import { services } from '../data/services'
 import { advantages } from '../data/advantages'
 import { keyFigures } from '../data/figures'
+import heroPeople from '../assets/images/hero-people.png'
 
 export default function HomePage() {
   const location = useLocation()
@@ -28,8 +29,8 @@ export default function HomePage() {
               <Link to="/formations" className="cta-button-picto"><i class="fa-solid fa-arrow-right"></i>Découvrir nos formations</Link>
               <p class="hidden">Votre réussite commence ici !</p>
             </div>
-            <span className="recommend"><i class="fa-solid fa-star"></i>98% de nos apprenants recommandent nos formations</span><br />
-            <img src="../assets/images/hero-people.png" alt="people" />
+            <span className="recommend"><i class="fa-solid fa-star"></i>98% de nos apprenants recommandent nos formations</span>
+            <img src={heroPeople} alt="Apprenants et formateurs" />
           </div>
           
         </Container>

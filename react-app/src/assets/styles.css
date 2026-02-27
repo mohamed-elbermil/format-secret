@@ -165,10 +165,6 @@ nav {
     justify-content: space-between;
 }
 
-.hero-content {
-    flex: 1;
-    max-width: 600px;
-}
 
 .hero h1 {
     font-size: 3.5rem;
@@ -240,7 +236,7 @@ nav {
     gap: 13px;
     align-items: center;
     color: #ffffff;
-    margin: 2em 0;
+    margin: 2em 0 0;
 }
 
 .recommend > i {
@@ -305,11 +301,15 @@ nav {
 
 /* FIN HERO */
 /* HERO INDEX (nouvelle version) */
+.hero-content {
+    display: grid;
+    place-items: center;
+}
 .hero-index {
-    position: relative;
+
     background: #333249;
-    padding: 160px 0 40px;
-    margin:0;
+    padding: 120px 0 0 0;
+    margin: 0;
 }
 .hero-index::after {
     content: "";
@@ -1015,6 +1015,12 @@ background-color: #ffffff;
 
 .infos-left a {
     text-decoration: underline!important;
+}
+
+.infos-left a {
+    display: flex;
+    align-items: center;
+    gap: 8px;
 }
 
 .horaires p {
@@ -2378,9 +2384,6 @@ section h2 {
     z-index: 2;
 }
 
-.hero-content {
-    flex: 0 0 50%;
-}
 
 .hero-secretariat h1 {
     font-size: 3.5rem;
