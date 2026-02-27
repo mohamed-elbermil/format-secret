@@ -1038,6 +1038,19 @@ background-color: #ffffff;
 .footer-legal,
 .footer-contact {
     margin-bottom: 20px;
+    width: 24em;
+}
+.email-link {
+    background: #f08526;
+    height: 5em;
+    padding: 16px 17px;
+    border-radius: 64px;
+    color: #333249 !important;
+    font-weight: 500;
+}
+
+.email-link i {
+    color: #333249 !important;
 }
 
 .footer h4 {
@@ -1068,7 +1081,7 @@ background-color: #ffffff;
 .footer-contact p {
     display: flex;
     align-items: center;
-    margin-bottom: 8px;
+    margin-bottom: 30px
 }
 
 .footer-contact i {

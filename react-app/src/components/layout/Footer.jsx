@@ -39,21 +39,17 @@ export default function Footer() {
                   )}
                 </li>
               ))}
-            </ul>
-          </div>
-          <div className="footer-legal">
-            <h4>Informations légales</h4>
-            <ul>
               <li><Link to="/cgu">Conditions Générales d'Utilisation</Link></li>
               <li><Link to="/cgv">Conditions Générales de Vente</Link></li>
             </ul>
           </div>
           <div className="footer-contact">
             <h4>Former, accompagner, réussir</h4>
-              <p>
-             lorem12
-            </p>
-
+              <p>Former aujourd'hui, pour bâtir l'excellence de demain. Nous vous proposons une offre de plus de 25 formations riches et adaptée à toute structure professionnelle en France.</p>
+              <a href="mailto:contact@formasecret.fr" target="_blank" rel="noopener noreferrer" aria-label="Envoyer un email" className="email-link">
+                <i className="fa-solid fa-envelope"></i>
+                contact@formasecret.fr
+              </a>
           </div>
         </div>
         <div className="footer-bottom">
