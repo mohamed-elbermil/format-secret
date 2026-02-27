@@ -36,7 +36,7 @@ export default function HomePage() {
 
       <section className="services">
         <Container>
-          <h2>Nos Services</h2>
+          <h2><span className="title-style">Nos</span> Services</h2>
           <div className="services-grid">
             {services.map((s, i) => (
               <ServiceCard key={i} {...s} />
@@ -52,7 +52,7 @@ export default function HomePage() {
 
       <section className="key-advantages">
         <Container>
-          <h2>Nos Avantages Clés</h2>
+          <h2><span className='title-style '>Nos Avantages</span> Clés</h2>
           <div className="advantages-grid">
             {advantages.map((a, i) => (
               <AdvantageCard key={i} {...a} />
@@ -63,7 +63,7 @@ export default function HomePage() {
 
       <section className="certification">
         <Container>
-          <h2>Notre Certification</h2>
+          <h2><span className="title-style">Notre</span> Certification</h2>
           <div className="qualiopi-content">
             <div className="qualiopi-logo">
               <a href="https://certifopac.fr/qualiopi/certification/verification/?siren=911922540" target="_blank" rel="noopener noreferrer">
@@ -102,7 +102,7 @@ export default function HomePage() {
 
       <section className="trusted-by">
         <Container>
-          <h2>Ils nous font confiance</h2>
+          <h2><span className="title-style">Ils nous font</span> confiance</h2>
           <div className="logo-slider">
             {[
               { img: 'weishaupt.PNG', h3: 'Weishaupt', p: 'Mme Loddo est une consultante énergique et passionnée par son travail. Elle a su adapter sa mission à nos besoins, et nos collaborateurs qu\'elle a pu accompagner ont tous apprécié ses interventions. Je recommande !', author: 'Jérôme HOEFLER, Directeur du Service Clients WEISHAUPT' },

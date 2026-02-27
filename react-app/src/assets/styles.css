@@ -456,6 +456,10 @@ background-color: #ffffff;
     text-align: center;
 }
 
+.title-style {
+    font-weight: 400;
+}
+
 .service-card p {
     font-size: 1rem;
     color: #666666;
