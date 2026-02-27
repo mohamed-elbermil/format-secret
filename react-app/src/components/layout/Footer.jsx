@@ -7,6 +7,7 @@ import { socialLinks } from '../../data/socialLinks'
 
 export default function Footer() {
   return (
+    
     <footer className="footer">
       <Container>
         <div className="footer-content">
