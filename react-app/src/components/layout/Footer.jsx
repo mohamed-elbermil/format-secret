@@ -12,7 +12,19 @@ export default function Footer() {
         <div className="footer-content">
           <div className="footer-logo">
             <img src="/assets/images/Formasecret-nouveau-logo.png" alt="FormaSecret Logo" />
-            <p>Formasecret, votre succès, c'est notre secret !</p>
+            <div className="infos-left">
+              <a href="https://www.google.com/maps/place/FORMASECRET/@45.763958,4.9577099,17z/data=!3m1!4b1!4m6!3m5!1s0x47f4c1b4e323ca65:0xe04edf5081197452!8m2!3d45.763958!4d4.9577099!16s%2Fg%2F11mvxkpql8?entry=ttu&g_ep=EgoyMDI2MDIyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Google map">
+                <i className="fa-solid fa-location-dot" />140 Rue Emile Zola, 69150 Décines-Charpieu
+              </a>
+              <a href={`tel:${contactInfo.phone}`}>
+                <i className="fa-solid fa-phone"></i>
+                {contactInfo.phone}
+              </a>
+
+              <div className="horaires">
+                <p><span>Lun-Ven :</span> 09:00 - 18:00</p>
+              </div>
+            </div>
           </div>
           <div className="footer-links">
             <h4>Liens rapides</h4>
@@ -36,19 +48,11 @@ export default function Footer() {
             </ul>
           </div>
           <div className="footer-contact">
-            <h4>Contactez-nous</h4>
+            <h4>Former, accompagner, réussir</h4>
               <p>
-              <i className="fas fa-phone" />
-              <a href={`tel:${contactInfo.phone}`}>
-                {contactInfo.phone}
-              </a>
+             lorem12
             </p>
-            <p>
-              <i className="fas fa-envelope" />
-              <a href={`mailto:${contactInfo.email}`}>
-                {contactInfo.email}
-              </a>
-            </p>
+
           </div>
         </div>
         <div className="footer-bottom">

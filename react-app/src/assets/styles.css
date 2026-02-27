@@ -977,8 +977,29 @@ background-color: #ffffff;
 }
 
 .footer-logo img {
-    height: 150px;
+    width: 190px;
     margin-bottom: 10px;
+}
+
+.horaires span {
+    font-weight: bold;
+}
+
+.infos-left a {
+    text-decoration: underline!important;
+}
+
+.horaires p {
+    background: #65639d6e;
+    border-radius: 44px;
+    padding: 5px 17px;
+    width: max-content;
+}
+
+.infos-left {
+    display: flex;
+    flex-direction: column;
+    gap: 19px;
 }
 
 .footer-logo p {
