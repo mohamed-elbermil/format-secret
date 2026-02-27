@@ -189,7 +189,10 @@ nav {
     display: flex;
     justify-content: center;
     gap: 20px;
+        position: relative;
+
 }
+
 
 .cta-button-picto {
     padding: 12px 20px 11px 9px;
@@ -204,6 +207,20 @@ nav {
     justify-content: center;
     align-items: center;
     gap: 11px;
+    transition-duration:4s;
+}
+
+.hidden {
+    position: absolute;
+    bottom: -17px;
+    left: 24em;
+    white-space: pre;
+    transition: opacity 0.3s ease;
+    opacity: 0
+}
+
+.cta-button-picto:hover + .hidden {
+    opacity:1;
 }
 
 .cta-button-picto i {
