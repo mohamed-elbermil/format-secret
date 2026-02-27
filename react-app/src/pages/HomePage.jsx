@@ -38,7 +38,7 @@ export default function HomePage() {
 
       <section className="services">
         <Container>
-          <h2><span className="title-style">Nos</span> Services</h2>
+          <h2><span className="title-style">Nos services de </span>formation professionnelle certifiante</h2>
           <div className="services-grid">
             {services.map((s, i) => (
               <ServiceCard key={i} {...s} />
