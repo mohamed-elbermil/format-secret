@@ -27,7 +27,7 @@ export default function HomePage() {
             <div className="cta-buttons">
               <Link to="/formations" className="cta-button-picto"><i class="fa-solid fa-arrow-right"></i>Découvrir nos formations</Link>
             </div>
-            <span className="recommend"><i class="fa-solid fa-star"></i>98% de nos .. recommendent nos formation</span><br />
+            <span className="recommend"><i class="fa-solid fa-star"></i>98% de nos apprenants recommandent nos formations</span><br />
             <img src="/assets/images/hero-people.png" alt="people" />
           </div>
           
@@ -42,6 +42,11 @@ export default function HomePage() {
               <ServiceCard key={i} {...s} />
             ))}
           </div>
+        </Container>
+      </section>
+      <section className="presentation">
+        <Container>
+         <iframe width="560" height="315" src="https://www.youtube.com/embed/xiUDHScv1QY?si=6UO6GMfZRvFF41J3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </Container>
       </section>
 

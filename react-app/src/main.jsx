@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom/client'
 import App from './App'
 // Styles du projet parent (dossier format-secret-v2/assets)
-import '../../assets/styles.css'
+import '../src/assets/styles.css'
 
 const rootEl = document.getElementById('root')
 if (!rootEl) {
