@@ -1443,6 +1443,12 @@ background-color: #ffffff;
     width: max-content;
 }
 
+.qualiopi {
+    border-radius: 10px;
+    padding: 11px;
+    background: #fff;
+}
+
 .infos-left {
     display: flex;
     flex-direction: column;
