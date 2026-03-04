@@ -5,7 +5,6 @@
 }
 
 header {
-    background-color: var(--color-primary);
     padding: 10px 0;
     position: fixed;
     width: 100%;
@@ -14,6 +13,11 @@ header {
 }
 
 header .container {
+    width: 52em;
+    background: #333249bd;
+    padding: 9px 12px;
+    border-radius: 64px;
+    backdrop-filter: blur(91px);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -67,6 +71,21 @@ nav {
 }
 
 @media screen and (max-width: 768px) {
+    header {
+        padding: 8px 0;
+    }
+
+    header .container {
+        width: 92%;
+        max-width: 1200px;
+        padding: 10px 14px;
+        border-radius: 22px;
+    }
+
+    .logo img {
+        height: 34px;
+    }
+
     .nav-links {
         display: none;
     }
@@ -88,12 +107,39 @@ nav {
         opacity: 0;
         visibility: hidden;
         transition: opacity 0.3s ease, visibility 0.3s ease;
-        z-index:1;
+        z-index: 1000;
     }
 
     .fullscreen-menu.active {
         opacity: 1;
         visibility: visible;
+    }
+
+    .fullscreen-close {
+        position: absolute;
+        top: 16px;
+        right: 16px;
+        width: 44px;
+        height: 44px;
+        border: 0;
+        border-radius: 999px;
+        background: rgba(0, 0, 0, 0.22);
+        color: #ffffff;
+        font-size: 34px;
+        line-height: 44px;
+        display: grid;
+        place-items: center;
+        cursor: pointer;
+        z-index: 1001;
+    }
+
+    .fullscreen-close:hover {
+        background: rgba(0, 0, 0, 0.32);
+    }
+
+    .fullscreen-close:focus-visible {
+        outline: 2px solid #ffffff;
+        outline-offset: 3px;
     }
 
     .mobile-nav-links {
@@ -128,6 +174,28 @@ nav {
 
     .burger-menu.active .bar:nth-child(3) {
         transform: rotate(45deg) translate(-5px, -6px);
+    }
+}
+
+@media screen and (max-width: 480px) {
+    header .container {
+        width: calc(100% - 20px);
+        padding: 10px 12px;
+        border-radius: 18px;
+    }
+
+    .logo img {
+        height: 30px;
+    }
+
+    .bar {
+        width: 26px;
+        height: 3px;
+        margin: 5px 0;
+    }
+
+    .mobile-nav-links a {
+        font-size: 1.6rem;
     }
 }
 

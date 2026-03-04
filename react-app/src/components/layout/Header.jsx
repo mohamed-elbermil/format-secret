@@ -37,6 +37,14 @@ export default function Header() {
       </header>
 
       <div className={`fullscreen-menu ${menuOpen ? 'active' : ''}`}>
+        <button
+          type="button"
+          className="fullscreen-close"
+          onClick={closeMenu}
+          aria-label="Fermer le menu"
+        >
+          <span aria-hidden="true">×</span>
+        </button>
         <NavLinks className="mobile-nav-links" onLinkClick={closeMenu} />
       </div>
     </>
