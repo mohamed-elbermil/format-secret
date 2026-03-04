@@ -576,6 +576,7 @@ background-color: #ffffff;
     margin-bottom: 22px;
 }
 .orientation-images img {
+    border: solid 2px var(--color-primary);
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
@@ -718,7 +719,7 @@ background-color: #ffffff;
     padding: 22px;
     text-align: left;
     transition: transform 0.2s ease, box-shadow 0.2s ease;
-    box-shadow: 0 14px 40px rgba(15, 23, 42, 0.08);
+    border: 1px solid #f0852654;
 }
 
 .advantage-card:hover {
@@ -929,84 +930,132 @@ background-color: #ffffff;
 
 .key-figures {
     padding: 80px 0;
-    background-color: var(--color-secondary);
-    color: #ffffff;
+    background: linear-gradient(45deg, #333249, #3a3778);
+    color: #111827;
+}
+
+.key-figures-panel {
+    background: #ffffff;
+    border-radius: 26px;
+    padding: 28px 26px;
+    box-shadow: 0 18px 55px rgba(17, 24, 39, 0.12);
+    border: 1px solid rgba(17, 24, 39, 0.06);
+}
+
+.key-figures-header {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin-bottom: 18px;
+}
+
+.key-figures-eyebrow {
+    margin: 0;
+    font-size: 0.95rem;
+    color: #6b7280;
+    letter-spacing: 0.01em;
 }
 
 .key-figures h2 {
-    text-align: center;
-    font-size: 2.5rem;
-    margin-bottom: 50px;
+    margin: 0;
+    font-size: 2.1rem;
+    font-weight: 700;
+    letter-spacing: -0.02em;
+    color: var(--color-primary);
+    text-align: left;
 }
 
 .figures-grid {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 30px;
+    grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+    gap: 0;
 }
 
 .figure-card {
-    text-align: center;
-    padding: 20px;
-    background-color: rgba(255, 255, 255, 0.1);
-    border-radius: 15px;
-    transition: all 0.3s ease;
+    text-align: left;
+    padding: 18px 20px;
+    background: transparent;
+    border-radius: 0;
+    transition: background-color 0.2s ease;
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
 }
 
 .figure-card:hover {
-    transform: translateY(-10px);
-    background-color: rgba(255, 255, 255, 0.2);
+    transform: none;
+    background-color: rgba(17, 24, 39, 0.02);
 }
 
 .figure-icon {
-    font-size: 3rem;
-    margin-bottom: 20px;
+    display: none;
 }
 
 .figure-number {
-    font-size: 3rem;
-    font-weight: bold;
-    margin-bottom: 10px;
+    order: 1;
+    font-size: 2.35rem;
+    font-weight: 800;
+    margin: 0;
+    letter-spacing: -0.02em;
+    color: var(--color-primary);
 }
 
 .figure-card h3 {
-    font-size: 1.1rem;
+    order: 2;
+    font-size: 0.95rem;
     font-weight: 600;
-    margin-bottom: 10px;
-    color: #ffffff;
+    margin: 0;
+    color: #6b7280;
+    text-transform: none;
+    letter-spacing: 0.01em;
 }
 
 .figure-card p {
+    order: 3;
     font-size: 1rem;
+    margin: 0;
+    color: #374151;
+    line-height: 1.45;
 }
 
 @media screen and (max-width: 1024px) {
-    .figures-grid {
-        gap: 20px;
+    .key-figures-panel {
+        padding: 24px 20px;
+        border-radius: 22px;
     }
 }
 
 @media screen and (max-width: 768px) {
     .figures-grid {
         grid-template-columns: 1fr;
-        gap: 20px;
     }
     
     .figure-card {
-        padding: 15px;
+        padding: 16px 14px;
     }
     
-    .figure-icon {
-        font-size: 2.5rem;
-        margin-bottom: 15px;
+    .key-figures h2 {
+        font-size: 1.7rem;
     }
     
     .figure-number {
-        font-size: 2.5rem;
+        font-size: 2.1rem;
     }
     
     .figure-card h3 {
-        font-size: 1rem;
+        font-size: 0.92rem;
+    }
+}
+
+@media screen and (min-width: 900px) {
+    .key-figures .figure-card:not(:first-child) {
+        border-left: 1px solid rgba(17, 24, 39, 0.08);
+    }
+}
+
+@media screen and (max-width: 899px) {
+    .key-figures .figure-card:not(:first-child) {
+        border-top: 1px solid rgba(17, 24, 39, 0.08);
     }
 }
 

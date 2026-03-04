@@ -169,11 +169,16 @@ export default function HomePage() {
 
       <section className="key-figures">
         <Container>
-          <h2>NOS CHIFFRES CLÉS</h2>
-          <div className="figures-grid">
+          <div className="key-figures-panel">
+            <div className="key-figures-header">
+              <p className="key-figures-eyebrow">Des résultats, rien que des résultats.</p>
+              <h2>Nos chiffres clés</h2>
+            </div>
+            <div className="figures-grid">
             {keyFigures.map((f, i) => (
               <FigureCard key={i} {...f} />
             ))}
+            </div>
           </div>
         </Container>
       </section>
