@@ -14,10 +14,10 @@ export default function Footer() {
           <div className="footer-logo">
             <img src="/assets/images/Formasecret-nouveau-logo.png" alt="FormaSecret Logo" />
             <div className="infos-left">
-              <a href="https://www.google.com/maps/place/FORMASECRET/@45.763958,4.9577099,17z/data=!3m1!4b1!4m6!3m5!1s0x47f4c1b4e323ca65:0xe04edf5081197452!8m2!3d45.763958!4d4.9577099!16s%2Fg%2F11mvxkpql8?entry=ttu&g_ep=EgoyMDI2MDIyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Google map">
+              <a href="https://www.google.com/maps/place/FORMASECRET/@45.763958,4.9577099,17z/data=!3m1!4b1!4m6!3m5!1s0x47f4c1b4e323ca65:0xe04edf5081197452!8m2!3d45.763958!4d4.9577099!16s%2Fg%2F11mvxkpql8?entry=ttu&g_ep=EgoyMDI2MDIyNC4wIKXMDSoASAFQAw%3D%3D" target="_blank" rel="noopener noreferrer" aria-label="Google map" className="list-link">
                 <i className="fa-solid fa-location-dot" />140 Rue Emile Zola, 69150 Décines-Charpieu
               </a>
-              <a href={`tel:${contactInfo.phone}`}>
+              <a href={`tel:${contactInfo.phone}`} className="list-link">
                 <i className="fa-solid fa-phone"></i>
                 {contactInfo.phone}
               </a>
@@ -33,14 +33,14 @@ export default function Footer() {
               {navLinks.map((link) => (
                 <li key={link.path}>
                   {link.isHash || link.path.includes('#') ? (
-                    <a href={link.path.startsWith('/') ? link.path : `/${link.path}`}>{link.label}</a>
+                    <a href={link.path.startsWith('/') ? link.path : `/${link.path}`} className="list-link">{link.label}</a>
                   ) : (
-                    <Link to={link.path}>{link.label}</Link>
+                    <Link to={link.path} className="list-link">{link.label}</Link>
                   )}
                 </li>
               ))}
-              <li><Link to="/cgu">Conditions Générales d'Utilisation</Link></li>
-              <li><Link to="/cgv">Conditions Générales de Vente</Link></li>
+              <li><Link to="/cgu" className="list-link">Conditions Générales d'Utilisation</Link></li>
+              <li><Link to="/cgv" className="list-link">Conditions Générales de Vente</Link></li>
             </ul>
           </div>
           <div className="footer-contact">
