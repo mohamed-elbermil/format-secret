@@ -1,23 +1,3 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
-
-html {
-    scroll-behavior: smooth;
-}
-
-body {
-    font-family: "Work Sans", sans-serif;
-    line-height: 1.6;
-    background-color: #ffffff;
-}
-
-strong {
-    font-weight: 700;
-}
-
 .container {
     width: 90%;
     max-width: 1200px;
@@ -25,7 +5,7 @@ strong {
 }
 
 header {
-    background-color: #333249;
+    background-color: var(--color-primary);
     padding: 10px 0;
     position: fixed;
     width: 100%;
@@ -65,7 +45,7 @@ nav {
 }
 
 .nav-links a:hover {
-    color: #f7ab3f;
+    color: var(--color-secondary);
 }
 
 .burger-menu {
@@ -134,7 +114,7 @@ nav {
     }
 
     .mobile-nav-links a:hover {
-        color: #f7ab3f;
+        color: var(--color-secondary);
     }
 
     /* Animation pour le burger menu */
@@ -155,7 +135,7 @@ nav {
 
 .hero {
     padding: 170px 0 80px;
-    background: #f7ab3f;
+    background: var(--color-secondary);
     overflow: hidden;
 }
 
@@ -196,7 +176,7 @@ nav {
     font-weight: 700;
     text-decoration: none;
     border-radius: 30px;
-    color: #333249;
+    color: var(--color-primary);
     background-color: #fff;
     transition: all 0.3s ease;
     display: flex;
@@ -211,8 +191,8 @@ nav {
     font-weight: 700;
     text-decoration: none;
     border-radius: 30px;
-    color: #333249;
-    background-color: #f7ab3f;
+    color: var(--color-primary);
+    background-color: var(--color-secondary);
     transition: all 0.3s ease;
     display: flex;
     justify-content: center;
@@ -235,7 +215,7 @@ nav {
 }
 
 .cta-button-picto i {
-    background: #333249;
+    background: var(--color-primary);
     width: 32px;
     height: 32px;
     display: flex;
@@ -255,12 +235,12 @@ nav {
 }
 
 .recommend > i {
-    color: #f7ab3f;
+    color: var(--color-secondary);
 }
 
 .cta-button.primary {
     background-color: #ffffff;
-    color: #333249;
+    color: var(--color-primary);
 }
 
 
@@ -273,7 +253,7 @@ nav {
 
 .cta-button.secondary:hover {
     background-color: #ffffff;
-    color: #f7ab3f;
+    color: var(--color-secondary);
 }
 
 .hero-image {
@@ -322,7 +302,7 @@ nav {
 }
 .hero-index {
 
-    background: #333249;
+    background: var(--color-primary);
     padding: 120px 0 0 0;
     margin: 0;
 }
@@ -446,7 +426,7 @@ nav {
 .services h2, .presentation h3 {
     text-align: center;
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 50px;
 }
 
@@ -461,7 +441,7 @@ background-color: #ffffff;
     border-radius: 15px;
     overflow: hidden;
     transition: all 0.3s ease;
-    border: solid 1px #333249;
+    border: solid 1px var(--color-primary);
 }
 
 
@@ -484,7 +464,7 @@ background-color: #ffffff;
 .service-card h3 {
     font-size: 1.5rem;
     margin: 20px 20px 10px;
-    color: #333249;
+    color: var(--color-primary);
     text-align: center;
 }
 
@@ -513,7 +493,7 @@ background-color: #ffffff;
 .orientation h2 {
     text-align: center;
     font-size: 2.4rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 6px;
 }
 .orientation-subtitle {
@@ -542,13 +522,13 @@ background-color: #ffffff;
 }
 .orientation-step {
     text-align: left;
-    color: #333249;
+    color: var(--color-primary);
     display: flex;
     flex-direction: column;
     justify-content: center;
     padding: 1em 2em;
     border-radius: 11px;
-    background: #33324914;
+    background: var(--color-primary)14;
 }
 .orientation-step-title {
     font-weight: 600;
@@ -635,7 +615,7 @@ background-color: #ffffff;
     gap: 12px;
     padding: 10px 10px 10px 16px;
     border-radius: 999px;
-    background: #f8ff8a;
+    background: var(--color-secondary);
     color: #111827;
     text-decoration: none;
     font-weight: 600;
@@ -683,7 +663,7 @@ background-color: #ffffff;
     border-radius: 999px;
     display: grid;
     place-items: center;
-    background: rgba(248, 255, 138, 0.45);
+    background: color-mix(in srgb, var(--color-secondary), transparent 80%);
     color: #111827;
     margin-bottom: 14px;
 }
@@ -717,7 +697,7 @@ background-color: #ffffff;
 .certification h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 50px;
 }
 
@@ -747,7 +727,7 @@ background-color: #ffffff;
 
 .qualiopi-info h3 {
     font-size: 1.8rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 20px;
 }
 
@@ -773,7 +753,7 @@ background-color: #ffffff;
 
 .qualiopi-info ul li::before {
     content: "\2022";
-    color: #f7ab3f;
+    color: var(--color-secondary);
     font-weight: bold;
     font-size: 1.5rem;
     position: absolute;
@@ -804,7 +784,7 @@ background-color: #ffffff;
 .verify-link a {
     display: inline-block;
     padding: 10px 20px;
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     color: #ffffff;
     text-decoration: none;
     border-radius: 5px;
@@ -826,7 +806,7 @@ background-color: #ffffff;
 .about h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 50px;
 }
 
@@ -853,7 +833,7 @@ background-color: #ffffff;
 
 .about-text h3 {
     font-size: 1.8rem;
-    color: #f7ab3f;
+    color: var(--color-secondary);
     margin-bottom: 20px;
 }
 
@@ -880,7 +860,7 @@ background-color: #ffffff;
 
 .key-figures {
     padding: 80px 0;
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     color: #ffffff;
 }
 
@@ -974,7 +954,7 @@ background-color: #ffffff;
 .contact h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 50px;
 }
 
@@ -1012,13 +992,13 @@ background-color: #ffffff;
 
 .info-card i {
     font-size: 2rem;
-    color: #f7ab3f;
+    color: var(--color-secondary);
     margin-bottom: 10px;
 }
 
 .info-card h3 {
     font-size: 1.2rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 10px;
 }
 
@@ -1034,14 +1014,14 @@ background-color: #ffffff;
 }
 
 .social-media a {
-    color: #333249;
+    color: var(--color-primary);
     font-size: 1.5rem;
     margin: 0 10px;
     transition: color 0.3s ease;
 }
 
 .social-media a:hover {
-    color: #f7ab3f;
+    color: var(--color-secondary);
 }
 
 .contact-form {
@@ -1053,7 +1033,7 @@ background-color: #ffffff;
 
 .contact-form h3 {
     font-size: 1.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 20px;
 }
 
@@ -1064,7 +1044,7 @@ background-color: #ffffff;
 .form-group label {
     display: block;
     margin-bottom: 5px;
-    color: #333249;
+    color: var(--color-primary);
 }
 
 .form-group input,
@@ -1081,7 +1061,7 @@ background-color: #ffffff;
 }
 
 .btn-primary {
-    background: #f7ab3f;
+    background: var(--color-secondary);
     padding: 12px 17px;
     color: black;
     border-radius: 44px;
@@ -1092,7 +1072,7 @@ background-color: #ffffff;
 }
 
 .btn-dark {
-    background: #333249;
+    background: var(--color-primary);
     padding: 1em 2em;
     border-radius: 64px;
     color: #fff;
@@ -1100,7 +1080,7 @@ background-color: #ffffff;
 }
 
 .submit-btn {
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     color: #ffffff;
     border: none;
     padding: 12px 20px;
@@ -1132,7 +1112,7 @@ background-color: #ffffff;
 /* Footer */
 
 .footer {
-    background-color: #333249;
+    background-color: var(--color-primary);
     color: #ffffff;
     padding: 60px 0 20px;
 }
@@ -1187,22 +1167,22 @@ background-color: #ffffff;
     width: 24em;
 }
 .email-link {
-    background: #f08526;
+    background: var(--color-secondary);
     height: 5em;
     padding: 16px 17px;
     border-radius: 64px;
-    color: #333249 !important;
+    color: var(--color-primary) !important;
     font-weight: 500;
 }
 
 .email-link i {
-    color: #333249 !important;
+    color: var(--color-primary) !important;
 }
 
 .footer h4 {
     font-size: 1.2rem;
     margin-bottom: 15px;
-    color: #f7ab3f;
+    color: var(--color-secondary);
 }
 
 .footer ul {
@@ -1221,7 +1201,7 @@ background-color: #ffffff;
 }
 
 .footer a:hover {
-    color: #f7ab3f;
+    color: var(--color-secondary);
 }
 
 .footer-contact p {
@@ -1232,7 +1212,7 @@ background-color: #ffffff;
 
 .footer-contact i {
     margin-right: 10px;
-    color: #f7ab3f;
+    color: var(--color-secondary);
 }
 
 .footer-bottom {
@@ -1251,7 +1231,7 @@ background-color: #ffffff;
 }
 
 .footer-social a:hover {
-    color: #f7ab3f;
+    color: var(--color-secondary);
 }
 
 @media screen and (max-width: 768px) {
@@ -1288,7 +1268,7 @@ background-color: #ffffff;
 .trusted-by h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 50px;
 }
 
@@ -1330,7 +1310,7 @@ background-color: #ffffff;
 
 .logo-slide h3 {
     font-size: 1.2rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 10px;
 }
 
@@ -1358,7 +1338,7 @@ background-color: #ffffff;
 /* FIN Ils nous font confiance */
 /* HERO A PROPOS */ 
 .a-propos-hero {
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     padding: 150px 0 80px;
     position: relative;
     overflow: hidden;
@@ -1372,7 +1352,7 @@ background-color: #ffffff;
     left: 0;
     right: 0;
     bottom: 0;
-    background: #f7ab3f;
+    background: var(--color-secondary);
     z-index: 1;
 }
 
@@ -1428,7 +1408,7 @@ background-color: #ffffff;
 .histoire-fondation h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 50px;
 }
 
@@ -1455,7 +1435,7 @@ background-color: #ffffff;
 
 .histoire-text h3 {
     font-size: 1.8rem;
-    color: #f7ab3f;
+    color: var(--color-secondary);
     margin-bottom: 20px;
 }
 
@@ -1476,12 +1456,12 @@ background-color: #ffffff;
     padding-left: 30px;
     margin-bottom: 10px;
     font-size: 1rem;
-    color: #333249;
+    color: var(--color-primary);
 }
 
 .histoire-points li::before {
     content: "\2022";
-    color: #f7ab3f;
+    color: var(--color-secondary);
     font-weight: bold;
     font-size: 1.5rem;
     position: absolute;
@@ -1512,7 +1492,7 @@ background-color: #ffffff;
 .notre-approche h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 50px;
 }
 
@@ -1538,13 +1518,13 @@ background-color: #ffffff;
 
 .approche-icon {
     font-size: 3rem;
-    color: #f7ab3f;
+    color: var(--color-secondary);
     margin-bottom: 20px;
 }
 
 .approche-card h3 {
     font-size: 1.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 15px;
 }
 
@@ -1569,7 +1549,7 @@ background-color: #ffffff;
 .methodes-formation h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 50px;
 }
 
@@ -1602,14 +1582,14 @@ background-color: #ffffff;
 .methode-number {
     font-size: 3rem;
     font-weight: bold;
-    color: #f7ab3f;
+    color: var(--color-secondary);
     margin-right: 20px;
     line-height: 1;
 }
 
 .methode-info h3 {
     font-size: 1.3rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 10px;
 }
 
@@ -1650,7 +1630,7 @@ background-color: #ffffff;
 .engagement-qualite h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 50px;
 }
 
@@ -1668,7 +1648,7 @@ background-color: #ffffff;
     transform: translateX(-50%);
     width: 4px;
     height: 100%;
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
 }
 
 .roadmap-item {
@@ -1698,7 +1678,7 @@ background-color: #ffffff;
     top: 50%;
     width: 60px;
     height: 60px;
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1719,7 +1699,7 @@ background-color: #ffffff;
 
 .roadmap-content h3 {
     font-size: 1.3rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 10px;
 }
 
@@ -1766,7 +1746,7 @@ background-color: #ffffff;
 .pourquoi-choisir h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 50px;
 }
 
@@ -1787,7 +1767,7 @@ background-color: #ffffff;
     align-items: center;
     justify-content: center;
     clip-path: polygon(50% 0%, 100% 25%, 100% 75%, 50% 100%, 0% 75%, 0% 25%);
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     transition: all 0.3s ease;
 }
 
@@ -1875,7 +1855,7 @@ background-color: #ffffff;
 
 .hero-formations h1 {
     font-size: 3.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 20px;
     line-height: 1.2;
 }
@@ -1897,7 +1877,7 @@ background-color: #ffffff;
     position: absolute;
     width: 80px;
     height: 80px;
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -1995,7 +1975,7 @@ section {
 section h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 50px;
 }
 
@@ -2004,7 +1984,7 @@ section h2 {
 .instruction {
     text-align: center;
     font-size: 1.1rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 80px;
 }
 
@@ -2024,7 +2004,7 @@ section h2 {
 }
 
 .domaines-intervention ul li:hover {
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     color: #ffffff;
 }
 
@@ -2040,7 +2020,7 @@ section h2 {
 
 .category-title {
     font-size: 1.1rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 12px;
     padding-bottom: 8px;
     position: relative;
@@ -2055,7 +2035,7 @@ section h2 {
     left: 0;
     width: 60px;
     height: 3px;
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     transition: width 0.3s ease;
 }
 
@@ -2064,7 +2044,7 @@ section h2 {
 }
 
 .category-title i {
-    color: #f7ab3f;
+    color: var(--color-secondary);
     margin-right: 10px;
     font-size: 1.1rem;
 }
@@ -2093,7 +2073,7 @@ section h2 {
 
 .domaine-icon {
     font-size: 3rem;
-    color: #f7ab3f;
+    color: var(--color-secondary);
     margin-bottom: 20px;
 }
 
@@ -2106,7 +2086,7 @@ section h2 {
     width: 60%;
     margin: 20px auto;
     padding: 12px 0;
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     color: #ffffff;
     text-align: center;
     text-decoration: none;
@@ -2121,7 +2101,7 @@ section h2 {
 
 .domaine-card h3 {
     font-size: 1.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 5px; /* Réduit la marge en bas pour rapprocher le sous-titre */
 }
 
@@ -2175,13 +2155,13 @@ section h2 {
 
 .modalite-icon {
     font-size: 3rem;
-    color: #f7ab3f;
+    color: var(--color-secondary);
     margin-bottom: 20px;
 }
 
 .modalite-item h3 {
     font-size: 1.3rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 15px;
 }
 
@@ -2246,7 +2226,7 @@ section h2 {
     left: 0;
     right: 0;
     height: 3px;
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     z-index: 10;
 }
 
@@ -2291,7 +2271,7 @@ section h2 {
     display: block;
     margin-top: 15px;
     padding: 12px 20px;
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     color: #FFF;
     text-align: center;
     border-radius: 5px;
@@ -2367,13 +2347,13 @@ section h2 {
 .stat-number {
     font-size: 3rem;
     font-weight: bold;
-    color: #f7ab3f;
+    color: var(--color-secondary);
     margin-bottom: 10px;
 }
 
 .stat-label {
     font-size: 1.1rem;
-    color: #333249;
+    color: var(--color-primary);
 }
 
 /* Styles responsives */
@@ -2395,7 +2375,7 @@ section h2 {
 .faq h2, .certifications h2 {
     text-align: center;
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 50px;
 }
 
@@ -2424,7 +2404,7 @@ section h2 {
 
 .faq-item h3 {
     font-size: 1.2rem;
-    color: #f7ab3f;
+    color: var(--color-secondary);
     margin-bottom: 15px;
 }
 
@@ -2467,7 +2447,7 @@ section h2 {
 
 .certification-item h3 {
     font-size: 1.3rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 15px;
 }
 
@@ -2527,7 +2507,7 @@ section h2 {
 
 .hero-secretariat h1 {
     font-size: 3.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 20px;
     line-height: 1.2;
 }
@@ -2548,7 +2528,7 @@ section h2 {
     position: absolute;
     width: 80px;
     height: 80px;
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -2640,7 +2620,7 @@ section h2 {
 
 .secretariat-about h2 {
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 50px;
     text-align: center;
 }
@@ -2669,14 +2649,14 @@ section h2 {
 
 .about-features li {
     font-size: 1rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 15px;
     display: flex;
     align-items: center;
 }
 
 .about-features i {
-    color: #f7ab3f;
+    color: var(--color-secondary);
     margin-right: 10px;
     font-size: 1.2rem;
 }
@@ -2752,7 +2732,7 @@ section h2 {
 
 .secretariat-advantages h2 {
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 50px;
     text-align: center;
 }
@@ -2769,13 +2749,13 @@ section h2 {
 
 .advantage-item i {
     font-size: 3rem;
-    color: #f7ab3f;
+    color: var(--color-secondary);
     margin-bottom: 20px;
 }
 
 .advantage-item h3 {
     font-size: 1.2rem;
-    color: #333249;
+    color: var(--color-primary);
 }
 
 /* Section Nos Propositions */
@@ -2786,14 +2766,14 @@ section h2 {
 
 .secretariat-propositions h2 {
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 50px;
     text-align: center;
 }
 
 .secretariat-propositions h3 {
     font-size: 2rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 40px;
     margin-top: 50px;
 }
@@ -2819,7 +2799,7 @@ section h2 {
 }
 
 .card-header {
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     color: #ffffff;
     padding: 20px;
     text-align: center;
@@ -2853,7 +2833,7 @@ section h2 {
 }
 
 .card-content li i {
-    color: #f7ab3f;
+    color: var(--color-secondary);
     margin-right: 10px;
 }
 
@@ -2883,7 +2863,7 @@ section h2 {
 
 .secretariat-experience h2 {
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 30px;
 }
 
@@ -2902,7 +2882,7 @@ section h2 {
 
 .secretariat-why-choose h2 {
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 30px;
 }
 
@@ -2927,7 +2907,7 @@ section h2 {
 
 .secretariat-why-choose li::before {
     content: '•';
-    color: #f7ab3f;
+    color: var(--color-secondary);
     position: absolute;
     left: 0;
 }
@@ -2983,7 +2963,7 @@ section h2 {
 }
 
 .modal-btn {
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     color: #ffffff;
     border: none;
     padding: 10px 18px;
@@ -3004,7 +2984,7 @@ section h2 {
 }
 
 .close {
-    color: #333249;
+    color: var(--color-primary);
     float: right;
     font-size: 24px;
     font-weight: bold;
@@ -3013,13 +2993,13 @@ section h2 {
 
 .close:hover,
 .close:focus {
-    color: #f7ab3f;
+    color: var(--color-secondary);
     text-decoration: none;
     cursor: pointer;
 }
 
 #modalTitle {
-    color: #333249;
+    color: var(--color-primary);
     font-size: 1.8rem;
     margin-bottom: 15px;
 }
@@ -3032,7 +3012,7 @@ section h2 {
 
 /* Note formation */
 .note-formation {
-    background: #f7ab3f;
+    background: var(--color-secondary);
     border-radius: 15px;
     padding: 20px;
     margin: 20px 0;
@@ -3106,7 +3086,7 @@ section h2 {
 
 .clients-section h2{
     font-size: 2.5rem;
-    color: #333249;
+    color: var(--color-primary);
 }
 
 .clients-logos {
@@ -3199,7 +3179,7 @@ section h2 {
 .formation-block-title {
     font-size: 1.3rem;
     font-weight: 700;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 20px;
     line-height: 1.3;
 }
@@ -3215,9 +3195,9 @@ section h2 {
     display: flex;
     align-items: flex-start;
     gap: 10px;
-    color: #333249;
+    color: var(--color-primary);
     font-size: 0.95rem;
-    background: #f7ab3f3b;
+    background: var(--color-secondary)3b;
     padding: 6px 14px;
     justify-content: center;
     align-items: center;
@@ -3225,7 +3205,7 @@ section h2 {
 }
 
 .formation-info-item i {
-    color: #f7ab3f;
+    color: var(--color-secondary);
     font-size: 1rem;
     margin-top: 3px;
     flex-shrink: 0;
@@ -3315,11 +3295,11 @@ section h2 {
     background-color: #f9f9f9;
     border-radius: 10px;
     font-size: 1rem;
-    color: #333249;
+    color: var(--color-primary);
 }
 
 .formation-info-item-large i {
-    color: #f7ab3f;
+    color: var(--color-secondary);
     font-size: 1.2rem;
 }
 
@@ -3335,7 +3315,7 @@ section h2 {
 
 .formation-detail-content h3 {
     font-size: 2rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 30px;
     text-align: center;
 }
@@ -3358,7 +3338,7 @@ section h2 {
 .formation-detail-objectives h3 {
     text-align: center;
     font-size: 2rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 40px;
 }
 
@@ -3390,13 +3370,13 @@ section h2 {
 }
 
 .objective-icon i {
-    color: #f7ab3f;
+    color: var(--color-secondary);
     font-size: 1.5rem;
 }
 
 .formation-objective-card p {
     margin: 0;
-    color: #333249;
+    color: var(--color-primary);
     font-size: 1rem;
     line-height: 1.6;
 }
@@ -3409,7 +3389,7 @@ section h2 {
 .formation-detail-program h3 {
     text-align: center;
     font-size: 2rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 40px;
 }
 
@@ -3440,7 +3420,7 @@ section h2 {
     flex-shrink: 0;
     width: 50px;
     height: 50px;
-    background-color: #f7ab3f;
+    background-color: var(--color-secondary);
     color: #ffffff;
     border-radius: 50%;
     display: flex;
@@ -3452,7 +3432,7 @@ section h2 {
 
 .program-content h4 {
     font-size: 1.3rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 10px;
 }
 
@@ -3474,7 +3454,7 @@ section h2 {
     align-items: center;
     gap: 30px;
     padding: 40px;
-    background: linear-gradient(135deg, #f7ab3f 0%, #e0b43e 100%);
+    background: linear-gradient(135deg, var(--color-secondary) 0%, #e0b43e 100%);
     border-radius: 15px;
     color: #ffffff;
 }
@@ -3507,7 +3487,7 @@ section h2 {
 
 .formation-cta-content h3 {
     font-size: 2rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 15px;
 }
 
@@ -3561,9 +3541,9 @@ section h2 {
 /* ========== Page formation référence (maquette) ========== */
 .formation-ref-hero {
     margin: 0 0 8em 0;
-    background: #F7AB3F;
+    background: var(--color-secondary);
     padding: 0px;
-    color: #333249;
+    color: var(--color-primary);
 }
 
 .formation-ref-hero-inner {
@@ -3602,7 +3582,7 @@ section h2 {
     font-weight: 700;
     margin-bottom: 15px;
     line-height: 1.25;
-    color: #333249;
+    color: var(--color-primary);
 }
 
 .formation-ref-hero-subtitle {
@@ -3682,13 +3662,13 @@ z-index: 1;
 .formation-ref-intro-text h2 {
     text-align: left;
     font-size: 2.8rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 15px;
     line-height: 60px;
 }
 
 .formation-ref-intro-text h2 span {
-    color: #f7ab3f;
+    color: var(--color-secondary);
 }
 
 .formation-ref-intro-text p {
@@ -3699,7 +3679,7 @@ z-index: 1;
 
 .formation-ref-intro-card {
     flex-shrink: 0;
-    background: linear-gradient(182deg, #f7ab3f, transparent);
+    background: linear-gradient(182deg, var(--color-secondary), transparent);
     padding: 4em;
     border-radius: 31px;
 }
@@ -3711,7 +3691,7 @@ z-index: 1;
     display: flex;
     align-items: center;
     justify-content: center;
-    color: #f7ab3fdb;
+    color: var(--color-secondary)db;
     font-size: 4rem;
     padding: 72px;
     box-shadow: 0 16px 26px #2915045e;
@@ -3719,7 +3699,7 @@ z-index: 1;
 
 .formation-ref-objectives {
     padding: 60px 0;
-    color: #333249;
+    color: var(--color-primary);
 }
 
 .formation-ref-objectives h2,
@@ -3733,7 +3713,7 @@ z-index: 1;
     text-align: left;
     font-size: 2.8rem;
     margin-bottom: 40px;
-    color: #333249;
+    color: var(--color-primary);
     font-weight: 300;
     line-height: 56px;
 }
@@ -3745,7 +3725,7 @@ z-index: 1;
 }
 
 .formation-ref-objective-card {
-    background: #f7ab3f;
+    background: var(--color-secondary);
     border-radius: 12px;
     padding: 25px;
     display: flex;
@@ -3774,8 +3754,8 @@ z-index: 1;
 
 .formation-ref-definition {
     padding: 60px 0;
-    background: #f7ab3f;
-    color: #333249;
+    background: var(--color-secondary);
+    color: var(--color-primary);
 }
 
 .formation-ref-definition p {
@@ -3801,7 +3781,7 @@ z-index: 1;
     padding: 46px 28px;
     text-align: center;
     transition: transform 0.2s, box-shadow 0.2s;
-    border: solid 2px #f7ab3f;
+    border: solid 2px var(--color-secondary);
     position: relative;
 }
 
@@ -3814,7 +3794,7 @@ z-index: 1;
     width: 48px;
     height: 48px;
     margin: 0 auto 15px;
-    background: #f7ab3f;
+    background: var(--color-secondary);
     color: #fff;
     border-radius: 50%;
     display: flex;
@@ -3830,7 +3810,7 @@ z-index: 1;
 
 .formation-ref-mission-card h3 {
     font-size: 1.2rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 10px;
 }
 
@@ -3845,11 +3825,11 @@ z-index: 1;
     margin: 0 5em;
     border-radius: 41px;
     padding: 39px 0;
-    color: #333249;
+    color: var(--color-primary);
 }
 
 .card-formation {
-    background: #f7ab3f;
+    background: var(--color-secondary);
     padding: 2em;
     border-radius: 49px;    
 }
@@ -3891,7 +3871,7 @@ z-index: 1;
     content: "•";
     position: absolute;
     left: 0;
-    color: #f7ab3f;
+    color: var(--color-secondary);
     font-weight: bold;
 }
 
@@ -3921,7 +3901,7 @@ z-index: 1;
     padding-left: 24px;
     font-size: 1rem;
     line-height: 1.8;
-    color: #333249;
+    color: var(--color-primary);
 }
 
 .formation-ref-contenu {
@@ -3944,7 +3924,7 @@ z-index: 1;
 
 .formation-ref-contenu-bloc h3 {
     font-size: 1.2rem;
-    color: #f7ab3f;
+    color: var(--color-secondary);
     margin-bottom: 15px;
 }
 
@@ -3984,7 +3964,7 @@ z-index: 1;
     width: 60px;
     height: 60px;
     margin: 0 auto 15px;
-    background: #f7ab3f;
+    background: var(--color-secondary);
     color: #fff;
     border-radius: 50%;
     display: flex;
@@ -3995,12 +3975,12 @@ z-index: 1;
 
 .formation-ref-testimonial-card h4 {
     font-size: 1rem;
-    color: #333249;
+    color: var(--color-primary);
     margin-bottom: 8px;
 }
 
 .formation-ref-stars {
-    color: #f7ab3f;
+    color: var(--color-secondary);
     font-size: 0.9rem;
     margin-bottom: 12px;
 }
@@ -4030,14 +4010,14 @@ z-index: 1;
 .formation-ref-footer-links a,
 .formation-ref-footer-contact a {
     margin-right: 20px;
-    color: #333249;
+    color: var(--color-primary);
     text-decoration: none;
     font-size: 0.95rem;
 }
 
 .formation-ref-footer-links a:hover,
 .formation-ref-footer-contact a:hover {
-    color: #f7ab3f;
+    color: var(--color-secondary);
 }
 
 @media (max-width: 1024px) {
