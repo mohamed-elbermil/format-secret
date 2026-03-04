@@ -88,11 +88,20 @@ export default function HomePage() {
 
       <section className="key-advantages">
         <Container>
-          <h2><span className='title-style '>Nos Avantages</span> Clés</h2>
-          <div className="advantages-grid">
-            {advantages.map((a, i) => (
-              <AdvantageCard key={i} {...a} />
-            ))}
+          <div className="key-advantages__wrap">
+            <div className="key-advantages__content">
+              <h2><span className='title-style '>Nos avantages</span> clés</h2>
+              <p>Des formations concrètes, animées par des experts, pour développer des compétences utiles et immédiatement applicables.</p>
+              <Link to="/#contact" className="key-advantages__cta">
+                <span>En savoir plus</span>
+                <span className="key-advantages__cta-icon"><i className="fa-solid fa-arrow-right"></i></span>
+              </Link>
+            </div>
+            <div className="advantages-grid">
+              {advantages.map((a, i) => (
+                <AdvantageCard key={i} {...a} />
+              ))}
+            </div>
           </div>
         </Container>
       </section>
