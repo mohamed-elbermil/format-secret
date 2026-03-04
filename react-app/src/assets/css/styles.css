@@ -584,8 +584,9 @@ background-color: #ffffff;
 }
 
 .key-advantages__wrap {
-    background: #eef2f1;
+    background: #f7ab3f0d;
     border-radius: 28px;
+    border: solid 1px #80808047;
     padding: clamp(22px, 4vw, 44px);
     display: grid;
     grid-template-columns: minmax(240px, 1fr) minmax(280px, 1.2fr);
