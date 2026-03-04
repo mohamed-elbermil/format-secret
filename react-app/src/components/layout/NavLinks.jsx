@@ -15,7 +15,7 @@ export default function NavLinks({ className = 'nav-links', onLinkClick }) {
           const href = link.path.startsWith('/') ? link.path : `/${link.path}`
           return (
             <li key={link.path}>
-              <a href={href} onClick={onLinkClick} className='contact'>{link.label}</a>
+              <a href={href} onClick={onLinkClick} className='contact-link'>{link.label}</a>
             </li>
           )
         }

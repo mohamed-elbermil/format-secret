@@ -23,6 +23,23 @@ header .container {
     align-items: center;
 }
 
+.contact-link {
+    background: #fff;
+    padding: 10px 19px;
+    border-radius: 54px;
+    color: #333249!important;
+}
+
+.contact-link::after{
+    content: '\f063';
+    font-family: 'Font Awesome 7 Free';
+    color: #333249;
+    border-radius: 54px;
+    margin-left: 9px;
+    display: inline-block;
+    transform: rotate(228deg);
+}
+
 .logo img {
     height: 39px;
 }
