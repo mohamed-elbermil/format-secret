@@ -23,6 +23,11 @@ header .container {
     align-items: center;
 }
 
+.people-banner {
+    width: 39em;
+    margin-top: 2em;
+}
+
 .contact-link {
     background: #fff;
     padding: 10px 19px;

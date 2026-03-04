@@ -34,7 +34,7 @@ export default function HomePage() {
               <p class="hidden">Votre réussite commence ici !</p>
             </div>
             <span className="recommend disappear" ><i class="fa-solid fa-star"></i>98% de nos apprenants recommandent nos formations</span>
-            <img src={heroPeople} alt="Apprenants et formateurs" />
+            <img src={heroPeople} alt="Apprenants et formateurs" className='people-banner'/>
           </div>
           
         </Container>
