@@ -224,7 +224,7 @@ nav {
 .hidden {
     position: absolute;
     bottom: -17px;
-    left: 24em;
+    left: 16em;
     white-space: pre;
     transition: opacity 0.3s ease;
     opacity: 0
@@ -531,7 +531,7 @@ background-color: #ffffff;
     width: 100%;
     aspect-ratio: 4 / 3;
     object-fit: cover;
-    border-radius: 14px;
+    border-radius: 34px;
     box-shadow: 0 8px 20px rgba(0,0,0,0.08);
 }
 .orientation-steps {
@@ -543,6 +543,12 @@ background-color: #ffffff;
 .orientation-step {
     text-align: left;
     color: #333249;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    padding: 1em 2em;
+    border-radius: 11px;
+    background: #33324914;
 }
 .orientation-step-title {
     font-weight: 600;
@@ -1038,6 +1044,14 @@ background-color: #ffffff;
 }
 
 .btn-primary a {
+    text-decoration: none;
+}
+
+.btn-dark {
+    background: #333249;
+    padding: 1em 2em;
+    border-radius: 64px;
+    color: #fff;
     text-decoration: none;
 }
 
@@ -3502,7 +3516,7 @@ section h2 {
 
 /* ========== Page formation référence (maquette) ========== */
 .formation-ref-hero {
-    margin-top: 8em;
+    margin: 0 0 8em 0;
     background: #F7AB3F;
     padding: 0px;
     color: #333249;
@@ -3609,15 +3623,11 @@ section h2 {
 position: relative;
 z-index: 1;
 }
-.formation-ref-tag:nth-child(2):hover + .formation-ref-tag:nth-child(3), .formation-ref-tag:nth-child(3):hover {
-    left: 779px;
-    padding: 6px 18px 6px 33px;
 
-}
 
 .formation-ref-tag:nth-child(3) {
-    background: #0000001a;
-    color: #00000082;
+    background: none;
+    color: #00000045;
     position: absolute;
     left: 630px;
     font-size: 12px;
