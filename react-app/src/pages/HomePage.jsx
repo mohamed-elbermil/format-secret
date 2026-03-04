@@ -27,13 +27,13 @@ export default function HomePage() {
       <section className="hero hero-index">
         <Container className='index'>
           <div className="hero-content">
-            <h1>FORMASECRET,<br />Votre succès, c'est notre secret !</h1>
-            <p>Organisme de formation expert en efficacité professionnelle, management et vente</p>
+            <h1 className='disappear'>FORMASECRET,<br />Votre succès, c'est notre secret !</h1>
+            <p className='disappear'>Organisme de formation expert en efficacité professionnelle, management et vente</p>
             <div className="cta-buttons">
               <Link to="/formations" className="cta-button-picto"><i class="fa-solid fa-arrow-right"></i>Découvrir nos formations</Link>
               <p class="hidden">Votre réussite commence ici !</p>
             </div>
-            <span className="recommend"><i class="fa-solid fa-star"></i>98% de nos apprenants recommandent nos formations</span>
+            <span className="recommend disappear" ><i class="fa-solid fa-star"></i>98% de nos apprenants recommandent nos formations</span>
             <img src={heroPeople} alt="Apprenants et formateurs" />
           </div>
           

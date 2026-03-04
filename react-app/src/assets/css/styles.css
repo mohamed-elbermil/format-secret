@@ -299,6 +299,8 @@ nav {
     opacity:1;
 }
 
+
+
 .cta-button-picto i {
     background: var(--color-primary);
     width: 32px;
@@ -635,7 +637,7 @@ background-color: #ffffff;
 
 /* FAQ globale */
 .global-faq {
-    padding: 72px 0 40px;
+    padding: 14em 0;
     background: #ffffff;
 }
 
@@ -960,12 +962,12 @@ background-color: #ffffff;
     background-color: var(--color-secondary);
     color: #ffffff;
     text-decoration: none;
-    border-radius: 5px;
+    border-radius: 55px;
     transition: background-color 0.3s ease;
 }
 
 .verify-link a:hover {
-    background-color: #f08526;
+    background-color: var(--color-secondary);
 }
 
 /* FIN Certifications */
@@ -1196,7 +1198,7 @@ background-color: #ffffff;
 }
 
 .contact-info-header h2 {
-    color: #fff;
+    color: #c2c2d6;
     margin: 1em 0;
     font-size: 22px;
     letter-spacing: -0.02em;
@@ -2250,7 +2252,7 @@ background-color: #ffffff;
 /* FIN HERO FORMATIONS */
 /* Styles communs */
 section {
-    margin: 5em 0;
+    padding: 5em 0;
 }
 
 section h2 {
