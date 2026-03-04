@@ -52,19 +52,19 @@ export default function HomePage() {
       </section>
       <section className="presentation">
         <Container>
+          <h3><span className="title-style">Qui sommes </span>nous ?</h3>
          <iframe width="560" height="315" src="https://www.youtube.com/embed/xiUDHScv1QY?si=6UO6GMfZRvFF41J3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         </Container>
       </section>
       
       <section className="orientation">
         <Container>
-          <h2>Faire un bilan d’orientation</h2>
+          <h2><span className="title-style">Faire un </span>bilan d’orientation</h2>
           <p className="orientation-subtitle">Gratuit et sans engagement</p>
           <div className="orientation-images">
             <img src={imgAnalyse} alt="Analyse de votre parcours" />
             <img src={imgProjet} alt="Définition de votre projet" />
             <img src={imgParcours} alt="Présentation de parcours personnalisés" />
-            <img src={imgFinancement} alt="Étude de vos solutions de financement" />
           </div>
           <div className="orientation-steps">
             <div className="orientation-step">
@@ -78,10 +78,6 @@ export default function HomePage() {
             <div className="orientation-step">
               <div className="orientation-step-title">3. Présentation du/des parcours personnalisé(s)</div>
               <div className="orientation-step-time"><i className="fa-regular fa-clock"></i> 10 min</div>
-            </div>
-            <div className="orientation-step">
-              <div className="orientation-step-title">4. Étude de vos solutions de financement</div>
-              <div className="orientation-step-time"><i className="fa-regular fa-clock"></i> 5 min</div>
             </div>
           </div>
           <div className="orientation-cta">

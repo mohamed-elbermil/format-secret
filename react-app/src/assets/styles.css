@@ -443,7 +443,7 @@ nav {
     background-color: #ffffff;
 }
 
-.services h2 {
+.services h2, .presentation h3 {
     text-align: center;
     font-size: 2.5rem;
     color: #333249;
@@ -523,7 +523,7 @@ background-color: #ffffff;
 }
 .orientation-images {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
     margin-bottom: 22px;
 }
@@ -536,7 +536,7 @@ background-color: #ffffff;
 }
 .orientation-steps {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(3, 1fr);
     gap: 18px;
     margin: 10px 0 24px;
 }
