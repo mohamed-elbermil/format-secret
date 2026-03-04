@@ -38,7 +38,7 @@ export default function FAQSection() {
                     {isOpen ? '−' : '＋'}
                   </span>
                 </div>
-                {isOpen && <p className="global-faq-answer">{item.a}</p>}
+                <p className={`global-faq-answer ${isOpen ? 'is-open' : ''}`}>{item.a}</p>
               </button>
             )
           })}
