@@ -12,10 +12,11 @@ import heroPeople from '../assets/images/hero-people.png'
 import imgAnalyse from '../assets/images/pexels-photo-2977547.jpeg'
 import imgProjet from '../assets/images/pexels-photo-5915194.jpeg'
 import imgParcours from '../assets/images/pexels-photo-3184465.jpeg'
-import imgFinancement from '../assets/images/pexels-photo-8062280.jpeg'
+import GoogleReviews from "../google-review";
 
 export default function HomePage() {
   const location = useLocation()
+  
   useEffect(() => {
     if (location.hash === '#contact') {
       document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
@@ -30,13 +31,16 @@ export default function HomePage() {
             <h1 className='disappear'>FORMASECRET,<br />Votre succès, c'est notre secret !</h1>
             <p className='disappear'>Organisme de formation expert en efficacité professionnelle, management et vente</p>
             <div className="cta-buttons">
-              <Link to="/formations" className="cta-button-picto"><i class="fa-solid fa-arrow-right"></i>Découvrir nos formations</Link>
-              <p class="hidden">Votre réussite commence ici !</p>
+              <Link to="/formations" className="cta-button-picto">
+                <i className="fa-solid fa-arrow-right"></i>Découvrir nos formations
+              </Link>
+              <p className="hidden">Votre réussite commence ici !</p>
             </div>
-            <span className="recommend disappear" ><i class="fa-solid fa-star"></i>98% de nos apprenants recommandent nos formations</span>
+            <span className="recommend disappear">
+              <i className="fa-solid fa-star"></i>98% de nos apprenants recommandent nos formations
+            </span>
             <img src={heroPeople} alt="Apprenants et formateurs" className='people-banner'/>
           </div>
-          
         </Container>
       </section>
 
@@ -50,10 +54,20 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
+
       <section className="presentation">
         <Container>
           <h3><span className="title-style">Qui sommes </span>nous ?</h3>
-         <iframe width="560" height="315" src="https://www.youtube.com/embed/xiUDHScv1QY?si=6UO6GMfZRvFF41J3" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+          <iframe 
+            width="560" 
+            height="315" 
+            src="https://www.youtube.com/embed/xiUDHScv1QY?si=6UO6GMfZRvFF41J3" 
+            title="YouTube video player" 
+            frameBorder="0" 
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+            referrerPolicy="strict-origin-when-cross-origin" 
+            allowFullScreen
+          ></iframe>
         </Container>
       </section>
       
@@ -117,28 +131,14 @@ export default function HomePage() {
             </div>
             <div className="qualiopi-info">
               <h3>Certification Qualiopi</h3>
-              <p>FormaSecret est fière d'être certifiée Qualiopi. Cette certification atteste de la qualité du processus mis en œuvre par les prestataires d'actions concourant au développement des compétences et permet une plus grande lisibilité de l'offre de formation auprès des entreprises et des usagers.</p>
+              <p>FormaSecret est fière d'être certifiée Qualiopi. Cette certification atteste de la qualité du processus mis en œuvre...</p>
               <ul>
                 <li>Gage de qualité des processus de formation</li>
                 <li>Reconnaissance officielle de notre professionnalisme</li>
-                <li>Assurance d'un suivi rigoureux et d'une amélioration continue</li>
+                <li>Assurance d'un suivi rigoureux</li>
               </ul>
               <p className="verify-link">
-                <a href="https://certifopac.fr/qualiopi/certification/verification/?siren=911922540" target="_blank" rel="noopener noreferrer">Vérifier notre certification Qualiopi</a>
-              </p>
-            </div>
-          </div>
-          <div className="qualiopi-content">
-            <div className="qualiopi-logo">
-              <a href="https://sofo-insights.com/produits/certification-de-formateur-disc-flow" target="_blank" rel="noopener noreferrer">
-                <img src="/assets/images/DISC-Flow-Logo.png" alt="Logo Certification DISC FLOW" />
-              </a>
-            </div>
-            <div className="qualiopi-info">
-              <h3>Certification DISC FLOW®</h3>
-              <p>Formation certifiante pour développer la connaissance de soi, renforcer la performance individuelle et collective.</p>
-              <p className="verify-link">
-                <a href="https://sofo-insights.com/produits/certification-de-formateur-disc-flow" target="_blank" rel="noopener noreferrer">En savoir plus</a>
+                <a href="https://certifopac.fr/qualiopi/certification/verification/?siren=911922540" target="_blank" rel="noopener noreferrer">Vérifier notre certification</a>
               </p>
             </div>
           </div>
@@ -147,19 +147,13 @@ export default function HomePage() {
 
       <section className="trusted-by">
         <Container>
-          <h2><span className="title-style">Ils nous font</span> confiance</h2>
-          <div className="logo-slider">
-            {[
-              { img: 'weishaupt.PNG', h3: 'Weishaupt', p: 'Mme Loddo est une consultante énergique et passionnée par son travail. Elle a su adapter sa mission à nos besoins, et nos collaborateurs qu\'elle a pu accompagner ont tous apprécié ses interventions. Je recommande !', author: 'Jérôme HOEFLER, Directeur du Service Clients WEISHAUPT' },
-              { img: 'simonetti.PNG', h3: 'Menuiserie Simonetti', p: 'Dynamique, motivée, toujours de bonne humeur. Quel que soit le travail confié, il est fait avec rigueur et rapidité. Une vraie capacité à comprendre très rapidement les besoins et les process.', author: 'Olivier DUTOUR, Dirigeant Menuiserie SIMONETTI' },
-              { img: 'ladapt.jpg', h3: 'LADAPT', p: 'Stéphanie Loddo excelle en assistanat et formation qualifiante. Efficace et adaptable, elle répond aux besoins des clients avec professionnalisme dans divers domaines administratifs.', author: 'Damien Verrecchia, Adjoint de direction et responsable du pôle Formation Ladapt Rhône' },
-            ].map((slide, i) => (
-              <div key={i} className="logo-slide">
-                <img src={`/assets/images/${slide.img}`} alt={`Logo ${slide.h3}`} />
-                <h3>{slide.h3}</h3>
-                <p>{slide.p}<br /><br /><b>{slide.author}</b></p>
-              </div>
-            ))}
+          <div className="reviews-section">
+            <h2 className="text-3xl font-bold mb-6">
+              <span className="title-style text-orange-500">Ils nous font</span> confiance
+            </h2>
+            <div className="reviews-container">
+              <GoogleReviews />
+            </div>
           </div>
           <div className="cta-container">
             <Link to="/a-propos" className="cta-button">Découvrir FormaSecret</Link>
@@ -175,9 +169,9 @@ export default function HomePage() {
               <h2>Nos chiffres clés</h2>
             </div>
             <div className="figures-grid">
-            {keyFigures.map((f, i) => (
-              <FigureCard key={i} {...f} />
-            ))}
+              {keyFigures.map((f, i) => (
+                <FigureCard key={i} {...f} />
+              ))}
             </div>
           </div>
         </Container>

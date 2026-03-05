@@ -8,7 +8,6 @@ const __dirname = path.dirname(fileURLToPath(import.meta.url))
 export default defineConfig({
   plugins: [react()],
   root: __dirname,
-  // Servir les assets (images, PDF, etc.) depuis le projet parent
   publicDir: path.join(__dirname, '..'),
   resolve: {
     alias: {
@@ -16,10 +15,16 @@ export default defineConfig({
       '@assets': path.join(__dirname, '..', 'assets'),
     },
   },
-  // Autoriser Vite à lire les fichiers du dossier parent (CSS, etc.)
   server: {
     fs: {
       allow: ['..'],
     },
+    proxy: {
+      '/api/places': {
+        target: 'https://maps.googleapis.com',
+        changeOrigin: true,
+        rewrite: (path) => path.replace(/^\/api\/places/, '/maps/api/place'),
+      }
+    }
   },
 })
