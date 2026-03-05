@@ -2,12 +2,11 @@ import React, { useState } from 'react'
 import Container from '../layout/Container'
 
 const faqItems = [
-  { q: 'Comment financer ma formation ?', a: 'Plusieurs dispositifs de financement existent selon votre situation (entreprise, salarié, demandeur d’emploi). Nous vous accompagnons pour identifier la meilleure solution.' },
-  { q: "Quelles sont les conditions d'accès aux formations ?", a: 'Les prérequis varient selon les programmes. Nous vérifions votre niveau et vos objectifs avant toute inscription.' },
-  { q: "Combien de temps prend l'admission à une formation ?", a: "Après votre demande, nous revenons vers vous sous quelques jours pour valider votre projet et planifier la formation." },
-  { q: 'Dans combien de temps aurai-je accès à ma formation ?', a: 'Une fois la prise en charge validée, nous convenons ensemble des dates de démarrage en fonction de vos disponibilités.' },
-  { q: 'Quel est le matériel nécessaire pour suivre la formation ?', a: "Un ordinateur, une connexion internet stable et, selon les modules, quelques outils bureautiques standards suffisent." },
-  { q: 'Quels sont les diplômes ou certifications proposés ?', a: "Nos formations visent principalement le développement de compétences opérationnelles, certaines donnant accès à des certifications reconnues." },
+  { q: 'Quelles sont les modalités de formation ?', a: 'Nous proposons des formations en présentiel. Nos formations peuvent être individuelles ou en groupe, selon vos besoins.' },
+  { q: "Comment financer ma formation ?", a: 'Si votre entreprise compte moins de 50 salariés, vous avez la possibilité de solliciter un financement auprès de votre OPCO (Opérateur de Compétences) grâce à notre certification Qualiopi.' },
+  { q: "Quelle est la durée moyenne d'une formation ?", a: "La durée varie selon le type de formation, allant d'une journée à plusieurs jours. Nous adaptons la durée en fonction de vos objectifs et disponibilités." },
+  { q: 'Comment sont évalués les acquis ?', a: 'Nous utilisons diverses méthodes d\'évaluation, incluant des exercices pratiques, des mises en situation, et des tests de connaissances, pour assurer que les objectifs d\'apprentissage sont atteints.'},
+  { q: 'Puis-je personnaliser mon programme de formation ?', a: "Oui, toutes nos formations sont personnalisables. FormaSecret s'adapte aux besoins et attentes de chaque entreprise afin de répondre au mieux à votre demande." },
 ]
 
 export default function FAQSection() {
