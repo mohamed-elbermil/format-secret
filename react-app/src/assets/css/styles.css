@@ -53,6 +53,7 @@ header .container {
     margin: 0;
     padding: 0;
     position: relative;
+    gap: 7em;
   }
   
   .bar-item {
@@ -115,7 +116,6 @@ header .container {
     align-items: center;
     gap: .35rem;
     border-radius: 4px;
-    padding: .18rem .55rem;
     position: relative;
     overflow: hidden;
   }
