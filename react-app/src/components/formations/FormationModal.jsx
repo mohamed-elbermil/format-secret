@@ -35,7 +35,7 @@ export default function FormationModal({ formationKey, onClose }) {
             <p dangerouslySetInnerHTML={{ __html: formation.description }} />
             <div className="modal-buttons">
               <Button href={formation.pdf} variant="primary" size="sm">Télécharger PDF</Button>
-              <Button type="button" variant="outline" size="sm" fullWidth onClick={toggleCalendar}>
+              <Button type="button" variant="secondary" size="sm" fullWidth onClick={toggleCalendar}>
                 {calendarVisible ? 'Masquer les sessions' : 'Voir les sessions'}
               </Button>
             </div>
