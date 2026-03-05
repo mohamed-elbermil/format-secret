@@ -12,6 +12,29 @@ export default function Header() {
   return (
     <>
       <header>
+      {/* <!-- ① BARRE DE RÉASSURANCE – sticky, au-dessus de la navbar --> */}
+  <div class="reassurance-bar" role="region" aria-label="Informations de confiance">
+    <ul class="bar-items">
+
+      <li class="bar-item">
+        <span class="badge-qualiopi">
+          <span class="bar-icon">🏅</span>
+          <span class="bar-text">Certifié Qualiopi</span>
+        </span>
+      </li>
+
+      <li class="bar-item">
+        <span class="bar-icon">💳</span>
+        <span class="bar-text">Financement <strong>OPCO</strong> accepté</span>
+      </li>
+
+      <li class="bar-item">
+        <span class="bar-icon">⭐</span>
+        <span class="bar-text"><strong>98%</strong> de satisfaction stagiaires</span>
+      </li>
+
+    </ul>
+  </div>
         <Container>
           <div className="logo">
             <Link to="/">

@@ -5,7 +5,7 @@
 }
 
 header {
-    padding: 10px 0;
+    /* padding: 10px 0; */
     position: fixed;
     width: 100%;
     top: 0;
@@ -22,6 +22,122 @@ header .container {
     justify-content: space-between;
     align-items: center;
 }
+  
+  .reassurance-bar {
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    background: #f08526;
+    height: 23px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    overflow: hidden;
+    margin-bottom: 10px;
+    color: #ffffff;
+  }
+  
+  .reassurance-bar::before {
+    content: '';
+    position: absolute;
+    inset: 0;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='200' height='200'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.9' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='200' height='200' filter='url(%23n)' opacity='0.04'/%3E%3C/svg%3E");
+    opacity: .4;
+    pointer-events: none;
+  }
+  
+  .bar-items {
+    display: flex;
+    align-items: center;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    position: relative;
+  }
+  
+  .bar-item {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+    position: relative;
+    cursor: default;
+    transition: background .2s;
+    opacity: 0;
+    animation: fadeInDown .4s ease forwards;
+  }
+  
+  .bar-item:hover {
+    background: rgba(255,255,255,.04);
+  }
+  
+  .bar-item + .bar-item::before {
+    content: '';
+    position: absolute;
+    left: 0;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 1px;
+    height: 20px;
+    background: var(--bar-sep);
+  }
+  
+  .bar-item:nth-child(1) { animation-delay: .05s; }
+  .bar-item:nth-child(2) { animation-delay: .12s; }
+  .bar-item:nth-child(3) { animation-delay: .19s; }
+  .bar-item:nth-child(4) { animation-delay: .26s; }
+  
+  @keyframes fadeInDown {
+    from { opacity: 0; transform: translateY(-6px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+  
+  .bar-icon {
+    font-size: 1rem;
+    flex-shrink: 0;
+    filter: drop-shadow(0 0 4px rgba(201,168,76,.4));
+  }
+  
+  .bar-text {
+    font-size: .78rem;
+    font-weight: 500;
+    color: var(--bar-text);
+    white-space: nowrap;
+    letter-spacing: .01em;
+  }
+  
+  .bar-text strong {
+    color: var(--bar-gold-light);
+    font-weight: 700;
+  }
+  
+  .badge-qualiopi {
+    display: inline-flex;
+    align-items: center;
+    gap: .35rem;
+    border-radius: 4px;
+    padding: .18rem .55rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  
+  .badge-qualiopi .bar-text {
+    color: var(--bar-gold-light);
+    font-weight: 700;
+    font-size: .76rem;
+    letter-spacing: .04em;
+    text-transform: uppercase;
+  }
+  
+  @media (max-width: 768px) {
+    .bar-item:nth-child(3),
+    .bar-item:nth-child(4) { display: none; }
+    .bar-item { padding: 0 1.2rem; }
+  }
+  
+  @media (max-width: 480px) {
+    .bar-item:nth-child(2) { display: none; }
+  }
 
 .people-banner {
     width: 39em;
