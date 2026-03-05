@@ -132,21 +132,6 @@ export default function FormationsPage() {
           </div>
         </Container>
       </section>
-
-      <section className="faq">
-        <Container>
-          <h2>Foire Aux Questions</h2>
-          <div className="faq-grid">
-            {faqItems.map((item, i) => (
-              <div key={i} className="faq-item">
-                <h3>{item.q}</h3>
-                <p>{item.a}</p>
-              </div>
-            ))}
-          </div>
-        </Container>
-      </section>
-
       <section className="certification">
         <Container>
           <h2>Notre Certification</h2>
