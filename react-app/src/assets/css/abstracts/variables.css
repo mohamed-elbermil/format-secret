@@ -1,5 +1,31 @@
 :root {
-    --color-primary: #333249;
-    --color-secondary: #f7ab3f;
-    --color-tertiary: #ffffff;
+  --color-primary: #333249;
+  --color-secondary: #f7ab3f;
+  --color-tertiary: #ffffff;
+
+  /* Typography */
+  --font-size-hero-title: 3.2rem;
+  --font-size-hero-subtitle: 1.15rem;
+  --font-weight-hero-title: 800;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  /* Spacing */
+  --padding-hero-desktop: 120px 0 0 0;
+  --padding-hero-mobile: 100px 0 0 0;
+  --margin-section: 80px 0;
+
+  /* Colors for text */
+  --text-on-primary: #ffffff;
+  --text-on-primary-light: #e9e8ff;
+  --text-muted: #666666;
+
+  /* Border radius */
+  --border-radius-card: 15px;
+  --border-radius-button: 30px;
+  --border-radius-large: 28px;
+
+  /* Shadows */
+  --shadow-card: 0 5px 15px rgba(0, 0, 0, 0.1);
+  --shadow-hover: 0 10px 25px rgba(15, 23, 42, 0.06);
 }
