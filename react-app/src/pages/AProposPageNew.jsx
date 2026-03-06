@@ -1,26 +1,68 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import Container from '../components/layout/Container'
-import ContactSection from '../components/sections/ContactSection'
+import React from "react";
+import { Link } from "react-router-dom";
+import Container from "../components/layout/Container";
+import ContactSection from "../components/sections/ContactSection";
 
 const statistics = [
-  { number: '25+', label: 'Ans d\'expérience', description: 'Au service de l\'excellence' },
-  { number: '150+', label: 'Formations certifiées', description: 'Programmes qualifiopi' },
-  { number: '2000+', label: 'Apprenants formés', description: 'Parcours transformés' },
-  { number: '98%', label: 'Satisfaction', description: 'Témoignages clients' }
-]
+  {
+    number: "25+",
+    label: "Ans d'expérience",
+    description: "Au service de l'excellence",
+  },
+  {
+    number: "150+",
+    label: "Formations certifiées",
+    description: "Programmes qualifiopi",
+  },
+  {
+    number: "2000+",
+    label: "Apprenants formés",
+    description: "Parcours transformés",
+  },
+  { number: "98%", label: "Satisfaction", description: "Témoignages clients" },
+];
 
 const missionValues = [
-  { icon: 'fas fa-target', title: 'Excellence', description: 'Des formations de haute qualité, conçues par des experts pour garantir des résultats tangibles.' },
-  { icon: 'fas fa-users', title: 'Humain', description: 'Une approche centrée sur l\'humain, où chaque apprenant est au cœur de notre démarche pédagogique.' },
-  { icon: 'fas fa-lightbulb', title: 'Innovation', description: 'Des méthodes modernes et adaptées aux enjeux actuels des entreprises et des professionnels.' }
-]
+  {
+    icon: "fas fa-target",
+    title: "Excellence",
+    description:
+      "Des formations de haute qualité, conçues par des experts pour garantir des résultats tangibles.",
+  },
+  {
+    icon: "fas fa-users",
+    title: "Humain",
+    description:
+      "Une approche centrée sur l'humain, où chaque apprenant est au cœur de notre démarche pédagogique.",
+  },
+  {
+    icon: "fas fa-lightbulb",
+    title: "Innovation",
+    description:
+      "Des méthodes modernes et adaptées aux enjeux actuels des entreprises et des professionnels.",
+  },
+];
 
 const visionValues = [
-  { icon: 'fas fa-globe', title: 'Impact', description: 'Former pour transformer les carrières et booster la performance des entreprises.' },
-  { icon: 'fas fa-award', title: 'Qualité', description: 'Maintenir notre certification Qualiopi comme gage de notre engagement envers l\'excellence.' },
-  { icon: 'fas fa-rocket', title: 'Croissance', description: 'Accompagner chaque professionnel dans son développement pour un avenir réussi.' }
-]
+  {
+    icon: "fas fa-globe",
+    title: "Impact",
+    description:
+      "Former pour transformer les carrières et booster la performance des entreprises.",
+  },
+  {
+    icon: "fas fa-award",
+    title: "Qualité",
+    description:
+      "Maintenir notre certification Qualiopi comme gage de notre engagement envers l'excellence.",
+  },
+  {
+    icon: "fas fa-rocket",
+    title: "Croissance",
+    description:
+      "Accompagner chaque professionnel dans son développement pour un avenir réussi.",
+  },
+];
 
 export default function AProposPage() {
   return (
@@ -31,24 +73,28 @@ export default function AProposPage() {
           <div className="about-hero-content">
             <div className="about-hero-text">
               <h1>
-                <span className="title-style">{'L\'Excellence '}</span>
-                {'Formation'}
+                <span className="title-style">{"L'Excellence "}</span>
+                {"Formation"}
               </h1>
               <p>
-                Plus de 25 ans d\'expertise au service de votre développement professionnel. 
-                FormaSecret transforme les compétences en performance, avec une approche 
-                innovante et humaine de la formation.
+                Plus de 25 ans d\'expertise au service de votre développement
+                professionnel. FormaSecret transforme les compétences en
+                performance, avec une approche innovante et humaine de la
+                formation.
               </p>
               <div className="about-hero-cta">
                 <Link to="/#contact" className="cta-button-picto">
                   <i className="fa-solid fa-arrow-right"></i>
-                  {'Découvrir notre approche'}
+                  {"Découvrir notre approche"}
                 </Link>
               </div>
             </div>
             <div className="about-hero-visual">
               <div className="about-hero-image">
-                <img src="/assets/images/loddo.jpg" alt="Stéphanie Loddo, fondatrice de FormaSecret" />
+                <img
+                  src="/assets/images/loddo.jpg"
+                  alt="Stéphanie Loddo, fondatrice de FormaSecret"
+                />
               </div>
               <div className="about-hero-badge">
                 <div className="badge-content">
@@ -66,13 +112,16 @@ export default function AProposPage() {
         <Container>
           <div className="commitment-content">
             <h2>
-              <span className="title-style">{'Notre '}</span>
-              {'Engagement'}
+              <span className="title-style">{"Notre "}</span>
+              {"Engagement"}
             </h2>
             <p className="commitment-text">
-              Chez FormaSecret, nous nous engageons à fournir des <strong>formations innovantes, 
-              durables et centrées sur vos besoins</strong>. Notre mission est de vous accompagner 
-              dans l\'acquisition de compétences qui transforment véritablement votre pratique 
+              Chez FormaSecret, nous nous engageons à fournir des{" "}
+              <strong>
+                formations innovantes, durables et centrées sur vos besoins
+              </strong>
+              . Notre mission est de vous accompagner dans l\'acquisition de
+              compétences qui transforment véritablement votre pratique
               professionnelle et boostent votre carrière.
             </p>
           </div>
@@ -100,19 +149,28 @@ export default function AProposPage() {
           <div className="mission-content">
             <div className="mission-visual">
               <div className="mission-images">
-                <img src="/assets/images/pexels-photo-2977547.jpeg" alt="Formation professionnelle" className="mission-img mission-img-1" />
-                <img src="/assets/images/pexels-photo-3184465.jpeg" alt="Apprenants en formation" className="mission-img mission-img-2" />
+                <img
+                  src="/assets/images/pexels-photo-2977547.jpeg"
+                  alt="Formation professionnelle"
+                  className="mission-img mission-img-1"
+                />
+                <img
+                  src="/assets/images/pexels-photo-3184465.jpeg"
+                  alt="Apprenants en formation"
+                  className="mission-img mission-img-2"
+                />
               </div>
             </div>
             <div className="mission-text">
               <h2>
-                <span className="title-style">{'Notre '}</span>
-                {'Mission'}
+                <span className="title-style">{"Notre "}</span>
+                {"Mission"}
               </h2>
               <p className="mission-description">
-                FormaSecret a pour mission de transformer les potentiels en performances. 
-                Nous concevons des parcours de formation qui allient exigence, méthode 
-                et humanité pour garantir des résultats concrets et durables.
+                FormaSecret a pour mission de transformer les potentiels en
+                performances. Nous concevons des parcours de formation qui
+                allient exigence, méthode et humanité pour garantir des
+                résultats concrets et durables.
               </p>
               <div className="mission-values">
                 {missionValues.map((value, i) => (
@@ -138,13 +196,14 @@ export default function AProposPage() {
           <div className="vision-content">
             <div className="vision-text">
               <h2>
-                <span className="title-style">{'Notre '}</span>
-                {'Vision'}
+                <span className="title-style">{"Notre "}</span>
+                {"Vision"}
               </h2>
               <p className="vision-description">
-                Nous visionnons un avenir où chaque professionnel a accès à des formations 
-                de qualité qui lui permettent de s'épanouir professionnellement et de 
-                contribuer activement à la réussite de son entreprise.
+                Nous visionnons un avenir où chaque professionnel a accès à des
+                formations de qualité qui lui permettent de s'épanouir
+                professionnellement et de contribuer activement à la réussite de
+                son entreprise.
               </p>
               <div className="vision-values">
                 {visionValues.map((value, i) => (
@@ -161,7 +220,11 @@ export default function AProposPage() {
               </div>
             </div>
             <div className="vision-visual">
-              <img src="/assets/images/pexels-photo-5915194.jpeg" alt="Vision FormaSecret" className="vision-img" />
+              <img
+                src="/assets/images/pexels-photo-5915194.jpeg"
+                alt="Vision FormaSecret"
+                className="vision-img"
+              />
             </div>
           </div>
         </Container>
@@ -169,5 +232,5 @@ export default function AProposPage() {
 
       <ContactSection />
     </>
-  )
+  );
 }

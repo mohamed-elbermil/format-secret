@@ -52,49 +52,104 @@ const faqItems = [
   },
 ];
 
+const statistics = [
+  {
+    number: "150+",
+    label: "Formations certifiées",
+    description: "Programmes qualifiopi",
+  },
+  {
+    number: "2000+",
+    label: "Apprenants formés",
+    description: "Parcours transformés",
+  },
+  { number: "98%", label: "Satisfaction", description: "Témoignages clients" },
+  {
+    number: "25+",
+    label: "Ans d'expérience",
+    description: "Au service de l'excellence",
+  },
+];
+
 export default function FormationsPage() {
   const [modalFormationKey, setModalFormationKey] = useState(null);
 
   return (
     <>
-      <section className="hero-formations">
+      {/* Hero Section - Design asymétrique moderne */}
+      <section className="about-hero">
         <Container>
-          <div className="hero-formations-content">
-            <div className="hero-text">
+          <div className="about-hero-content">
+            <div className="about-hero-text">
               <h1>
                 <span className="title-style">{"Nos "}</span>
-                {"Formations Professionnelles"}
+                {"Formations"}
               </h1>
               <p>
                 Des programmes sur mesure pour développer vos compétences et
-                booster votre carrière
+                booster votre carrière. FormaSecret vous accompagne avec des
+                formations certifiées et adaptées aux enjeux actuels.
               </p>
-              <div className="cta-buttons">
+              <div className="about-hero-cta">
                 <Link to="/#contact" className="cta-button-picto">
                   <i className="fa-solid fa-arrow-right"></i>
-                  {"Contactez-nous"}
+                  {"Découvrir nos formations"}
                 </Link>
               </div>
             </div>
-            <div className="hero-visual">
-              <div className="hero-icon icon-1">
-                <i className="fas fa-graduation-cap" />
+            <div className="about-hero-visual">
+              <div className="about-hero-image">
+                <img
+                  src="/assets/images/pexels-photo-3184465.jpeg"
+                  alt="Formations professionnelles FormaSecret"
+                />
               </div>
-              <div className="hero-icon icon-2">
-                <i className="fas fa-chart-line" />
+              <div className="about-hero-badge">
+                <div className="badge-content">
+                  <i className="fas fa-graduation-cap"></i>
+                  <span>Expertise</span>
+                </div>
               </div>
-              <div className="hero-icon icon-3">
-                <i className="fas fa-users" />
-              </div>
-              <div className="hero-shape" />
             </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Section Statistiques */}
+      <section className="about-statistics">
+        <Container>
+          <div className="statistics-grid">
+            {statistics.map((stat, i) => (
+              <div key={i} className="stat-card">
+                <div className="stat-number">{stat.number}</div>
+                <div className="stat-label">{stat.label}</div>
+                <div className="stat-description">{stat.description}</div>
+              </div>
+            ))}
+          </div>
+        </Container>
+      </section>
+
+      {/* Section Domaines d'Intervention */}
+      <section className="about-commitment">
+        <Container>
+          <div className="commitment-content">
+            <h2>
+              <span className="title-style">{"Nos "}</span>
+              {"Domaines d'Expertise"}
+            </h2>
+            <p className="commitment-text">
+              FormaSecret vous propose des{" "}
+              <strong>formations certifiées Qualiopi</strong>
+              dans les domaines clés de l'efficacité professionnelle, du
+              management et du développement commercial.
+            </p>
           </div>
         </Container>
       </section>
 
       <section className="domaines-intervention">
         <Container>
-          <h2>Nos Domaines d'Intervention</h2>
           <p className="instruction">
             Cliquez sur une formation pour en savoir plus et télécharger le PDF.
           </p>
@@ -195,81 +250,123 @@ export default function FormationsPage() {
         onClose={() => setModalFormationKey(null)}
       />
 
-      <section className="modalites-formation">
+      <section className="about-mission">
         <Container>
-          <h2>Modalités de Formation</h2>
-          <div className="modalites-flex">
-            {modalites.map((m, i) => (
-              <div key={i} className="modalite-item">
-                <div className="modalite-icon">
-                  <i className={m.icon} />
-                </div>
-                <h3>{m.title}</h3>
-                <p>{m.description}</p>
+          <div className="mission-content">
+            <div className="mission-visual">
+              <div className="mission-images">
+                <img
+                  src="/assets/images/pexels-photo-2977547.jpeg"
+                  alt="Formation professionnelle"
+                  className="mission-img mission-img-1"
+                />
+                <img
+                  src="/assets/images/pexels-photo-5915194.jpeg"
+                  alt="Apprenants en formation"
+                  className="mission-img mission-img-2"
+                />
+              </div>
+            </div>
+            <div className="mission-text">
+              <h2>
+                <span className="title-style">{"Nos "}</span>
+                {"Modalités"}
+              </h2>
+              <p className="mission-description">
+                FormaSecret s'adapte à vos contraintes et objectifs avec des
+                modalités de formation flexibles et efficaces.
+              </p>
+              <div className="mission-values">
+                {modalites.map((m, i) => (
+                  <div key={i} className="value-item">
+                    <div className="value-icon">
+                      <i className={m.icon}></i>
+                    </div>
+                    <div className="value-content">
+                      <h3>{m.title}</h3>
+                      <p>{m.description}</p>
+                    </div>
+                  </div>
+                ))}
+              </div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      <section className="about-statistics">
+        <Container>
+          <div className="statistics-grid">
+            {keyFigures.map((f, i) => (
+              <div key={i} className="stat-card">
+                <div className="stat-number">{f.number}</div>
+                <div className="stat-label">{f.label}</div>
+                <div className="stat-description">{f.description}</div>
               </div>
             ))}
           </div>
         </Container>
       </section>
 
-      <section className="key-figures">
+      <section className="about-vision">
         <Container>
-          <div className="key-figures-panel">
-            <div className="key-figures-header">
-              <p className="key-figures-eyebrow">
-                Des résultats, rien que des résultats.
-              </p>
-              <h2>Nos chiffres clés</h2>
-            </div>
-            <div className="figures-grid">
-              {keyFigures.map((f, i) => (
-                <FigureCard key={i} {...f} />
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
-      <section className="certification">
-        <Container>
-          <h2>Notre Certification</h2>
-          <div className="qualiopi-content">
-            <div className="qualiopi-logo">
-              <a
-                href="https://certifopac.fr/qualiopi/certification/verification/?siren=911922540"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                <img
-                  src="/assets/images/logo-qualiopi-valide-400x179.png"
-                  alt="Logo Certification Qualiopi"
-                />
-              </a>
-            </div>
-            <div className="qualiopi-info">
-              <h3>Certification Qualiopi</h3>
-              <p>
+          <div className="vision-content">
+            <div className="vision-text">
+              <h2>
+                <span className="title-style">{"Notre "}</span>
+                {"Certification"}
+              </h2>
+              <p className="vision-description">
                 FormaSecret est fière d'être certifiée Qualiopi. Cette
                 certification atteste de la qualité du processus mis en œuvre
                 par les prestataires d'actions concourant au développement des
                 compétences et permet une plus grande lisibilité de l'offre de
                 formation auprès des entreprises et des usagers.
               </p>
-              <ul>
-                <li>Gage de qualité des processus de formation</li>
-                <li>Reconnaissance officielle de notre professionnalisme</li>
-                <li>
-                  Assurance d'un suivi rigoureux et d'une amélioration continue
-                </li>
-              </ul>
-              <p className="verify-link">
-                <a
-                  href="https://certifopac.fr/qualiopi/certification/verification/?siren=911922540"
-                  target="_blank"
-                  rel="noopener noreferrer"
-                >
-                  Vérifier notre certification Qualiopi
-                </a>
-              </p>
+              <div className="vision-values">
+                <div className="value-item">
+                  <div className="value-icon">
+                    <i className="fas fa-award"></i>
+                  </div>
+                  <div className="value-content">
+                    <h3>Gage de Qualité</h3>
+                    <p>
+                      Reconnaissance officielle de la qualité de nos processus
+                      de formation
+                    </p>
+                  </div>
+                </div>
+                <div className="value-item">
+                  <div className="value-icon">
+                    <i className="fas fa-check-circle"></i>
+                  </div>
+                  <div className="value-content">
+                    <h3>Professionnalisme</h3>
+                    <p>
+                      Assurance d'un suivi rigoureux et d'une amélioration
+                      continue
+                    </p>
+                  </div>
+                </div>
+                <div className="value-item">
+                  <div className="value-icon">
+                    <i className="fas fa-shield-alt"></i>
+                  </div>
+                  <div className="value-content">
+                    <h3>Confiance</h3>
+                    <p>
+                      Garantie de fiabilité et de transparence pour nos clients
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div className="vision-visual">
+              <img
+                src="/assets/images/logo-qualiopi-valide-400x179.png"
+                alt="Logo Certification Qualiopi"
+                className="vision-img"
+              />
             </div>
           </div>
         </Container>
