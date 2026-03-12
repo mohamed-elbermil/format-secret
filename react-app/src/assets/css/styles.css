@@ -3100,16 +3100,17 @@ section h2 {
 }
 
 .modal-content {
-  background-color: #ffffff;
+  background-color: #ffffffd1;
   margin: 10% auto;
   padding: 25px;
   border: none;
   width: 90%;
   max-width: 800px;
-  border-radius: 10px;
+  border-radius: 40px;
   box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
   max-height: 90vh;
   overflow-y: auto;
+  backdrop-filter: blur(5px);
 }
 
 .modal-flex-content {
@@ -3122,6 +3123,9 @@ section h2 {
 .modal-description {
   flex: 1;
   min-width: 280px;
+  padding: 2em;
+  background: #ffffff;
+  border-radius: 26px;
 }
 
 .modal-calendar {
@@ -3955,13 +3959,11 @@ section h2 {
 
 /* Note formation */
 .note-formation {
-  background: var(--color-secondary);
+  background: linear-gradient(45deg, #078266, #008b78);
   border-radius: 15px;
   padding: 20px;
   margin: 20px 0;
   text-align: center;
-  box-shadow: 0 8px 25px rgba(254, 203, 76, 0.3);
-  border: 3px solid #fff;
   position: relative;
   overflow: hidden;
 }

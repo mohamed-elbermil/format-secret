@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/layout/Container";
 import FormationModal from "../components/formations/FormationModal";
@@ -97,8 +97,76 @@ const formCards = [
   }
 ];
 
+// Données FAQ
+const faqData = [
+  {
+    question: "Quelles sont les modalités de formation ?",
+    answer: "Nous proposons des formations en présentiel, adaptées à vos disponibilités. Nos programmes peuvent être individuels ou en groupe, selon vos objectifs spécifiques."
+  },
+  {
+    question: "Comment financer ma formation ?",
+    answer: "Grâce à notre certification Qualiopi, vous pouvez bénéficier de financements via votre OPCO ou le CPF. Nous vous accompagnons dans toutes les démarches administratives."
+  },
+  {
+    question: "Quelle est la durée moyenne d'une formation ?",
+    answer: "Nos formations s'étendent de 1 à 2 jours, avec des programmes intensifs conçus pour un impact immédiat sur votre pratique professionnelle."
+  },
+  {
+    question: "Les formations sont-elles personnalisables ?",
+    answer: "Absolument ! Chaque formation peut être adaptée aux enjeux spécifiques de votre entreprise. Nous réalisons un audit préalable pour garantir la pertinence du contenu."
+  },
+  {
+    question: "Comment sont évalués les acquis ?",
+    answer: "Nous utilisons une approche multi-critères : mises en situation, projets pratiques, et évaluations formelles pour valider la maîtrise des compétences."
+  }
+];
+
 export default function FormationsPage() {
   const [modalFormationKey, setModalFormationKey] = useState(null);
+  const [activeFaq, setActiveFaq] = useState(null);
+  const figuresRef = useRef(null);
+
+  // Animation des compteurs
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const numbers = entry.target.querySelectorAll('.figure-number');
+            numbers.forEach((numberElement) => {
+              const target = parseInt(numberElement.getAttribute('data-target'));
+              let current = 0;
+              const increment = target / 50;
+              const timer = setInterval(() => {
+                current += increment;
+                if (current >= target) {
+                  current = target;
+                  clearInterval(timer);
+                }
+                numberElement.textContent = Math.floor(current);
+              }, 30);
+            });
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (figuresRef.current) {
+      observer.observe(figuresRef.current);
+    }
+
+    return () => {
+      if (figuresRef.current) {
+        observer.unobserve(figuresRef.current);
+      }
+    };
+  }, []);
+
+  const toggleFaq = (index) => {
+    setActiveFaq(activeFaq === index ? null : index);
+  };
 
   return (
     <>
@@ -110,6 +178,108 @@ export default function FormationsPage() {
             <p className="hero-subtitle">
               Développez vos compétences avec des formations certifiées et orientées résultats
             </p>
+          </div>
+        </Container>
+      </section>
+
+      {/* Section Pour Qui ? */}
+      <section className="target-audience-section">
+        <Container>
+          <div className="section-header">
+            <h2>Pour qui ?</h2>
+            <p className="section-subtitle">Des formations conçues pour les professionnels ambitieux</p>
+          </div>
+          
+          <div className="audience-grid">
+            <div className="audience-card">
+              <div className="audience-icon">
+                <i className="fas fa-briefcase"></i>
+              </div>
+              <h3>Managers</h3>
+              <p>Renforcez votre leadership et optimisez l'impact de vos équipes</p>
+            </div>
+            
+            <div className="audience-card">
+              <div className="audience-icon">
+                <i className="fas fa-users"></i>
+              </div>
+              <h3>Équipes</h3>
+              <p>Développez vos compétences collectives et votre performance</p>
+            </div>
+            
+            <div className="audience-card">
+              <div className="audience-icon">
+                <i className="fas fa-user-tie"></i>
+              </div>
+              <h3>Dirigeants</h3>
+              <p>Accélérez votre développement professionnel et stratégique</p>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Section Chiffres Clés */}
+      <section className="key-figures-section">
+        <Container>
+          <div className="section-header">
+            <h2>Ne nous croyez pas sur parole, croyez nos chiffres</h2>
+            <p className="section-subtitle">L'impact réel de nos formations</p>
+          </div>
+          
+          <div className="figures-grid" ref={figuresRef}>
+            <div className="figure-card">
+              <div className="figure-number" data-target="500">0</div>
+              <div className="figure-label">Apprenants formés</div>
+              <div className="figure-plus">+</div>
+            </div>
+            
+            <div className="figure-card">
+              <div className="figure-number" data-target="98">0</div>
+              <div className="figure-label">Satisfaction</div>
+              <div className="figure-percent">%</div>
+            </div>
+            
+            <div className="figure-card">
+              <div className="figure-number" data-target="15">0</div>
+              <div className="figure-label">Ans d'expertise</div>
+            </div>
+          </div>
+        </Container>
+      </section>
+
+      {/* Section Le Formateur */}
+      <section className="trainer-section">
+        <Container>
+          <div className="trainer-content">
+            <div className="trainer-image">
+              <img 
+                src="https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=400&q=80"
+                alt="Formateur expert FormaSecret"
+              />
+            </div>
+            <div className="trainer-info">
+              <h2>L'expertise au service de votre réussite</h2>
+              <p>
+                Avec plus de 15 ans d'expérience dans le développement des compétences, 
+                notre formateur allie expertise pédagogique et connaissance approfondie des enjeux 
+                d'entreprise. Une approche pragmatique et orientée résultats pour garantir 
+                l'applicabilité immédiate des acquis.
+              </p>
+              <div className="trainer-credentials">
+                <div className="credential-item">
+                  <i className="fas fa-award"></i>
+                  <span>Certifié Qualiopi</span>
+                </div>
+                <div className="credential-item">
+                  <i className="fas fa-graduation-cap"></i>
+                  <span>Expert en formation</span>
+                </div>
+                <div className="credential-item">
+                  <i className="fas fa-chart-line"></i>
+                  <span>Résultats prouvés</span>
+                </div>
+              </div>
+            </div>
           </div>
         </Container>
       </section>
@@ -208,31 +378,6 @@ export default function FormationsPage() {
             <Link to="/#contact" className="cta-button">
               Démarrer une conversation
             </Link>
-          </div>
-        </Container>
-      </section>
-
-      {/* Contact Section - Minimaliste */}
-      <section className="contact-section">
-        <Container>
-          <div className="contact-content">
-            <h2>Contact</h2>
-            <div className="contact-grid">
-              <div className="contact-item">
-                <i className="fas fa-phone"></i>
-                <div>
-                  <strong>Téléphone</strong>
-                  <span>04 58 28 04 29</span>
-                </div>
-              </div>
-              <div className="contact-item">
-                <i className="fas fa-envelope"></i>
-                <div>
-                  <strong>Email</strong>
-                  <span>contact@formasecret.fr</span>
-                </div>
-              </div>
-            </div>
           </div>
         </Container>
       </section>
