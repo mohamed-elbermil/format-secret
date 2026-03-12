@@ -345,42 +345,6 @@ export default function FormationsPage() {
         </Container>
       </section>
 
-      {/* Preuve Sociale - Discrète mais puissante */}
-      <section className="social-proof-section">
-        <Container>
-          <div className="social-proof-content">
-            <h3>Ils nous font confiance</h3>
-            <div className="testimonial">
-              <p className="testimonial-text">
-                "Une approche pédagogique remarquable. Les formateurs sont experts et les contenus directement applicables. Vraiment utile pour notre développement professionnel."
-              </p>
-              <div className="testimonial-author">— Marie Laurent, Responsable RH</div>
-            </div>
-            <div className="certification-badge">
-              <img 
-                src="/assets/images/logo-qualiopi-valide-400x179.png" 
-                alt="Certification Qualiopi" 
-              />
-              <span>Certification Qualiopi - Gage de qualité</span>
-            </div>
-          </div>
-        </Container>
-      </section>
-
-      {/* CTA Section - Bouton unique et percutant */}
-      <section className="cta-section">
-        <Container>
-          <div className="cta-content">
-            <h2>Prêt à développer vos compétences ?</h2>
-            <p className="cta-subtitle">
-              Contactez-nous pour discuter de vos besoins et co-construire votre parcours de formation
-            </p>
-            <Link to="/#contact" className="cta-button">
-              Démarrer une conversation
-            </Link>
-          </div>
-        </Container>
-      </section>
 
       {/* Modal */}
       <FormationModal

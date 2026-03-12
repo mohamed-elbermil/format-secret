@@ -357,7 +357,7 @@
 
 .formation-card {
   background: var(--color-background);
-  border: 1px solid var(--color-border);
+  border: solid 1px #333249ad;
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: all 0.3s ease;
@@ -460,15 +460,20 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  padding-top: var(--spacing-md);
-  /* border: 2px solid #020202; */
-  border-bottom: none;
+  border: 2px solid #020202;
+  border-bottom: 1px solid #33324930;
   border-radius: 44px 44px 0 0;
-  background: #e8e8ea;
+  background: #3332491f;
+  color: #ffff;
 }
 
 .stat-item {
   text-align: center;
+}
+
+.stat-item:first-child{
+  border-right: solid #333249 2px;
+  padding: 15px 0;
 }
 
 .stat-value {
@@ -718,9 +723,7 @@
     height: 180px;
   }
 
-  .card-content {
-    padding: var(--spacing-md);
-  }
+
 
   .card-title {
     font-size: var(--text-lg);
