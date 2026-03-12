@@ -1,7 +1,10 @@
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
+import { motion, AnimatePresence } from "framer-motion";
 import Container from "../components/layout/Container";
+import FormationModal from "../components/formations/FormationModal";
 import { formationsData, categories } from "../data/formationsData";
+import { formations } from "../data/formations";
 import "../styles/FormationsPage.css";
 
 // Filtrer les formations par catégorie active
@@ -51,9 +54,19 @@ const faqData = [
 
 export default function FormationsPage() {
   const [activeCategory, setActiveCategory] = useState(null);
+  const [modalFormationKey, setModalFormationKey] = useState(null);
 
   // Obtenir les formations filtrées
   const filteredFormations = getFilteredFormations(activeCategory);
+
+  // Animation des cartes au survol
+  const cardHover = {
+    whileHover: { 
+      scale: 1.02, 
+      boxShadow: "0 10px 30px rgba(0, 0, 0, 0.15)",
+      transition: { duration: 0.3 }
+    }
+  };
 
   return (
     <>
@@ -110,9 +123,14 @@ export default function FormationsPage() {
               
               <div className="formations-grid">
                 {filteredFormations.map((formation) => (
-                  <div
+                  <motion.div
                     key={formation.id}
                     className="formation-card"
+                    onClick={() => setModalFormationKey(getFormationKey(formation.id))}
+                    role="button"
+                    tabIndex={0}
+                    onKeyDown={(e) => e.key === 'Enter' && setModalFormationKey(getFormationKey(formation.id))}
+                    {...cardHover}
                   >
                     <div className="card-image-container">
                       <img 
@@ -151,13 +169,19 @@ export default function FormationsPage() {
                         </div>
                       </div>
                     </div>
-                  </div>
+                  </motion.div>
                 ))}
               </div>
             </div>
           )}
         </Container>
       </section>
+
+      {/* Modal */}
+      <FormationModal
+        formationKey={modalFormationKey}
+        onClose={() => setModalFormationKey(null)}
+      />
     </>
   );
 }
