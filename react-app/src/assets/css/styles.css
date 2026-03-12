@@ -413,6 +413,7 @@ nav {
   align-items: center;
   gap: 11px;
   transition-duration: 4s;
+  width: fit-content;
 }
 .cta-button-picto-2 {
   padding: 12px 20px 11px 9px;
@@ -1972,7 +1973,7 @@ nav {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 8px;
-  color: var(--text-on-primary);
+  color: #fff;
 }
 
 .stat-description {
@@ -2308,7 +2309,7 @@ nav {
 }
 
 .card-header i {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: var(--color-secondary);
 }
 
@@ -3269,7 +3270,7 @@ section h2 {
 
 .stat-label {
   font-size: 1.1rem;
-  color: var(--color-primary);
+  color: #020202;
 }
 
 /* Styles responsives */
@@ -3742,15 +3743,14 @@ section h2 {
 }
 
 .card-header {
-  background-color: var(--color-secondary);
+  background-color: #65647526;
+  border-radius: 14px;
   color: #ffffff;
-  padding: 20px;
   text-align: center;
 }
 
 .card-header i {
-  font-size: 3rem;
-  margin-bottom: 10px;
+  font-size: 1rem;
 }
 
 .card-header h4 {

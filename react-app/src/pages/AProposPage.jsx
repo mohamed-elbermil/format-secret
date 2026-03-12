@@ -24,7 +24,7 @@ const statistics = [
 
 const missionValues = [
   {
-    icon: "fas fa-target",
+    icon: "fa-solid fa-check",
     title: "Excellence",
     description:
       "Des formations de haute qualité, conçues par des experts pour garantir des résultats tangibles.",
