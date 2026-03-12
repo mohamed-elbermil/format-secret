@@ -1973,7 +1973,7 @@ nav {
   font-size: 1.1rem;
   font-weight: 600;
   margin-bottom: 8px;
-  color: #fff;
+
 }
 
 .stat-description {
@@ -3278,7 +3278,7 @@ section h2 {
 
 .stat-label {
   font-size: 1.1rem;
-  color: #020202;
+  color: #333249;
 }
 
 /* Styles responsives */

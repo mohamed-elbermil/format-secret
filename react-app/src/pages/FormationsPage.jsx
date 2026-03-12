@@ -177,6 +177,38 @@ export default function FormationsPage() {
         </Container>
       </section>
 
+
+      {/* Section Contenu Sémantique - SEO */}
+      <section className="seo-content-section">
+        <Container>
+          <article className="seo-content">
+            <h2>Pourquoi choisir FormaSecret pour votre développement professionnel ?</h2>
+            
+            <div className="seo-columns">
+              <div className="seo-column">
+                <h3>Une expertise reconnue au service de votre performance</h3>
+                <p>
+                  FormaSecret s'impose comme un acteur référence dans le domaine de la formation professionnelle en France. Notre approche pédagogique innovante combine théorie et pratique pour garantir des résultats tangibles. Chaque programme est méticuleusement conçu par des experts métier, assurant une pertinence et une applicabilité immédiate dans votre environnement professionnel.
+                </p>
+                <p>
+                  Notre certification Qualiopi témoigne de notre engagement qualité et vous ouvre l'accès à multiples dispositifs de financement. Que vous soyez une entreprise cherchant à former vos équipes ou un professionnel désireux d'évoluer, nous adaptons nos solutions à vos objectifs spécifiques.
+                </p>
+              </div>
+              
+              <div className="seo-column">
+                <h3>Des formations qui transforment durablement les compétences</h3>
+                <p>
+                  L'excellence de nos formations repose sur trois piliers fondamentaux : un contenu actualisé en permanence, une pédagogie active et centrée sur les participants, et un suivi post-formation pour assurer la pérennité des acquis. Cette méthodologie éprouvée explique notre taux de satisfaction exceptionnel de 98%.
+                </p>
+                <p>
+                  Nos interventions couvrent les enjeux stratégiques actuels : management, performance commerciale, communication impactante, et sécurité au travail. En choisissant FormaSecret, vous investissez dans un partenariat durable pour le développement des compétences clés de votre organisation.
+                </p>
+              </div>
+            </div>
+          </article>
+        </Container>
+      </section>
+
       {/* Modal */}
       <FormationModal
         formationKey={modalFormationKey}
