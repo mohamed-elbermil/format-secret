@@ -55,9 +55,43 @@ const faqData = [
 export default function FormationsPage() {
   const [activeCategory, setActiveCategory] = useState(null);
   const [modalFormationKey, setModalFormationKey] = useState(null);
+  const [email, setEmail] = useState('');
+  const [isSubmitted, setIsSubmitted] = useState(false);
+  const [emailError, setEmailError] = useState('');
 
   // Obtenir les formations filtrées
   const filteredFormations = getFilteredFormations(activeCategory);
+
+  // Validation d'email simple
+  const validateEmail = (email) => {
+    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return re.test(email);
+  };
+
+  // Gestion de la soumission
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    
+    if (!validateEmail(email)) {
+      setEmailError('Veuillez entrer une adresse email valide');
+      return;
+    }
+    
+    setEmailError('');
+    setIsSubmitted(true);
+    
+    // Simuler l'envoi (à remplacer par votre API)
+    setTimeout(() => {
+      setEmail('');
+      setIsSubmitted(false);
+    }, 5000);
+  };
+
+  // Gestion du changement d'email
+  const handleEmailChange = (e) => {
+    setEmail(e.target.value);
+    setEmailError('');
+  };
 
   // Animation des cartes au survol
   const cardHover = {
@@ -206,6 +240,55 @@ export default function FormationsPage() {
               </div>
             </div>
           </article>
+        </Container>
+      </section>
+
+
+      {/* Section Lead Magnet - CRO Optimized */}
+      <section className="lead-magnet-section">
+        <Container>
+          <div className="lead-magnet-content">
+            <div className="lead-magnet-text">
+              <h2>Besoin de plus de détails ?</h2>
+              <p>
+                Recevez notre plaquette complète 2026 directement par email : 
+                programmes détaillés, tarifs et modalités de financement.
+              </p>
+            </div>
+            
+            <div className="lead-magnet-form">
+              {!isSubmitted ? (
+                <form onSubmit={handleSubmit} className="email-form">
+                  <div className="input-group">
+                    <div className="input-wrapper">
+                      <i className="fas fa-download input-icon"></i>
+                      <input
+                        type="email"
+                        value={email}
+                        onChange={handleEmailChange}
+                        placeholder="Votre adresse email"
+                        className={`email-input ${emailError ? 'error' : ''}`}
+                        required
+                      />
+                    </div>
+                    {emailError && <span className="error-message">{emailError}</span>}
+                  </div>
+                  <button type="submit" className="submit-button">
+                    <span>Envoyer</span>
+                    <i className="fas fa-arrow-right button-icon"></i>
+                  </button>
+                </form>
+              ) : (
+                <div className="success-message">
+                  <div className="success-icon">
+                    <i className="fas fa-check-circle"></i>
+                  </div>
+                  <h3>C'est parti !</h3>
+                  <p>Vérifiez votre boîte mail.</p>
+                </div>
+              )}
+            </div>
+          </div>
         </Container>
       </section>
 

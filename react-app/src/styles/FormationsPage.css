@@ -1025,4 +1025,241 @@
     .reassurance-grid { grid-template-columns: 1fr; gap: var(--spacing-md); }
     .reassurance-item { padding: var(--spacing-lg); }
     .seo-content { padding: 0 var(--spacing-md); }
+}
+
+/* ============================================
+   LEAD MAGNET - CRO OPTIMIZED
+   ============================================ */
+.lead-magnet-section {
+  padding: var(--spacing-2xl) 0;
+  background: #333249;
+  position: relative;
+  overflow: hidden;
+}
+
+.lead-magnet-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100"><defs><pattern id="grid" width="10" height="10" patternUnits="userSpaceOnUse"><path d="M 10 0 L 0 0 0 10" fill="none" stroke="rgba(255,255,255,0.03)" stroke-width="0.5"/></pattern></defs><rect width="100" height="100" fill="url(%23grid)"/></svg>');
+  opacity: 0.5;
+  pointer-events: none;
+}
+
+.lead-magnet-content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-2xl);
+  align-items: center;
+  position: relative;
+  z-index: 1;
+}
+
+.lead-magnet-text {
+  color: white;
+}
+
+.lead-magnet-text h2 {
+  text-align: left;
+  font-size: var(--text-3xl);
+  font-weight: 700;
+  margin-bottom: var(--spacing-lg);
+  line-height: 1.2;
+  color: #ffffff;
+}
+
+.lead-magnet-text p {
+  font-size: var(--text-lg);
+  line-height: 1.6;
+  margin: 0;
+  color: rgba(255, 255, 255, 0.9);
+  max-width: 400px;
+}
+
+.lead-magnet-form {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+}
+
+.email-form {
+  width: 100%;
+  max-width: 400px;
+}
+
+.input-group {
+  margin-bottom: var(--spacing-md);
+  width: 100%;
+}
+
+.input-wrapper {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.input-icon {
+  position: absolute;
+  left: var(--spacing-md);
+  color: rgba(255, 255, 255, 0.5);
+  font-size: var(--text-base);
+  z-index: 2;
+}
+
+.email-input {
+  width: 100%;
+  padding: var(--spacing-md) var(--spacing-md) var(--spacing-md) calc(var(--spacing-md) + 30px);
+  background: rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  border-radius: var(--radius-md);
+  color: white;
+  font-size: var(--text-base);
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.email-input::placeholder {
+  color: rgba(255, 255, 255, 0.6);
+}
+
+.email-input:focus {
+  outline: none;
+  border-color: var(--color-accent);
+  background: rgba(255, 255, 255, 0.15);
+  box-shadow: 0 0 0 3px rgba(0, 102, 255, 0.2);
+}
+
+.email-input.error {
+  border-color: #ef4444;
+  background: rgba(239, 68, 68, 0.1);
+}
+
+.error-message {
+  color: #ef4444;
+  font-size: var(--text-sm);
+  margin-top: var(--spacing-xs);
+  display: block;
+  text-align: left;
+}
+
+.submit-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  background: var(--color-accent);
+  color: white;
+  border: none;
+  padding: var(--spacing-md) var(--spacing-xl);
+  border-radius: var(--radius-md);
+  font-size: var(--text-base);
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  min-width: 120px;
+  position: relative;
+  overflow: hidden;
+}
+
+.submit-button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.5s ease;
+}
+
+.submit-button:hover::before {
+  left: 100%;
+}
+
+.submit-button:hover {
+  background: #0052cc;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px rgba(0, 102, 255, 0.3);
+}
+
+.button-icon {
+  transition: transform 0.3s ease;
+}
+
+.submit-button:hover .button-icon {
+  transform: translateX(3px);
+}
+
+.success-message {
+  text-align: center;
+  padding: var(--spacing-xl);
+  background: rgba(16, 185, 129, 0.1);
+  border: 1px solid rgba(16, 185, 129, 0.3);
+  border-radius: var(--radius-lg);
+  backdrop-filter: blur(10px);
+}
+
+.success-icon {
+  margin-bottom: var(--spacing-md);
+}
+
+.success-icon i {
+  font-size: 3rem;
+  color: #10b981;
+  animation: successPulse 0.6s ease-out;
+}
+
+.success-message h3 {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+  color: white;
+  margin: 0 0 var(--spacing-sm) 0;
+}
+
+.success-message p {
+  font-size: var(--text-base);
+  color: rgba(255, 255, 255, 0.9);
+  margin: 0;
+}
+
+@keyframes successPulse {
+  0% { transform: scale(0); opacity: 0; }
+  50% { transform: scale(1.1); }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+/* ============================================
+   RESPONSIVE — LEAD MAGNET
+   ============================================ */
+@media (max-width: 768px) {
+  .lead-magnet-content {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+    text-align: center;
   }
+  
+  .lead-magnet-text {
+    text-align: center;
+    margin-bottom: var(--spacing-lg);
+  }
+  
+  .lead-magnet-text h2 {
+    font-size: var(--text-2xl);
+  }
+  
+  .lead-magnet-text p {
+    max-width: 100%;
+    font-size: var(--text-base);
+  }
+  
+  .lead-magnet-form {
+    align-items: center;
+  }
+  
+  .email-form {
+    max-width: 100%;
+  }
+}
