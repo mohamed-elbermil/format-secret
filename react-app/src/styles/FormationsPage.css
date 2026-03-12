@@ -34,7 +34,7 @@
 .formations-hero {
   padding: calc(var(--spacing-2xl) + 80px) 0 var(--spacing-2xl);
   text-align: center;
-  background: var(--color-background);
+  background: var(--color-primary);
 }
 
 /* Section Pour Qui ? */
@@ -359,12 +359,12 @@
   line-height: 1.2;
   margin-bottom: var(--spacing-md);
   letter-spacing: -0.02em;
-  color: var(--color-primary);
+  color: #ffff;
 }
 
 .hero-subtitle {
   font-size: var(--text-xl);
-  color: var(--color-primary);
+  color: #fff;
   font-weight: 400;
   max-width: 600px;
   margin: 0 auto;
