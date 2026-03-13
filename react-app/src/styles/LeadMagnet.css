@@ -1,0 +1,46 @@
+/* Styles additionnels pour le bouton secondaire */
+.cta-button-picto.secondary {
+  background: transparent;
+  border: 2px solid var(--color-accent);
+  color: var(--color-accent);
+}
+
+.cta-button-picto.secondary:hover {
+  background: var(--color-accent);
+  color: white;
+}
+
+/* Animation pour le spinner */
+.fa-spin {
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Styles pour les messages d'erreur */
+.error-message {
+  color: #e74c3c;
+  font-size: 0.875rem;
+  margin-top: 0.5rem;
+  display: block;
+}
+
+.email-input.error {
+  border-color: #e74c3c !important;
+  box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2) !important;
+}
+
+/* Bouton désactivé */
+.cta-button-picto:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none !important;
+}
+
+.cta-button-picto:disabled:hover {
+  transform: none !important;
+  box-shadow: none !important;
+}

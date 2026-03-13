@@ -67,13 +67,6 @@ export default function HomePage() {
     if (location.hash === '#contact') scrollToContact()
   }, [location.hash, scrollToContact])
 
-  // Gestion de la soumission du Lead Magnet
-  const handleLeadMagnetSubmit = (email) => {
-    console.log('Lead Magnet email submitted from HomePage:', email);
-    // Ici vous pouvez ajouter votre logique d'API pour envoyer l'email
-    // Par exemple : await api.sendLeadMagnet(email);
-  };
-
   return (
     <>
       <script
@@ -229,7 +222,16 @@ export default function HomePage() {
       </section>
       <ContactSection />
 
-      <LeadMagnet onSubmit={handleLeadMagnetSubmit} />
+      <LeadMagnet 
+        title="Téléchargez notre catalogue complet"
+        subtitle="Recevez toutes nos formations certifiées et nos tarifs préférentiels directement par email."
+        buttonText="Télécharger le catalogue"
+        placeholder="Votre adresse email"
+        successMessage="Catalogue envoyé !"
+        successSubtext="Consultez votre boîte mail pour recevoir notre catalogue complet."
+        icon="fa-file-pdf"
+        pdfUrl="/plaquette-2026.pdf"
+      />
     </>
   )
 }

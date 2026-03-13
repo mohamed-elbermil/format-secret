@@ -65,13 +65,6 @@ export default function FormationsPage() {
   // Obtenir les formations filtrées
   const filteredFormations = getFilteredFormations(activeCategory);
 
-  // Gestion de la soumission du Lead Magnet
-  const handleLeadMagnetSubmit = (email) => {
-    console.log('Lead Magnet email submitted:', email);
-    // Ici vous pouvez ajouter votre logique d'API pour envoyer l'email
-    // Par exemple : await api.sendLeadMagnet(email);
-  };
-
   // Animation des cartes au survol
   const cardHover = {
     whileHover: { 
@@ -236,7 +229,16 @@ export default function FormationsPage() {
 
 
       {/* Section Lead Magnet - CRO Optimized */}
-      <LeadMagnet onSubmit={handleLeadMagnetSubmit} />
+      <LeadMagnet 
+        title="Besoin de plus de détails ?"
+        subtitle="Recevez notre plaquette complète 2026 directement par email : programmes détaillés, tarifs et modalités de financement."
+        buttonText="Envoyer"
+        placeholder="Votre adresse email"
+        successMessage="C'est parti !"
+        successSubtext="Vérifiez votre boîte mail."
+        icon="fa-download"
+        pdfUrl="/plaquette-2026.pdf"
+      />
 
       {/* Modal */}
       <FormationModal

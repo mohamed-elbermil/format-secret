@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test PDF</title>
+</head>
+<body>
+    <h1>Test d'accès au PDF</h1>
+    <p>Vérifiez si le PDF est accessible :</p>
+    
+    <h2>Test 1 : Lien direct</h2>
+    <a href="/plaquette-2026.pdf" target="_blank">Ouvrir plaquette-2026.pdf</a>
+    
+    <h2>Test 2 : URL complète</h2>
+    <a href="http://localhost:5174/plaquette-2026.pdf" target="_blank">Ouvrir avec URL complète</a>
+    
+    <h2>Test 3 : Vérification automatique</h2>
+    <iframe src="/plaquette-2026.pdf" width="100%" height="600px" title="PDF Preview">
+        Votre navigateur ne supporte pas les PDF intégrés.
+    </iframe>
+    
+    <script>
+        // Test JavaScript
+        fetch('/plaquette-2026.pdf')
+            .then(response => {
+                if (response.ok) {
+                    console.log('✅ PDF accessible via fetch');
+                } else {
+                    console.error('❌ PDF non accessible:', response.status);
+                }
+            })
+            .catch(error => {
+                console.error('❌ Erreur fetch:', error);
+            });
+            
+        // Afficher l'URL complète
+        console.log('URL complète:', window.location.origin + '/plaquette-2026.pdf');
+    </script>
+</body>
+</html>
