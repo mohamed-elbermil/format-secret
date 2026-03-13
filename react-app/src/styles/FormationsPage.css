@@ -143,7 +143,22 @@
     line-height: 1.6;
     font-size: var(--text-base);
   }
-  
+
+/* Bouton Voir Toutes les Formations */
+.see-all-formations {
+  text-align: center;
+  margin-top: var(--spacing-2xl);
+  display: flex;
+  justify-content: center;
+}
+
+/* Responsive - Bouton Voir Toutes */
+@media (max-width: 768px) {
+  .see-all-formations {
+    margin-top: var(--spacing-xl);
+  }
+}
+
   /* ============================================
      SELECTED PROFILE
      ============================================ */

@@ -433,6 +433,23 @@ nav {
   gap: 11px;
   transition-duration: 4s;
 }
+.cta-button-picto-3 {
+  padding: 12px 20px 11px 9px;
+  font-size: 1rem;
+  font-weight: 700;
+  text-decoration: none;
+  border-radius: 30px;
+  color: #fff;
+  background-color: var(--color-primary);
+  transition: all 0.3s ease;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  gap: 11px;
+  transition-duration: 4s;
+  border:none;
+  cursor:pointer;
+}
 
 .hidden {
   position: absolute;

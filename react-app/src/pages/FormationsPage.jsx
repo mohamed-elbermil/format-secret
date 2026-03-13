@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { motion, AnimatePresence } from "framer-motion";
 import Container from "../components/layout/Container";
 import FormationModal from "../components/formations/FormationModal";
+import LeadMagnet from "../components/marketing/LeadMagnet";
 import { formationsData, categories } from "../data/formationsData";
 import { formations } from "../data/formations";
 import "../styles/FormationsPage.css";
@@ -10,6 +11,7 @@ import "../styles/FormationsPage.css";
 // Filtrer les formations par catégorie active
 const getFilteredFormations = (activeCategory) => {
   if (!activeCategory) return [];
+  if (activeCategory === 'all') return formationsData;
   return formationsData.filter(formation => formation.category === activeCategory);
 };
 
@@ -55,42 +57,15 @@ const faqData = [
 export default function FormationsPage() {
   const [activeCategory, setActiveCategory] = useState(null);
   const [modalFormationKey, setModalFormationKey] = useState(null);
-  const [email, setEmail] = useState('');
-  const [isSubmitted, setIsSubmitted] = useState(false);
-  const [emailError, setEmailError] = useState('');
 
   // Obtenir les formations filtrées
   const filteredFormations = getFilteredFormations(activeCategory);
 
-  // Validation d'email simple
-  const validateEmail = (email) => {
-    const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-    return re.test(email);
-  };
-
-  // Gestion de la soumission
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    
-    if (!validateEmail(email)) {
-      setEmailError('Veuillez entrer une adresse email valide');
-      return;
-    }
-    
-    setEmailError('');
-    setIsSubmitted(true);
-    
-    // Simuler l'envoi (à remplacer par votre API)
-    setTimeout(() => {
-      setEmail('');
-      setIsSubmitted(false);
-    }, 5000);
-  };
-
-  // Gestion du changement d'email
-  const handleEmailChange = (e) => {
-    setEmail(e.target.value);
-    setEmailError('');
+  // Gestion de la soumission du Lead Magnet
+  const handleLeadMagnetSubmit = (email) => {
+    console.log('Lead Magnet email submitted:', email);
+    // Ici vous pouvez ajouter votre logique d'API pour envoyer l'email
+    // Par exemple : await api.sendLeadMagnet(email);
   };
 
   // Animation des cartes au survol
@@ -125,22 +100,34 @@ export default function FormationsPage() {
           </div>
           
           {!activeCategory ? (
-            <div className="audience-grid">
-              {categories.map((category) => (
-                <div
-                  key={category.id}
-                  className="audience-card"
-                  onClick={() => setActiveCategory(category.id)}
-                  style={{ borderTop: `4px solid ${category.color}` }}
-                >
-                  <div className="audience-icon" style={{ background: `linear-gradient(135deg, ${category.color}, #7673c5)` }}>
-                    <i className={`fas ${category.icon}`}></i>
+            <>
+              <div className="audience-grid">
+                {categories.map((category) => (
+                  <div
+                    key={category.id}
+                    className="audience-card"
+                    onClick={() => setActiveCategory(category.id)}
+                    style={{ borderTop: `4px solid ${category.color}` }}
+                  >
+                    <div className="audience-icon" style={{ background: `linear-gradient(135deg, ${category.color}, #7673c5)` }}>
+                      <i className={`fas ${category.icon}`}></i>
+                    </div>
+                    <h3>{category.title}</h3>
+                    <p>{category.description}</p>
                   </div>
-                  <h3>{category.title}</h3>
-                  <p>{category.description}</p>
-                </div>
-              ))}
-            </div>
+                ))}
+              </div>
+              
+              <div className="see-all-formations">
+                <button 
+                  onClick={() => setActiveCategory('all')}
+                  className="cta-button-picto-3"
+                >
+                  <i className="fas fa-th-large"></i>
+                  Voir toutes les formations
+                </button>
+              </div>
+            </>
           ) : (
             <div>
               <div className="selected-category-header">
@@ -151,7 +138,7 @@ export default function FormationsPage() {
                   <i className="fas fa-arrow-left"></i>
                   Retour aux catégories
                 </button>
-                <h3>{categories.find(c => c.id === activeCategory)?.title}</h3>
+                <h3>{activeCategory === 'all' ? 'Toutes nos formations' : categories.find(c => c.id === activeCategory)?.title}</h3>
                 <p className="formation-count">{filteredFormations.length} formation{filteredFormations.length > 1 ? 's' : ''} disponible{filteredFormations.length > 1 ? 's' : ''}</p>
               </div>
               
@@ -245,52 +232,7 @@ export default function FormationsPage() {
 
 
       {/* Section Lead Magnet - CRO Optimized */}
-      <section className="lead-magnet-section">
-        <Container>
-          <div className="lead-magnet-content">
-            <div className="lead-magnet-text">
-              <h2>Besoin de plus de détails ?</h2>
-              <p>
-                Recevez notre plaquette complète 2026 directement par email : 
-                programmes détaillés, tarifs et modalités de financement.
-              </p>
-            </div>
-            
-            <div className="lead-magnet-form">
-              {!isSubmitted ? (
-                <form onSubmit={handleSubmit} className="email-form">
-                  <div className="input-group">
-                    <div className="input-wrapper">
-                      <i className="fas fa-download input-icon"></i>
-                      <input
-                        type="email"
-                        value={email}
-                        onChange={handleEmailChange}
-                        placeholder="Votre adresse email"
-                        className={`email-input ${emailError ? 'error' : ''}`}
-                        required
-                      />
-                    </div>
-                    {emailError && <span className="error-message">{emailError}</span>}
-                  </div>
-                  <button type="submit" className="cta-button-picto">
-                    <i className="fas fa-arrow-right button-icon"></i>
-                    <span>Envoyer</span>
-                  </button>
-                </form>
-              ) : (
-                <div className="success-message">
-                  <div className="success-icon">
-                    <i className="fas fa-check-circle"></i>
-                  </div>
-                  <h3>C'est parti !</h3>
-                  <p>Vérifiez votre boîte mail.</p>
-                </div>
-              )}
-            </div>
-          </div>
-        </Container>
-      </section>
+      <LeadMagnet onSubmit={handleLeadMagnetSubmit} />
 
       {/* Modal */}
       <FormationModal

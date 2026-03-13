@@ -13,6 +13,8 @@ import imgAnalyse from '../assets/images/pexels-photo-2977547.jpeg'
 import imgProjet from '../assets/images/pexels-photo-5915194.jpeg'
 import imgParcours from '../assets/images/pexels-photo-3184465.jpeg'
 import GoogleReviews from '../google-review'
+import LeadMagnet from "../components/marketing/LeadMagnet";
+
 
 const structuredData = {
   '@context': 'https://schema.org',
@@ -60,6 +62,13 @@ export default function HomePage() {
   useEffect(() => {
     if (location.hash === '#contact') scrollToContact()
   }, [location.hash, scrollToContact])
+
+  // Gestion de la soumission du Lead Magnet
+  const handleLeadMagnetSubmit = (email) => {
+    console.log('Lead Magnet email submitted from HomePage:', email);
+    // Ici vous pouvez ajouter votre logique d'API pour envoyer l'email
+    // Par exemple : await api.sendLeadMagnet(email);
+  };
 
   return (
     <>
@@ -214,8 +223,9 @@ export default function HomePage() {
           </div>
         </Container>
       </section>
-
       <ContactSection />
+
+      <LeadMagnet onSubmit={handleLeadMagnetSubmit} />
     </>
   )
 }
