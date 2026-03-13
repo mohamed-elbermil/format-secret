@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/layout/Container";
 import ContactSection from "../components/sections/ContactSection";
+import useScrollToTop from "../hooks/useScrollToTop";
 
 const statistics = [
   {
@@ -68,6 +69,8 @@ const parcoursValues = [
 ];
 
 export default function AcademiePage() {
+  // Réinitialiser le scroll en haut de page au chargement
+  useScrollToTop();
   return (
     <>
       {/* Hero Section - Design asymétrique moderne */}

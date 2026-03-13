@@ -1959,7 +1959,7 @@ nav {
 
 .statistics-grid {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: repeat(3, 1fr);
   gap: 40px;
 }
 
@@ -3299,7 +3299,7 @@ section h2 {
 
 .stat-label {
   font-size: 1.1rem;
-  color: #333249;
+  color: #fff;
 }
 
 /* Styles responsives */

@@ -5,6 +5,7 @@ import ServiceCard from '../components/cards/ServiceCard'
 import AdvantageCard from '../components/cards/AdvantageCard'
 import FigureCard from '../components/cards/FigureCard'
 import ContactSection from '../components/sections/ContactSection'
+import useScrollToTop from '../hooks/useScrollToTop'
 import { services } from '../data/services'
 import { advantages } from '../data/advantages'
 import { keyFigures } from '../data/figures'
@@ -58,6 +59,9 @@ export default function HomePage() {
   const scrollToContact = useCallback(() => {
     document.getElementById('contact')?.scrollIntoView({ behavior: 'smooth' })
   }, [])
+
+  // Réinitialiser le scroll en haut de page au chargement
+  useScrollToTop();
 
   useEffect(() => {
     if (location.hash === '#contact') scrollToContact()

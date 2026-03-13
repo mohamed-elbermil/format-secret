@@ -2,6 +2,7 @@ import React from 'react'
 import { useParams, Navigate } from 'react-router-dom'
 import { getFormationNtcBySlug, getFormationNtcById } from '../data/formationNtc'
 import ContactSection from '../components/sections/ContactSection'
+import useScrollToTop from '../hooks/useScrollToTop'
 import FormationDetailHero from '../components/formation-detail/FormationDetailHero'
 import FormationDetailIntro from '../components/formation-detail/FormationDetailIntro'
 import FormationDetailObjectives from '../components/formation-detail/FormationDetailObjectives'
@@ -20,6 +21,10 @@ import FormationDetailFooter from '../components/formation-detail/FormationDetai
  */
 export default function FormationNtcPage() {
   const { slug } = useParams()
+  
+  // Réinitialiser le scroll en haut de page au chargement
+  useScrollToTop();
+  
   const formation = slug
     ? getFormationNtcBySlug(slug) || getFormationNtcById(slug)
     : null

@@ -4,6 +4,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import Container from "../components/layout/Container";
 import FormationModal from "../components/formations/FormationModal";
 import LeadMagnet from "../components/marketing/LeadMagnet";
+import useScrollToTop from "../hooks/useScrollToTop";
 import { formationsData, categories } from "../data/formationsData";
 import { formations } from "../data/formations";
 import "../styles/FormationsPage.css";
@@ -57,6 +58,9 @@ const faqData = [
 export default function FormationsPage() {
   const [activeCategory, setActiveCategory] = useState(null);
   const [modalFormationKey, setModalFormationKey] = useState(null);
+
+  // Réinitialiser le scroll en haut de page au chargement
+  useScrollToTop();
 
   // Obtenir les formations filtrées
   const filteredFormations = getFilteredFormations(activeCategory);

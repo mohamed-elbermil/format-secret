@@ -10,7 +10,7 @@ const statistics = [
     description: "Au service de l'excellence",
   },
   {
-    number: "150+",
+    number: "8",
     label: "Formations certifiées",
     description: "Programmes qualifiopi",
   },

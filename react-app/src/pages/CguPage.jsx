@@ -1,7 +1,10 @@
 import React from 'react'
 import Container from '../components/layout/Container'
+import useScrollToTop from '../hooks/useScrollToTop'
 
 export default function CguPage() {
+  // Réinitialiser le scroll en haut de page au chargement
+  useScrollToTop();
   return (
     <section className="histoire-fondation" style={{ paddingTop: '120px' }}>
       <Container>

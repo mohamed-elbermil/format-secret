@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/layout/Container";
 import ContactSection from "../components/sections/ContactSection";
+import useScrollToTop from "../hooks/useScrollToTop";
 
 const statistics = [
   {
@@ -10,14 +11,9 @@ const statistics = [
     description: "Au service de l'excellence",
   },
   {
-    number: "150+",
+    number: "8",
     label: "Formations certifiées",
     description: "Programmes qualifiopi",
-  },
-  {
-    number: "2000+",
-    label: "Apprenants formés",
-    description: "Parcours transformés",
   },
   { number: "98%", label: "Satisfaction", description: "Témoignages clients" },
 ];
@@ -65,6 +61,8 @@ const visionValues = [
 ];
 
 export default function AProposPage() {
+  // Réinitialiser le scroll en haut de page au chargement
+  useScrollToTop();
   return (
     <>
       {/* Hero Section - Design asymétrique moderne */}
