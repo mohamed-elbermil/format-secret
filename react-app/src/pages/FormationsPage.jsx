@@ -123,7 +123,7 @@ export default function FormationsPage() {
                   onClick={() => setActiveCategory('all')}
                   className="cta-button-picto-3"
                 >
-                  <i className="fas fa-th-large"></i>
+                  <i class="fa-solid fa-plus"></i>
                   Voir toutes les formations
                 </button>
               </div>
