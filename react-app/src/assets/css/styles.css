@@ -415,6 +415,8 @@ nav {
   transition-duration: 4s;
   width: fit-content;
   flex-direction: row-reverse;
+  border: none;
+  cursor: pointer;
 }
 .cta-button-picto-2 {
   padding: 12px 20px 11px 9px;

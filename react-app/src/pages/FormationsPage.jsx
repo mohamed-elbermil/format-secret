@@ -273,9 +273,9 @@ export default function FormationsPage() {
                     </div>
                     {emailError && <span className="error-message">{emailError}</span>}
                   </div>
-                  <button type="submit" className="submit-button">
-                    <span>Envoyer</span>
+                  <button type="submit" className="cta-button-picto">
                     <i className="fas fa-arrow-right button-icon"></i>
+                    <span>Envoyer</span>
                   </button>
                 </form>
               ) : (
