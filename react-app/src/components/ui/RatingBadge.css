@@ -1,0 +1,25 @@
+.rating-badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 16px;
+  border: 1px solid #ccc;
+  border-radius: 999px;
+  background: #f7f7f7;
+  font-family: Arial, sans-serif;
+}
+
+.logo {
+  width: 18px;
+}
+
+.stars {
+  color: #f5a623;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.text {
+  font-size: 14px;
+  color: #333;
+}
