@@ -98,6 +98,7 @@ export default function AProposPage() {
               </div>
               <div className="about-hero-badge">
                 <div className="badge-content">
+                  ss
                   <i className="fas fa-graduation-cap"></i>
                   <span>FormaSecret</span>
                 </div>

@@ -94,12 +94,6 @@ export default function AProposPage() {
                   alt="Stéphanie Loddo, fondatrice de FormaSecret"
                 />
               </div>
-              <div className="about-hero-badge">
-                <div className="badge-content">
-                  <i className="fas fa-graduation-cap"></i>
-                  <span>FormaSecret</span>
-                </div>
-              </div>
             </div>
           </div>
         </Container>

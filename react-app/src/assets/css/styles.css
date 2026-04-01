@@ -583,7 +583,6 @@ nav {
   display: flex;
   flex-direction: column;
   grid-template-columns: 1fr 1fr;
-  gap: 60px;
   align-items: center;
   position: relative;
   z-index: 2;
@@ -1951,13 +1950,9 @@ nav {
 .about-hero-image img {
   width: 100%;
   height: auto;
-  border-radius: 20px;
+  border-radius: 280px 0 0 0;
   box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
   transition: transform 0.3s ease;
-}
-
-.about-hero-image:hover img {
-  transform: translateY(-5px);
 }
 
 .about-hero-badge {
