@@ -1,32 +1,43 @@
-import path from 'path'
-import { fileURLToPath } from 'url'
-import { defineConfig } from 'vite'
-import react from '@vitejs/plugin-react'
+import path from "path";
+import { fileURLToPath } from "url";
+import { defineConfig } from "vite";
+import react from "@vitejs/plugin-react";
 
-const __dirname = path.dirname(fileURLToPath(import.meta.url))
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
   plugins: [react()],
   root: __dirname,
-  publicDir: path.join(__dirname, 'public'),
+  publicDir: path.join(__dirname, "public"),
+  base: "/",
+  build: {
+    outDir: "dist",
+    assetsDir: "assets",
+    sourcemap: false,
+    rollupOptions: {
+      output: {
+        manualChunks: undefined,
+      },
+    },
+  },
   resolve: {
     alias: {
-      '@': path.join(__dirname, 'src'),
-      '@assets': path.join(__dirname, '..', 'assets'),
+      "@": path.join(__dirname, "src"),
+      "@assets": path.join(__dirname, "..", "assets"),
     },
   },
   server: {
-    host: '0.0.0.0',  // Permet l'accès depuis le réseau
+    host: "0.0.0.0", // Permet l'accès depuis le réseau
     port: 5174,
     fs: {
-      allow: ['..'],
+      allow: [".."],
     },
     proxy: {
-      '/api/places': {
-        target: 'https://maps.googleapis.com',
+      "/api/places": {
+        target: "https://maps.googleapis.com",
         changeOrigin: true,
-        rewrite: (path) => path.replace(/^\/api\/places/, '/maps/api/place'),
-      }
-    }
+        rewrite: (path) => path.replace(/^\/api\/places/, "/maps/api/place"),
+      },
+    },
   },
-})
+});
