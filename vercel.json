@@ -6,7 +6,7 @@
       "use": "@vercel/static-build",
       "config": {
         "installCommand": "cd react-app && npm install --force",
-        "buildCommand": "cd react-app && npm install --force && npx vite build",
+        "buildCommand": "cd react-app && chmod +x node_modules/.bin/* && npm run build",
         "outputDirectory": "react-app/dist"
       }
     }
