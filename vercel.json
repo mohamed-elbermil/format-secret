@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "builds": [
+    {
+      "src": "react-app/package.json",
+      "use": "@vercel/static-build",
+      "config": {
+        "installCommand": "cd react-app && npm install --force",
+        "buildCommand": "cd react-app && npm install --force && npx vite build",
+        "outputDirectory": "react-app/dist"
+      }
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/react-app/$1"
+    },
+    {
+      "src": "/react-app/(.*)",
+      "dest": "/react-app/index.html"
+    }
+  ],
+  "env": {
+    "VITE_EMAILJS_SERVICE_ID": "@vite_emailjs_service_id",
+    "VITE_EMAILJS_TEMPLATE_ID": "@vite_emailjs_template_id",
+    "VITE_EMAILJS_PUBLIC_KEY": "@vite_emailjs_public_key"
+  }
+}
