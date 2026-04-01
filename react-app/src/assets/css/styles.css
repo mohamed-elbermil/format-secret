@@ -418,6 +418,12 @@ nav {
   color: #fff;
   background-color: transparent;
   border: solid 1px #fff;
+  transition: 0s;
+}
+
+.cta-button-picto.header:hover {
+  background: #fff;
+  color: black;
 }
 
 .cta-button-picto.header:hover + .hero-visual {
