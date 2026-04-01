@@ -1240,6 +1240,7 @@
   align-items: center;
   position: relative;
   z-index: 1;
+  color: #fff;
 }
 
 .lead-magnet-text {
