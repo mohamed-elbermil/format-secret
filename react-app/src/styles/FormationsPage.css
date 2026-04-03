@@ -572,7 +572,7 @@
   border: 2px solid #020202;
   border-bottom: 1px solid #33324930;
   border-radius: 44px 44px 0 0;
-  background: #3332491f;
+  background: #333249;
   color: #fff;
   margin-top: auto;
 }
@@ -590,7 +590,7 @@
 .stat-value {
   font-size: var(--text-lg);
   font-weight: 600;
-  color: #333249;
+  color: #fff;
   display: flex;
   align-items: baseline;
   justify-content: center;
@@ -881,6 +881,7 @@
   color: var(--color-primary);
   line-height: 1.6;
   margin: 0;
+  font-size: 14px;
 }
 
 .modal-actions {

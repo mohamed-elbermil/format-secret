@@ -3430,10 +3430,12 @@ section h2 {
   gap: 30px;
 }
 
-.stat-item {
+.stat-item:nth-child(2) {
   text-align: center;
   flex: 1;
   min-width: 200px;
+  background: #009688;
+  border-radius: 0 42px 0 0;
 }
 
 .stat-number {
@@ -4133,7 +4135,7 @@ section h2 {
 .note-formation {
   background: linear-gradient(45deg, #078266, #008b78);
   border-radius: 15px;
-  padding: 20px;
+  padding: 6px;
   margin: 20px 0;
   text-align: center;
   position: relative;
