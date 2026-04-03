@@ -1838,6 +1838,10 @@ nav {
   align-items: center;
 }
 
+.footer-bottom a {
+  color: orange;
+}
+
 .footer-social a {
   color: #ffffff;
   font-size: 1.2rem;
