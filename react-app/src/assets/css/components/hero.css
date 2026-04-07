@@ -1,0 +1,482 @@
+/* ============================================================
+   HERO SECTION – FormaSecret 2026
+   Layout  : split 2 colonnes (texte gauche / visuel droite)
+   Fond    : navy #1B2F4E + texture subtile + glow or
+   Anim.   : fade + slide-up CSS staggeré (GPU-only)
+   ============================================================ */
+
+/* ── Keyframes ── */
+@keyframes heroFadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(28px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes heroFadeIn {
+  from { opacity: 0; transform: translateY(16px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0)    scale(1);    }
+}
+
+@keyframes heroBadgePop {
+  0%   { opacity: 0; transform: translateY(12px) scale(0.85); }
+  70%  { transform: translateY(-4px) scale(1.04); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@keyframes heroGlowPulse {
+  0%, 100% { opacity: 0.35; transform: scale(1); }
+  50%       { opacity: 0.5;  transform: scale(1.08); }
+}
+
+/* ── Section wrapper ── */
+.hero-section {
+  position: relative;
+  min-height: 100vh;
+  background: var(--clr-navy);
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  /* Compenser le header fixe (réassurance 32px + nav 70px) */
+  padding-top: var(--hdr-total-h);
+}
+
+/* ── Fond décoratif ── */
+.hero-section__bg {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 0;
+}
+
+/* Grille de points */
+.hero-section__bg-dots {
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(249, 247, 244, 0.07) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+
+/* Halo or en haut à droite */
+.hero-section__bg-glow {
+  position: absolute;
+  top: -120px;
+  right: -100px;
+  width: 600px;
+  height: 600px;
+  background: radial-gradient(circle, rgba(200, 146, 42, 0.18) 0%, transparent 65%);
+  animation: heroGlowPulse 6s ease-in-out infinite;
+}
+
+/* Halo navy-mid en bas à gauche */
+.hero-section__bg-glow-2 {
+  position: absolute;
+  bottom: -80px;
+  left: -60px;
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, rgba(36, 61, 96, 0.6) 0%, transparent 70%);
+}
+
+/* ── Layout interne ── */
+.hero-section__inner {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding-top: 3rem;
+  padding-bottom: 5rem;
+}
+
+/* ── Colonne texte (gauche) ── */
+.hero-section__text {
+  flex: 0 0 52%;
+  max-width: 52%;
+}
+
+/* Eyebrow */
+.hero-section__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 1.5rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(200, 146, 42, 0.35);
+  border-radius: var(--radius-pill);
+  background: rgba(200, 146, 42, 0.08);
+
+  animation: heroFadeUp 0.6s ease both;
+  animation-delay: 0.1s;
+}
+
+.hero-section__eyebrow-dot {
+  width: 6px;
+  height: 6px;
+  background: var(--clr-gold);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Titre h1 */
+.hero-section__title {
+  font-family: var(--font-title);
+  font-size: clamp(2.8rem, 5vw, 4.8rem);
+  font-weight: 600;
+  line-height: 1.08;
+  color: var(--clr-cream);
+  margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+
+  animation: heroFadeUp 0.7s ease both;
+  animation-delay: 0.25s;
+}
+
+/* L'italique (em) reçoit la couleur or */
+.hero-section__title em {
+  font-style: italic;
+  color: var(--clr-gold-light);
+}
+
+/* Sous-titre */
+.hero-section__subtitle {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  line-height: 1.7;
+  color: rgba(249, 247, 244, 0.72);
+  margin-bottom: 2rem;
+  max-width: 46ch;
+
+  animation: heroFadeUp 0.7s ease both;
+  animation-delay: 0.4s;
+}
+
+.hero-section__subtitle strong {
+  color: rgba(249, 247, 244, 0.95);
+  font-weight: 600;
+}
+
+/* Séparateur décoratif fin */
+.hero-section__divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(to right, var(--clr-gold), transparent);
+  margin-bottom: 2rem;
+  border-radius: 2px;
+
+  animation: heroFadeUp 0.6s ease both;
+  animation-delay: 0.35s;
+}
+
+/* Boutons CTA */
+.hero-section__ctas {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+  margin-bottom: 2.5rem;
+
+  animation: heroFadeUp 0.7s ease both;
+  animation-delay: 0.55s;
+}
+
+.hero-section__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.04em;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.75rem;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-fast);
+}
+
+/* CTA primaire : gold plein */
+.hero-section__cta--primary {
+  background: var(--clr-gold);
+  color: var(--clr-navy-deep);
+  border: 2px solid var(--clr-gold);
+}
+
+.hero-section__cta--primary:hover {
+  background: var(--clr-gold-light);
+  border-color: var(--clr-gold-light);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.hero-section__cta--primary:active {
+  transform: translateY(0);
+}
+
+.hero-section__cta--primary svg {
+  transition: transform var(--transition-fast);
+}
+
+.hero-section__cta--primary:hover svg {
+  transform: translateX(4px);
+}
+
+/* CTA secondaire : outline blanc */
+.hero-section__cta--secondary {
+  background: transparent;
+  color: rgba(249, 247, 244, 0.88);
+  border: 2px solid rgba(249, 247, 244, 0.35);
+}
+
+.hero-section__cta--secondary:hover {
+  border-color: rgba(249, 247, 244, 0.8);
+  color: var(--clr-cream);
+  background: rgba(249, 247, 244, 0.06);
+  transform: translateY(-1px);
+}
+
+/* Focus visible */
+.hero-section__cta:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 4px;
+}
+
+/* Preuve sociale */
+.hero-section__proof {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+
+  animation: heroFadeUp 0.6s ease both;
+  animation-delay: 0.7s;
+}
+
+.hero-section__stars {
+  color: #F59E0B;
+  font-size: 1rem;
+  letter-spacing: 1px;
+}
+
+.hero-section__proof-text {
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  color: rgba(249, 247, 244, 0.58);
+}
+
+.hero-section__proof-text strong {
+  color: rgba(249, 247, 244, 0.88);
+  font-weight: 600;
+}
+
+/* ── Colonne visuelle (droite) ── */
+.hero-section__visual {
+  flex: 0 0 44%;
+  max-width: 44%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+
+  animation: heroFadeIn 0.9s ease both;
+  animation-delay: 0.2s;
+}
+
+/* Cadre doré derrière l'image */
+.hero-section__visual::before {
+  content: '';
+  position: absolute;
+  bottom: 16px;
+  right: -16px;
+  width: 85%;
+  height: 85%;
+  border: 2px solid rgba(200, 146, 42, 0.28);
+  border-radius: var(--radius-lg);
+  z-index: 0;
+}
+
+.hero-section__visual-img {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  max-width: 480px;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 24px 48px rgba(11, 23, 42, 0.5));
+}
+
+/* Badge flottant "98% de satisfaction" */
+.hero-section__badge {
+  position: absolute;
+  bottom: 3rem;
+  left: -1.5rem;
+  z-index: 2;
+  background: var(--clr-cream);
+  border-radius: var(--radius-md);
+  padding: 0.85rem 1.25rem;
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.15rem;
+  min-width: 120px;
+
+  animation: heroBadgePop 0.8s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+  animation-delay: 0.9s;
+}
+
+.hero-section__badge::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--clr-gold);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+
+.hero-section__badge-number {
+  font-family: var(--font-title);
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: var(--clr-navy);
+  line-height: 1;
+}
+
+.hero-section__badge-label {
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: var(--clr-text-muted);
+  text-align: center;
+  letter-spacing: 0.02em;
+}
+
+/* ── Vague de transition ── */
+.hero-section__wave {
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  right: 0;
+  line-height: 0;
+  z-index: 2;
+}
+
+.hero-section__wave svg {
+  display: block;
+  width: 100%;
+  height: 60px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .hero-section__inner {
+    gap: 2.5rem;
+  }
+
+  .hero-section__text {
+    flex: 0 0 55%;
+    max-width: 55%;
+  }
+
+  .hero-section__visual {
+    flex: 0 0 42%;
+    max-width: 42%;
+  }
+}
+
+@media (max-width: 768px) {
+  .hero-section {
+    min-height: auto;
+    padding-bottom: 0;
+  }
+
+  .hero-section__inner {
+    flex-direction: column;
+    text-align: center;
+    padding-top: 2rem;
+    padding-bottom: 0;
+    gap: 2rem;
+  }
+
+  .hero-section__text {
+    flex: none;
+    max-width: 100%;
+  }
+
+  .hero-section__eyebrow {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-section__subtitle {
+    max-width: 56ch;
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-section__divider {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .hero-section__ctas {
+    justify-content: center;
+  }
+
+  .hero-section__proof {
+    justify-content: center;
+  }
+
+  .hero-section__visual {
+    flex: none;
+    max-width: min(400px, 100%);
+    width: 100%;
+    margin: 0 auto;
+  }
+
+  /* Cacher le cadre décoratif sur mobile */
+  .hero-section__visual::before {
+    display: none;
+  }
+
+  .hero-section__badge {
+    left: 0.5rem;
+    bottom: 1.5rem;
+  }
+
+  .hero-section__wave svg {
+    height: 40px;
+  }
+}
+
+@media (max-width: 480px) {
+  .hero-section__ctas {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .hero-section__cta {
+    width: 100%;
+    justify-content: center;
+    max-width: 320px;
+  }
+}

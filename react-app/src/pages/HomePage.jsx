@@ -1,16 +1,12 @@
-import React, { useEffect, useCallback, lazy, Suspense } from "react";
+import React, { useEffect, useCallback } from "react";
 import { Link, useLocation } from "react-router-dom";
 import Container from "../components/layout/Container";
-import ServiceCard from "../components/cards/ServiceCard";
-import AdvantageCard from "../components/cards/AdvantageCard";
-import FigureCard from "../components/cards/FigureCard";
+import ServicesSection from "../components/sections/ServicesSection";
+import AdvantagesSection from "../components/sections/AdvantagesSection";
+import KeyFiguresSection from "../components/sections/KeyFiguresSection";
 import ContactSection from "../components/sections/ContactSection";
-import RatingBadge from "../components/ui/RatingBadge";
+import HeroSection from "../components/sections/HeroSection";
 import useScrollToTop from "../hooks/useScrollToTop";
-import { services } from "../data/services";
-import { advantages } from "../data/advantages";
-import { keyFigures } from "../data/figures";
-import heroPeople from "../assets/images/hero-people.png";
 import imgAnalyse from "../assets/images/pexels-photo-2977547.jpeg";
 import imgProjet from "../assets/images/pexels-photo-5915194.jpeg";
 import imgParcours from "../assets/images/pexels-photo-3184465.jpeg";
@@ -78,56 +74,9 @@ export default function HomePage() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
       />
 
-      <section className="hero hero-index">
-        <div className="hero-rating">
-          <RatingBadge />
-        </div>
-        <Container className="index">
-          <div className="hero-content">
-            <div className="hero-text">
-              <h1 className="disappear">
-                {"FORMASECRET,"}
-                <br />
-                {"Votre succès, c'est notre secret !"}
-              </h1>
-              <p className="disappear">
-                {
-                  "Organisme de formation expert en efficacité professionnelle, management et vente"
-                }
-              </p>
-              <div className="cta-buttons">
-                <Link to="/formations" className="cta-button-picto header">
-                  <i className="fa-solid fa-arrow-right"></i>
-                  {"Découvrir nos formations"}
-                </Link>
-                <p className="hidden">{"Votre réussite commence ici !"}</p>
-              </div>
-            </div>
-            <div className="hero-visual">
-              <img
-                src={heroPeople}
-                alt="Apprenants et formateurs"
-                className="people-banner"
-                loading="eager"
-              />
-            </div>
-          </div>
-        </Container>
-      </section>
+      <HeroSection />
 
-      <section className="services">
-        <Container>
-          <h2>
-            <span className="title-style">{"Nos services de "}</span>
-            {"formation professionnelle certifiante"}
-          </h2>
-          <div className="services-grid">
-            {services.map((s, i) => (
-              <ServiceCard key={i} {...s} />
-            ))}
-          </div>
-        </Container>
-      </section>
+      <ServicesSection />
 
       <section className="presentation">
         <Container>
@@ -180,34 +129,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="key-advantages">
-        <Container>
-          <div className="key-advantages__wrap">
-            <div className="key-advantages__content">
-              <h2>
-                <span className="title-style ">{"Nos avantages"}</span>
-                {" clés"}
-              </h2>
-              <p>
-                {
-                  "Des formations concrètes, animées par des experts, pour développer des compétences utiles et immédiatement applicables."
-                }
-              </p>
-              <Link to="/#contact" className="key-advantages__cta">
-                <span>{"En savoir plus"}</span>
-                <span className="key-advantages__cta-icon">
-                  <i className="fa-solid fa-arrow-right"></i>
-                </span>
-              </Link>
-            </div>
-            <div className="advantages-grid">
-              {advantages.map((a, i) => (
-                <AdvantageCard key={i} {...a} />
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
+      <AdvantagesSection />
 
       <section className="certification">
         <Container>
@@ -278,23 +200,7 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="key-figures">
-        <Container>
-          <div className="key-figures-panel">
-            <div className="key-figures-header">
-              <p className="key-figures-eyebrow">
-                {"Des résultats, rien que des résultats."}
-              </p>
-              <h2>{"Nos chiffres clés"}</h2>
-            </div>
-            <div className="figures-grid">
-              {keyFigures.map((f, i) => (
-                <FigureCard key={i} {...f} />
-              ))}
-            </div>
-          </div>
-        </Container>
-      </section>
+      <KeyFiguresSection />
       <ContactSection />
 
       <LeadMagnet

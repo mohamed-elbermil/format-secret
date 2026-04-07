@@ -1,0 +1,280 @@
+/* ============================================================
+   ADVANTAGES SECTION – FormaSecret 2026
+   Fond    : bleu ardoise #1B2F4E — rupture visuelle forte
+   Layout  : header centré + grille 2×2
+   Accents : or sur icônes, titres, séparateurs
+   ============================================================ */
+
+/* ── Section wrapper ── */
+.adv-section {
+  background: var(--clr-navy);
+  padding: var(--padding-section-desktop);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Texture de fond : grille de points discrets */
+.adv-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(249, 247, 244, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+/* Halo gold subtil en haut à gauche */
+.adv-section::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  left: -80px;
+  width: 480px;
+  height: 480px;
+  background: radial-gradient(circle, rgba(200, 146, 42, 0.1) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* ── En-tête de section ── */
+.adv-header {
+  text-align: center;
+  margin-bottom: 4rem;
+  position: relative;
+  z-index: 1;
+}
+
+.adv-header__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 1.25rem;
+}
+
+.adv-header__eyebrow-line {
+  display: block;
+  width: 28px;
+  height: 1px;
+  background: var(--clr-gold);
+  opacity: 0.6;
+}
+
+.adv-header__title {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600;
+  color: var(--clr-cream);
+  line-height: 1.15;
+  margin-bottom: 1.1rem;
+}
+
+.adv-header__title em {
+  font-style: italic;
+  color: var(--clr-gold-light);
+}
+
+.adv-header__subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: rgba(249, 247, 244, 0.6);
+  line-height: 1.65;
+  max-width: 52ch;
+  margin: 0 auto;
+}
+
+/* ── Grille 2×2 ── */
+.adv-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 1.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+/* ── Card avantage ── */
+.adv-card {
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid rgba(249, 247, 244, 0.08);
+  border-radius: var(--radius-md);
+  padding: 2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  position: relative;
+  overflow: hidden;
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+/* Trait or vertical gauche (indicateur d'état) */
+.adv-card::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 2px;
+  background: var(--clr-gold);
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleY(0.4);
+  transition:
+    opacity var(--transition-base),
+    transform var(--transition-base);
+}
+
+.adv-card:hover {
+  background: rgba(255, 255, 255, 0.07);
+  border-color: rgba(200, 146, 42, 0.25);
+  transform: translateY(-4px);
+  box-shadow: 0 16px 48px rgba(0, 0, 0, 0.25);
+}
+
+.adv-card:hover::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* ── Icône ── */
+.adv-card__icon-wrap {
+  width: 52px;
+  height: 52px;
+  background: rgba(200, 146, 42, 0.12);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-gold);
+  flex-shrink: 0;
+  transition: background var(--transition-base);
+}
+
+.adv-card:hover .adv-card__icon-wrap {
+  background: rgba(200, 146, 42, 0.2);
+}
+
+/* ── Texte ── */
+.adv-card__title {
+  font-family: var(--font-title);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--clr-cream);
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+.adv-card__desc {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: rgba(249, 247, 244, 0.62);
+  line-height: 1.7;
+  margin: 0;
+}
+
+/* ── CTA bas de section ── */
+.adv-footer {
+  display: flex;
+  justify-content: center;
+  margin-top: 3.5rem;
+  position: relative;
+  z-index: 1;
+}
+
+.adv-footer__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--clr-navy-deep);
+  background: var(--clr-gold);
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.75rem;
+  transition:
+    background var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-fast);
+}
+
+.adv-footer__cta:hover {
+  background: var(--clr-gold-light);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.adv-footer__cta:active {
+  transform: translateY(0);
+}
+
+.adv-footer__cta svg {
+  transition: transform var(--transition-fast);
+}
+
+.adv-footer__cta:hover svg {
+  transform: translateX(4px);
+}
+
+.adv-footer__cta:focus-visible {
+  outline: 2px solid var(--clr-cream);
+  outline-offset: 4px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .adv-section {
+    padding: var(--padding-section-mobile);
+  }
+
+  .adv-header {
+    margin-bottom: 2.5rem;
+  }
+
+  /* Mobile : liste 1 colonne, layout horizontal (icône + texte côte à côte) */
+  .adv-grid {
+    grid-template-columns: 1fr;
+    gap: 1rem;
+  }
+
+  .adv-card {
+    flex-direction: row;
+    align-items: flex-start;
+    gap: 1.25rem;
+    padding: 1.5rem;
+  }
+
+  .adv-card__icon-wrap {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+  }
+
+  .adv-card__text {
+    min-width: 0;
+  }
+
+  /* Pas de trait gauche sur mobile (layout horizontal) */
+  .adv-card::before {
+    display: none;
+  }
+}
+
+@media (max-width: 480px) {
+  .adv-card {
+    padding: 1.25rem;
+  }
+}

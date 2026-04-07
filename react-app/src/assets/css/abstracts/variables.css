@@ -1,31 +1,77 @@
 :root {
+  /* ===================================================
+     LEGACY (conservé pour compatibilité composants existants)
+     =================================================== */
   --color-primary: #333249;
   --color-secondary: #f7ab3f;
   --color-tertiary: #ffffff;
 
-  /* Typography */
-  --font-size-hero-title: 3.2rem;
-  --font-size-hero-subtitle: 1.15rem;
-  --font-weight-hero-title: 800;
-  --font-weight-normal: 400;
-  --font-weight-bold: 700;
-
-  /* Spacing */
-  --padding-hero-desktop: 120px 0 0 0;
-  --padding-hero-mobile: 100px 0 0 0;
-  --margin-section: 80px 0;
-
-  /* Colors for text */
   --text-on-primary: #ffffff;
   --text-on-primary-light: #e9e8ff;
   --text-muted: #666666;
 
-  /* Border radius */
   --border-radius-card: 15px;
   --border-radius-button: 30px;
   --border-radius-large: 28px;
 
-  /* Shadows */
   --shadow-card: 0 5px 15px rgba(0, 0, 0, 0.1);
   --shadow-hover: 0 10px 25px rgba(15, 23, 42, 0.06);
+
+  --margin-section: 80px 0;
+
+  /* ===================================================
+     FORMASECRET 2026 – DESIGN SYSTEM
+     =================================================== */
+
+  /* Palette */
+  --clr-navy: #333249; /* Primaire : bleu ardoise profond */
+  --clr-navy-deep: #333249; /* Fond footer, barre de réassurance */
+  --clr-navy-mid: #243d60; /* Hover states, nuances intermédiaires */
+  --clr-gold: #f7ab3f; /* Accent : or satiné */
+  --clr-gold-light: #d9a040; /* Hover gold */
+  --clr-gold-pale: rgba(200, 146, 42, 0.15); /* Backgrounds gold subtils */
+  --clr-cream: #f9f7f4; /* Blanc cassé chaud – fond principal */
+  --clr-bg-alt: #f1efe9; /* Fond sections alternées */
+  --clr-text: #2c2c2c; /* Gris anthracite – texte principal */
+  --clr-text-muted: #6b6b6b; /* Texte secondaire */
+  --clr-white: #ffffff;
+
+  /* Typographie */
+  --font-title: "Cormorant Garamond", Georgia, "Times New Roman", serif;
+  --font-body: "Outfit", system-ui, -apple-system, sans-serif;
+
+  /* Échelle typographique */
+  --font-size-hero-title: 3.2rem;
+  --font-size-hero-subtitle: 1.15rem;
+  --font-weight-hero-title: 600;
+  --font-weight-normal: 400;
+  --font-weight-bold: 700;
+
+  /* Espacement sections */
+  --padding-section-desktop: 96px 0;
+  --padding-section-mobile: 56px 0;
+  --padding-hero-desktop: 140px 0 0 0;
+  --padding-hero-mobile: 110px 0 0 0;
+
+  /* Header */
+  --hdr-reassurance-h: 32px;
+  --hdr-nav-h: 70px;
+  --hdr-total-h: 102px; /* réassurance + nav */
+
+  /* Transitions */
+  --transition-fast: 200ms ease;
+  --transition-base: 300ms ease;
+  --transition-slow: 400ms cubic-bezier(0.4, 0, 0.2, 1);
+
+  /* Rayons */
+  --radius-sm: 4px;
+  --radius-md: 8px;
+  --radius-lg: 16px;
+  --radius-pill: 999px;
+
+  /* Ombres */
+  --shadow-sm: 0 2px 8px rgba(11, 23, 42, 0.08);
+  --shadow-md: 0 4px 24px rgba(11, 23, 42, 0.14);
+  --shadow-lg: 0 8px 48px rgba(11, 23, 42, 0.2);
+  --shadow-gold: 0 4px 20px rgba(200, 146, 42, 0.3);
 }

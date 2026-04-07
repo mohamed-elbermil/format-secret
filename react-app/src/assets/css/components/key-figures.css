@@ -1,0 +1,252 @@
+/* ============================================================
+   KEY FIGURES SECTION – FormaSecret 2026
+   Fond    : blanc pur — contraste fort après la bande navy
+   Chiffres : Cormorant Garamond grand format, navy
+   Labels  : Outfit, anthracite/muted
+   Séparateurs : traits or verticaux entre les figures
+   ============================================================ */
+
+/* ── Section wrapper ── */
+.kf-section {
+  background: #ffffff;
+  padding: var(--padding-section-desktop);
+  position: relative;
+  overflow: hidden;
+}
+
+/* Filet or en haut (signal de transition depuis le navy) */
+.kf-section::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 80px;
+  height: 3px;
+  background: var(--clr-gold);
+  border-radius: 0 0 var(--radius-sm) var(--radius-sm);
+}
+
+/* ── En-tête ── */
+.kf-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.kf-header__eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 1rem;
+}
+
+.kf-header__title {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600;
+  color: var(--clr-navy);
+  line-height: 1.15;
+  margin-bottom: 0.75rem;
+}
+
+.kf-header__title em {
+  font-style: italic;
+  color: var(--clr-gold);
+}
+
+.kf-header__subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--clr-text-muted);
+  line-height: 1.6;
+  max-width: 48ch;
+  margin: 0 auto;
+}
+
+/* ── Grille des chiffres ── */
+.kf-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  position: relative;
+}
+
+/* Séparateurs verticaux or entre les figures */
+.kf-grid::before,
+.kf-grid::after {
+  content: '';
+  position: absolute;
+  top: 15%;
+  bottom: 15%;
+  width: 1px;
+  background: linear-gradient(
+    to bottom,
+    transparent,
+    rgba(200, 146, 42, 0.4) 30%,
+    rgba(200, 146, 42, 0.4) 70%,
+    transparent
+  );
+}
+
+.kf-grid::before { left: 33.33%; }
+.kf-grid::after  { left: 66.66%; }
+
+/* ── Figure item ── */
+.kf-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: 2rem 2.5rem;
+  position: relative;
+}
+
+/* ── Icône ── */
+.kf-figure__icon {
+  width: 48px;
+  height: 48px;
+  background: var(--clr-gold-pale);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-gold);
+  margin-bottom: 1.5rem;
+  transition: background var(--transition-base);
+}
+
+.kf-figure:hover .kf-figure__icon {
+  background: rgba(200, 146, 42, 0.2);
+}
+
+/* ── Nombre (le héros de la section) ── */
+.kf-figure__number {
+  font-family: var(--font-title);
+  font-size: clamp(3.2rem, 6vw, 5.5rem);
+  font-weight: 700;
+  color: var(--clr-navy);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 0.75rem;
+
+  /* Animation subtile au déclenchement */
+  transition: color var(--transition-base);
+}
+
+.kf-figure__prefix,
+.kf-figure__suffix {
+  font-family: var(--font-title);
+  font-size: 0.65em; /* relatif au parent */
+  font-weight: 600;
+  color: var(--clr-gold);
+  vertical-align: super;
+  line-height: 1;
+}
+
+.kf-figure__prefix {
+  margin-right: 0.05em;
+  vertical-align: baseline;
+  font-size: 0.55em;
+}
+
+/* ── Label ── */
+.kf-figure__label {
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  font-weight: 700;
+  color: var(--clr-text);
+  letter-spacing: 0.01em;
+  margin-bottom: 0.4rem;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.08em;
+}
+
+/* ── Description ── */
+.kf-figure__desc {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--clr-text-muted);
+  line-height: 1.5;
+  max-width: 22ch;
+}
+
+/* ── Bandeau de réassurance bas ── */
+.kf-footer {
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(200, 146, 42, 0.18);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 3rem;
+  flex-wrap: wrap;
+}
+
+.kf-footer__item {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--clr-text-muted);
+}
+
+.kf-footer__item svg {
+  color: var(--clr-gold);
+  flex-shrink: 0;
+}
+
+.kf-footer__item strong {
+  color: var(--clr-text);
+  font-weight: 600;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .kf-section {
+    padding: var(--padding-section-mobile);
+  }
+
+  .kf-header {
+    margin-bottom: 2.5rem;
+  }
+
+  /* Mobile : colonne unique — séparateurs horizontaux */
+  .kf-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .kf-grid::before,
+  .kf-grid::after {
+    display: none;
+  }
+
+  .kf-figure {
+    padding: 2rem 1rem;
+    border-bottom: 1px solid rgba(200, 146, 42, 0.15);
+  }
+
+  .kf-figure:last-child {
+    border-bottom: none;
+  }
+
+  .kf-footer {
+    gap: 1.5rem;
+    flex-direction: column;
+    align-items: flex-start;
+    padding-left: 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .kf-figure__number {
+    font-size: clamp(3rem, 15vw, 4.5rem);
+  }
+}

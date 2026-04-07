@@ -1,0 +1,435 @@
+/* ============================================================
+   HEADER – FormaSecret 2026
+   Structure : barre de réassurance (collapsible) + navbar full-width
+   Palette   : navy #1B2F4E | gold #C8922A | cream #F9F7F4
+   ============================================================ */
+
+/* ── Root : wrapper fixed pleine largeur ── */
+.hdr-root {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+}
+
+/* ── Barre de réassurance ── */
+.hdr-reassurance {
+  background: var(--clr-navy-deep);
+  height: var(--hdr-reassurance-h);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  max-height: var(--hdr-reassurance-h);
+  opacity: 1;
+  transition:
+    max-height var(--transition-base),
+    opacity 250ms ease;
+}
+
+.hdr-root--scrolled .hdr-reassurance {
+  max-height: 0;
+  opacity: 0;
+}
+
+.hdr-bar-items {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 3.5rem;
+  align-items: center;
+}
+
+.hdr-bar-item {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 500;
+  color: rgba(249, 247, 244, 0.72);
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+}
+
+.hdr-bar-item svg {
+  color: var(--clr-gold);
+  flex-shrink: 0;
+}
+
+.hdr-bar-item strong {
+  color: var(--clr-gold-light);
+  font-weight: 700;
+}
+
+/* Séparateurs entre items */
+.hdr-bar-item + .hdr-bar-item {
+  padding-left: 3.5rem;
+  position: relative;
+}
+
+.hdr-bar-item + .hdr-bar-item::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 1px;
+  height: 16px;
+  background: rgba(249, 247, 244, 0.15);
+}
+
+/* ── Barre de navigation ── */
+.hdr-nav-bar {
+  background: #333249;
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border-bottom: 1px solid rgba(200, 146, 42, 0.14);
+  transition: box-shadow var(--transition-base);
+}
+
+.hdr-root--scrolled .hdr-nav-bar {
+  box-shadow: 0 4px 32px rgba(11, 23, 42, 0.28);
+}
+
+.hdr-container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+  height: var(--hdr-nav-h);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+}
+
+/* ── Logo ── */
+.hdr-logo {
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+  text-decoration: none;
+}
+
+.hdr-logo img {
+  height: 42px;
+  width: auto;
+  display: block;
+  transition: opacity var(--transition-fast);
+}
+
+.hdr-logo:hover img {
+  opacity: 0.88;
+}
+
+/* ── Navigation desktop ── */
+.hdr-nav {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+}
+
+.hdr-nav-list {
+  display: flex;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  gap: 0.25rem;
+}
+
+.hdr-nav-link {
+  display: block;
+  padding: 0.55rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: rgba(249, 247, 244, 0.82);
+  text-decoration: none;
+  letter-spacing: 0.025em;
+  position: relative;
+  transition: color var(--transition-base);
+}
+
+/* Soulignement animé */
+.hdr-nav-link::after {
+  content: "";
+  position: absolute;
+  bottom: 4px;
+  left: 1.1rem;
+  right: 1.1rem;
+  height: 1.5px;
+  background: var(--clr-gold);
+  border-radius: 2px;
+  transform: scaleX(0);
+  transform-origin: left center;
+  transition: transform 280ms ease;
+}
+
+.hdr-nav-link:hover {
+  color: var(--clr-cream);
+}
+
+.hdr-nav-link:hover::after,
+.hdr-nav-link--active::after {
+  transform: scaleX(1);
+}
+
+.hdr-nav-link--active {
+  color: var(--clr-cream);
+}
+
+/* Focus visible (accessibilité) */
+.hdr-nav-link:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+/* ── Bouton CTA "Nous contacter" ── */
+.hdr-cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.35rem;
+  background: var(--clr-gold);
+  color: var(--clr-navy-deep);
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  flex-shrink: 0;
+  transition:
+    background var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-fast);
+}
+
+.hdr-cta:hover {
+  background: var(--clr-gold-light);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-1px);
+}
+
+.hdr-cta:active {
+  transform: translateY(0);
+  box-shadow: none;
+}
+
+.hdr-cta:focus-visible {
+  outline: 2px solid var(--clr-cream);
+  outline-offset: 3px;
+}
+
+.hdr-cta svg {
+  transition: transform var(--transition-fast);
+}
+
+.hdr-cta:hover svg {
+  transform: translateX(3px);
+}
+
+/* ── Burger (masqué sur desktop) ── */
+.hdr-burger {
+  display: none;
+  flex-direction: column;
+  justify-content: center;
+  gap: 5px;
+  width: 42px;
+  height: 42px;
+  background: transparent;
+  border: 1.5px solid rgba(249, 247, 244, 0.25);
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  padding: 10px;
+  flex-shrink: 0;
+  transition:
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.hdr-burger:hover {
+  border-color: rgba(200, 146, 42, 0.5);
+  background: rgba(200, 146, 42, 0.06);
+}
+
+.hdr-burger:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 3px;
+}
+
+.hdr-burger-line {
+  display: block;
+  width: 100%;
+  height: 1.5px;
+  background: var(--clr-cream);
+  border-radius: 2px;
+  transform-origin: center;
+  transition:
+    transform 320ms cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 200ms ease;
+}
+
+/* Burger → X animé */
+.hdr-burger--open .hdr-burger-line:nth-child(1) {
+  transform: translateY(6.5px) rotate(45deg);
+}
+.hdr-burger--open .hdr-burger-line:nth-child(2) {
+  opacity: 0;
+  transform: scaleX(0);
+}
+.hdr-burger--open .hdr-burger-line:nth-child(3) {
+  transform: translateY(-6.5px) rotate(-45deg);
+}
+
+/* ── Drawer mobile ── */
+.hdr-drawer {
+  position: fixed;
+  top: 0;
+  right: 0;
+  height: 100%;
+  width: min(340px, 86vw);
+  background: var(--clr-navy);
+  z-index: 999;
+  transform: translateX(100%);
+  transition: transform 360ms cubic-bezier(0.4, 0, 0.2, 1);
+  display: flex;
+  flex-direction: column;
+  padding: 7rem 2rem 3rem;
+  border-left: 1px solid rgba(200, 146, 42, 0.2);
+  overflow-y: auto;
+}
+
+.hdr-drawer--open {
+  transform: translateX(0);
+}
+
+.hdr-drawer-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+.hdr-drawer-link {
+  display: block;
+  padding: 1rem 0;
+  font-family: var(--font-body);
+  font-size: 1.1rem;
+  font-weight: 500;
+  color: rgba(249, 247, 244, 0.78);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(249, 247, 244, 0.08);
+  letter-spacing: 0.02em;
+  transition:
+    color var(--transition-base),
+    padding-left var(--transition-base);
+}
+
+.hdr-drawer-link:hover,
+.hdr-drawer-link--active {
+  color: var(--clr-gold-light);
+  padding-left: 0.75rem;
+}
+
+.hdr-drawer-link:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.hdr-drawer-cta {
+  margin-top: 2.5rem;
+  display: block;
+  padding: 1rem 1.5rem;
+  background: var(--clr-gold);
+  color: var(--clr-navy-deep);
+  font-family: var(--font-body);
+  font-weight: 700;
+  font-size: 0.9rem;
+  text-align: center;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  transition:
+    background var(--transition-base),
+    box-shadow var(--transition-base);
+}
+
+.hdr-drawer-cta:hover {
+  background: var(--clr-gold-light);
+  box-shadow: var(--shadow-gold);
+}
+
+/* ── Overlay ── */
+.hdr-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(11, 23, 42, 0.65);
+  backdrop-filter: blur(3px);
+  -webkit-backdrop-filter: blur(3px);
+  z-index: 998;
+  animation: hdrFadeIn 300ms ease forwards;
+}
+
+@keyframes hdrFadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+/* Tablette + Mobile : masquer nav desktop & CTA, afficher burger */
+@media (max-width: 1024px) {
+  .hdr-nav,
+  .hdr-cta {
+    display: none;
+  }
+
+  .hdr-burger {
+    display: flex;
+  }
+}
+
+/* Tablette : réduire le logo légèrement */
+@media (max-width: 768px) {
+  .hdr-logo img {
+    height: 36px;
+  }
+
+  /* Cacher le 3e item de réassurance */
+  .hdr-bar-item:nth-child(3) {
+    display: none;
+  }
+
+  .hdr-bar-items {
+    gap: 0;
+  }
+}
+
+/* Mobile S : cacher le 2e item de réassurance aussi */
+@media (max-width: 480px) {
+  .hdr-bar-item:nth-child(2) {
+    display: none;
+  }
+
+  .hdr-logo img {
+    height: 32px;
+  }
+
+  .hdr-container {
+    height: 62px;
+  }
+}

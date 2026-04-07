@@ -1,0 +1,278 @@
+/* ============================================================
+   SERVICES SECTION – FormaSecret 2026
+   Layout : header centré + grille 3 colonnes
+   Cards  : image-badge / body / lien — hover élévation + bordure or
+   ============================================================ */
+
+/* ── Section wrapper ── */
+.svc-section {
+  background: var(--clr-cream);
+  padding: var(--padding-section-desktop);
+}
+
+/* ── En-tête de section ── */
+.svc-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.svc-header__eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 1rem;
+}
+
+.svc-header__title {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600;
+  color: var(--clr-navy);
+  line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+
+.svc-header__title em {
+  font-style: italic;
+  color: var(--clr-gold);
+}
+
+.svc-header__subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--clr-text-muted);
+  line-height: 1.65;
+  max-width: 52ch;
+  margin: 0 auto;
+}
+
+/* Ligne décorative sous le titre */
+.svc-header__rule {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1rem;
+  margin: 1.5rem auto 0;
+}
+
+.svc-header__rule-line {
+  width: 48px;
+  height: 1.5px;
+  background: linear-gradient(to right, transparent, var(--clr-gold));
+  border-radius: 2px;
+}
+
+.svc-header__rule-line:last-child {
+  background: linear-gradient(to left, transparent, var(--clr-gold));
+}
+
+.svc-header__rule-diamond {
+  width: 7px;
+  height: 7px;
+  background: var(--clr-gold);
+  transform: rotate(45deg);
+  flex-shrink: 0;
+}
+
+/* ── Grille 3 colonnes ── */
+.svc-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 2rem;
+}
+
+/* ── Card ── */
+.svc-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  /* Bordure or en bas : animée */
+  border-bottom: 3px solid transparent;
+  transition:
+    transform 320ms cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    box-shadow 320ms ease,
+    border-color 320ms ease;
+}
+
+.svc-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-bottom-color: var(--clr-gold);
+}
+
+/* ── Zone image ── */
+.svc-card__image {
+  position: relative;
+  height: 230px;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+.svc-card__image img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  transition: transform 400ms ease;
+}
+
+.svc-card:hover .svc-card__image img {
+  transform: scale(1.07);
+}
+
+/* Overlay dégradé bas → transparent pour lisibilité du badge */
+.svc-card__image::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(27, 47, 78, 0.42) 0%,
+    transparent 50%,
+    rgba(11, 23, 42, 0.18) 100%
+  );
+  pointer-events: none;
+}
+
+/* ── Badge domaine (coin haut-gauche) ── */
+.svc-card__badge {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  z-index: 2;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-gold-light);
+  background: rgba(15, 30, 48, 0.78);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+  border: 1px solid rgba(200, 146, 42, 0.3);
+  border-radius: var(--radius-pill);
+  padding: 0.3rem 0.8rem;
+}
+
+/* ── Corps de la card ── */
+.svc-card__body {
+  padding: 1.75rem 1.75rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* Icône domaine */
+.svc-card__icon {
+  width: 40px;
+  height: 40px;
+  background: var(--clr-gold-pale);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 1.1rem;
+  color: var(--clr-gold);
+  flex-shrink: 0;
+  transition: background var(--transition-base);
+}
+
+.svc-card:hover .svc-card__icon {
+  background: rgba(200, 146, 42, 0.22);
+}
+
+/* Titre */
+.svc-card__title {
+  font-family: var(--font-title);
+  font-size: 1.45rem;
+  font-weight: 600;
+  color: var(--clr-navy);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+  letter-spacing: 0.01em;
+}
+
+/* Description */
+.svc-card__desc {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+  flex: 1;
+}
+
+/* Lien "En savoir plus" */
+.svc-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  text-decoration: none;
+  padding-top: 1rem;
+  border-top: 1px solid rgba(200, 146, 42, 0.18);
+  margin-top: auto;
+  transition: gap var(--transition-fast), color var(--transition-fast);
+}
+
+.svc-card__link:hover {
+  color: var(--clr-gold-light);
+  gap: 0.7rem;
+}
+
+.svc-card__link:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 3px;
+  border-radius: var(--radius-sm);
+}
+
+.svc-card__link svg {
+  transition: transform var(--transition-fast);
+}
+
+.svc-card__link:hover svg {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .svc-grid {
+    gap: 1.5rem;
+  }
+
+  .svc-card__image {
+    height: 200px;
+  }
+}
+
+@media (max-width: 768px) {
+  .svc-section {
+    padding: var(--padding-section-mobile);
+  }
+
+  .svc-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .svc-header {
+    margin-bottom: 2.5rem;
+  }
+}

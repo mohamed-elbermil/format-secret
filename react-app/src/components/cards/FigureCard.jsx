@@ -1,46 +1,56 @@
-import React, { useEffect, useRef, useState } from 'react'
+import React from 'react'
+import { useCountUp } from '../../hooks/useCountUp'
 
-function animateValue(ref, start, end, duration, suffix) {
-  let startTimestamp = null
-  const step = (timestamp) => {
-    if (!startTimestamp) startTimestamp = timestamp
-    const progress = Math.min((timestamp - startTimestamp) / duration, 1)
-    const current = Math.floor(progress * (end - start) + start)
-    if (ref.current) ref.current.textContent = suffix ? `${current}${suffix}` : String(current)
-    if (progress < 1) requestAnimationFrame(step)
-  }
-  requestAnimationFrame(step)
+/* ── Icônes SVG par figure ── */
+const icons = {
+  participants: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
+      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+    </svg>
+  ),
+  satisfaction: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2" />
+    </svg>
+  ),
+  donneurs: (
+    <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14" />
+      <polyline points="22 4 12 14.01 9 11.01" />
+    </svg>
+  ),
 }
 
-export default function FigureCard({ icon, label, value, suffix = '', description }) {
-  const ref = useRef(null)
-  const [animated, setAnimated] = useState(false)
-  const observerRef = useRef(null)
-
-  useEffect(() => {
-    const el = ref.current
-    if (!el) return
-    observerRef.current = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting && !animated) {
-          setAnimated(true)
-          animateValue(ref, 0, value, 2000, suffix)
-        }
-      },
-      { threshold: 0.5 }
-    )
-    observerRef.current.observe(el)
-    return () => observerRef.current?.disconnect()
-  }, [value, suffix, animated])
+export default function FigureCard({ id, value, prefix = '', suffix = '', label, description }) {
+  const { count, ref } = useCountUp(value, 2200)
 
   return (
-    <div className="figure-card">
-      <div className="figure-icon">
-        <i className={icon} />
+    <div className="kf-figure">
+      {/* Icône */}
+      <div className="kf-figure__icon" aria-hidden="true">
+        {icons[id] ?? icons.participants}
       </div>
-      <h3>{label}</h3>
-      <div className="figure-number" ref={ref}>{suffix ? `0${suffix}` : '0'}</div>
-      <p>{description}</p>
+
+      {/* Grand chiffre animé */}
+      <div
+        className="kf-figure__number"
+        ref={ref}
+        aria-live="polite"
+        aria-label={`${prefix}${count}${suffix}`}
+      >
+        {prefix && <span className="kf-figure__prefix">{prefix}</span>}
+        {count}
+        {suffix && <span className="kf-figure__suffix">{suffix}</span>}
+      </div>
+
+      {/* Label */}
+      <p className="kf-figure__label">{label}</p>
+
+      {/* Description */}
+      <p className="kf-figure__desc">{description}</p>
     </div>
   )
 }

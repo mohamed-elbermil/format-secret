@@ -1,0 +1,269 @@
+/* ============================================================
+   CERTIFICATIONS SECTION – FormaSecret 2026
+   Layout  : 2 cards côte à côte (Qualiopi + DISC FLOW®)
+   Fond    : bg-alt #F1EFE9 — doux, professionnel
+   Accents : or sur les coches, bordures, badges
+   ============================================================ */
+
+/* ── Section wrapper ── */
+.cert-section {
+  background: var(--clr-bg-alt);
+  padding: var(--padding-section-desktop);
+  position: relative;
+}
+
+/* ── En-tête ── */
+.cert-header {
+  text-align: center;
+  margin-bottom: 4rem;
+}
+
+.cert-header__eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 1rem;
+}
+
+.cert-header__title {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600;
+  color: var(--clr-navy);
+  line-height: 1.15;
+  margin-bottom: 0.9rem;
+}
+
+.cert-header__title em {
+  font-style: italic;
+  color: var(--clr-gold);
+}
+
+.cert-header__subtitle {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  color: var(--clr-text-muted);
+  line-height: 1.65;
+  max-width: 52ch;
+  margin: 0 auto;
+}
+
+/* ── Grille 2 colonnes ── */
+.cert-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  align-items: stretch;
+}
+
+/* ── Card commune ── */
+.cert-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  transition: box-shadow var(--transition-base), transform var(--transition-base);
+}
+
+.cert-card:hover {
+  box-shadow: var(--shadow-md);
+  transform: translateY(-3px);
+}
+
+/* ── Bande colorée en haut de chaque card ── */
+.cert-card__stripe {
+  height: 4px;
+  background: var(--clr-gold);
+  flex-shrink: 0;
+}
+
+.cert-card--disc .cert-card__stripe {
+  background: linear-gradient(
+    to right,
+    #C8922A 25%,
+    #1B2F4E 25% 50%,
+    #2C5F8A 50% 75%,
+    #8B6914 75%
+  );
+}
+
+/* Badge "Certifié" / "Méthode" en haut à droite */
+.cert-card__badge {
+  position: absolute;
+  top: 1.25rem;
+  right: 1.25rem;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  background: rgba(200, 146, 42, 0.1);
+  border: 1px solid rgba(200, 146, 42, 0.3);
+  border-radius: var(--radius-pill);
+  padding: 0.25rem 0.7rem;
+}
+
+/* ── Corps de la card ── */
+.cert-card__body {
+  padding: 2rem 2rem 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+/* ── Zone logo / icône ── */
+.cert-card__visual {
+  margin-bottom: 1.75rem;
+}
+
+/* Logo Qualiopi */
+.cert-card__logo {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  background: var(--clr-cream);
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(200, 146, 42, 0.2);
+  transition: border-color var(--transition-base);
+}
+
+.cert-card__logo:hover {
+  border-color: rgba(200, 146, 42, 0.5);
+}
+
+.cert-card__logo img {
+  height: 56px;
+  width: auto;
+  display: block;
+}
+
+/* Icône DISC FLOW® */
+.cert-card__disc-icon {
+  width: 80px;
+  height: 80px;
+  display: block;
+}
+
+/* ── Titre ── */
+.cert-card__title {
+  font-family: var(--font-title);
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--clr-navy);
+  margin-bottom: 0.75rem;
+  line-height: 1.2;
+}
+
+/* ── Description ── */
+.cert-card__desc {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--clr-text-muted);
+  line-height: 1.7;
+  margin-bottom: 1.5rem;
+}
+
+/* ── Checklist ── */
+.cert-card__list {
+  list-style: none;
+  margin: 0 0 1.75rem;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+}
+
+.cert-card__list-item {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--clr-text);
+  line-height: 1.5;
+}
+
+.cert-card__check {
+  flex-shrink: 0;
+  width: 18px;
+  height: 18px;
+  background: rgba(200, 146, 42, 0.12);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-gold);
+  margin-top: 1px;
+}
+
+/* ── Lien externe discret ── */
+.cert-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 600;
+  color: var(--clr-text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid rgba(200, 146, 42, 0.3);
+  padding-bottom: 1px;
+  margin-top: auto;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+  width: fit-content;
+}
+
+.cert-card__link:hover {
+  color: var(--clr-gold);
+  border-color: var(--clr-gold);
+}
+
+.cert-card__link:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 4px;
+  border-radius: var(--radius-sm);
+}
+
+.cert-card__link svg {
+  transition: transform var(--transition-fast);
+}
+
+.cert-card__link:hover svg {
+  transform: translate(2px, -2px);
+}
+
+/* ── Note légale sous les cards ── */
+.cert-note {
+  text-align: center;
+  margin-top: 2rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: rgba(107, 107, 107, 0.7);
+  line-height: 1.5;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .cert-section {
+    padding: var(--padding-section-mobile);
+  }
+
+  .cert-header {
+    margin-bottom: 2.5rem;
+  }
+
+  .cert-grid {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+}
