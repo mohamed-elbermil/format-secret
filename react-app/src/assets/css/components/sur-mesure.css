@@ -1,0 +1,307 @@
+/* ============================================================
+   FORMATION SUR MESURE – FormaSecret 2026
+   Fond    : navy plein #1B2F4E + texture géométrique
+   Layout  : 2 colonnes — argumentaire gauche / 3 points forts droite
+   CTA     : or centré en bas
+   ============================================================ */
+
+/* ── Section ── */
+.surm-section {
+  position: relative;
+  background: var(--clr-navy);
+  padding: var(--padding-section-desktop);
+  overflow: hidden;
+}
+
+/* Texture géométrique de fond (grille de points + halo) */
+.surm-section::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(249, 247, 244, 0.05) 1px, transparent 1px);
+  background-size: 24px 24px;
+  pointer-events: none;
+}
+
+.surm-section::after {
+  content: '';
+  position: absolute;
+  top: -80px;
+  right: -80px;
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, rgba(200, 146, 42, 0.12) 0%, transparent 65%);
+  pointer-events: none;
+}
+
+/* ── Layout 2 colonnes ── */
+.surm-grid {
+  position: relative;
+  z-index: 1;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 5rem;
+  align-items: center;
+}
+
+/* ============================================================
+   COLONNE GAUCHE — Argumentaire
+   ============================================================ */
+
+.surm-left__eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 1.4rem;
+}
+
+.surm-left__eyebrow-line {
+  display: block;
+  width: 24px;
+  height: 1px;
+  background: var(--clr-gold);
+  opacity: 0.6;
+}
+
+.surm-left__title {
+  font-family: var(--font-title);
+  font-size: clamp(2rem, 3.5vw, 3rem);
+  font-weight: 600;
+  color: var(--clr-cream);
+  line-height: 1.12;
+  margin-bottom: 1.5rem;
+}
+
+.surm-left__title em {
+  font-style: italic;
+  color: var(--clr-gold-light);
+}
+
+.surm-left__divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(to right, var(--clr-gold), transparent);
+  border-radius: 2px;
+  margin-bottom: 1.5rem;
+}
+
+.surm-left__text {
+  font-family: var(--font-body);
+  font-size: 0.97rem;
+  color: rgba(249, 247, 244, 0.68);
+  line-height: 1.78;
+  margin-bottom: 1rem;
+}
+
+.surm-left__text strong {
+  color: rgba(249, 247, 244, 0.95);
+  font-weight: 600;
+}
+
+/* ── Mini-checklist ── */
+.surm-left__checks {
+  list-style: none;
+  margin: 1.75rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.surm-left__check-item {
+  display: flex;
+  align-items: center;
+  gap: 0.7rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: rgba(249, 247, 244, 0.75);
+}
+
+.surm-left__check-icon {
+  width: 20px;
+  height: 20px;
+  background: rgba(200, 146, 42, 0.15);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-gold);
+  flex-shrink: 0;
+}
+
+/* ============================================================
+   COLONNE DROITE — 3 points forts
+   ============================================================ */
+
+.surm-right {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+}
+
+.surm-point {
+  display: flex;
+  gap: 1.25rem;
+  align-items: flex-start;
+  padding: 1.5rem;
+  background: rgba(255, 255, 255, 0.05);
+  border: 1px solid rgba(249, 247, 244, 0.08);
+  border-radius: var(--radius-md);
+  position: relative;
+  overflow: hidden;
+  transition:
+    background var(--transition-base),
+    border-color var(--transition-base),
+    transform var(--transition-base);
+}
+
+/* Trait gold gauche */
+.surm-point::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 20%;
+  bottom: 20%;
+  width: 2px;
+  background: var(--clr-gold);
+  border-radius: 2px;
+  opacity: 0;
+  transform: scaleY(0.4);
+  transition: opacity var(--transition-base), transform var(--transition-base);
+}
+
+.surm-point:hover {
+  background: rgba(255, 255, 255, 0.08);
+  border-color: rgba(200, 146, 42, 0.25);
+  transform: translateX(4px);
+}
+
+.surm-point:hover::before {
+  opacity: 1;
+  transform: scaleY(1);
+}
+
+/* Icône */
+.surm-point__icon {
+  width: 48px;
+  height: 48px;
+  background: rgba(200, 146, 42, 0.12);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-gold);
+  flex-shrink: 0;
+  transition: background var(--transition-base);
+}
+
+.surm-point:hover .surm-point__icon {
+  background: rgba(200, 146, 42, 0.22);
+}
+
+/* Texte */
+.surm-point__title {
+  font-family: var(--font-title);
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--clr-cream);
+  margin-bottom: 0.35rem;
+  line-height: 1.2;
+}
+
+.surm-point__desc {
+  font-family: var(--font-body);
+  font-size: 0.87rem;
+  color: rgba(249, 247, 244, 0.58);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ============================================================
+   CTA BAS DE SECTION (centré, pleine largeur)
+   ============================================================ */
+
+.surm-footer {
+  position: relative;
+  z-index: 1;
+  display: flex;
+  justify-content: center;
+  margin-top: 4rem;
+  padding-top: 3rem;
+  border-top: 1px solid rgba(200, 146, 42, 0.18);
+}
+
+.surm-footer__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  text-decoration: none;
+  color: var(--clr-navy-deep);
+  background: var(--clr-gold);
+  border-radius: var(--radius-sm);
+  padding: 1rem 2.25rem;
+  transition:
+    background var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-fast);
+}
+
+.surm-footer__cta:hover {
+  background: var(--clr-gold-light);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.surm-footer__cta:active {
+  transform: translateY(0);
+}
+
+.surm-footer__cta:focus-visible {
+  outline: 2px solid var(--clr-cream);
+  outline-offset: 4px;
+}
+
+.surm-footer__cta svg {
+  transition: transform var(--transition-fast);
+}
+
+.surm-footer__cta:hover svg {
+  transform: translateX(4px);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .surm-grid {
+    gap: 3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .surm-section {
+    padding: var(--padding-section-mobile);
+  }
+
+  .surm-grid {
+    grid-template-columns: 1fr;
+    gap: 2.5rem;
+  }
+
+  /* Sur mobile : les points ne se déplacent pas en X */
+  .surm-point:hover {
+    transform: none;
+  }
+}

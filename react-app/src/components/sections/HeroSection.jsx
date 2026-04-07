@@ -1,7 +1,7 @@
-import React from 'react'
-import { Link } from 'react-router-dom'
-import heroPeople from '../../assets/images/hero-people.png'
-import '@/assets/css/components/hero.css'
+import React from "react";
+import { Link } from "react-router-dom";
+import heroPeople from "../../assets/images/hero-people.png";
+import "@/assets/css/components/hero.css";
 
 /* ── Icônes SVG inline (pas d'emoji, pas de Font Awesome) ── */
 
@@ -20,12 +20,14 @@ const IconArrow = () => (
     <line x1="5" y1="12" x2="19" y2="12" />
     <polyline points="12 5 19 12 12 19" />
   </svg>
-)
+);
 
 export default function HeroSection() {
   return (
-    <section className="hero-section" aria-label="Bannière principale FormaSecret">
-
+    <section
+      className="hero-section"
+      aria-label="Bannière principale FormaSecret"
+    >
       {/* ── Éléments de fond décoratifs ── */}
       <div className="hero-section__bg" aria-hidden="true">
         <div className="hero-section__bg-dots" />
@@ -35,10 +37,8 @@ export default function HeroSection() {
 
       {/* ── Contenu principal ── */}
       <div className="hero-section__inner container">
-
         {/* Colonne texte */}
         <div className="hero-section__text">
-
           {/* Eyebrow – label de confiance */}
           <p className="hero-section__eyebrow">
             <span className="hero-section__eyebrow-dot" aria-hidden="true" />
@@ -57,10 +57,10 @@ export default function HeroSection() {
 
           {/* Sous-titre : 3 domaines */}
           <p className="hero-section__subtitle">
-            Expert en <strong>efficacité professionnelle</strong>,{' '}
-            <strong>management</strong> et <strong>vente &amp; commerce</strong> —
-            des formations concrètes animées par des praticiens, pour des compétences
-            immédiatement applicables en entreprise.
+            Expert en <strong>efficacité professionnelle</strong>,{" "}
+            <strong>management</strong> et <strong>vente &amp; commerce</strong>{" "}
+            — des formations concrètes animées par des praticiens, pour des
+            compétences immédiatement applicables en entreprise.
           </p>
 
           {/* Boutons CTA */}
@@ -86,7 +86,8 @@ export default function HeroSection() {
               ★★★★★
             </span>
             <span className="hero-section__proof-text">
-              Recommandé par <strong>+500 professionnels</strong>
+              La solution qui séduit de
+              <strong> plus en plus de professionnels.</strong>
             </span>
           </div>
         </div>
@@ -107,16 +108,21 @@ export default function HeroSection() {
             <span className="hero-section__badge-label">de satisfaction</span>
           </div>
         </div>
-
       </div>
 
       {/* ── Vague de transition vers la section suivante ── */}
       <div className="hero-section__wave" aria-hidden="true">
-        <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-          <path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" fill="var(--clr-cream)" />
+        <svg
+          viewBox="0 0 1440 60"
+          preserveAspectRatio="none"
+          xmlns="http://www.w3.org/2000/svg"
+        >
+          <path
+            d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z"
+            fill="var(--clr-cream)"
+          />
         </svg>
       </div>
-
     </section>
-  )
+  );
 }

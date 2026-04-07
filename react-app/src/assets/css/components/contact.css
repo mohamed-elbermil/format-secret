@@ -1,0 +1,479 @@
+/* ============================================================
+   CONTACT SECTION – FormaSecret 2026
+   Layout  : 2 colonnes — infos navy à gauche / formulaire à droite
+   Fond    : #F1EFE9 (bg-alt)
+   Labels  : floating labels animés au focus
+   États   : loading spinner / success / error
+   ============================================================ */
+
+/* ── Section wrapper ── */
+.ctc-section {
+  background: var(--clr-bg-alt);
+  padding: var(--padding-section-desktop);
+}
+
+/* ── Grille 2 colonnes ── */
+.ctc-grid {
+  display: grid;
+  grid-template-columns: 380px 1fr;
+  gap: 2.5rem;
+  align-items: start;
+}
+
+/* ============================================================
+   COLONNE GAUCHE — Infos de contact
+   ============================================================ */
+
+.ctc-info {
+  background: var(--clr-navy);
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  position: sticky;
+  top: calc(var(--hdr-total-h) + 2rem);
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  overflow: hidden;
+}
+
+/* Halo décoratif */
+.ctc-info::before {
+  content: '';
+  position: absolute;
+  bottom: -60px;
+  right: -60px;
+  width: 220px;
+  height: 220px;
+  background: radial-gradient(circle, rgba(200, 146, 42, 0.15) 0%, transparent 70%);
+  pointer-events: none;
+}
+
+/* Grille de points */
+.ctc-info::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(249, 247, 244, 0.06) 1px, transparent 1px);
+  background-size: 20px 20px;
+  pointer-events: none;
+}
+
+.ctc-info__inner {
+  position: relative;
+  z-index: 1;
+}
+
+/* Eyebrow */
+.ctc-info__eyebrow {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 0.9rem;
+}
+
+/* Titre */
+.ctc-info__title {
+  font-family: var(--font-title);
+  font-size: 1.9rem;
+  font-weight: 600;
+  color: var(--clr-cream);
+  line-height: 1.15;
+  margin-bottom: 0.85rem;
+}
+
+.ctc-info__title em {
+  font-style: italic;
+  color: var(--clr-gold-light);
+}
+
+/* Sous-titre */
+.ctc-info__subtitle {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: rgba(249, 247, 244, 0.6);
+  line-height: 1.65;
+  margin-bottom: 2rem;
+}
+
+/* Séparateur */
+.ctc-info__divider {
+  width: 40px;
+  height: 1.5px;
+  background: linear-gradient(to right, var(--clr-gold), transparent);
+  margin-bottom: 2rem;
+}
+
+/* Cartes d'info (téléphone, email, horaires) */
+.ctc-info__items {
+  display: flex;
+  flex-direction: column;
+  gap: 1.25rem;
+  margin-bottom: 2rem;
+}
+
+.ctc-info__item {
+  display: flex;
+  align-items: flex-start;
+  gap: 1rem;
+}
+
+.ctc-info__item-icon {
+  width: 38px;
+  height: 38px;
+  background: rgba(200, 146, 42, 0.12);
+  border-radius: var(--radius-sm);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-gold);
+  flex-shrink: 0;
+}
+
+.ctc-info__item-label {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: rgba(249, 247, 244, 0.45);
+  display: block;
+  margin-bottom: 0.2rem;
+}
+
+.ctc-info__item-value {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--clr-cream);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+  line-height: 1.4;
+}
+
+a.ctc-info__item-value:hover {
+  color: var(--clr-gold-light);
+}
+
+/* Réseaux sociaux */
+.ctc-info__social {
+  display: flex;
+  gap: 0.6rem;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(249, 247, 244, 0.08);
+}
+
+.ctc-info__social-link {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1px solid rgba(249, 247, 244, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: rgba(249, 247, 244, 0.55);
+  text-decoration: none;
+  transition:
+    color var(--transition-fast),
+    border-color var(--transition-fast),
+    background var(--transition-fast);
+}
+
+.ctc-info__social-link:hover {
+  color: var(--clr-gold-light);
+  border-color: rgba(200, 146, 42, 0.4);
+  background: rgba(200, 146, 42, 0.08);
+}
+
+.ctc-info__social-link:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 3px;
+}
+
+/* ============================================================
+   COLONNE DROITE — Formulaire
+   ============================================================ */
+
+.ctc-form-wrap {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  padding: 2.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.ctc-form__title {
+  font-family: var(--font-title);
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: var(--clr-navy);
+  margin-bottom: 0.4rem;
+  line-height: 1.2;
+}
+
+.ctc-form__subtitle {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--clr-text-muted);
+  margin-bottom: 2rem;
+}
+
+/* Grille interne 2 colonnes */
+.ctc-form__row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.25rem;
+}
+
+.ctc-form__row--full {
+  grid-template-columns: 1fr;
+}
+
+/* ── Floating label ── */
+.ctc-field {
+  position: relative;
+  margin-bottom: 1.25rem;
+}
+
+.ctc-field__input,
+.ctc-field__textarea {
+  width: 100%;
+  padding: 1.5rem 1rem 0.6rem;
+  font-family: var(--font-body);
+  font-size: 0.95rem;
+  color: var(--clr-text);
+  background: #ffffff;
+  border: 1.5px solid rgba(44, 44, 44, 0.16);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition:
+    border-color var(--transition-base),
+    box-shadow var(--transition-base);
+  box-sizing: border-box;
+  appearance: none;
+}
+
+.ctc-field__textarea {
+  resize: vertical;
+  min-height: 140px;
+}
+
+/* Bordure + shadow au focus */
+.ctc-field__input:focus,
+.ctc-field__textarea:focus {
+  border-color: var(--clr-gold);
+  box-shadow: 0 0 0 3px rgba(200, 146, 42, 0.12);
+}
+
+/* Bordure rouge sur invalid + tentative de submit */
+.ctc-field__input:invalid:not(:placeholder-shown),
+.ctc-field__textarea:invalid:not(:placeholder-shown) {
+  border-color: #e53e3e;
+}
+
+/* Placeholder invisible — requis pour le floating label */
+.ctc-field__input::placeholder,
+.ctc-field__textarea::placeholder {
+  color: transparent;
+}
+
+/* ── Label flottant ── */
+.ctc-field__label {
+  position: absolute;
+  top: 50%;
+  left: 1rem;
+  transform: translateY(-50%);
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  font-weight: 400;
+  color: var(--clr-text-muted);
+  pointer-events: none;
+  transition:
+    top 200ms ease,
+    transform 200ms ease,
+    font-size 200ms ease,
+    color 200ms ease;
+  transform-origin: left center;
+}
+
+/* Label textarea : positionné en haut par défaut */
+.ctc-field--textarea .ctc-field__label {
+  top: 1.25rem;
+  transform: none;
+}
+
+/* État flottant : classe ajoutée via React (focus ou valeur non vide) */
+.ctc-field__label--float {
+  top: 0.45rem !important;
+  transform: translateY(0) !important;
+  font-size: 0.72rem !important;
+  font-weight: 600 !important;
+  color: var(--clr-gold) !important;
+  letter-spacing: 0.05em !important;
+}
+
+/* ── Bouton d'envoi ── */
+.ctc-form__footer {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  margin-top: 0.5rem;
+}
+
+.ctc-submit {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.6rem;
+  width: 100%;
+  padding: 1rem 2rem;
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--clr-navy-deep);
+  background: var(--clr-gold);
+  border: none;
+  border-radius: var(--radius-sm);
+  cursor: pointer;
+  transition:
+    background var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-fast);
+}
+
+.ctc-submit:hover:not(:disabled) {
+  background: var(--clr-gold-light);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-1px);
+}
+
+.ctc-submit:active:not(:disabled) {
+  transform: translateY(0);
+}
+
+.ctc-submit:disabled {
+  opacity: 0.75;
+  cursor: not-allowed;
+}
+
+.ctc-submit:focus-visible {
+  outline: 2px solid var(--clr-navy);
+  outline-offset: 4px;
+}
+
+/* ── Spinner loading ── */
+.ctc-spinner {
+  width: 16px;
+  height: 16px;
+  border: 2px solid rgba(15, 30, 48, 0.25);
+  border-top-color: var(--clr-navy-deep);
+  border-radius: 50%;
+  animation: ctcSpin 0.7s linear infinite;
+  flex-shrink: 0;
+}
+
+@keyframes ctcSpin {
+  to { transform: rotate(360deg); }
+}
+
+/* ── Message succès ── */
+.ctc-success {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.85rem;
+  padding: 1.25rem 1.5rem;
+  background: rgba(200, 146, 42, 0.08);
+  border: 1px solid rgba(200, 146, 42, 0.3);
+  border-radius: var(--radius-sm);
+  animation: ctcFadeIn 0.4s ease both;
+}
+
+.ctc-success__icon {
+  width: 22px;
+  height: 22px;
+  background: var(--clr-gold);
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--clr-navy-deep);
+  flex-shrink: 0;
+}
+
+.ctc-success__text {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  color: var(--clr-text);
+  line-height: 1.5;
+}
+
+.ctc-success__text strong {
+  display: block;
+  font-weight: 700;
+  color: var(--clr-navy);
+  margin-bottom: 0.2rem;
+}
+
+/* ── Message erreur ── */
+.ctc-error {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 1rem 1.25rem;
+  background: rgba(229, 62, 62, 0.06);
+  border: 1px solid rgba(229, 62, 62, 0.25);
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: #c53030;
+  animation: ctcFadeIn 0.4s ease both;
+}
+
+@keyframes ctcFadeIn {
+  from { opacity: 0; transform: translateY(8px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* Note RGPD */
+.ctc-form__rgpd {
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  color: var(--clr-text-muted);
+  line-height: 1.5;
+  text-align: center;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .ctc-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .ctc-info {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .ctc-section {
+    padding: var(--padding-section-mobile);
+  }
+
+  .ctc-form-wrap {
+    padding: 1.75rem 1.25rem;
+  }
+
+  .ctc-form__row {
+    grid-template-columns: 1fr;
+  }
+
+  .ctc-info {
+    padding: 2rem 1.5rem;
+  }
+}

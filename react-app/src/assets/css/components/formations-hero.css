@@ -1,0 +1,289 @@
+/* ============================================================
+   FORMATIONS HERO – FormaSecret 2026
+   Fond    : photo réelle + overlay navy dégradé directionnel
+   Layout  : centré avec fil d'Ariane en haut
+   Anim.   : fade + slide-up CSS staggeré (même pattern que l'accueil)
+   ============================================================ */
+
+@keyframes fhFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ── Wrapper ── */
+.fh-section {
+  position: relative;
+  min-height: 52vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding-top: var(--hdr-total-h);
+  overflow: hidden;
+}
+
+/* ── Photo de fond ── */
+.fh-bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+}
+
+.fh-bg img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center 30%;
+  display: block;
+}
+
+/* Overlay : dégradé navy directionnel (gauche dense → droite léger) */
+.fh-bg::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    105deg,
+    rgba(27, 47, 78, 0.93) 0%,
+    rgba(27, 47, 78, 0.75) 55%,
+    rgba(15, 30, 48, 0.88) 100%
+  );
+}
+
+/* ── Contenu ── */
+.fh-inner {
+  position: relative;
+  z-index: 1;
+  padding: 3.5rem 0 4rem;
+}
+
+/* ── Fil d'Ariane ── */
+.fh-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: rgba(249, 247, 244, 0.55);
+  margin-bottom: 2rem;
+  letter-spacing: 0.04em;
+
+  animation: fhFadeUp 0.5s ease both;
+  animation-delay: 0.05s;
+}
+
+.fh-breadcrumb a {
+  color: rgba(249, 247, 244, 0.55);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.fh-breadcrumb a:hover {
+  color: var(--clr-gold-light);
+}
+
+.fh-breadcrumb-sep {
+  color: rgba(249, 247, 244, 0.3);
+}
+
+.fh-breadcrumb-current {
+  color: var(--clr-gold);
+  font-weight: 600;
+}
+
+/* ── Eyebrow ── */
+.fh-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 1.25rem;
+  padding: 0.35rem 0.9rem;
+  border: 1px solid rgba(200, 146, 42, 0.35);
+  border-radius: var(--radius-pill);
+  background: rgba(200, 146, 42, 0.1);
+
+  animation: fhFadeUp 0.55s ease both;
+  animation-delay: 0.15s;
+}
+
+/* ── H1 ── */
+.fh-title {
+  font-family: var(--font-title);
+  font-size: clamp(2.6rem, 5vw, 4.2rem);
+  font-weight: 600;
+  color: var(--clr-cream);
+  line-height: 1.1;
+  letter-spacing: -0.01em;
+  margin-bottom: 1.1rem;
+  max-width: 18ch;
+
+  animation: fhFadeUp 0.6s ease both;
+  animation-delay: 0.25s;
+}
+
+.fh-title em {
+  font-style: italic;
+  color: var(--clr-gold-light);
+}
+
+/* Séparateur ── */
+.fh-divider {
+  width: 48px;
+  height: 2px;
+  background: linear-gradient(to right, var(--clr-gold), transparent);
+  border-radius: 2px;
+  margin-bottom: 1.25rem;
+
+  animation: fhFadeUp 0.5s ease both;
+  animation-delay: 0.32s;
+}
+
+/* ── Sous-titre ── */
+.fh-subtitle {
+  font-family: var(--font-body);
+  font-size: 1.05rem;
+  color: rgba(249, 247, 244, 0.72);
+  line-height: 1.65;
+  max-width: 50ch;
+  margin-bottom: 2.25rem;
+
+  animation: fhFadeUp 0.6s ease both;
+  animation-delay: 0.4s;
+}
+
+/* ── Boutons ── */
+.fh-ctas {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+
+  animation: fhFadeUp 0.6s ease both;
+  animation-delay: 0.52s;
+}
+
+.fh-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.55rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  padding: 0.85rem 1.6rem;
+  cursor: pointer;
+  border: 2px solid transparent;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-fast);
+}
+
+/* Primaire — or plein */
+.fh-btn--primary {
+  background: var(--clr-gold);
+  color: var(--clr-navy-deep);
+  border-color: var(--clr-gold);
+}
+
+.fh-btn--primary:hover {
+  background: var(--clr-gold-light);
+  border-color: var(--clr-gold-light);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-2px);
+}
+
+.fh-btn--primary svg {
+  transition: transform var(--transition-fast);
+}
+
+.fh-btn--primary:hover svg {
+  transform: translateY(3px);
+}
+
+/* Secondaire — outline blanc */
+.fh-btn--secondary {
+  background: transparent;
+  color: rgba(249, 247, 244, 0.88);
+  border-color: rgba(249, 247, 244, 0.38);
+}
+
+.fh-btn--secondary:hover {
+  border-color: rgba(249, 247, 244, 0.75);
+  color: var(--clr-cream);
+  background: rgba(249, 247, 244, 0.06);
+  transform: translateY(-1px);
+}
+
+.fh-btn:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 4px;
+}
+
+/* ── Vague de transition ── */
+.fh-wave {
+  position: relative;
+  z-index: 1;
+  line-height: 0;
+  margin-top: -1px;
+}
+
+.fh-wave svg {
+  display: block;
+  width: 100%;
+  height: 50px;
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 768px) {
+  .fh-section {
+    min-height: 58vh;
+  }
+
+  .fh-inner {
+    padding: 2.5rem 0 3rem;
+  }
+
+  .fh-title {
+    max-width: 100%;
+  }
+
+  .fh-subtitle {
+    max-width: 100%;
+  }
+
+  .fh-ctas {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .fh-btn {
+    width: 100%;
+    justify-content: center;
+    max-width: 340px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fh-section {
+    min-height: 64vh;
+  }
+
+  .fh-title {
+    font-size: clamp(2.2rem, 9vw, 2.8rem);
+  }
+}

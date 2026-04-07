@@ -1,18 +1,99 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { formations } from '../../data/formations'
-import Button from '../ui/Button'
+import '@/assets/css/components/formation-modal.css'
+
+/* ── Couleur badge par catégorie (correspond aux cards) ── */
+const catColors = {
+  management:    '#1B2F4E',
+  communication: '#2D6A4F',
+  commercial:    '#C8922A',
+  developpement: '#6B3FA0',
+  securite:      '#9B2335',
+}
+
+/* Mapping clé formation → catégorie */
+const keyCat = {
+  formation3:  'management',
+  formation8:  'management',
+  formation15: 'management',
+  formation7:  'communication',
+  formation16: 'communication',
+  formation14: 'communication',
+  formation5:  'commercial',
+  formation6:  'developpement',
+  formation20: 'securite',
+  formation21: 'securite',
+  formation22: 'securite',
+}
+
+const catLabels = {
+  management:    'Management',
+  communication: 'Communication',
+  commercial:    'Commercial',
+  developpement: 'Dév. Personnel',
+  securite:      'Sécurité',
+}
+
+/* ── Icônes SVG ── */
+const IconClose = () => (
+  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <line x1="18" y1="6" x2="6" y2="18" /><line x1="6" y1="6" x2="18" y2="18" />
+  </svg>
+)
+const IconDownload = () => (
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4" />
+    <polyline points="7 10 12 15 17 10" />
+    <line x1="12" y1="15" x2="12" y2="3" />
+  </svg>
+)
+const IconCalendar = () => (
+  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
+    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+    <line x1="16" y1="2" x2="16" y2="6" />
+    <line x1="8" y1="2" x2="8" y2="6" />
+    <line x1="3" y1="10" x2="21" y2="10" />
+  </svg>
+)
 
 export default function FormationModal({ formationKey, onClose }) {
   const [calendarVisible, setCalendarVisible] = useState(false)
-  const formation = formationKey ? formations[formationKey] : null
-  const isMobile = typeof window !== 'undefined' && window.innerWidth < 768
+  const modalRef = useRef(null)
+  const closeRef = useRef(null)
 
+  const formation = formationKey ? formations[formationKey] : null
+  const isMobile  = typeof window !== 'undefined' && window.innerWidth < 768
+  const catId     = keyCat[formationKey] || 'management'
+  const badgeColor = catColors[catId] || catColors.management
+
+  /* Réinitialise le calendrier à chaque ouverture */
   useEffect(() => {
     setCalendarVisible(false)
   }, [formationKey])
 
-  if (!formation) return null
+  /* Focus trap : focus sur le bouton close à l'ouverture */
+  useEffect(() => {
+    if (formation && closeRef.current) {
+      closeRef.current.focus()
+    }
+  }, [formation])
 
+  /* Fermer avec Escape */
+  const handleKeyDown = useCallback((e) => {
+    if (e.key === 'Escape') onClose()
+  }, [onClose])
+
+  useEffect(() => {
+    if (!formation) return
+    document.addEventListener('keydown', handleKeyDown)
+    document.body.style.overflow = 'hidden'
+    return () => {
+      document.removeEventListener('keydown', handleKeyDown)
+      document.body.style.overflow = ''
+    }
+  }, [formation, handleKeyDown])
+
+  /* Logique calendrier inchangée */
   const toggleCalendar = () => {
     if (isMobile) {
       const calIdMatch = formation.calendar.match(/src=([^&]+)/)
@@ -21,36 +102,103 @@ export default function FormationModal({ formationKey, onClose }) {
         window.open(`https://calendar.google.com/calendar/u/0/r?cid=${calendarId}`, '_blank')
       }
     } else {
-      setCalendarVisible((v) => !v)
+      setCalendarVisible(v => !v)
     }
   }
 
+  if (!formation) return null
+
   return (
-    <div className="modal" style={{ display: formationKey ? 'block' : 'none' }} onClick={(e) => e.target.className === 'modal' && onClose()}>
-      <div className="modal-content">
-        <span className="close" onClick={onClose} role="button" tabIndex={0} onKeyDown={(e) => e.key === 'Enter' && onClose()}>&times;</span>
-        <h2>{formation.title}</h2>
-        <div className="modal-flex-content">
-          <div className="modal-description">
-            <p dangerouslySetInnerHTML={{ __html: formation.description }} />
-            <div className="modal-buttons">
-              <Button href={formation.pdf} variant="primary" size="sm">Télécharger PDF</Button>
-              <Button type="button" variant="secondary" size="sm" fullWidth onClick={toggleCalendar}>
-                {calendarVisible ? 'Masquer les sessions' : 'Voir les sessions'}
-              </Button>
-            </div>
+    /* Backdrop */
+    <div
+      className="fm-backdrop"
+      role="dialog"
+      aria-modal="true"
+      aria-labelledby="fm-title"
+      onClick={e => e.target === e.currentTarget && onClose()}
+    >
+      {/* Modale */}
+      <div className="fm-modal" ref={modalRef}>
+
+        {/* Bande couleur catégorie */}
+        <div className="fm-modal__stripe" style={{ background: badgeColor }} aria-hidden="true" />
+
+        {/* ── En-tête ── */}
+        <div className="fm-modal__head">
+          <div className="fm-modal__head-left">
+            <span
+              className="fm-modal__badge"
+              style={{ background: badgeColor }}
+            >
+              {catLabels[catId]}
+            </span>
+            <h2 id="fm-title" className="fm-modal__title">
+              {formation.title}
+            </h2>
           </div>
-          <div className="modal-calendar" id="calendarContainer" style={{ display: calendarVisible ? 'block' : 'none' }}>
-            {calendarVisible && !isMobile && (
-              <>
-                <iframe src={formation.calendar} title="Calendrier" frameBorder="0" scrolling="no" />
-                <Button href="/#contact" variant="primary" size="sm" className="calendar-cta-button" fullWidth>
-                  Je m'inscris à cette session de formation
-                </Button>
-              </>
-            )}
-          </div>
+
+          <button
+            ref={closeRef}
+            className="fm-modal__close"
+            onClick={onClose}
+            aria-label="Fermer la fenêtre"
+          >
+            <IconClose />
+          </button>
         </div>
+
+        {/* ── Corps : description HTML existante inchangée ── */}
+        <div className="fm-modal__body">
+          <div
+            className="fm-modal__desc"
+            dangerouslySetInnerHTML={{ __html: formation.description }}
+          />
+        </div>
+
+        {/* ── Calendrier Google (logique originale inchangée) ── */}
+        {calendarVisible && !isMobile && (
+          <>
+            <div className="fm-modal__calendar" id="calendarContainer">
+              <iframe
+                src={formation.calendar}
+                title="Calendrier des sessions"
+                frameBorder="0"
+                scrolling="no"
+              />
+            </div>
+            <a
+              href="/#contact"
+              className="fm-modal__calendar-cta"
+              onClick={onClose}
+            >
+              Je m'inscris à cette session de formation →
+            </a>
+          </>
+        )}
+
+        {/* ── Pied : boutons d'action ── */}
+        <div className="fm-modal__foot">
+          <a
+            href={formation.pdf}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="fm-modal__cta fm-modal__cta--primary"
+            aria-label={`Télécharger le PDF de ${formation.title}`}
+          >
+            <IconDownload />
+            Télécharger le PDF
+          </a>
+
+          <button
+            type="button"
+            className={`fm-modal__cta fm-modal__cta--secondary${calendarVisible ? ' is-active' : ''}`}
+            onClick={toggleCalendar}
+          >
+            <IconCalendar />
+            {calendarVisible ? 'Masquer les sessions' : 'Voir les sessions'}
+          </button>
+        </div>
+
       </div>
     </div>
   )

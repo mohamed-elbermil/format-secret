@@ -1,0 +1,365 @@
+/* ============================================================
+   FORMATION MODAL – FormaSecret 2026
+   Backdrop : noir 60% + blur(4px)
+   Modale   : max-width 720px, border-radius 16px, scroll interne
+   Animation: scale(0.95) → 1 + fadeIn à l'ouverture
+   Logique  : PDF + calendrier Google inchangés
+   ============================================================ */
+
+@keyframes fmBackdropIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes fmModalIn {
+  from { opacity: 0; transform: translate(-50%, -50%) scale(0.94); }
+  to   { opacity: 1; transform: translate(-50%, -50%) scale(1); }
+}
+
+/* ── Backdrop ── */
+.fm-backdrop {
+  position: fixed;
+  inset: 0;
+  z-index: 2000;
+  background: rgba(11, 23, 42, 0.62);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+  animation: fmBackdropIn 250ms ease both;
+  overflow-y: auto;
+}
+
+/* ── Modale centrée ── */
+.fm-modal {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 92%;
+  max-width: 720px;
+  /* Min-height pour éviter le collapse quand le calendrier est masqué */
+  min-height: 200px;
+  background: #ffffff;
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-lg);
+  display: flex;
+  flex-direction: column;
+  overflow: hidden;
+  animation: fmModalIn 280ms cubic-bezier(0.34, 1.2, 0.64, 1) both;
+  /* Scroll interne si contenu long */
+  max-height: 90vh;
+  overflow-y: auto;
+}
+
+/* scrollbar discrète */
+.fm-modal::-webkit-scrollbar { width: 4px; }
+.fm-modal::-webkit-scrollbar-track { background: transparent; }
+.fm-modal::-webkit-scrollbar-thumb { background: rgba(200, 146, 42, 0.3); border-radius: 4px; }
+
+/* ── Bande colorée en haut ── */
+.fm-modal__stripe {
+  height: 4px;
+  background: var(--clr-gold);
+  flex-shrink: 0;
+}
+
+/* ── En-tête ── */
+.fm-modal__head {
+  padding: 1.75rem 2rem 1.25rem;
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+  border-bottom: 1px solid rgba(200, 146, 42, 0.15);
+  flex-shrink: 0;
+}
+
+.fm-modal__head-left {
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  min-width: 0;
+}
+
+/* Badge catégorie */
+.fm-modal__badge {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 0.25rem 0.75rem;
+  border-radius: var(--radius-pill);
+  width: fit-content;
+}
+
+/* Titre */
+.fm-modal__title {
+  font-family: var(--font-title);
+  font-size: clamp(1.4rem, 3vw, 1.9rem);
+  font-weight: 600;
+  color: var(--clr-navy);
+  line-height: 1.2;
+  margin: 0;
+}
+
+/* Bouton fermeture */
+.fm-modal__close {
+  width: 36px;
+  height: 36px;
+  border-radius: var(--radius-sm);
+  border: 1.5px solid rgba(44, 44, 44, 0.15);
+  background: transparent;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  color: var(--clr-text-muted);
+  flex-shrink: 0;
+  transition:
+    background var(--transition-fast),
+    color var(--transition-fast),
+    border-color var(--transition-fast);
+}
+
+.fm-modal__close:hover {
+  background: rgba(155, 35, 53, 0.07);
+  color: #9B2335;
+  border-color: rgba(155, 35, 53, 0.3);
+}
+
+.fm-modal__close:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 3px;
+}
+
+/* ── Corps : description HTML (contenu existant) ── */
+.fm-modal__body {
+  padding: 1.75rem 2rem;
+  flex: 1;
+}
+
+/* Styles pour le HTML injecté via dangerouslySetInnerHTML */
+.fm-modal__desc {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--clr-text);
+  line-height: 1.75;
+}
+
+.fm-modal__desc strong {
+  color: var(--clr-navy);
+  font-weight: 700;
+}
+
+.fm-modal__desc br + br {
+  display: block;
+  content: '';
+  margin-top: 0.5rem;
+}
+
+/* Note de satisfaction (div.note-formation existante) */
+.note-formation {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  background: rgba(200, 146, 42, 0.08);
+  border: 1px solid rgba(200, 146, 42, 0.25);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1.25rem;
+  margin: 0.5rem 0;
+}
+
+.note-score {
+  font-family: var(--font-title);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: var(--clr-navy);
+  line-height: 1;
+}
+
+.note-label {
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+}
+
+/* ── Zone calendrier ── */
+.fm-modal__calendar {
+  margin: 0 2rem;
+  border-radius: var(--radius-sm);
+  overflow: hidden;
+  border: 1px solid rgba(200, 146, 42, 0.2);
+  position: relative;
+}
+
+.fm-modal__calendar::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 3px;
+  background: var(--clr-gold);
+  z-index: 1;
+}
+
+.fm-modal__calendar iframe {
+  display: block;
+  width: 100%;
+  height: 360px;
+  border: none;
+}
+
+/* ── Pied de modale : CTAs ── */
+.fm-modal__foot {
+  padding: 1.5rem 2rem;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-top: 1px solid rgba(200, 146, 42, 0.15);
+  flex-wrap: wrap;
+  flex-shrink: 0;
+  background: var(--clr-cream);
+}
+
+/* CTA primaire — or */
+.fm-modal__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 1.4rem;
+  cursor: pointer;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-base),
+    transform var(--transition-fast);
+  border: 2px solid transparent;
+}
+
+/* Primaire gold */
+.fm-modal__cta--primary {
+  background: var(--clr-gold);
+  color: var(--clr-navy-deep);
+  border-color: var(--clr-gold);
+}
+
+.fm-modal__cta--primary:hover {
+  background: var(--clr-gold-light);
+  border-color: var(--clr-gold-light);
+  box-shadow: var(--shadow-gold);
+  transform: translateY(-1px);
+}
+
+/* Secondaire outline navy */
+.fm-modal__cta--secondary {
+  background: transparent;
+  color: var(--clr-navy);
+  border-color: rgba(27, 47, 78, 0.3);
+}
+
+.fm-modal__cta--secondary:hover {
+  background: rgba(27, 47, 78, 0.05);
+  border-color: var(--clr-navy);
+  transform: translateY(-1px);
+}
+
+/* Actif (quand calendrier visible) */
+.fm-modal__cta--secondary.is-active {
+  background: var(--clr-navy);
+  color: var(--clr-cream);
+  border-color: var(--clr-navy);
+}
+
+.fm-modal__cta:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 4px;
+}
+
+.fm-modal__cta svg {
+  transition: transform var(--transition-fast);
+  flex-shrink: 0;
+}
+
+.fm-modal__cta--primary:hover svg {
+  transform: translateY(2px);
+}
+
+/* ── Lien "Je m'inscris" sous le calendrier ── */
+.fm-modal__calendar-cta {
+  display: block;
+  margin: 0 2rem 1.5rem;
+  padding: 0.85rem;
+  background: var(--clr-navy);
+  color: var(--clr-cream);
+  text-align: center;
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  border-radius: var(--radius-sm);
+  transition: background var(--transition-base);
+}
+
+.fm-modal__calendar-cta:hover {
+  background: var(--clr-navy-mid);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 600px) {
+  .fm-modal {
+    top: auto;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    transform: none;
+    width: 100%;
+    max-width: 100%;
+    border-radius: var(--radius-lg) var(--radius-lg) 0 0;
+    max-height: 92vh;
+    animation: fmSlideUp 300ms cubic-bezier(0.34, 1.1, 0.64, 1) both;
+  }
+
+  @keyframes fmSlideUp {
+    from { opacity: 0; transform: translateY(40px); }
+    to   { opacity: 1; transform: translateY(0); }
+  }
+
+  .fm-modal__head,
+  .fm-modal__body,
+  .fm-modal__foot {
+    padding-left: 1.25rem;
+    padding-right: 1.25rem;
+  }
+
+  .fm-modal__calendar,
+  .fm-modal__calendar-cta {
+    margin-left: 1.25rem;
+    margin-right: 1.25rem;
+  }
+
+  .fm-modal__foot {
+    flex-direction: column;
+  }
+
+  .fm-modal__cta {
+    width: 100%;
+    justify-content: center;
+  }
+}

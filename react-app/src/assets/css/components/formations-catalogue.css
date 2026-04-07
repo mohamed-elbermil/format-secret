@@ -1,0 +1,405 @@
+/* ============================================================
+   FORMATIONS CATALOGUE – Filtres + Grille cards
+   FormaSecret 2026
+   ============================================================ */
+
+/* ── Section wrapper ── */
+.fcat-section {
+  background: var(--clr-cream);
+  padding: var(--padding-section-desktop);
+}
+
+/* ── En-tête de section ── */
+.fcat-header {
+  text-align: center;
+  margin-bottom: 3rem;
+}
+
+.fcat-header__eyebrow {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  margin-bottom: 1rem;
+}
+
+.fcat-header__title {
+  font-family: var(--font-title);
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  font-weight: 600;
+  color: var(--clr-navy);
+  line-height: 1.15;
+  margin-bottom: 0.8rem;
+}
+
+.fcat-header__title em {
+  font-style: italic;
+  color: var(--clr-gold);
+}
+
+.fcat-header__count {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: var(--clr-text-muted);
+}
+
+.fcat-header__count strong {
+  color: var(--clr-navy);
+  font-weight: 700;
+}
+
+/* ============================================================
+   BARRE DE FILTRES
+   ============================================================ */
+
+.fcat-filters-wrap {
+  position: sticky;
+  top: var(--hdr-nav-h); /* colle sous la navbar fixe */
+  z-index: 10;
+  background: var(--clr-cream);
+  padding: 1rem 0;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid rgba(200, 146, 42, 0.15);
+  /* shadow vers le bas */
+  box-shadow: 0 4px 16px rgba(27, 47, 78, 0.06);
+}
+
+.fcat-filters {
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+  overflow-x: auto;
+  scrollbar-width: none; /* Firefox */
+  -ms-overflow-style: none; /* IE/Edge */
+  padding-bottom: 2px; /* évite le clip de box-shadow */
+}
+
+.fcat-filters::-webkit-scrollbar {
+  display: none;
+}
+
+/* ── Bouton de filtre ── */
+.fcat-filter-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  padding: 0.55rem 1.1rem;
+  font-family: var(--font-body);
+  font-size: 0.82rem;
+  font-weight: 600;
+  letter-spacing: 0.03em;
+  white-space: nowrap;
+  border-radius: var(--radius-pill);
+  cursor: pointer;
+  transition:
+    background var(--transition-base),
+    color var(--transition-base),
+    border-color var(--transition-base),
+    box-shadow var(--transition-fast),
+    transform var(--transition-fast);
+
+  /* Inactif : outline navy */
+  background: transparent;
+  color: var(--clr-navy);
+  border: 1.5px solid rgba(27, 47, 78, 0.3);
+}
+
+.fcat-filter-btn:hover:not(.fcat-filter-btn--active) {
+  background: rgba(27, 47, 78, 0.06);
+  border-color: rgba(27, 47, 78, 0.55);
+  transform: translateY(-1px);
+}
+
+/* Actif : gold plein */
+.fcat-filter-btn--active {
+  background: var(--clr-gold);
+  color: #ffffff;
+  border-color: var(--clr-gold);
+  box-shadow: 0 2px 12px rgba(200, 146, 42, 0.35);
+}
+
+.fcat-filter-btn:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 3px;
+}
+
+/* Pastille de comptage */
+.fcat-filter-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 18px;
+  height: 18px;
+  padding: 0 4px;
+  font-size: 0.68rem;
+  font-weight: 700;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.25);
+  color: inherit;
+}
+
+.fcat-filter-btn:not(.fcat-filter-btn--active) .fcat-filter-badge {
+  background: rgba(27, 47, 78, 0.1);
+}
+
+/* ============================================================
+   GRILLE DE CARDS
+   ============================================================ */
+
+.fcat-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.75rem;
+}
+
+/* ── Card formation ── */
+.fcat-card {
+  background: #ffffff;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+  box-shadow: var(--shadow-sm);
+  border-bottom: 3px solid transparent;
+  transition:
+    transform 280ms ease,
+    box-shadow 280ms ease,
+    border-color 280ms ease;
+  cursor: pointer;
+}
+
+.fcat-card:hover {
+  transform: translateY(-6px);
+  box-shadow: var(--shadow-md);
+  border-bottom-color: var(--clr-gold);
+}
+
+.fcat-card:focus-visible {
+  outline: 2px solid var(--clr-gold);
+  outline-offset: 3px;
+}
+
+/* ── Zone icône / visuel ── */
+.fcat-card__visual {
+  position: relative;
+  background: var(--clr-navy);
+  height: 130px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  flex-shrink: 0;
+}
+
+/* Pattern géométrique de fond */
+.fcat-card__visual::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background-image: radial-gradient(rgba(249, 247, 244, 0.06) 1px, transparent 1px);
+  background-size: 18px 18px;
+}
+
+/* Couleur de fond selon catégorie */
+.fcat-card[data-cat="management"]    .fcat-card__visual { background: #1B2F4E; }
+.fcat-card[data-cat="communication"] .fcat-card__visual { background: #2D6A4F; }
+.fcat-card[data-cat="commercial"]    .fcat-card__visual { background: #8B6914; }
+.fcat-card[data-cat="developpement"] .fcat-card__visual { background: #6B3FA0; }
+.fcat-card[data-cat="securite"]      .fcat-card__visual { background: #9B2335; }
+
+.fcat-card__icon {
+  position: relative;
+  z-index: 1;
+  color: rgba(249, 247, 244, 0.85);
+  transition: transform 300ms ease;
+}
+
+.fcat-card:hover .fcat-card__icon {
+  transform: scale(1.1);
+}
+
+/* ── Badge catégorie ── */
+.fcat-card__badge {
+  position: absolute;
+  top: 0.85rem;
+  left: 0.85rem;
+  z-index: 2;
+  font-family: var(--font-body);
+  font-size: 0.65rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #ffffff;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-pill);
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  background: rgba(0, 0, 0, 0.28);
+  backdrop-filter: blur(4px);
+  -webkit-backdrop-filter: blur(4px);
+}
+
+/* ── Corps de la card ── */
+.fcat-card__body {
+  padding: 1.5rem;
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  gap: 0;
+}
+
+.fcat-card__title {
+  font-family: var(--font-body);
+  font-size: 1rem;
+  font-weight: 700;
+  color: var(--clr-navy);
+  line-height: 1.35;
+  margin-bottom: 0.65rem;
+}
+
+.fcat-card__desc {
+  font-family: var(--font-body);
+  font-size: 0.85rem;
+  color: var(--clr-text-muted);
+  line-height: 1.65;
+  margin-bottom: 1rem;
+  flex: 1;
+  /* Clamper à 3 lignes */
+  display: -webkit-box;
+  -webkit-line-clamp: 3;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+/* ── Meta (durée + modalité) ── */
+.fcat-card__meta {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1.25rem;
+  padding-bottom: 1.25rem;
+  border-bottom: 1px solid rgba(200, 146, 42, 0.15);
+}
+
+.fcat-card__meta-item {
+  display: flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  color: var(--clr-text-muted);
+}
+
+.fcat-card__meta-item svg {
+  color: var(--clr-gold);
+  flex-shrink: 0;
+}
+
+/* ── Actions ── */
+.fcat-card__actions {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.fcat-card__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-family: var(--font-body);
+  font-size: 0.8rem;
+  font-weight: 700;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  transition: gap var(--transition-fast), color var(--transition-fast);
+}
+
+.fcat-card__cta:hover {
+  color: var(--clr-gold-light);
+  gap: 0.6rem;
+}
+
+.fcat-card__cta svg {
+  transition: transform var(--transition-fast);
+}
+
+.fcat-card__cta:hover svg {
+  transform: translateX(3px);
+}
+
+.fcat-card__pdf {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 500;
+  color: var(--clr-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.fcat-card__pdf:hover {
+  color: var(--clr-navy);
+}
+
+/* ── État vide (aucune formation dans la catégorie) ── */
+.fcat-empty {
+  grid-column: 1 / -1;
+  text-align: center;
+  padding: 4rem 2rem;
+  font-family: var(--font-body);
+  color: var(--clr-text-muted);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+
+@media (max-width: 1024px) {
+  .fcat-grid {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .fcat-section {
+    padding: var(--padding-section-mobile);
+  }
+
+  .fcat-filters-wrap {
+    top: var(--hdr-nav-h);
+    margin-left: calc(-5vw); /* sortir du container pour bord à bord */
+    margin-right: calc(-5vw);
+    padding-left: 5vw;
+    padding-right: 5vw;
+  }
+
+  .fcat-grid {
+    grid-template-columns: 1fr;
+    max-width: 480px;
+    margin: 0 auto;
+  }
+
+  .fcat-card__visual {
+    height: 110px;
+  }
+}
+
+@media (max-width: 480px) {
+  .fcat-card__actions {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.6rem;
+  }
+}
