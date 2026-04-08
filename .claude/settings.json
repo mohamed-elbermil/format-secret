@@ -1,0 +1,10 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s \"https://images.pexels.com/photos/6303767/pexels-photo-6303767.jpeg?auto=compress&cs=tinysrgb&w=800\" -o \"c:/xampp/tmp_sst1.jpg\")",
+      "Bash(curl -s \"https://images.pexels.com/photos/8942495/pexels-photo-8942495.jpeg?auto=compress&cs=tinysrgb&w=800\" -o \"c:/xampp/tmp_sst2.jpg\")",
+      "Bash(curl -s \"https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=800\" -o \"c:/xampp/tmp_sst3.jpg\")",
+      "Read(//c/xampp/**)"
+    ]
+  }
+}
