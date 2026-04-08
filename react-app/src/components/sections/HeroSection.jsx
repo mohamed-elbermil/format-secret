@@ -1,6 +1,5 @@
-import React from "react";
 import { Link } from "react-router-dom";
-import heroPeople from "../../assets/images/hero-people.png";
+const HERO_PHOTO = "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=960&h=720&dpr=1";
 import "@/assets/css/components/hero.css";
 
 /* ── Icônes SVG inline (pas d'emoji, pas de Font Awesome) ── */
@@ -95,11 +94,11 @@ export default function HeroSection() {
         {/* Colonne visuelle */}
         <div className="hero-section__visual" aria-hidden="true">
           <img
-            src={heroPeople}
+            src={HERO_PHOTO}
             alt="Apprenants et formateurs FormaSecret"
             className="hero-section__visual-img"
             loading="eager"
-            fetchpriority="high"
+            fetchPriority="high"
           />
 
           {/* Badge flottant */}
