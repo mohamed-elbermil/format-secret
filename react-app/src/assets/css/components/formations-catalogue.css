@@ -110,7 +110,6 @@
 .fcat-filter-btn:hover:not(.fcat-filter-btn--active) {
   background: rgba(27, 47, 78, 0.06);
   border-color: rgba(27, 47, 78, 0.55);
-  transform: translateY(-1px);
 }
 
 /* Actif : gold plein */
@@ -182,43 +181,112 @@
   outline-offset: 3px;
 }
 
-/* ── Zone icône / visuel ── */
+/* ── Zone visuelle (photo) ── */
 .fcat-card__visual {
   position: relative;
-  background: var(--clr-navy);
-  height: 130px;
+  height: 170px;
   display: flex;
-  align-items: center;
+  align-items: flex-end;
   justify-content: center;
   overflow: hidden;
   flex-shrink: 0;
+  /* Couleur de fond par défaut (fallback si pas de photo) */
+  background: var(--clr-navy);
 }
 
-/* Pattern géométrique de fond */
-.fcat-card__visual::before {
-  content: '';
+/* Couleur de fond de secours selon catégorie */
+.fcat-card[data-cat="management"] .fcat-card__visual {
+  background: #1b2f4e;
+}
+.fcat-card[data-cat="communication"] .fcat-card__visual {
+  background: #2d6a4f;
+}
+.fcat-card[data-cat="commercial"] .fcat-card__visual {
+  background: #8b6914;
+}
+.fcat-card[data-cat="developpement"] .fcat-card__visual {
+  background: #6b3fa0;
+}
+.fcat-card[data-cat="securite"] .fcat-card__visual {
+  background: #9b2335;
+}
+
+/* Photo de fond */
+.fcat-card__bg-img {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(249, 247, 244, 0.06) 1px, transparent 1px);
-  background-size: 18px 18px;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center top;
+  transition: transform 500ms ease;
 }
 
-/* Couleur de fond selon catégorie */
-.fcat-card[data-cat="management"]    .fcat-card__visual { background: #1B2F4E; }
-.fcat-card[data-cat="communication"] .fcat-card__visual { background: #2D6A4F; }
-.fcat-card[data-cat="commercial"]    .fcat-card__visual { background: #8B6914; }
-.fcat-card[data-cat="developpement"] .fcat-card__visual { background: #6B3FA0; }
-.fcat-card[data-cat="securite"]      .fcat-card__visual { background: #9B2335; }
+.fcat-card:hover .fcat-card__bg-img {
+  transform: scale(1.06);
+}
 
+/* Overlay dégradé : sombre en bas pour lisibilité de l'icône */
+.fcat-card__visual-overlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(11, 23, 42, 0.35) 0%,
+    rgba(11, 23, 42, 0.62) 100%
+  );
+  z-index: 1;
+}
+
+/* Teinture couleur catégorie légère sur le bas */
+.fcat-card[data-cat="management"] .fcat-card__visual-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(27, 47, 78, 0.3) 0%,
+    rgba(27, 47, 78, 0.72) 100%
+  );
+}
+.fcat-card[data-cat="communication"] .fcat-card__visual-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(45, 106, 79, 0.3) 0%,
+    rgba(45, 106, 79, 0.72) 100%
+  );
+}
+.fcat-card[data-cat="commercial"] .fcat-card__visual-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(139, 105, 20, 0.3) 0%,
+    rgba(139, 105, 20, 0.72) 100%
+  );
+}
+.fcat-card[data-cat="developpement"] .fcat-card__visual-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(107, 63, 160, 0.3) 0%,
+    rgba(107, 63, 160, 0.72) 100%
+  );
+}
+.fcat-card[data-cat="securite"] .fcat-card__visual-overlay {
+  background: linear-gradient(
+    to bottom,
+    rgba(155, 35, 53, 0.3) 0%,
+    rgba(155, 35, 53, 0.72) 100%
+  );
+}
+
+/* Icône SVG centrée par-dessus */
 .fcat-card__icon {
   position: relative;
-  z-index: 1;
-  color: rgba(249, 247, 244, 0.85);
+  z-index: 2;
+  color: rgba(249, 247, 244, 0.92);
+  margin-bottom: 1rem;
   transition: transform 300ms ease;
+  filter: drop-shadow(0 2px 6px rgba(0, 0, 0, 0.4));
 }
 
 .fcat-card:hover .fcat-card__icon {
-  transform: scale(1.1);
+  transform: scale(1.12) translateY(-2px);
 }
 
 /* ── Badge catégorie ── */
@@ -226,7 +294,7 @@
   position: absolute;
   top: 0.85rem;
   left: 0.85rem;
-  z-index: 2;
+  z-index: 3;
   font-family: var(--font-body);
   font-size: 0.65rem;
   font-weight: 700;
@@ -320,7 +388,9 @@
   border: none;
   padding: 0;
   cursor: pointer;
-  transition: gap var(--transition-fast), color var(--transition-fast);
+  transition:
+    gap var(--transition-fast),
+    color var(--transition-fast);
 }
 
 .fcat-card__cta:hover {

@@ -6,6 +6,24 @@ import '@/assets/css/components/formations-catalogue.css'
    MÉTADONNÉES COMPLÉMENTAIRES
    (durée + description courte non-HTML par formation)
    ============================================================ */
+/* ============================================================
+   IMAGES PAR FORMATION
+   (toutes disponibles dans /public/assets/images/)
+   ============================================================ */
+const formationImages = {
+  formation3:  '/assets/images/pexels-photo-2977547.jpeg',  // Coach debout, tableau blanc → pratiques managériales
+  formation8:  '/assets/images/pexels-photo-5915194.jpeg',  // Femme organisée, documents → gestion du temps
+  formation15: '/assets/images/pexels-photo-3184465.jpeg',  // Réunion, accord → réinventez vos réunions
+  formation7:  'https://images.pexels.com/photos/3810796/pexels-photo-3810796.jpeg?auto=compress&cs=tinysrgb&w=800', // Équipe en workshop → prise de parole
+  formation16: 'https://images.pexels.com/photos/1587014/pexels-photo-1587014.jpeg?auto=compress&cs=tinysrgb&w=800', // Professionnelle souriante → accueil
+  formation14: 'https://images.pexels.com/photos/4065876/pexels-photo-4065876.jpeg?auto=compress&cs=tinysrgb&w=800', // Mains sur clavier → écrits professionnels
+  formation5:  'https://images.pexels.com/photos/1181396/pexels-photo-1181396.jpeg?auto=compress&cs=tinysrgb&w=800',  // Équipe commerciale → techniques de vente
+  formation6:  '/assets/images/rpms.jpg',                   // Homme serein, café → préparer sa retraite
+  formation20: '/assets/images/pexels-photo-8062280.jpeg',  // Femme au bureau → gestes et postures
+  formation21: 'https://images.pexels.com/photos/8942495/pexels-photo-8942495.jpeg?auto=compress&cs=tinysrgb&w=800', // Ambulancier croix rouge → SST
+  formation22: 'https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=800', // Médecin stéthoscope → MAC SST
+}
+
 const formationMeta = {
   formation3:  { duration: '2 jours', modality: 'Présentiel', desc: 'Développez votre leadership, mobilisez vos équipes et maîtrisez les techniques d\'évaluation et de délégation.' },
   formation8:  { duration: '1 jour',  modality: 'Présentiel', desc: 'Apprenez à identifier les activités chronophages, à fixer vos priorités et à utiliser des outils de planification efficaces.' },
@@ -206,9 +224,19 @@ export default function FormationsCatalogue({ onOpenModal }) {
               >
                 {/* Zone visuelle */}
                 <div className="fcat-card__visual">
+                  {formationImages[formation.key] && (
+                    <img
+                      src={formationImages[formation.key]}
+                      alt=""
+                      className="fcat-card__bg-img"
+                      loading="lazy"
+                      aria-hidden="true"
+                    />
+                  )}
+                  <div className="fcat-card__visual-overlay" aria-hidden="true" />
                   <span className="fcat-card__badge">{formation.catLabel}</span>
                   <div className="fcat-card__icon">
-                    <CatIcon catId={formation.catId} size={48} />
+                    <CatIcon catId={formation.catId} size={40} />
                   </div>
                 </div>
 
