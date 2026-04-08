@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/layout/Container";
-import ContactSection from "../components/sections/ContactSection";
 
 const statistics = [
   {
@@ -230,7 +229,6 @@ export default function AProposPage() {
         </Container>
       </section>
 
-      <ContactSection />
     </>
   );
 }

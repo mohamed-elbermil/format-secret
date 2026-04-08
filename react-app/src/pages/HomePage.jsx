@@ -4,12 +4,8 @@ import Container from "../components/layout/Container";
 import ServicesSection from "../components/sections/ServicesSection";
 import AdvantagesSection from "../components/sections/AdvantagesSection";
 import KeyFiguresSection from "../components/sections/KeyFiguresSection";
-import ContactSection from "../components/sections/ContactSection";
 import HeroSection from "../components/sections/HeroSection";
 import useScrollToTop from "../hooks/useScrollToTop";
-import imgAnalyse from "../assets/images/pexels-photo-2977547.jpeg";
-import imgProjet from "../assets/images/pexels-photo-5915194.jpeg";
-import imgParcours from "../assets/images/pexels-photo-3184465.jpeg";
 import GoogleReviews from "../google-review";
 import LeadMagnet from "../components/marketing/LeadMagnet";
 
@@ -38,20 +34,6 @@ const structuredData = {
   },
 };
 
-const orientationSteps = [
-  { label: "1. Analyse de votre parcours", duration: "10 min" },
-  { label: "2. Définition de votre projet", duration: "5 min" },
-  {
-    label: "3. Présentation du/des parcours personnalisé(s)",
-    duration: "10 min",
-  },
-];
-
-const orientationImages = [
-  { src: imgAnalyse, alt: "Analyse de votre parcours" },
-  { src: imgProjet, alt: "Définition de votre projet" },
-  { src: imgParcours, alt: "Présentation de parcours personnalisés" },
-];
 
 export default function HomePage() {
   const location = useLocation();
@@ -95,37 +77,6 @@ export default function HomePage() {
             allowFullScreen
             loading="lazy"
           ></iframe>
-        </Container>
-      </section>
-
-      <section className="orientation">
-        <Container>
-          <h2>
-            <span className="title-style">{"Faire un "}</span>
-            {"bilan d'orientation"}
-          </h2>
-          <p className="orientation-subtitle">{"Gratuit et sans engagement"}</p>
-          <div className="orientation-images">
-            {orientationImages.map(({ src, alt }, i) => (
-              <img key={i} src={src} alt={alt} loading="lazy" />
-            ))}
-          </div>
-          <div className="orientation-steps">
-            {orientationSteps.map(({ label, duration }, i) => (
-              <div key={i} className="orientation-step">
-                <div className="orientation-step-title">{label}</div>
-                <div className="orientation-step-time">
-                  <i className="fa-regular fa-clock"></i> {duration}
-                </div>
-              </div>
-            ))}
-          </div>
-          <div className="orientation-cta">
-            <Link to="/#contact" className="cta-button-picto-2">
-              <i className="fa-solid fa-calendar-check"></i>
-              {"Je prends rendez-vous"}
-            </Link>
-          </div>
         </Container>
       </section>
 
@@ -179,29 +130,9 @@ export default function HomePage() {
         </Container>
       </section>
 
-      <section className="trusted-by">
-        <Container>
-          <div className="reviews-section">
-            <h2 className="text-3xl font-bold mb-6">
-              <span className="title-style text-orange-500">
-                {"Ils nous font"}
-              </span>
-              {" confiance"}
-            </h2>
-            <div className="reviews-container">
-              <GoogleReviews />
-            </div>
-          </div>
-          <div className="cta-container">
-            <Link to="/a-propos" className="cta-button">
-              {"Découvrir FormaSecret"}
-            </Link>
-          </div>
-        </Container>
-      </section>
+      <GoogleReviews />
 
       <KeyFiguresSection />
-      <ContactSection />
 
       <LeadMagnet
         title="Téléchargez notre catalogue complet"

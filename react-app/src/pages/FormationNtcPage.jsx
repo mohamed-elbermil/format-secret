@@ -1,7 +1,6 @@
 import React from 'react'
 import { useParams, Navigate } from 'react-router-dom'
 import { getFormationNtcBySlug, getFormationNtcById } from '../data/formationNtc'
-import ContactSection from '../components/sections/ContactSection'
 import useScrollToTop from '../hooks/useScrollToTop'
 import FormationDetailHero from '../components/formation-detail/FormationDetailHero'
 import FormationDetailIntro from '../components/formation-detail/FormationDetailIntro'
@@ -91,7 +90,6 @@ export default function FormationNtcPage() {
 
       <FormationDetailFooter footerLinks={formation.footerLinks} />
 
-      <ContactSection />
     </>
   )
 }

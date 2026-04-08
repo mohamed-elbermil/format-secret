@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/layout/Container";
-import ContactSection from "../components/sections/ContactSection";
 import useScrollToTop from "../hooks/useScrollToTop";
 import "@/assets/css/components/academie.css";
 
@@ -333,7 +332,6 @@ export default function AcademiePage() {
         </Container>
       </section>
 
-      <ContactSection />
     </>
   );
 }

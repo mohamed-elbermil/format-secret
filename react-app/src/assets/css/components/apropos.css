@@ -1,0 +1,353 @@
+/* ============================================================
+   PAGE À PROPOS – FormaSecret 2026
+   Cohérence exacte avec HeroSection + AcademiePage
+   ============================================================ */
+
+@keyframes apFadeUp {
+  from { opacity: 0; transform: translateY(24px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+@keyframes apBadgePop {
+  0%   { opacity: 0; transform: translateY(12px) scale(0.85); }
+  70%  { transform: translateY(-4px) scale(1.04); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
+}
+@keyframes apGlow {
+  0%, 100% { opacity: 0.3; transform: scale(1); }
+  50%       { opacity: 0.45; transform: scale(1.06); }
+}
+
+/* ============================================================
+   1. HERO
+   ============================================================ */
+.ap-hero {
+  position: relative;
+  background: var(--clr-navy);
+  min-height: 88vh;
+  display: flex;
+  align-items: center;
+  padding-top: var(--hdr-total-h);
+  overflow: hidden;
+}
+
+.ap-hero__bg { position: absolute; inset: 0; pointer-events: none; z-index: 0; }
+
+.ap-hero__dots {
+  position: absolute; inset: 0;
+  background-image: radial-gradient(rgba(249,247,244,0.07) 1.5px, transparent 1.5px);
+  background-size: 28px 28px;
+}
+.ap-hero__glow {
+  position: absolute; top: -100px; right: -80px;
+  width: 500px; height: 500px;
+  background: radial-gradient(circle, rgba(200,146,42,0.18) 0%, transparent 65%);
+  animation: apGlow 7s ease-in-out infinite;
+}
+.ap-hero__glow-2 {
+  position: absolute; bottom: -60px; left: -40px;
+  width: 340px; height: 340px;
+  background: radial-gradient(circle, rgba(36,61,96,0.55) 0%, transparent 70%);
+}
+
+.ap-hero__inner {
+  position: relative; z-index: 1;
+  display: flex; align-items: center;
+  justify-content: space-between;
+  gap: 4rem;
+  padding-top: 3rem; padding-bottom: 5rem;
+}
+
+/* ── Texte ── */
+.ap-hero__text { flex: 0 0 52%; max-width: 52%; }
+
+.ap-hero__eyebrow {
+  display: inline-flex; align-items: center; gap: 0.5rem;
+  font-family: var(--font-body); font-size: 0.73rem;
+  font-weight: 700; letter-spacing: 0.12em; text-transform: uppercase;
+  color: var(--clr-gold); margin-bottom: 1.5rem;
+  padding: 0.4rem 1rem;
+  border: 1px solid rgba(200,146,42,0.35); border-radius: var(--radius-pill);
+  background: rgba(200,146,42,0.08);
+  animation: apFadeUp 0.6s ease both 0.1s;
+}
+.ap-hero__eyebrow-dot {
+  width: 6px; height: 6px; background: var(--clr-gold);
+  border-radius: 50%; flex-shrink: 0;
+}
+
+.ap-hero__title {
+  font-family: var(--font-title);
+  font-size: clamp(2.6rem, 4.5vw, 4.4rem);
+  font-weight: 600; line-height: 1.08;
+  color: var(--clr-cream); margin-bottom: 1.5rem;
+  letter-spacing: -0.01em;
+  animation: apFadeUp 0.7s ease both 0.25s;
+}
+.ap-hero__title em { font-style: italic; color: var(--clr-gold-light); }
+
+.ap-hero__divider {
+  width: 48px; height: 2px;
+  background: linear-gradient(to right, var(--clr-gold), transparent);
+  margin-bottom: 1.75rem; border-radius: 2px;
+  animation: apFadeUp 0.6s ease both 0.35s;
+}
+
+.ap-hero__subtitle {
+  font-family: var(--font-body); font-size: 1.05rem;
+  line-height: 1.7; color: rgba(249,247,244,0.72);
+  margin-bottom: 2.25rem; max-width: 46ch;
+  animation: apFadeUp 0.7s ease both 0.4s;
+}
+
+.ap-hero__cta {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--font-body); font-size: 0.9rem;
+  font-weight: 700; letter-spacing: 0.04em; text-decoration: none;
+  background: var(--clr-gold); color: var(--clr-navy-deep);
+  border: 2px solid var(--clr-gold); border-radius: var(--radius-sm);
+  padding: 0.85rem 1.75rem;
+  transition: background var(--transition-base), box-shadow var(--transition-base), transform var(--transition-fast);
+  animation: apFadeUp 0.7s ease both 0.55s;
+}
+.ap-hero__cta:hover {
+  background: var(--clr-gold-light); border-color: var(--clr-gold-light);
+  box-shadow: var(--shadow-gold); transform: translateY(-2px);
+}
+.ap-hero__cta:focus-visible { outline: 2px solid var(--clr-gold); outline-offset: 4px; }
+
+/* ── Visuel ── */
+.ap-hero__visual {
+  flex: 0 0 44%; max-width: 44%;
+  position: relative; display: flex;
+  align-items: flex-end; justify-content: center;
+}
+.ap-hero__visual::before {
+  content: ''; position: absolute;
+  bottom: 16px; right: -16px;
+  width: 85%; height: 85%;
+  border: 2px solid rgba(200,146,42,0.28);
+  border-radius: var(--radius-lg); z-index: 0;
+}
+.ap-hero__img {
+  position: relative; z-index: 1;
+  width: 100%; max-width: 440px;
+  height: auto; border-radius: var(--radius-lg);
+  display: block;
+  filter: drop-shadow(0 24px 48px rgba(11,23,42,0.5));
+  object-fit: cover; object-position: center top;
+  aspect-ratio: 3/4;
+}
+.ap-hero__badge {
+  position: absolute; bottom: 3rem; left: -1.5rem; z-index: 2;
+  background: var(--clr-cream); border-radius: var(--radius-md);
+  padding: 0.9rem 1.25rem; box-shadow: var(--shadow-lg);
+  display: flex; flex-direction: column; align-items: center;
+  gap: 0.2rem; min-width: 120px;
+  animation: apBadgePop 0.8s cubic-bezier(0.34,1.56,0.64,1) both 0.9s;
+}
+.ap-hero__badge::before {
+  content: ''; position: absolute; top: 0; left: 0; right: 0; height: 3px;
+  background: var(--clr-gold);
+  border-radius: var(--radius-md) var(--radius-md) 0 0;
+}
+.ap-hero__badge-number {
+  font-family: var(--font-title); font-size: 2rem;
+  font-weight: 700; color: var(--clr-navy); line-height: 1;
+}
+.ap-hero__badge-label {
+  font-family: var(--font-body); font-size: 0.7rem; font-weight: 600;
+  color: var(--clr-text-muted); text-align: center;
+}
+
+/* Vague */
+.ap-hero__wave { position: absolute; bottom: -1px; left: 0; right: 0; line-height: 0; z-index: 2; }
+.ap-hero__wave svg { display: block; width: 100%; height: 60px; }
+
+/* ============================================================
+   2. ENGAGEMENT (cream, centré)
+   ============================================================ */
+.ap-engage {
+  background: var(--clr-cream);
+  padding: var(--padding-section-desktop);
+  text-align: center;
+}
+.ap-engage__inner { max-width: 800px; margin: 0 auto; }
+
+.ap-eyebrow {
+  display: inline-block;
+  font-family: var(--font-body); font-size: 0.72rem;
+  font-weight: 700; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--clr-gold); margin-bottom: 1rem;
+}
+.ap-title {
+  font-family: var(--font-title);
+  font-size: clamp(1.9rem, 3.2vw, 2.8rem);
+  font-weight: 600; color: var(--clr-navy); line-height: 1.15;
+  margin-bottom: 1.25rem;
+}
+.ap-title em { font-style: italic; color: var(--clr-gold); }
+
+.ap-engage__text {
+  font-family: var(--font-body); font-size: 1.08rem;
+  line-height: 1.8; color: var(--clr-text-muted);
+}
+.ap-engage__text strong { color: var(--clr-navy); font-weight: 600; }
+
+/* ============================================================
+   3. STATISTIQUES (navy)
+   ============================================================ */
+.ap-stats {
+  background: linear-gradient(135deg, var(--clr-navy) 0%, var(--clr-navy-mid) 100%);
+  padding: var(--padding-section-desktop);
+}
+.ap-stats__grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+.ap-stat {
+  text-align: center; padding: 2.5rem 1.5rem;
+  border-radius: var(--radius-md);
+  background: rgba(255,255,255,0.05);
+  border: 1px solid rgba(200,146,42,0.15);
+  backdrop-filter: blur(8px);
+  transition: transform var(--transition-base), background var(--transition-base);
+}
+.ap-stat:hover { transform: translateY(-4px); background: rgba(255,255,255,0.1); }
+.ap-stat__number {
+  font-family: var(--font-title);
+  font-size: clamp(2.8rem, 4vw, 4rem);
+  font-weight: 700; color: var(--clr-gold); line-height: 1;
+  margin-bottom: 0.6rem;
+}
+.ap-stat__label {
+  font-family: var(--font-body); font-size: 0.95rem;
+  font-weight: 700; color: var(--clr-cream); margin-bottom: 0.3rem;
+}
+.ap-stat__desc {
+  font-family: var(--font-body); font-size: 0.78rem;
+  color: rgba(249,247,244,0.5); letter-spacing: 0.02em;
+}
+
+/* ============================================================
+   4. MISSION (blanc, split)
+   ============================================================ */
+.ap-mission { background: var(--clr-white); padding: var(--padding-section-desktop); }
+
+.ap-split {
+  display: grid; grid-template-columns: 1fr 1fr;
+  gap: 4rem; align-items: center;
+}
+
+/* Images empilées */
+.ap-split__images { position: relative; height: 440px; }
+.ap-split__img {
+  position: absolute;
+  width: calc(55% - 10px);
+  border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md);
+  object-fit: cover;
+  transition: transform var(--transition-base);
+}
+.ap-split__img:first-child { top: 0; left: 0; z-index: 2; height: 55%; }
+.ap-split__img:last-child  { bottom: 0; right: 0; z-index: 1; height: 55%; }
+.ap-split__img:hover { transform: scale(1.03); }
+
+/* Texte */
+.ap-split__desc {
+  font-family: var(--font-body); font-size: 1rem;
+  line-height: 1.75; color: var(--clr-text-muted);
+  margin-bottom: 2rem; margin-top: 0.75rem;
+}
+
+/* Items de valeur */
+.ap-values { display: flex; flex-direction: column; gap: 1rem; }
+.ap-value {
+  display: flex; align-items: flex-start; gap: 1rem;
+  padding: 1.1rem 1.25rem;
+  background: rgba(51,50,73,0.04);
+  border-radius: var(--radius-md);
+  border-left: 3px solid var(--clr-gold);
+  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+}
+.ap-value:hover { transform: translateX(4px); box-shadow: var(--shadow-sm); }
+.ap-value__icon {
+  flex-shrink: 0; width: 44px; height: 44px;
+  background: rgba(200,146,42,0.1); border-radius: var(--radius-md);
+  display: flex; align-items: center; justify-content: center;
+  color: var(--clr-gold); font-size: 1.1rem;
+}
+.ap-value__title {
+  font-family: var(--font-body); font-size: 0.95rem;
+  font-weight: 700; color: var(--clr-navy); margin-bottom: 0.2rem;
+}
+.ap-value__desc {
+  font-family: var(--font-body); font-size: 0.86rem;
+  color: var(--clr-text-muted); line-height: 1.55;
+}
+
+/* ============================================================
+   5. VISION (bg-alt, split inversé)
+   ============================================================ */
+.ap-vision { background: var(--clr-bg-alt); padding: var(--padding-section-desktop); }
+
+.ap-vision__img {
+  width: 100%; border-radius: var(--radius-lg);
+  box-shadow: var(--shadow-md); object-fit: cover;
+  aspect-ratio: 4/3;
+  transition: transform var(--transition-base);
+}
+.ap-vision__img:hover { transform: scale(1.02); }
+
+.ap-vision__cta {
+  display: inline-flex; align-items: center; gap: 0.6rem;
+  font-family: var(--font-body); font-size: 0.9rem;
+  font-weight: 700; letter-spacing: 0.04em; text-decoration: none;
+  background: var(--clr-gold); color: var(--clr-navy-deep);
+  border: 2px solid var(--clr-gold); border-radius: var(--radius-sm);
+  padding: 0.85rem 1.75rem; margin-top: 2rem;
+  transition: background var(--transition-base), box-shadow var(--transition-base), transform var(--transition-fast);
+}
+.ap-vision__cta:hover {
+  background: var(--clr-gold-light); border-color: var(--clr-gold-light);
+  box-shadow: var(--shadow-gold); transform: translateY(-2px);
+}
+
+/* ============================================================
+   RESPONSIVE
+   ============================================================ */
+@media (max-width: 1024px) {
+  .ap-split { gap: 2.5rem; }
+  .ap-stats__grid { gap: 1.25rem; }
+}
+
+@media (max-width: 768px) {
+  .ap-hero { min-height: auto; padding-bottom: 0; }
+  .ap-hero__inner {
+    flex-direction: column; text-align: center;
+    padding-top: 2rem; padding-bottom: 0; gap: 2rem;
+  }
+  .ap-hero__text { flex: none; max-width: 100%; }
+  .ap-hero__eyebrow, .ap-hero__divider { margin-left: auto; margin-right: auto; }
+  .ap-hero__subtitle { max-width: 52ch; margin-left: auto; margin-right: auto; }
+  .ap-hero__visual { flex: none; max-width: min(360px, 100%); width: 100%; margin: 0 auto; }
+  .ap-hero__visual::before { display: none; }
+  .ap-hero__badge { left: 0.5rem; bottom: 1.5rem; }
+  .ap-hero__wave svg { height: 40px; }
+
+  .ap-engage, .ap-stats, .ap-mission, .ap-vision {
+    padding: var(--padding-section-mobile);
+  }
+
+  .ap-stats__grid { grid-template-columns: repeat(3, 1fr); gap: 1rem; }
+  .ap-stat { padding: 1.5rem 1rem; }
+  .ap-stat__number { font-size: 2.2rem; }
+
+  .ap-split { grid-template-columns: 1fr; gap: 2rem; }
+  .ap-split__images { height: 280px; }
+}
+
+@media (max-width: 480px) {
+  .ap-stats__grid { grid-template-columns: 1fr; }
+  .ap-hero__cta, .ap-vision__cta { width: 100%; justify-content: center; }
+}
