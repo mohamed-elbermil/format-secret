@@ -67,10 +67,9 @@ export default function AProposPage() {
         </div>
 
         <div className="ap-hero__inner container">
-          <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "À Propos" }]} />
-
           {/* Texte */}
           <div className="ap-hero__text">
+            <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "À Propos" }]} />
             <p className="ap-hero__eyebrow">
               <span className="ap-hero__eyebrow-dot" aria-hidden="true" />
               Organisme de formation certifié Qualiopi

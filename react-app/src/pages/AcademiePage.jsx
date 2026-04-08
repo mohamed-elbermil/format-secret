@@ -117,10 +117,9 @@ export default function AcademiePage() {
         </div>
 
         <div className="acad-hero__inner container">
-          <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Académie" }]} />
-
           {/* Texte */}
           <div className="acad-hero__text">
+            <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Académie" }]} />
             <p className="acad-hero__eyebrow">
               <span className="acad-hero__eyebrow-dot" aria-hidden="true" />
               Organisme de formation certifié Qualiopi
