@@ -1,0 +1,72 @@
+/* ============================================================
+   BREADCRUMB – Fil d'Ariane partagé
+   FormaSecret 2026
+   Variantes : défaut (fond navy) · --light (fond clair)
+   ============================================================ */
+
+.bc {
+  margin-bottom: 2rem;
+}
+
+.bc__list {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  font-weight: 500;
+  letter-spacing: 0.04em;
+}
+
+.bc__item {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+}
+
+.bc__link {
+  color: rgba(249, 247, 244, 0.55);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.bc__link:hover {
+  color: var(--clr-gold-light);
+}
+
+.bc__sep {
+  color: rgba(249, 247, 244, 0.3);
+  display: flex;
+  align-items: center;
+}
+
+.bc__current {
+  color: var(--clr-gold);
+  font-weight: 600;
+}
+
+/* ── Variante fond clair (banner cream/blanc) ── */
+.bc--light .bc__link {
+  color: rgba(51, 50, 73, 0.55);
+}
+.bc--light .bc__link:hover {
+  color: var(--clr-navy);
+}
+.bc--light .bc__sep {
+  color: rgba(51, 50, 73, 0.3);
+}
+.bc--light .bc__current {
+  color: var(--clr-navy);
+}
+
+/* ── Bandeau autonome (pages sans hero navy) ── */
+.bc-banner {
+  background: var(--clr-navy);
+  padding: calc(var(--hdr-total-h) + 1rem) 0 1.25rem;
+}
+.bc-banner .bc__list {
+  justify-content: flex-start;
+}

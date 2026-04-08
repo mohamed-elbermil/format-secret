@@ -4,6 +4,16 @@
   margin: 0 auto;
 }
 
+.logo-agency img {
+  width: 74px;
+  margin-left: 4px;
+  transition-duration: 0.4s;
+}
+
+.logo-agency img:hover {
+  transform: translate(0px, -2px);
+}
+
 header {
   /* padding: 10px 0; */
   position: fixed;

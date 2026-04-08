@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/layout/Container";
 import useScrollToTop from "../hooks/useScrollToTop";
+import Breadcrumb from "../components/ui/Breadcrumb";
 import "@/assets/css/components/apropos.css";
 
 const IconArrow = () => (
@@ -66,6 +67,8 @@ export default function AProposPage() {
         </div>
 
         <div className="ap-hero__inner container">
+          <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "À Propos" }]} />
+
           {/* Texte */}
           <div className="ap-hero__text">
             <p className="ap-hero__eyebrow">

@@ -101,9 +101,17 @@ export default function Footer() {
           <p>
             &copy; 2025 FormaSecret. Tous droits réservés.
             <br />
-            Création par{" "}
-            <a href="#" target="_blank" rel="noopener noreferrer">
-              SOBLIM agency
+            Création par l'agence{" "}
+            <a
+              href="https://soblim.com/"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="logo-agency"
+            >
+              <img
+                src="/assets/images/soblim-logo.png"
+                alt="Logo de l'agence soblim"
+              />
             </a>
           </p>
           <div className="footer-social">

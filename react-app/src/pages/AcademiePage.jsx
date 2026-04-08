@@ -2,6 +2,7 @@ import React from "react";
 import { Link } from "react-router-dom";
 import Container from "../components/layout/Container";
 import useScrollToTop from "../hooks/useScrollToTop";
+import Breadcrumb from "../components/ui/Breadcrumb";
 import "@/assets/css/components/academie.css";
 
 // Import tous les logos depuis le dossier racine /assets (hors react-app/public)
@@ -116,6 +117,8 @@ export default function AcademiePage() {
         </div>
 
         <div className="acad-hero__inner container">
+          <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Académie" }]} />
+
           {/* Texte */}
           <div className="acad-hero__text">
             <p className="acad-hero__eyebrow">
