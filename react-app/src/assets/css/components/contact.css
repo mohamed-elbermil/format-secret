@@ -38,22 +38,29 @@
 
 /* Halo décoratif */
 .ctc-info::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: -60px;
   right: -60px;
   width: 220px;
   height: 220px;
-  background: radial-gradient(circle, rgba(200, 146, 42, 0.15) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(200, 146, 42, 0.15) 0%,
+    transparent 70%
+  );
   pointer-events: none;
 }
 
 /* Grille de points */
 .ctc-info::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(249, 247, 244, 0.06) 1px, transparent 1px);
+  background-image: radial-gradient(
+    rgba(249, 247, 244, 0.06) 1px,
+    transparent 1px
+  );
   background-size: 20px 20px;
   pointer-events: none;
 }
@@ -266,12 +273,6 @@ a.ctc-info__item-value:hover {
   box-shadow: 0 0 0 3px rgba(200, 146, 42, 0.12);
 }
 
-/* Bordure rouge sur invalid + tentative de submit */
-.ctc-field__input:invalid:not(:placeholder-shown),
-.ctc-field__textarea:invalid:not(:placeholder-shown) {
-  border-color: #e53e3e;
-}
-
 /* Placeholder invisible — requis pour le floating label */
 .ctc-field__input::placeholder,
 .ctc-field__textarea::placeholder {
@@ -376,7 +377,9 @@ a.ctc-info__item-value:hover {
 }
 
 @keyframes ctcSpin {
-  to { transform: rotate(360deg); }
+  to {
+    transform: rotate(360deg);
+  }
 }
 
 /* ── Message succès ── */
@@ -433,8 +436,14 @@ a.ctc-info__item-value:hover {
 }
 
 @keyframes ctcFadeIn {
-  from { opacity: 0; transform: translateY(8px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 /* Note RGPD */

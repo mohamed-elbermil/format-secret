@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState, useEffect } from "react";
 import { contactInfo } from "../../data/contactInfo";
 import { socialLinks } from "../../data/socialLinks";
 import emailjs from "@emailjs/browser";
@@ -50,6 +50,11 @@ const socialIconClass = {
 }
 
 export default function ContactSection() {
+  /* Initialisation EmailJS une seule fois (API v4) */
+  useEffect(() => {
+    emailjs.init({ publicKey: import.meta.env.VITE_EMAILJS_PUBLIC_KEY });
+  }, []);
+
   const [status, setStatus] = useState(null); // null | 'loading' | 'success' | 'error'
   const [formData, setFormData] = useState({
     name: "",
@@ -82,20 +87,18 @@ export default function ContactSection() {
     e.preventDefault();
     setStatus("loading");
 
+    const serviceId  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
+    const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
+
+    if (!serviceId || !templateId) {
+      console.error("Variables EmailJS manquantes. Vérifiez votre fichier .env");
+      setStatus("error");
+      setTimeout(() => setStatus(null), 5000);
+      return;
+    }
+
     try {
-      const serviceId  = import.meta.env.VITE_EMAILJS_SERVICE_ID;
-      const templateId = import.meta.env.VITE_EMAILJS_TEMPLATE_ID;
-      const publicKey  = import.meta.env.VITE_EMAILJS_PUBLIC_KEY;
-
-      if (!serviceId || !templateId || !publicKey) {
-        console.error("Variables EmailJS manquantes. Vérifiez votre fichier .env");
-        setStatus("error");
-        return;
-      }
-
-      emailjs.init(publicKey);
-
-      const response = await emailjs.send(serviceId, templateId, {
+      await emailjs.send(serviceId, templateId, {
         from_name:  formData.name,
         from_email: formData.email,
         subject:    formData.subject,
@@ -103,13 +106,9 @@ export default function ContactSection() {
         to_email:   contactInfo.email,
       });
 
-      if (response.status === 200) {
-        setStatus("success");
-        setFormData({ name: "", email: "", subject: "", message: "" });
-        setTimeout(() => setStatus(null), 5000);
-      } else {
-        throw new Error("Échec de l'envoi");
-      }
+      setStatus("success");
+      setFormData({ name: "", email: "", subject: "", message: "" });
+      setTimeout(() => setStatus(null), 5000);
     } catch (error) {
       console.error("Erreur EmailJS:", error);
       setStatus("error");
