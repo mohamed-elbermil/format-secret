@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Test EmailJS Simple</title>
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <script type="text/javascript">
+        (function() {
+            emailjs.init("a3VXxebTm0sCV3_H9");
+        })();
+    </script>
+</head>
+<body>
+    <h1>Test EmailJS</h1>
+    <form onsubmit="sendEmail(event)">
+        <input type="email" id="email" placeholder="Votre email" required>
+        <button type="submit">Tester l'envoi</button>
+    </form>
+    
+    <div id="result"></div>
+
+    <script>
+        function sendEmail(event) {
+            event.preventDefault();
+            
+            const email = document.getElementById('email').value;
+            const result = document.getElementById('result');
+            
+            const templateParams = {
+                to_email: email,
+                pdf_link: 'http://192.168.1.125:5174/plaquette-2026.pdf',
+                reply_to: 'contact@formasecret.fr'
+            };
+
+            console.log('Envoi avec les paramètres:', templateParams);
+            
+            emailjs.send('service_w1lw4hj', 'template_uas40aq', templateParams)
+                .then(function(response) {
+                    console.log('SUCCESS!', response.status, response.text);
+                    result.innerHTML = '<p style="color: green;">✅ Email envoyé avec succès!</p>';
+                }, function(error) {
+                    console.log('FAILED...', error);
+                    result.innerHTML = `<p style="color: red;">❌ Erreur: ${error.text}</p>`;
+                });
+        }
+    </script>
+</body>
+</html>

@@ -72,9 +72,9 @@ Dans `src/components/marketing/LeadMagnet.jsx`, remplacez les valeurs :
 
 ```javascript
 const EMAILJS_CONFIG = {
-  SERVICE_ID: 'service_qdaqwnh',      // Remplacez avec votre Service ID
-  TEMPLATE_ID: 'template_h35x9nw',    // Remplacez avec votre Template ID
-  PUBLIC_KEY: 'a3VXxebTm0sCV3_H9'      // Remplacez avec votre Public Key
+  SERVICE_ID: 'service_w1lw4hj',      // Remplacez avec votre Service ID
+  TEMPLATE_ID: 'template_uas40aq',    // Remplacez avec votre Template ID
+  PUBLIC_KEY: 'AV-lC8dyv1w1WXQRp'      // Remplacez avec votre Public Key
 };
 ```
 

@@ -4,11 +4,11 @@ import emailjs from '@emailjs/browser';
 import '../../styles/FormationsPage.css';
 import '../../styles/LeadMagnet.css';
 
-// Configuration EmailJS - Clés réelles
+// Configuration EmailJS - Utiliser le même service que le formulaire de contact
 const EMAILJS_CONFIG = {
-  SERVICE_ID: 'service_w1lw4hj',
-  TEMPLATE_ID: 'template_wsqxw7s',
-  PUBLIC_KEY: 'a3VXxebTm0sCV3_H9'
+  SERVICE_ID: 'service_w1lw4hj',  // Service qui fonctionne pour le contact
+  TEMPLATE_ID: 'template_uas40aq',  // Template pour la plaquette PDF
+  PUBLIC_KEY: 'AV-lC8dyv1w1WXQRp'  // Clé publique mise à jour
 };
 
 const LeadMagnet = ({ 
@@ -35,16 +35,21 @@ const LeadMagnet = ({
   const sendEmail = async (email) => {
     try {
       // Construire l'URL complète du PDF
-      // En développement, utiliser une URL accessible depuis l'extérieur
+      // Gestion automatique des environnements
       const isDevelopment = window.location.hostname === 'localhost';
+      const isStaging = window.location.hostname.includes('staging') || window.location.hostname.includes('dev');
+      
+      // URL de base selon l'environnement
       const baseUrl = isDevelopment 
-        ? 'http://192.168.1.125:5174'  // Votre IP locale réelle
-        : window.location.origin;
+        ? 'http://localhost:5174'  // localhost pour le développement
+        : isStaging
+        ? window.location.origin  // URL de staging
+        : window.location.origin;  // URL de production
       
       const pdfLink = `${baseUrl}${pdfUrl}`;
-      console.log('📧 Envoi email à:', email);
-      console.log('🌐 Mode développement:', isDevelopment);
-      console.log('📎 Lien PDF:', pdfLink);
+      console.log(' Envoi email à:', email);
+      console.log(' Mode développement:', isDevelopment);
+      console.log(' Lien PDF:', pdfLink);
       
       const templateParams = {
         name: email,  // Utilise la variable que le template attend
@@ -55,9 +60,12 @@ const LeadMagnet = ({
         reply_to: 'contact@formasecret.fr'
       };
 
-      console.log('📤 TemplateParams envoyés à EmailJS:', templateParams);
-      console.log('📤 Service ID:', EMAILJS_CONFIG.SERVICE_ID);
-      console.log('📤 Template ID:', EMAILJS_CONFIG.TEMPLATE_ID);
+      console.log(' TemplateParams envoyés à EmailJS:', templateParams);
+      console.log(' Service ID:', EMAILJS_CONFIG.SERVICE_ID);
+      console.log(' Template ID:', EMAILJS_CONFIG.TEMPLATE_ID);
+      console.log('🔗 Lien PDF complet:', pdfLink);
+      console.log('🌐 Base URL:', baseUrl);
+      console.log('📁 PDF URL:', pdfUrl);
       
       const response = await emailjs.send(
         EMAILJS_CONFIG.SERVICE_ID,
@@ -70,7 +78,11 @@ const LeadMagnet = ({
       return response;
     } catch (error) {
       console.error('❌ Erreur EmailJS:', error);
-      console.error('Détails:', error.text || error.message);
+      console.error('❌ Status:', error.status);
+      console.error('❌ Text:', error.text);
+      console.error('❌ Message:', error.message);
+      console.error('❌ Service ID:', EMAILJS_CONFIG.SERVICE_ID);
+      console.error('❌ Template ID:', EMAILJS_CONFIG.TEMPLATE_ID);
       throw error;
     }
   };
