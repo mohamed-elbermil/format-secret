@@ -6,15 +6,30 @@ import Breadcrumb from "../components/ui/Breadcrumb";
 import "@/assets/css/components/apropos.css";
 
 const IconArrow = () => (
-  <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
+  <svg
+    width="15"
+    height="15"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="2.5"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <line x1="5" y1="12" x2="19" y2="12" />
+    <polyline points="12 5 19 12 12 19" />
   </svg>
 );
 
 const statistics = [
-  { number: "25+",  label: "Ans d'expérience",     desc: "Au service de l'excellence" },
-  { number: "8",    label: "Formations certifiées", desc: "Programmes Qualiopi"         },
-  { number: "98%",  label: "Satisfaction client",   desc: "Témoignages vérifiés"        },
+  {
+    number: "25+",
+    label: "Ans d'expérience",
+    desc: "Au service de l'excellence",
+  },
+  { number: "8", label: "Formations certifiées", desc: "Programmes Qualiopi" },
+  { number: "98%", label: "Satisfaction client", desc: "Témoignages vérifiés" },
 ];
 
 const missionValues = [
@@ -69,7 +84,9 @@ export default function AProposPage() {
         <div className="ap-hero__inner container">
           {/* Texte */}
           <div className="ap-hero__text">
-            <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "À Propos" }]} />
+            <Breadcrumb
+              items={[{ label: "Accueil", href: "/" }, { label: "À Propos" }]}
+            />
             <p className="ap-hero__eyebrow">
               <span className="ap-hero__eyebrow-dot" aria-hidden="true" />
               Organisme de formation certifié Qualiopi
@@ -111,8 +128,15 @@ export default function AProposPage() {
         </div>
 
         <div className="ap-hero__wave" aria-hidden="true">
-          <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" fill="var(--clr-cream)" />
+          <svg
+            viewBox="0 0 1440 60"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z"
+              fill="var(--clr-cream)"
+            />
           </svg>
         </div>
       </section>
@@ -127,10 +151,12 @@ export default function AProposPage() {
             </h2>
             <p className="ap-engage__text">
               Chez FormaSecret, nous nous engageons à fournir des{" "}
-              <strong>formations innovantes, durables et centrées sur vos besoins</strong>.
-              Notre mission est de vous accompagner dans l'acquisition de compétences
-              qui transforment véritablement votre pratique professionnelle et
-              boostent votre carrière.
+              <strong>
+                formations innovantes, durables et centrées sur vos besoins
+              </strong>
+              . Notre mission est de vous accompagner dans l'acquisition de
+              compétences qui transforment véritablement votre pratique
+              professionnelle et boostent votre carrière.
             </p>
           </div>
         </Container>
@@ -239,7 +265,7 @@ export default function AProposPage() {
             <div>
               <img
                 src="/assets/images/pexels-photo-5915194.jpeg"
-                alt="Vision FormaSecret — professionnelle en formation"
+                alt="Vision FormaSecret - professionnelle en formation"
                 className="ap-vision__img"
                 loading="lazy"
               />

@@ -241,7 +241,7 @@ export default function CguPage() {
                 <p>
                   L'ensemble des éléments constituant le site — marques, logos,
                   textes, images, graphismes, sons, vidéos, logiciels et bases
-                  de données — est protégé par les dispositions du Code de la
+                  de données - est protégé par les dispositions du Code de la
                   propriété intellectuelle.
                 </p>
                 <p>

@@ -10,12 +10,10 @@ export default function RatingBadge() {
         className="logo"
       />
 
-      <div className="stars">
-        {"★★★★★"}
-      </div>
+      <div className="stars">{"★★★★★"}</div>
 
       <span className="text">
-        <strong>5/5</strong> — Recommandé par nos clients
+        <strong>5/5</strong> - Recommandé par nos clients
       </span>
     </div>
   );

@@ -24,7 +24,7 @@ const reassuranceItems = [
   {
     label: (
       <>
-        <strong>Certification Qualiopi</strong> — financement professionnel
+        <strong>Certification Qualiopi</strong> - financement professionnel
         facilité
       </>
     ),

@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import FormationModal from "../components/formations/FormationModal";
 import FormationsHero from "../components/sections/FormationsHero";
 import FormationsCatalogue from "../components/sections/FormationsCatalogue";
+import DomainesSection from "../components/sections/DomainesSection";
 import SurMesureSection from "../components/sections/SurMesureSection";
 import ModalitesSection from "../components/sections/ModalitesSection";
 import KeyFiguresSection from "../components/sections/KeyFiguresSection";
@@ -19,6 +20,8 @@ export default function FormationsPage() {
       <FormationsHero />
 
       <FormationsCatalogue onOpenModal={setModalFormationKey} />
+
+      <DomainesSection />
 
       <SurMesureSection />
 
