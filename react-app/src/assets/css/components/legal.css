@@ -1,0 +1,297 @@
+/* ============================================================
+   LEGAL PAGES – CGU / CGV
+   FormaSecret 2026
+   ============================================================ */
+
+/* ── Hero bandeau navy ── */
+.legal-banner {
+  background: var(--clr-navy);
+  padding: calc(var(--hdr-total-h) + 1.5rem) 0 2rem;
+}
+
+.legal-banner__title {
+  font-family: var(--font-title);
+  font-size: 2.4rem;
+  font-weight: 600;
+  color: var(--clr-white);
+  margin: 0.75rem 0 0.4rem;
+  line-height: 1.2;
+}
+
+.legal-banner__subtitle {
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  color: rgba(249, 247, 244, 0.55);
+  margin: 0;
+  letter-spacing: 0.03em;
+}
+
+.legal-banner__badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  background: rgba(247, 171, 63, 0.15);
+  border: 1px solid rgba(247, 171, 63, 0.3);
+  color: var(--clr-gold);
+  font-family: var(--font-body);
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+  padding: 0.3rem 0.8rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.5rem;
+}
+
+/* ── Corps principal ── */
+.legal-body {
+  background: var(--clr-cream);
+  padding: 4rem 0 6rem;
+}
+
+/* ── Layout : grille avec sommaire latéral ── */
+.legal-layout {
+  display: grid;
+  grid-template-columns: 240px 1fr;
+  gap: 3rem;
+  align-items: start;
+}
+
+/* ── Sommaire ── */
+.legal-toc {
+  position: sticky;
+  top: calc(var(--hdr-total-h) + 1.5rem);
+  background: var(--clr-white);
+  border: 1px solid rgba(51, 50, 73, 0.1);
+  border-radius: var(--radius-lg);
+  padding: 1.5rem;
+  box-shadow: var(--shadow-sm);
+}
+
+.legal-toc__title {
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-text-muted);
+  margin: 0 0 1rem;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid rgba(51, 50, 73, 0.08);
+}
+
+.legal-toc__list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.15rem;
+}
+
+.legal-toc__link {
+  display: block;
+  font-family: var(--font-body);
+  font-size: 0.78rem;
+  color: var(--clr-text-muted);
+  text-decoration: none;
+  padding: 0.35rem 0.6rem;
+  border-radius: var(--radius-sm);
+  transition: color var(--transition-fast), background var(--transition-fast);
+  line-height: 1.4;
+}
+
+.legal-toc__link:hover {
+  color: var(--clr-navy);
+  background: var(--clr-bg-alt);
+}
+
+/* ── Contenu articles ── */
+.legal-content {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+}
+
+.legal-article {
+  padding: 2rem 0;
+  border-bottom: 1px solid rgba(51, 50, 73, 0.08);
+}
+
+.legal-article:last-child {
+  border-bottom: none;
+  padding-bottom: 0;
+}
+
+.legal-article__num {
+  display: inline-block;
+  font-family: var(--font-body);
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--clr-gold);
+  background: rgba(247, 171, 63, 0.1);
+  padding: 0.2rem 0.65rem;
+  border-radius: var(--radius-pill);
+  margin-bottom: 0.6rem;
+}
+
+.legal-article__title {
+  font-family: var(--font-title);
+  font-size: 1.55rem;
+  font-weight: 600;
+  color: var(--clr-navy);
+  margin: 0 0 1rem;
+  line-height: 1.3;
+}
+
+.legal-article p {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  color: var(--clr-text);
+  line-height: 1.8;
+  margin: 0 0 0.85rem;
+}
+
+.legal-article p:last-child {
+  margin-bottom: 0;
+}
+
+.legal-article ul,
+.legal-article ol {
+  font-family: var(--font-body);
+  font-size: 0.94rem;
+  color: var(--clr-text);
+  line-height: 1.8;
+  margin: 0.5rem 0 0.85rem 1.2rem;
+  padding: 0;
+}
+
+.legal-article li {
+  margin-bottom: 0.35rem;
+}
+
+.legal-article strong {
+  color: var(--clr-navy);
+  font-weight: 600;
+}
+
+/* ── Bloc info mis en valeur ── */
+.legal-info-box {
+  background: var(--clr-bg-alt);
+  border-left: 3px solid var(--clr-gold);
+  border-radius: 0 var(--radius-md) var(--radius-md) 0;
+  padding: 1.1rem 1.4rem;
+  margin: 0.85rem 0;
+}
+
+.legal-info-box p {
+  margin-bottom: 0.4rem !important;
+}
+
+.legal-info-box p:last-child {
+  margin-bottom: 0 !important;
+}
+
+/* ── Tableau des pénalités ── */
+.legal-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  margin: 0.85rem 0;
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  box-shadow: var(--shadow-sm);
+}
+
+.legal-table thead {
+  background: var(--clr-navy);
+  color: var(--clr-white);
+}
+
+.legal-table th {
+  padding: 0.75rem 1rem;
+  text-align: left;
+  font-weight: 600;
+  font-size: 0.8rem;
+  letter-spacing: 0.04em;
+}
+
+.legal-table td {
+  padding: 0.65rem 1rem;
+  border-bottom: 1px solid rgba(51, 50, 73, 0.07);
+  color: var(--clr-text);
+}
+
+.legal-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.legal-table tbody tr:nth-child(even) {
+  background: var(--clr-bg-alt);
+}
+
+/* ── Bouton retour ── */
+.legal-back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-family: var(--font-body);
+  font-size: 0.88rem;
+  font-weight: 600;
+  color: var(--clr-navy);
+  text-decoration: none;
+  background: var(--clr-white);
+  border: 1.5px solid rgba(51, 50, 73, 0.2);
+  padding: 0.55rem 1.2rem;
+  border-radius: var(--radius-pill);
+  transition: all var(--transition-fast);
+  margin-bottom: 2.5rem;
+}
+
+.legal-back-btn:hover {
+  background: var(--clr-navy);
+  color: var(--clr-white);
+  border-color: var(--clr-navy);
+}
+
+/* ── Responsive ── */
+@media (max-width: 900px) {
+  .legal-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .legal-toc {
+    position: static;
+    display: none; /* masqué sur mobile : navigation linéaire suffit */
+  }
+}
+
+@media (max-width: 600px) {
+  .legal-banner__title {
+    font-size: 1.8rem;
+  }
+
+  .legal-body {
+    padding: 2.5rem 0 4rem;
+  }
+
+  .legal-article {
+    padding: 1.5rem 0;
+  }
+
+  .legal-article__title {
+    font-size: 1.25rem;
+  }
+
+  .legal-table {
+    font-size: 0.8rem;
+  }
+
+  .legal-table th,
+  .legal-table td {
+    padding: 0.5rem 0.65rem;
+  }
+}
