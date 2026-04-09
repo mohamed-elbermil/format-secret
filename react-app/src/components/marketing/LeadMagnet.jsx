@@ -6,8 +6,8 @@ import '../../styles/LeadMagnet.css';
 
 // Configuration EmailJS - Clés réelles
 const EMAILJS_CONFIG = {
-  SERVICE_ID: 'service_qdaqwnh',
-  TEMPLATE_ID: 'template_h35x9nw',
+  SERVICE_ID: 'service_w1lw4hj',
+  TEMPLATE_ID: 'template_wsqxw7s',
   PUBLIC_KEY: 'a3VXxebTm0sCV3_H9'
 };
 
