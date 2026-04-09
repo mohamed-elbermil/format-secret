@@ -7,19 +7,40 @@
 
 /* ── Keyframes ── */
 @keyframes acadFadeUp {
-  from { opacity: 0; transform: translateY(24px); }
-  to   { opacity: 1; transform: translateY(0); }
+  from {
+    opacity: 0;
+    transform: translateY(24px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes acadBadgePop {
-  0%   { opacity: 0; transform: translateY(12px) scale(0.85); }
-  70%  { transform: translateY(-4px) scale(1.04); }
-  100% { opacity: 1; transform: translateY(0) scale(1); }
+  0% {
+    opacity: 0;
+    transform: translateY(12px) scale(0.85);
+  }
+  70% {
+    transform: translateY(-4px) scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
 }
 
 @keyframes acadGlow {
-  0%, 100% { opacity: 0.3; transform: scale(1); }
-  50%       { opacity: 0.45; transform: scale(1.06); }
+  0%,
+  100% {
+    opacity: 0.3;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.45;
+    transform: scale(1.06);
+  }
 }
 
 /* ============================================================
@@ -46,7 +67,10 @@
 .acad-hero__dots {
   position: absolute;
   inset: 0;
-  background-image: radial-gradient(rgba(249, 247, 244, 0.07) 1.5px, transparent 1.5px);
+  background-image: radial-gradient(
+    rgba(249, 247, 244, 0.07) 1.5px,
+    transparent 1.5px
+  );
   background-size: 28px 28px;
 }
 
@@ -56,7 +80,11 @@
   right: -80px;
   width: 520px;
   height: 520px;
-  background: radial-gradient(circle, rgba(200, 146, 42, 0.18) 0%, transparent 65%);
+  background: radial-gradient(
+    circle,
+    rgba(200, 146, 42, 0.18) 0%,
+    transparent 65%
+  );
   animation: acadGlow 7s ease-in-out infinite;
 }
 
@@ -66,7 +94,11 @@
   left: -40px;
   width: 350px;
   height: 350px;
-  background: radial-gradient(circle, rgba(36, 61, 96, 0.55) 0%, transparent 70%);
+  background: radial-gradient(
+    circle,
+    rgba(36, 61, 96, 0.55) 0%,
+    transparent 70%
+  );
 }
 
 /* Layout interne */
@@ -193,7 +225,7 @@
 }
 
 .acad-hero__visual::before {
-  content: '';
+  content: "";
   position: absolute;
   bottom: 16px;
   right: -16px;
@@ -235,9 +267,11 @@
 }
 
 .acad-hero__badge::before {
-  content: '';
+  content: "";
   position: absolute;
-  top: 0; left: 0; right: 0;
+  top: 0;
+  left: 0;
+  right: 0;
   height: 3px;
   background: var(--clr-gold);
   border-radius: var(--radius-md) var(--radius-md) 0 0;
@@ -261,7 +295,9 @@
 /* Vague de transition */
 .acad-hero__wave {
   position: absolute;
-  bottom: -1px; left: 0; right: 0;
+  bottom: -1px;
+  left: 0;
+  right: 0;
   line-height: 0;
   z-index: 2;
 }
@@ -270,60 +306,6 @@
   display: block;
   width: 100%;
   height: 60px;
-}
-
-/* ============================================================
-   2. STATISTIQUES
-   ============================================================ */
-.acad-stats {
-  background: linear-gradient(135deg, var(--clr-navy) 0%, var(--clr-navy-mid) 100%);
-  padding: var(--padding-section-desktop);
-  position: relative;
-}
-
-.acad-stats__grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 1.5rem;
-}
-
-.acad-stat {
-  text-align: center;
-  padding: 2rem 1.5rem;
-  border-radius: var(--radius-md);
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(200, 146, 42, 0.15);
-  backdrop-filter: blur(8px);
-  transition: transform var(--transition-base), background var(--transition-base);
-}
-
-.acad-stat:hover {
-  transform: translateY(-4px);
-  background: rgba(255, 255, 255, 0.1);
-}
-
-.acad-stat__number {
-  font-family: var(--font-title);
-  font-size: clamp(2.5rem, 4vw, 3.5rem);
-  font-weight: 700;
-  color: var(--clr-gold);
-  line-height: 1;
-  margin-bottom: 0.5rem;
-}
-
-.acad-stat__label {
-  font-family: var(--font-body);
-  font-size: 0.9rem;
-  font-weight: 600;
-  color: var(--clr-cream);
-  margin-bottom: 0.25rem;
-}
-
-.acad-stat__desc {
-  font-family: var(--font-body);
-  font-size: 0.78rem;
-  color: rgba(249, 247, 244, 0.5);
-  letter-spacing: 0.02em;
 }
 
 /* ============================================================
@@ -463,7 +445,9 @@
   background: rgba(51, 50, 73, 0.04);
   border-radius: var(--radius-md);
   border-left: 3px solid var(--clr-gold);
-  transition: transform var(--transition-fast), box-shadow var(--transition-fast);
+  transition:
+    transform var(--transition-fast),
+    box-shadow var(--transition-fast);
 }
 
 .acad-value:hover {
@@ -546,7 +530,9 @@
   padding: 1.75rem;
   border-top: 3px solid var(--clr-gold);
   box-shadow: var(--shadow-sm);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
 }
 
 .acad-feature:hover {
@@ -594,7 +580,9 @@
   border-radius: var(--radius-md);
   overflow: hidden;
   box-shadow: var(--shadow-md);
-  transition: transform var(--transition-base), box-shadow var(--transition-base);
+  transition:
+    transform var(--transition-base),
+    box-shadow var(--transition-base);
 }
 
 .acad-audience-card:hover {

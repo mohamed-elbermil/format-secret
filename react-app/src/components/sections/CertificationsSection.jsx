@@ -50,7 +50,7 @@ const qualiopi = {
     'FormaSecret est certifiée Qualiopi, la certification nationale qualité pour les prestataires de formation. Elle atteste de la qualité de nos processus pédagogiques et de notre engagement envers les apprenants.',
   items: [
     'Gage de qualité des processus de formation reconnu par l'État',
-    'Condition nécessaire pour accéder aux financements publics (OPCO, CPF)',
+    'Condition nécessaire pour accéder aux financements publics de la formation',
     'Audit régulier garantissant un suivi rigoureux et transparent',
   ],
   link: {

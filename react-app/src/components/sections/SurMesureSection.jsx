@@ -64,7 +64,7 @@ const strengths = [
 
 const checkItems = [
   'Adapté à votre secteur d\'activité et à votre culture d\'entreprise',
-  'Financement OPCO facilité grâce à la certification Qualiopi',
+  'Certification Qualiopi reconnue par l\'État',
   'De 1 à plusieurs jours selon vos objectifs',
 ]
 

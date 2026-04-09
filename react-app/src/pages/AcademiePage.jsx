@@ -8,7 +8,7 @@ import "@/assets/css/components/academie.css";
 // Import tous les logos depuis le dossier racine /assets (hors react-app/public)
 const logoModules = import.meta.glob(
   "../../../assets/images/logo-entreprise/*.png",
-  { eager: true }
+  { eager: true },
 );
 const logos = Object.entries(logoModules)
   .sort(([a], [b]) => {
@@ -36,16 +36,32 @@ const IconArrow = () => (
 );
 
 const CheckIcon = () => (
-  <svg width="10" height="10" viewBox="0 0 12 12" fill="none" aria-hidden="true">
-    <polyline points="1.5,6 5,9.5 10.5,2.5" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
+  <svg
+    width="10"
+    height="10"
+    viewBox="0 0 12 12"
+    fill="none"
+    aria-hidden="true"
+  >
+    <polyline
+      points="1.5,6 5,9.5 10.5,2.5"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+    />
   </svg>
 );
 
 const statistics = [
-  { number: "50+",  label: "Parcours académiques", desc: "Programmes spécialisés" },
-  { number: "500+", label: "Managers formés",       desc: "Leaders développés"    },
-  { number: "300+", label: "Commerciaux certifiés", desc: "Performance vente"     },
-  { number: "95%",  label: "Taux de réussite",      desc: "Objectifs atteints"    },
+  {
+    number: "50+",
+    label: "Parcours académiques",
+    desc: "Programmes spécialisés",
+  },
+  { number: "500+", label: "Managers formés", desc: "Leaders développés" },
+  { number: "300+", label: "Commerciaux certifiés", desc: "Performance vente" },
+  { number: "95%", label: "Taux de réussite", desc: "Objectifs atteints" },
 ];
 
 const expertiseValues = [
@@ -88,7 +104,12 @@ const audienceCards = [
   {
     icon: "fas fa-briefcase",
     title: "Managers",
-    items: ["Posture managériale", "Communication", "Leadership", "Gestion d'équipe"],
+    items: [
+      "Posture managériale",
+      "Communication",
+      "Leadership",
+      "Gestion d'équipe",
+    ],
   },
   {
     icon: "fas fa-handshake",
@@ -119,7 +140,9 @@ export default function AcademiePage() {
         <div className="acad-hero__inner container">
           {/* Texte */}
           <div className="acad-hero__text">
-            <Breadcrumb items={[{ label: "Accueil", href: "/" }, { label: "Académie" }]} />
+            <Breadcrumb
+              items={[{ label: "Accueil", href: "/" }, { label: "Académie" }]}
+            />
             <p className="acad-hero__eyebrow">
               <span className="acad-hero__eyebrow-dot" aria-hidden="true" />
               Organisme de formation certifié Qualiopi
@@ -134,9 +157,9 @@ export default function AcademiePage() {
             <div className="acad-hero__divider" aria-hidden="true" />
 
             <p className="acad-hero__subtitle">
-              Des parcours sur mesure pour développer durablement les compétences
-              managériales et commerciales de vos équipes. FormaSecret transforme
-              vos talents en performance.
+              Des parcours sur mesure pour développer durablement les
+              compétences managériales et commerciales de vos équipes.
+              FormaSecret transforme vos talents en performance.
             </p>
 
             <Link to="/#contact" className="acad-hero__cta">
@@ -164,25 +187,17 @@ export default function AcademiePage() {
 
         {/* Vague de transition */}
         <div className="acad-hero__wave" aria-hidden="true">
-          <svg viewBox="0 0 1440 60" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
-            <path d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z" fill="var(--clr-cream)" />
+          <svg
+            viewBox="0 0 1440 60"
+            preserveAspectRatio="none"
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path
+              d="M0,40 C360,80 1080,0 1440,40 L1440,60 L0,60 Z"
+              fill="var(--clr-cream)"
+            />
           </svg>
         </div>
-      </section>
-
-      {/* ── 2. STATISTIQUES ── */}
-      <section className="acad-stats">
-        <Container>
-          <div className="acad-stats__grid">
-            {statistics.map((s, i) => (
-              <div key={i} className="acad-stat">
-                <div className="acad-stat__number">{s.number}</div>
-                <div className="acad-stat__label">{s.label}</div>
-                <div className="acad-stat__desc">{s.desc}</div>
-              </div>
-            ))}
-          </div>
-        </Container>
       </section>
 
       {/* ── 3. ENGAGEMENT ── */}
@@ -191,8 +206,7 @@ export default function AcademiePage() {
           <div className="acad-engage__inner">
             <span className="acad-section-eyebrow">Notre mission</span>
             <h2 className="acad-section-title">
-              Former, Structurer,{" "}
-              <em>Faire Progresser</em>
+              Former, Structurer, <em>Faire Progresser</em>
             </h2>
             <p className="acad-engage__text">
               L'Académie du Management et de la Vente accompagne les entreprises
@@ -333,7 +347,6 @@ export default function AcademiePage() {
           </div>
         </Container>
       </section>
-
     </>
   );
 }

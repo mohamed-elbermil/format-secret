@@ -20,8 +20,8 @@ const IconChevron = () => (
 
 const faqs = [
   {
-    q: "Vos formations sont-elles éligibles au financement OPCO ?",
-    a: "Oui. FormaSecret est certifié Qualiopi, ce qui vous permet de solliciter une prise en charge auprès de votre OPCO. Nous vous accompagnons dans la constitution du dossier et les démarches administratives pour maximiser votre financement.",
+    q: "Comment financer une formation FormaSecret ?",
+    a: "FormaSecret est certifié Qualiopi. Cette certification ouvre l'accès à différents dispositifs de financement de la formation professionnelle continue. Nos équipes vous accompagnent dans vos démarches.",
   },
   {
     q: "Quelle est la durée moyenne d'une formation ?",

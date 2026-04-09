@@ -181,7 +181,7 @@ export default function FormationsCatalogue({ onOpenModal }) {
           </h2>
           <p className="fcat-header__count">
             Toutes certifiées Qualiopi ·{' '}
-            <strong>Financement OPCO accepté</strong>
+            <strong>Financement professionnel accepté</strong>
           </p>
         </div>
 

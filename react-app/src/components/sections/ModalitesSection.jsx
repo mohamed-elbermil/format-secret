@@ -39,7 +39,7 @@ const modalites = [
     details: [
       'Sessions planifiées sur le calendrier annuel',
       '6 à 12 participants par session',
-      'Financement OPCO facilité',
+      'Financement professionnel facilité',
     ],
   },
   {

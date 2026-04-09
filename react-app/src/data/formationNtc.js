@@ -79,9 +79,9 @@ export const formationNtcData = [
     debouchesList: ['Commercial B to B ou B to C', 'Chargé d\'affaires', 'Responsable commercial Junior', 'Account Manager', 'Business Developer'],
     // Financement
     financementTitle: 'Financement',
-    financementContent: '<p>Cette formation peut être financée par l\'OPCO de votre entreprise, par Pôle emploi (AIF), par le CPF ou en contrat de professionnalisation / apprentissage. Nos équipes vous accompagnent dans vos démarches.</p>',
+    financementContent: '<p>Cette formation peut être financée par Pôle emploi (AIF), par le CPF ou en contrat de professionnalisation / apprentissage. Nos équipes vous accompagnent dans vos démarches.</p>',
     financementItems: [
-      { icon: 'fas fa-briefcase', title: 'OPCO', description: 'Prise en charge via votre opérateur de compétences.' },
+      { icon: 'fas fa-briefcase', title: 'Pôle emploi (AIF)', description: 'Aide individuelle à la formation selon votre situation.' },
       { icon: 'fas fa-id-card', title: 'CPF', description: 'Mobilisable selon votre situation professionnelle.' },
       { icon: 'fas fa-user-graduate', title: 'Contrat pro / apprentissage', description: 'Dispositifs alternants éligibles.' },
     ],
@@ -155,9 +155,9 @@ export const formationNtcData = [
     debouchesContent: '<p>Chargé d\'affaires, Commercial B2B, Account Manager, Business Developer, Ingénieur commercial dans tous les secteurs d\'activité.</p>',
     debouchesList: ['Chargé d\'affaires', 'Commercial B2B', 'Account Manager', 'Business Developer'],
     financementTitle: 'Financement',
-    financementContent: '<p>Financement possible via OPCO, CPF, contrat de professionnalisation ou apprentissage. Nous vous accompagnons dans vos démarches.</p>',
+    financementContent: '<p>Financement possible via CPF, contrat de professionnalisation ou apprentissage. Nous vous accompagnons dans vos démarches.</p>',
     financementItems: [
-      { icon: 'fas fa-briefcase', title: 'OPCO', description: 'Financement via votre opérateur de compétences.' },
+      { icon: 'fas fa-id-card', title: 'CPF', description: 'Possibilité de mobiliser votre compte de formation.' },
       { icon: 'fas fa-id-card', title: 'CPF', description: 'Possibilité de mobiliser votre compte CPF.' },
       { icon: 'fas fa-hand-holding-usd', title: 'Aides régionales', description: 'Selon votre région et votre statut.' },
     ],
@@ -228,9 +228,9 @@ export const formationNtcData = [
     debouchesContent: '<p>Commercial sédentaire, Téléconseiller, Chargé de clientèle, Account Manager à distance, Business Developer digital.</p>',
     debouchesList: ['Commercial sédentaire', 'Téléconseiller', 'Chargé de clientèle', 'Account Manager à distance'],
     financementTitle: 'Financement',
-    financementContent: '<p>Financement OPCO, CPF, contrat pro ou apprentissage. Accompagnement personnalisé pour monter votre dossier.</p>',
+    financementContent: '<p>Financement CPF, contrat pro ou apprentissage. Accompagnement personnalisé pour monter votre dossier.</p>',
     financementItems: [
-      { icon: 'fas fa-briefcase', title: 'OPCO', description: 'Prise en charge en lien avec votre branche.' },
+      { icon: 'fas fa-id-card', title: 'CPF', description: 'Éligibilité à vérifier selon votre profil.' },
       { icon: 'fas fa-id-card', title: 'CPF', description: 'Éligibilité à vérifier selon votre profil.' },
       { icon: 'fas fa-laptop', title: 'Aides spécifiques', description: 'Dispositifs liés à la formation à distance.' },
     ],

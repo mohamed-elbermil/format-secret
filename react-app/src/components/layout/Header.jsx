@@ -43,13 +43,6 @@ const reassuranceItems = [
     ),
   },
   {
-    id: 'opco',
-    Icon: IconCard,
-    content: (
-      <>Financement <strong>OPCO</strong> accepté</>
-    ),
-  },
-  {
     id: 'satisfaction',
     Icon: IconStar,
     content: (
