@@ -17,14 +17,14 @@ export default function Footer() {
             />
             <div className="infos-left">
               <a
-                href="https://www.google.com/maps/place/FORMASECRET/@45.763958,4.9577099,17z/data=!3m1!4b1!4m6!3m5!1s0x47f4c1b4e323ca65:0xe04edf5081197452!8m2!3d45.763958!4d4.9577099!16s%2Fg%2F11mvxkpql8?entry=ttu&g_ep=EgoyMDI2MDIyNC4wIKXMDSoASAFQAw%3D%3D"
+                href="https://www.google.com/maps/place/69150+D%C3%A9cines-Charpieu/@45.7759699,4.917739,13z/data=!3m1!4b1!4m6!3m5!1s0x47f4c0cae9da36e3:0x408ab2ae4bb18b0!8m2!3d45.7674499!4d4.957024!16zL20vMGQ0eXR5?entry=ttu&g_ep=EgoyMDI2MDQwNi4wIKXMDSoASAFQAw%3D%3D"
                 target="_blank"
                 rel="noopener noreferrer"
                 aria-label="Google map"
                 className="list-link"
               >
                 <i className="fa-solid fa-location-dot" />
-                140 Rue Emile Zola, 69150 Décines-Charpieu
+                Décines-Charpieu, 69150
               </a>
               <a href={`tel:${contactInfo.phone}`} className="list-link">
                 <i className="fa-solid fa-phone"></i>
