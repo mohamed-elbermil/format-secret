@@ -25,14 +25,13 @@ const articles = [
   { id: 'art2',  label: 'Art. 2 – Objet' },
   { id: 'art3',  label: 'Art. 3 – Devis et attestations' },
   { id: 'art4',  label: 'Art. 4 – Prix et paiement' },
-  { id: 'art5',  label: 'Art. 5 – Prise en charge OPCO' },
-  { id: 'art6',  label: 'Art. 6 – Annulation et report' },
-  { id: 'art7',  label: 'Art. 7 – Programme des formations' },
-  { id: 'art8',  label: 'Art. 8 – Propriété intellectuelle' },
-  { id: 'art9',  label: 'Art. 9 – Informatique et libertés' },
-  { id: 'art10', label: 'Art. 10 – Sécurité' },
-  { id: 'art11', label: 'Art. 11 – Formation continue' },
-  { id: 'art12', label: 'Art. 12 – Loi applicable' },
+  { id: 'art5',  label: 'Art. 5 – Annulation et report' },
+  { id: 'art6',  label: 'Art. 6 – Programme des formations' },
+  { id: 'art7',  label: 'Art. 7 – Propriété intellectuelle' },
+  { id: 'art8',  label: 'Art. 8 – Informatique et libertés' },
+  { id: 'art9',  label: 'Art. 9 – Sécurité' },
+  { id: 'art10', label: 'Art. 10 – Formation continue' },
+  { id: 'art11', label: 'Art. 11 – Loi applicable' },
 ]
 
 export default function CgvPage() {
@@ -107,10 +106,6 @@ export default function CgvPage() {
                     <strong>Stagiaire :</strong> toute personne physique participant effectivement
                     à la formation.
                   </p>
-                  <p>
-                    <strong>OPCO :</strong> Opérateur de Compétences, organisme collectant les
-                    contributions légales des entreprises au titre de la formation professionnelle.
-                  </p>
                 </div>
               </article>
 
@@ -159,10 +154,6 @@ export default function CgvPage() {
                   <li>Attestation de fin de formation</li>
                   <li>Feuilles d'émargement (par demi-journée)</li>
                 </ul>
-                <p>
-                  Une convention de formation particulière peut être établie avec un OPCO à la
-                  demande du Client.
-                </p>
               </article>
 
               {/* Art. 4 */}
@@ -194,35 +185,12 @@ export default function CgvPage() {
                   préalable, l'application de pénalités calculées au taux légal majoré au
                   triple, ainsi qu'une indemnité forfaitaire de recouvrement de{' '}
                   <strong>60 €</strong> conformément à l'article D. 441-5 du Code de commerce.
-                  Ces sommes ne sont pas éligibles à un financement OPCO.
                 </p>
               </article>
 
               {/* Art. 5 */}
               <article className="legal-article" id="art5">
                 <span className="legal-article__num">Article 5</span>
-                <h2 className="legal-article__title">Prise en charge OPCO</h2>
-                <p>
-                  Il appartient au Client de vérifier l'éligibilité de la formation à un
-                  financement OPCO et d'effectuer lui-même les démarches de demande de prise
-                  en charge auprès de son OPCO avant le démarrage de la formation.
-                </p>
-                <p>
-                  <strong>Aucune délégation de paiement directe ne sera accordée.</strong>{' '}
-                  Le Client règle <strong>FormaSecret</strong> et se fait rembourser
-                  ultérieurement par son OPCO.
-                </p>
-                <p>
-                  <strong>FormaSecret</strong> ne peut être tenu responsable
-                  des décisions de refus ou de prise en charge partielle prononcées par un OPCO,
-                  ni des délais de traitement de leurs dossiers. Dans tous les cas, le Client
-                  reste redevable de l'intégralité du montant de la formation.
-                </p>
-              </article>
-
-              {/* Art. 6 */}
-              <article className="legal-article" id="art6">
-                <span className="legal-article__num">Article 6</span>
                 <h2 className="legal-article__title">Conditions d'annulation et de report</h2>
                 <p>
                   <strong>FormaSecret</strong> se réserve le droit d'annuler ou de
@@ -275,9 +243,9 @@ export default function CgvPage() {
                 </p>
               </article>
 
-              {/* Art. 7 */}
-              <article className="legal-article" id="art7">
-                <span className="legal-article__num">Article 7</span>
+              {/* Art. 6 */}
+              <article className="legal-article" id="art6">
+                <span className="legal-article__num">Article 6</span>
                 <h2 className="legal-article__title">Programme des formations</h2>
                 <p>
                   Les programmes de formation communiqués avant la session ont un caractère
@@ -295,9 +263,9 @@ export default function CgvPage() {
                 </p>
               </article>
 
-              {/* Art. 8 */}
-              <article className="legal-article" id="art8">
-                <span className="legal-article__num">Article 8</span>
+              {/* Art. 7 */}
+              <article className="legal-article" id="art7">
+                <span className="legal-article__num">Article 7</span>
                 <h2 className="legal-article__title">Propriété intellectuelle</h2>
                 <p>
                   L'ensemble des supports de formation (présentations, documents, outils,
@@ -317,9 +285,9 @@ export default function CgvPage() {
                 </p>
               </article>
 
-              {/* Art. 9 */}
-              <article className="legal-article" id="art9">
-                <span className="legal-article__num">Article 9</span>
+              {/* Art. 8 */}
+              <article className="legal-article" id="art8">
+                <span className="legal-article__num">Article 8</span>
                 <h2 className="legal-article__title">Informatique et libertés</h2>
                 <p>
                   Les données personnelles collectées lors de l'inscription et du suivi des
@@ -343,9 +311,9 @@ export default function CgvPage() {
                 </p>
               </article>
 
-              {/* Art. 10 */}
-              <article className="legal-article" id="art10">
-                <span className="legal-article__num">Article 10</span>
+              {/* Art. 9 */}
+              <article className="legal-article" id="art9">
+                <span className="legal-article__num">Article 9</span>
                 <h2 className="legal-article__title">Prescriptions de sécurité</h2>
                 <p>
                   Pour les formations inter-entreprises organisées dans les locaux de{' '}
@@ -360,9 +328,9 @@ export default function CgvPage() {
                 </p>
               </article>
 
-              {/* Art. 11 */}
-              <article className="legal-article" id="art11">
-                <span className="legal-article__num">Article 11</span>
+              {/* Art. 10 */}
+              <article className="legal-article" id="art10">
+                <span className="legal-article__num">Article 10</span>
                 <h2 className="legal-article__title">Formation professionnelle continue</h2>
                 <p>
                   Les formations dispensées par <strong>FormaSecret</strong> sont
@@ -374,9 +342,9 @@ export default function CgvPage() {
                 </p>
               </article>
 
-              {/* Art. 12 */}
-              <article className="legal-article" id="art12">
-                <span className="legal-article__num">Article 12</span>
+              {/* Art. 11 */}
+              <article className="legal-article" id="art11">
+                <span className="legal-article__num">Article 11</span>
                 <h2 className="legal-article__title">Loi applicable et juridiction compétente</h2>
                 <p>
                   Les présentes CGV sont régies et interprétées conformément au droit français.

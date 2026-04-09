@@ -36,13 +36,13 @@ export const formations = {
   formation14: {
     title: 'Améliorer ses écrits professionnels',
     description: "Perfectionnez vos compétences en rédaction avec notre formation \"Améliorer ses écrits professionnels\". Apprenez à prendre des notes efficacement, rédiger des textes clairs et attractifs, et structurer vos écrits pour captiver votre lecteur. Adoptez des techniques d'écriture rapide et utilisez un vocabulaire précis pour informer et convaincre.<br /><br />Mis à jour le 15/04/2025",
-    pdf: '/assets/pdf/AMELIORER ECRITS PRO.pdf',
+    pdf: '/assets/pdf/AMELIORER-ECRITS-PRO.pdf',
     calendar: 'https://calendar.google.com/calendar/embed?src=dcbcd03039eab1973fc2d99221eac59e99f18e2a9b576d0beebd20e065e85a50%40group.calendar.google.com&ctz=Europe%2FParis',
   },
   formation6: {
     title: 'Comment bien préparer sa retraite',
     description: "Préparez-vous sereinement à la retraite avec notre formation \"Comment bien préparer sa retraite\". Apprenez à gérer le changement et le stress, à vous adapter à de nouvelles routines, et à établir un planning quotidien réaliste. Découvrez des stratégies pour maintenir votre bien-être physique et mental, développer de nouveaux centres d'intérêt, et élargir votre réseau social.<br /><br />Mis à jour le 15/04/2025",
-    pdf: '/assets/pdf/PREPARER SA RETRAITE.pdf',
+    pdf: '/assets/pdf/PREPARER-SA-RETRAITE.pdf',
     calendar: 'https://calendar.google.com/calendar/embed?src=4e248a6238e474594f20877ac01bea89f488b159532e8b45952d466fc4a39a3d%40group.calendar.google.com&ctz=Europe%2FParis',
   },
   formation15: {
@@ -54,19 +54,19 @@ export const formations = {
   formation20: {
     title: 'Gestes et Postures',
     description: "Préservez votre santé et prévenez les troubles musculosquelettiques avec notre formation \"Gestes et Postures\". Apprenez les techniques ergonomiques adaptées à votre environnement professionnel et adoptez les bonnes pratiques pour manipuler des charges en toute sécurité. Découvrez comment aménager votre poste de travail et réaliser vos tâches quotidiennes tout en préservant votre corps des risques liés aux mauvaises postures.<br /><br />Mis à jour le 15/04/2025",
-    pdf: '/assets/pdf/FORMATION GESTES ET POSTURES.pdf',
+    pdf: '/assets/pdf/FORMATION-GESTES-ET-POSTURES.pdf',
     calendar: 'https://calendar.google.com/calendar/embed?src=d3970e75fe6f45011508aefa637293d975eaf9075fd5e7325eea90f25d2a8964%40group.calendar.google.com&ctz=Europe%2FParis',
   },
   formation21: {
     title: 'Sauveteur Secouriste du Travail',
     description: "Devenez un acteur essentiel de la sécurité dans votre entreprise avec notre formation \"Sauveteur Secouriste du Travail\" (SST1). Apprenez à intervenir efficacement face aux situations d'urgence, à prodiguer les premiers secours et à alerter les secours appropriés. Cette formation certifiante vous permettra d'acquérir les compétences nécessaires pour protéger, examiner, secourir et prévenir les risques professionnels au sein de votre organisation.<br /><br />Mis à jour le 15/04/2025",
-    pdf: '/assets/pdf/PROGRAMME FORMATION SST.pdf',
+    pdf: '/assets/pdf/PROGRAMME-FORMATION-SST.pdf',
     calendar: 'https://calendar.google.com/calendar/embed?src=a0df1baf7f6cbf421e3d3205f9b57cc7659cda7977c71087326ee5a1c4cfad3a%40group.calendar.google.com&ctz=Europe%2FParis',
   },
   formation22: {
     title: 'MAC Sauveteur Secouriste du Travail',
     description: "Maintenez et actualisez vos compétences de Sauveteur Secouriste du Travail avec notre formation \"MAC SST\" (Maintien et Actualisation des Compétences). Restez à jour sur les dernières techniques de secourisme, révisez les gestes qui sauvent et renforcez votre rôle dans la prévention des risques professionnels. Cette formation de recyclage obligatoire vous permettra de renouveler votre certificat SST pour continuer à assurer la sécurité au sein de votre entreprise.<br /><br />Mis à jour le 15/04/2025",
-    pdf: '/assets/pdf/PROGRAMME FORMATION MAC SST.pdf',
+    pdf: '/assets/pdf/PROGRAMME-FORMATION-MAC-SST.pdf',
     calendar: 'https://calendar.google.com/calendar/embed?src=91bde2963e31663e497458eb0c76ac6972f6cecdf4b4b557a3cf18eecf012dc6%40group.calendar.google.com&ctz=Europe%2FParis',
   },
 }
