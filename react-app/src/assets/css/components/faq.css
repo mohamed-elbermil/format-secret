@@ -8,6 +8,7 @@
 .faq-section {
   background: #ffffff;
   padding: var(--padding-section-desktop);
+  overflow-x: clip;
 }
 
 /* ── En-tête centré ── */

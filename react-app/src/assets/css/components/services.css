@@ -8,6 +8,7 @@
 .svc-section {
   background: var(--clr-cream);
   padding: var(--padding-section-desktop);
+  overflow: hidden;
 }
 
 /* ── En-tête de section ── */

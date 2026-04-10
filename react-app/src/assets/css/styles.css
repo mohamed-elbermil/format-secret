@@ -1,7 +1,34 @@
+/* ============================================
+   PREVENT OVERFLOW
+   ============================================ */
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+body {
+  width: 100%;
+}
+
+/* ============================================
+   CONTAINER
+   ============================================ */
 .container {
   width: 90%;
   max-width: 1200px;
   margin: 0 auto;
+}
+
+@media (max-width: 480px) {
+  .container {
+    width: 100%;
+    padding: 0 1.1rem;
+  }
 }
 
 .logo-agency img {
@@ -31,6 +58,8 @@ header .container {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  max-width: calc(100vw - 40px);
+  box-sizing: border-box;
 }
 
 .reassurance-bar {
@@ -64,6 +93,9 @@ header .container {
   padding: 0;
   position: relative;
   gap: 7em;
+  max-width: calc(100vw - 120px);
+  overflow-x: auto;
+  box-sizing: border-box;
 }
 
 .bar-item {
@@ -351,6 +383,14 @@ nav {
     width: calc(100% - 20px);
     padding: 10px 12px;
     border-radius: 18px;
+    max-width: none;
+    box-sizing: border-box;
+  }
+
+  .bar-items {
+    gap: 2em;
+    max-width: calc(100vw - 80px);
+    padding-right: 10px;
   }
 
   .logo img {
@@ -530,6 +570,7 @@ nav {
   flex: 1;
   max-width: 500px;
   position: relative;
+  box-sizing: border-box;
 }
 
 .hero-image img {
@@ -539,6 +580,8 @@ nav {
   box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
   transform: perspective(1000px) rotateY(-15deg);
   transition: transform 0.3s ease;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 .hero-image:hover img {
@@ -623,6 +666,9 @@ nav {
   font-weight: 800;
   color: #ffffff;
   margin-bottom: 16px;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .hero-index-subtitle {
@@ -630,6 +676,9 @@ nav {
   opacity: 0.95;
   margin-bottom: 26px;
   color: #e9e8ff;
+  max-width: 100%;
+  overflow-wrap: break-word;
+  hyphens: auto;
 }
 
 .hero-visual {
@@ -646,6 +695,8 @@ nav {
   height: auto;
   border-radius: 20px;
   transition: transform 0.3s ease;
+  box-sizing: border-box;
+  max-width: calc(100vw - 40px);
 }
 
 @keyframes float {
@@ -694,6 +745,8 @@ nav {
   gap: 14px;
   margin-top: 22px;
   flex-wrap: wrap;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 .hero-index-stat {
   display: inline-flex;
@@ -758,6 +811,7 @@ nav {
 .services {
   padding: 80px 0;
   background-color: #ffffff;
+  overflow: hidden;
 }
 
 .services h2,
@@ -1129,6 +1183,7 @@ nav {
 .certification {
   padding: 80px 0;
   background-color: #f9f9f9;
+  overflow: hidden;
 }
 
 .certification h2 {

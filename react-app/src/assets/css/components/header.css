@@ -66,7 +66,7 @@
 
 /* Séparateurs entre items */
 .hdr-bar-item + .hdr-bar-item {
-  padding-left: 3.5rem;
+  padding-left: clamp(1.5rem, 5vw, 3.5rem);
   position: relative;
 }
 
@@ -95,14 +95,16 @@
 }
 
 .hdr-container {
-  width: 90%;
+  width: 100%;
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 1.25rem;
   height: var(--hdr-nav-h);
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 1.5rem;
+  box-sizing: border-box;
 }
 
 /* ── Logo ── */
@@ -417,6 +419,11 @@
   .hdr-bar-items {
     gap: 0;
   }
+
+  /* Sur tablette, réduire le gap pour que logo + burger restent dans le container */
+  .hdr-container {
+    gap: 0.75rem;
+  }
 }
 
 /* Mobile S : cacher le 2e item de réassurance aussi */
@@ -431,5 +438,16 @@
 
   .hdr-container {
     height: 62px;
+    gap: 0.5rem;
+  }
+
+  /* Le logo ne grandit pas pour laisser la place au burger */
+  .hdr-logo {
+    flex-shrink: 1;
+    min-width: 0;
+  }
+
+  .hdr-logo img {
+    max-width: 130px;
   }
 }

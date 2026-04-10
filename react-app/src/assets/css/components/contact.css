@@ -10,6 +10,7 @@
 .ctc-section {
   background: var(--clr-bg-alt);
   padding: var(--padding-section-desktop);
+  overflow-x: clip;
 }
 
 /* ── Grille 2 colonnes ── */

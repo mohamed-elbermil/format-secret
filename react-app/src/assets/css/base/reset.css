@@ -6,12 +6,16 @@
 
 html {
     scroll-behavior: smooth;
+    width: 100%;          /* bloque l'expansion du layout viewport */
+    overflow-x: hidden;
 }
 
 body {
     font-family: "Work Sans", sans-serif;
     line-height: 1.6;
     background-color: #ffffff;
+    width: 100%;          /* body ne dépasse jamais le viewport */
+    /* overflow-x absent : évite de casser position:fixed sur iOS Safari */
 }
 
 strong {

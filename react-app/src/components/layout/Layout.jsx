@@ -8,7 +8,7 @@ export default function Layout({ children }) {
   return (
     <>
       <Header />
-      <main>{children}</main>
+      <main style={{ width: '100%', overflowX: 'hidden' }}>{children}</main>
       <FAQSection />
       <ContactSection />
       <div className="map-banner">
