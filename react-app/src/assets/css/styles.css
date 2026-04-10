@@ -60,6 +60,7 @@ header .container {
   align-items: center;
   max-width: calc(100vw - 40px);
   box-sizing: border-box;
+  margin: 0 20px;
 }
 
 .reassurance-bar {
@@ -92,10 +93,11 @@ header .container {
   margin: 0;
   padding: 0;
   position: relative;
-  gap: 7em;
-  max-width: calc(100vw - 120px);
+  gap: 2em;
+  max-width: calc(100vw - 160px);
   overflow-x: auto;
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 .bar-item {
@@ -255,6 +257,9 @@ nav {
   display: none;
   cursor: pointer;
   z-index: 1001;
+  position: relative;
+  margin-right: 10px;
+  flex-shrink: 0;
 }
 
 .bar {
@@ -385,12 +390,19 @@ nav {
     border-radius: 18px;
     max-width: none;
     box-sizing: border-box;
+    margin: 0 10px;
   }
 
   .bar-items {
-    gap: 2em;
-    max-width: calc(100vw - 80px);
-    padding-right: 10px;
+    gap: 1em;
+    max-width: calc(100vw - 100px);
+    padding-right: 5px;
+    flex-shrink: 0;
+  }
+
+  .burger-menu {
+    margin-right: 0;
+    padding-right: 5px;
   }
 
   .logo img {
