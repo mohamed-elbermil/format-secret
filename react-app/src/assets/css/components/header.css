@@ -105,6 +105,7 @@
   justify-content: space-between;
   gap: 1.5rem;
   box-sizing: border-box;
+  overflow: hidden;
 }
 
 /* ── Logo ── */
@@ -423,6 +424,9 @@
   /* Sur tablette, réduire le gap pour que logo + burger restent dans le container */
   .hdr-container {
     gap: 0.75rem;
+    padding: 0 15px;
+    max-width: calc(100vw - 30px);
+    box-sizing: border-box;
   }
 }
 
@@ -439,6 +443,9 @@
   .hdr-container {
     height: 62px;
     gap: 0.5rem;
+    padding: 0 10px;
+    max-width: calc(100vw - 20px);
+    box-sizing: border-box;
   }
 
   /* Le logo ne grandit pas pour laisser la place au burger */
@@ -449,5 +456,10 @@
 
   .hdr-logo img {
     max-width: 130px;
+  }
+
+  .hdr-burger {
+    flex-shrink: 0;
+    margin-right: 0;
   }
 }
