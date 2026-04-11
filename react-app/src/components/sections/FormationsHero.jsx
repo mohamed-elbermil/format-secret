@@ -72,7 +72,7 @@ export default function FormationsHero() {
         {/* Eyebrow */}
         <p className="fh-eyebrow">
           <span aria-hidden="true">●</span>
-          Certifié Qualiopi · Financement professionnel accepté
+          Certifié Qualiopi
         </p>
 
         {/* Titre H1 */}

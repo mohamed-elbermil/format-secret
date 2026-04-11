@@ -45,18 +45,6 @@ const REVIEWS = [
     text: "Je recommande les services de FORMASECRET pour le sérieux, le professionnalisme et la bienveillance de Stéphanie. Elle prend le temps de comprendre chaque situation pour y répondre au mieux. Ne changez rien.",
   },
   {
-    author: "Viviane Maleron",
-    rating: 5,
-    date: "il y a 2 ans",
-    text: "Je remercie Mme Loddo et son équipe pour leurs réactivités et leurs professionnalismes sur les missions que nous leur confions régulièrement : administratif, les formations ou réponse à appel d'offre BTP et Architecture.",
-  },
-  {
-    author: "Jérôme Perrot-Minnot",
-    rating: 5,
-    date: "il y a 2 ans",
-    text: "Une équipe d'expertes en gestion administrative !! Professionnelles, assidues, qui tiennent leurs engagements, à l'écoute... Je vous recommande FORMASECRET sans hésitation.",
-  },
-  {
     author: "Sab",
     rating: 5,
     date: "il y a 3 mois",
