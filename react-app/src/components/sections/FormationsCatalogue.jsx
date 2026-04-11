@@ -37,12 +37,12 @@ const formationMeta = {
     desc: "Développez votre leadership, mobilisez vos équipes et maîtrisez les techniques d'évaluation et de délégation.",
   },
   formation8: {
-    duration: "1 jour",
+    duration: "2 jours",
     modality: "Présentiel",
     desc: "Apprenez à identifier les activités chronophages, à fixer vos priorités et à utiliser des outils de planification efficaces.",
   },
   formation15: {
-    duration: "1 jour",
+    duration: "2 jours",
     modality: "Présentiel",
     desc: "Transformez vos réunions en moments productifs : organisation, animation et méthodes collaboratives.",
   },
@@ -52,12 +52,12 @@ const formationMeta = {
     desc: "Gagnez en aisance à l'oral, apprivoisez le trac et rendez vos discours captivants face à tout type d'audience.",
   },
   formation16: {
-    duration: "1 jour",
+    duration: "2 jours",
     modality: "Présentiel",
     desc: "Maîtrisez les règles d'or de l'accueil de qualité et les techniques de communication téléphonique professionnelle.",
   },
   formation14: {
-    duration: "1 jour",
+    duration: "2 jours",
     modality: "Présentiel",
     desc: "Rédigez des textes clairs et percutants : prise de notes, structuration, vocabulaire précis pour convaincre.",
   },
@@ -67,12 +67,12 @@ const formationMeta = {
     desc: "De l'accueil client à la conclusion : maîtrisez les techniques de vente et boostez votre performance commerciale.",
   },
   formation6: {
-    duration: "1 jour",
+    duration: "2 jours",
     modality: "Présentiel",
     desc: "Gérez le changement, maintenez votre bien-être et préparez sereinement cette nouvelle étape de vie.",
   },
   formation20: {
-    duration: "1 jour",
+    duration: "2 jours",
     modality: "Présentiel",
     desc: "Adoptez les bonnes postures et techniques ergonomiques pour préserver votre santé et prévenir les TMS.",
   },
@@ -82,7 +82,7 @@ const formationMeta = {
     desc: "Devenez acteur de la sécurité : apprenez à intervenir, prodiguer les premiers secours et alerter efficacement.",
   },
   formation22: {
-    duration: "1 jour",
+    duration: "2 jours",
     modality: "Présentiel",
     desc: "Actualisez votre certification SST : révisez les gestes qui sauvent et renforcez votre rôle en prévention.",
   },
@@ -295,10 +295,11 @@ export default function FormationsCatalogue({ onOpenModal }) {
         <div className="fcat-header">
           <p className="fcat-header__eyebrow">Notre catalogue</p>
           <h2 id="fcat-title" className="fcat-header__title">
-            {filtered.length} formation{filtered.length > 1 ? "s" : ""}{" "}
-            <em>disponible{filtered.length > 1 ? "s" : ""}</em>
+            {/* {filtered.length} formation{filtered.length > 1 ? "s" : ""}{" "}
+            <em>disponible{filtered.length > 1 ? "s" : ""}</em> */}
+            Découvrez nos formations
           </h2>
-          <p className="fcat-header__count">Toutes certifiées Qualiopi · </p>
+          <p className="fcat-header__count">Toutes certifiées Qualiopi</p>
         </div>
 
         {/* ── Barre de filtres sticky ── */}

@@ -6,30 +6,33 @@ export const formationsData = [
     category: "leadership",
     duration: "2 jours",
     level: "Intermédiaire",
-    description: "Développez votre leadership et optimisez votre impact managérial",
+    description:
+      "Développez votre leadership et optimisez votre impact managérial",
     satisfaction: "100%",
     rating: "9/10",
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     // Champs pour la modale
     dates: "15-16 mars 2025",
     successRate: "95%",
     requirements: "Aucun pré-requis spécifique",
-    price: "1200€"
+    price: "1200€",
   },
   {
     id: 2,
     title: "Gestion du temps",
     category: "leadership",
-    duration: "1 jour",
+    duration: "2 jours",
     level: "Tous niveaux",
     description: "Optimisez votre organisation et votre productivité",
     satisfaction: "100%",
     rating: "10/10",
-    image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     dates: "22 mars 2025",
     successRate: "98%",
     requirements: "Aucun pré-requis spécifique",
-    price: "600€"
+    price: "600€",
   },
   {
     id: 3,
@@ -37,44 +40,48 @@ export const formationsData = [
     category: "performance",
     duration: "2 jours",
     level: "Intermédiaire",
-    description: "Maîtrisez les techniques de vente et augmentez votre performance",
+    description:
+      "Maîtrisez les techniques de vente et augmentez votre performance",
     satisfaction: "88%",
     rating: "9/10",
-    image: "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1460925895917-afdab827c52f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     dates: "5-6 avril 2025",
     successRate: "92%",
     requirements: "Expérience commerciale souhaitée",
-    price: "1200€"
+    price: "1200€",
   },
   {
     id: 4,
     title: "Réunions efficaces",
     category: "performance",
-    duration: "1 jour",
+    duration: "2 jours",
     level: "Tous niveaux",
     description: "Transformez vos réunions en moments productifs",
     satisfaction: "91%",
     rating: "8.9/10",
-    image: "https://images.unsplash.com/photo-1515189021306-79d6e3193a4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1515189021306-79d6e3193a4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     dates: "12 avril 2025",
     successRate: "89%",
     requirements: "Aucun pré-requis spécifique",
-    price: "600€"
+    price: "600€",
   },
   {
     id: 5,
     title: "Accueil performant",
     category: "performance",
-    duration: "1 jour",
+    duration: "2 jours",
     level: "Tous niveaux",
     description: "Améliorez votre accueil physique et téléphonique",
     satisfaction: "92%",
     rating: "8.8/10",
-    image: "https://images.unsplash.com/photo-1573497019940-1c28c88b8f50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1573497019940-1c28c88b8f50?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     dates: "19 avril 2025",
     successRate: "94%",
     requirements: "Aucun pré-requis spécifique",
-    price: "600€"
+    price: "600€",
   },
   {
     id: 6,
@@ -82,29 +89,32 @@ export const formationsData = [
     category: "communication",
     duration: "2 jours",
     level: "Tous niveaux",
-    description: "Gagnez en aisance et en confiance pour vos interventions publiques",
+    description:
+      "Gagnez en aisance et en confiance pour vos interventions publiques",
     satisfaction: "95%",
     rating: "8.5/10",
-    image: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     dates: "26-27 avril 2025",
     successRate: "91%",
     requirements: "Aucun pré-requis spécifique",
-    price: "1200€"
+    price: "1200€",
   },
   {
     id: 7,
     title: "Écrits professionnels",
     category: "communication",
-    duration: "1 jour",
+    duration: "2 jours",
     level: "Tous niveaux",
     description: "Perfectionnez vos écrits pour plus d'impact",
     satisfaction: "94%",
     rating: "8.7/10",
-    image: "https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1455390582262-044cdead277a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     dates: "3 mai 2025",
     successRate: "93%",
     requirements: "Connaissances de base en rédaction",
-    price: "600€"
+    price: "600€",
   },
   {
     id: 8,
@@ -115,12 +125,13 @@ export const formationsData = [
     description: "Devenez acteur essentiel de la sécurité au travail",
     satisfaction: "98%",
     rating: "9.2/10",
-    image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
+    image:
+      "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&q=80",
     dates: "10-11 mai 2025",
     successRate: "96%",
     requirements: "Aucun pré-requis spécifique",
-    price: "1200€"
-  }
+    price: "1200€",
+  },
 ];
 
 // Données des catégories pour la sélection
@@ -130,20 +141,20 @@ export const categories = [
     title: "Leadership & Management",
     description: "Développez votre impact managérial",
     icon: "fa-briefcase",
-    color: "#333249"
+    color: "#333249",
   },
   {
     id: "performance",
     title: "Performance & Vente",
     description: "Optimisez vos résultats commerciaux",
     icon: "fa-chart-line",
-    color: "#7673c5"
+    color: "#7673c5",
   },
   {
     id: "communication",
     title: "Communication & Sécurité",
     description: "Renforcez vos compétences clés",
     icon: "fa-comments",
-    color: "#333249"
-  }
+    color: "#333249",
+  },
 ];
