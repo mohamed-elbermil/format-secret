@@ -74,6 +74,25 @@ const IconQvt = () => (
   </svg>
 );
 
+const IconBureautique = () => (
+  <svg
+    width="24"
+    height="24"
+    viewBox="0 0 24 24"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.6"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden="true"
+  >
+    <rect x="2" y="3" width="20" height="14" rx="2" />
+    <path d="M8 21h8M12 17v4" />
+    <path d="M7 8h4M7 11h3" />
+    <path d="M15 8c1.5 0 2.5 1 2.5 2s-1 2-2.5 2c1.5 0 2.5 1 2.5 2" />
+  </svg>
+);
+
 const IconProject = () => (
   <svg
     width="24"
@@ -137,6 +156,17 @@ const domaines = [
       "Gestion multi-projets et priorisation",
       "Outils et méthodes agiles",
       "Suivi budgétaire et reporting",
+    ],
+  },
+  {
+    Icon: IconBureautique,
+    label: "Bureautique & IA",
+    title: "Outils du futur",
+    items: [
+      "Maîtriser Excel, Word et PowerPoint",
+      "Utiliser l'IA pour gagner en productivité",
+      "Automatiser les tâches répétitives",
+      "Prompting et outils IA au quotidien",
     ],
   },
 ];
