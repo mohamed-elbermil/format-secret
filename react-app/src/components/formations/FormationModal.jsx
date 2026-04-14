@@ -9,6 +9,7 @@ const catColors = {
   commercial:    '#C8922A',
   developpement: '#6B3FA0',
   securite:      '#9B2335',
+  numerique:     '#0D7C8F',
 }
 
 /* Mapping clé formation → catégorie */
@@ -24,6 +25,7 @@ const keyCat = {
   formation20: 'securite',
   formation21: 'securite',
   formation22: 'securite',
+  formation23: 'numerique',
 }
 
 const catLabels = {
@@ -32,6 +34,7 @@ const catLabels = {
   commercial:    'Commercial',
   developpement: 'Dév. Personnel',
   securite:      'Sécurité',
+  numerique:     'Numérique & IA',
 }
 
 /* ── Icônes SVG ── */
@@ -189,14 +192,16 @@ export default function FormationModal({ formationKey, onClose }) {
             Télécharger le PDF
           </a>
 
-          <button
-            type="button"
-            className={`fm-modal__cta fm-modal__cta--secondary${calendarVisible ? ' is-active' : ''}`}
-            onClick={toggleCalendar}
-          >
-            <IconCalendar />
-            {calendarVisible ? 'Masquer les sessions' : 'Voir les sessions'}
-          </button>
+          {formation.calendar && (
+            <button
+              type="button"
+              className={`fm-modal__cta fm-modal__cta--secondary${calendarVisible ? ' is-active' : ''}`}
+              onClick={toggleCalendar}
+            >
+              <IconCalendar />
+              {calendarVisible ? 'Masquer les sessions' : 'Voir les sessions'}
+            </button>
+          )}
         </div>
 
       </div>

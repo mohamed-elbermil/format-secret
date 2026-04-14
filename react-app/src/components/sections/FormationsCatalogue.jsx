@@ -28,6 +28,8 @@ const formationImages = {
     "https://images.pexels.com/photos/8942495/pexels-photo-8942495.jpeg?auto=compress&cs=tinysrgb&w=800", // Ambulancier croix rouge → SST
   formation22:
     "https://images.pexels.com/photos/5452293/pexels-photo-5452293.jpeg?auto=compress&cs=tinysrgb&w=800", // Médecin stéthoscope → MAC SST
+  formation23:
+    "https://images.pexels.com/photos/8386440/pexels-photo-8386440.jpeg?auto=compress&cs=tinysrgb&w=800", // Interface IA / chatbot lumineux → Osez l'IA Générative
 };
 
 const formationMeta = {
@@ -86,6 +88,11 @@ const formationMeta = {
     modality: "Présentiel",
     desc: "Actualisez votre certification SST : révisez les gestes qui sauvent et renforcez votre rôle en prévention.",
   },
+  formation23: {
+    duration: "2 jour",
+    modality: "Présentiel",
+    desc: "Intégrez l'IA générative dans votre quotidien professionnel : prompting, automatisation et outils IA pour gagner en productivité.",
+  },
 };
 
 /* ============================================================
@@ -98,6 +105,7 @@ const CATS = [
   { id: "commercial", label: "Commercial", color: "#C8922A" },
   { id: "developpement", label: "Dév. Personnel", color: "#6B3FA0" },
   { id: "securite", label: "Sécurité", color: "#9B2335" },
+  { id: "numerique", label: "Numérique & IA", color: "#0D7C8F" },
 ];
 
 /* Mapping index de formationCategories → id court */
@@ -107,6 +115,7 @@ const catIndexToId = [
   "commercial",
   "developpement",
   "securite",
+  "numerique",
 ];
 
 /* Construit la liste plate de toutes les formations avec catégorie */
@@ -190,6 +199,16 @@ const CatIcon = ({ catId, size = 44 }) => {
         <svg {...props}>
           <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
           <polyline points="9 12 11 14 15 10" />
+        </svg>
+      );
+    case "numerique":
+      return (
+        <svg {...props}>
+          <rect x="2" y="3" width="20" height="14" rx="2" />
+          <path d="M8 21h8M12 17v4" />
+          <path d="M7 8h2M7 11h2M11 8c1 0 2 .5 2 1.5S12 11 11 11c1 0 2 .5 2 1.5S12 14 11 14" />
+          <circle cx="17" cy="9" r="1.5" fill="currentColor" stroke="none" />
+          <path d="M15.5 11.5c0 1 .7 2 1.5 2s1.5-1 1.5-2" />
         </svg>
       );
     default:
