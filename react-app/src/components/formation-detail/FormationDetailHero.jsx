@@ -12,11 +12,6 @@ const IconArrow = () => (
     <line x1="5" y1="12" x2="19" y2="12" /><polyline points="12 5 19 12 12 19" />
   </svg>
 )
-const IconClock = () => (
-  <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
-    <circle cx="12" cy="12" r="10" /><polyline points="12 6 12 12 16 14" />
-  </svg>
-)
 
 export default function FormationDetailHero({ heroTitle, heroSubtitle, heroCtaText, heroImage, heroImageAlt, tags }) {
   return (
@@ -68,9 +63,6 @@ export default function FormationDetailHero({ heroTitle, heroSubtitle, heroCtaTe
         {heroImage && (
           <div className="fd-hero__visual">
             <img src={heroImage} alt={heroImageAlt || heroTitle} className="fd-hero__img" loading="eager" />
-            <div className="fd-hero__img-badge">
-              <IconClock /> Bac+2 reconnu par l'État
-            </div>
           </div>
         )}
       </div>
