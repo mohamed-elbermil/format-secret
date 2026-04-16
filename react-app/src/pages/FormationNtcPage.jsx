@@ -10,7 +10,7 @@ import FormationDetailMissions from '../components/formation-detail/FormationDet
 import FormationDetailProgram from '../components/formation-detail/FormationDetailProgram'
 import FormationDetailPrerequisites from '../components/formation-detail/FormationDetailPrerequisites'
 import FormationDetailDebouches from '../components/formation-detail/FormationDetailDebouches'
-import FormationDetailTestimonials from '../components/formation-detail/FormationDetailTestimonials'
+import GoogleReviews from '../google-review'
 
 /**
  * Page générique calquée sur la maquette de référence.
@@ -76,10 +76,7 @@ export default function FormationNtcPage() {
         debouchesCards={formation.debouchesCards}
       />
 
-      <FormationDetailTestimonials
-        testimonialsTitle={formation.testimonialsTitle}
-        testimonials={formation.testimonials}
-      />
+      <GoogleReviews />
 
     </>
   )

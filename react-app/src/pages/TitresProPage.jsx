@@ -34,7 +34,7 @@ const TITRES = [
     label: "Titre Professionnel – Niveau 5 (Bac+2)",
     title: "Négociateur Technico-Commercial",
     duration: "12 mois",
-    image: "/assets/images/negociateur-technico-commercial.png",
+    image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
     desc: "Maîtrisez l'art de la vente technique : prospection, négociation, gestion de portefeuille client. Un titre reconnu par l'État pour construire une carrière commerciale solide.",
   },
   {
@@ -44,7 +44,7 @@ const TITRES = [
     label: "Titre Professionnel – Niveau 5 (Bac+2)",
     title: "Responsable Petite et Moyenne Structure",
     duration: "12 mois",
-    image: "/assets/images/rpms.png",
+    image: "https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=800",
     desc: "Développez une vision globale de la gestion d'entreprise : pilotage opérationnel, management d'équipe, gestion commerciale et administrative d'une structure.",
   },
   {
@@ -54,7 +54,7 @@ const TITRES = [
     label: "Titre Professionnel – Niveau 5 (Bac+2)",
     title: "Assistant de Direction",
     duration: "810h totales",
-    image: "/assets/images/assistant-de-direction.png",
+    image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
     desc: "Devenez le bras droit indispensable d'un dirigeant : organisation, communication, gestion de projet et coordination administrative au plus haut niveau.",
   },
 ];

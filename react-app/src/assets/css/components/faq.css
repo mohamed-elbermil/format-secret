@@ -51,10 +51,16 @@
   color: var(--clr-gold);
 }
 
-/* ── Liste des accordéons ── */
+/* ── Grille 2 colonnes ── */
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0 2.5rem;
+  align-items: start;
+}
+
+/* ── Liste des accordéons (une colonne) ── */
 .faq-list {
-  max-width: 760px;
-  margin: 0 auto;
   display: flex;
   flex-direction: column;
   gap: 0;
@@ -160,8 +166,7 @@
 
 /* ── Footer de section ── */
 .faq-footer {
-  max-width: 760px;
-  margin: 3rem auto 0;
+  margin: 3rem 0 0;
   padding-top: 2.5rem;
   border-top: 1px solid rgba(200, 146, 42, 0.18);
   display: flex;
@@ -222,6 +227,11 @@
 @media (max-width: 768px) {
   .faq-section {
     padding: var(--padding-section-mobile);
+  }
+
+  .faq-grid {
+    grid-template-columns: 1fr;
+    gap: 0;
   }
 
   .faq-item__trigger {

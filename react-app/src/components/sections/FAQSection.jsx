@@ -91,6 +91,10 @@ export default function FAQSection() {
 
   const toggle = (i) => setOpenIndex((prev) => (prev === i ? null : i));
 
+  const half = Math.ceil(faqs.length / 2);
+  const left  = faqs.slice(0, half);
+  const right = faqs.slice(half);
+
   return (
     <section className="faq-section" aria-labelledby="faq-title">
       <Container>
@@ -107,16 +111,17 @@ export default function FAQSection() {
           </h2>
         </div>
 
-        <div className="faq-list">
-          {faqs.map((item, i) => (
-            <FaqItem
-              key={i}
-              item={item}
-              index={i}
-              isOpen={openIndex === i}
-              onToggle={toggle}
-            />
-          ))}
+        <div className="faq-grid">
+          <div className="faq-list">
+            {left.map((item, i) => (
+              <FaqItem key={i} item={item} index={i} isOpen={openIndex === i} onToggle={toggle} />
+            ))}
+          </div>
+          <div className="faq-list">
+            {right.map((item, i) => (
+              <FaqItem key={i + half} item={item} index={i + half} isOpen={openIndex === i + half} onToggle={toggle} />
+            ))}
+          </div>
         </div>
 
         <div className="faq-footer">
@@ -125,17 +130,7 @@ export default function FAQSection() {
           </p>
           <a href="/#contact" className="faq-footer__link">
             Contactez-nous directement
-            <svg
-              width="14"
-              height="14"
-              viewBox="0 0 24 24"
-              fill="none"
-              stroke="currentColor"
-              strokeWidth="2.5"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-              aria-hidden="true"
-            >
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" aria-hidden="true">
               <line x1="5" y1="12" x2="19" y2="12" />
               <polyline points="12 5 19 12 12 19" />
             </svg>
