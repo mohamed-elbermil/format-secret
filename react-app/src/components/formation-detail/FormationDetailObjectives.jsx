@@ -3,14 +3,19 @@ import React from 'react'
 export default function FormationDetailObjectives({ objectives }) {
   if (!objectives?.length) return null
   return (
-    <section className="formation-ref-objectives">
+    <section className="fd-objectives">
       <div className="container">
-        <h2>Les objectifs de <br /><strong>la formation</strong></h2>
-        <div className="formation-ref-objectives-grid">
+        <div className="fd-section-header">
+          <span className="fd-section-eyebrow">Ce que vous apprendrez</span>
+          <h2 className="fd-section-title">
+            Les objectifs de <em>la formation</em>
+          </h2>
+        </div>
+        <div className="fd-objectives__grid">
           {objectives.map((obj, i) => (
-            <div key={i} className="formation-ref-objective-card">
-              <div className="formation-ref-objective-icon">
-                <i className={obj.icon || 'fas fa-check-circle'} />
+            <div key={i} className="fd-objective-card">
+              <div className="fd-objective-card__icon">
+                <i className={obj.icon || 'fas fa-check-circle'} aria-hidden="true" />
               </div>
               <p>{obj.text}</p>
             </div>

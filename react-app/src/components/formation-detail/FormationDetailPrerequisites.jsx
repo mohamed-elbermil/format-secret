@@ -3,16 +3,21 @@ import React from 'react'
 export default function FormationDetailPrerequisites({ prerequisitesTitle, prerequisitesList }) {
   if (!prerequisitesList?.length) return null
   return (
-    <section className="formation-ref-prerequis">
+    <section className="fd-prereqs">
       <div className="container">
-        {prerequisitesTitle ? <h2 dangerouslySetInnerHTML={{ __html: prerequisitesTitle }} /> : null}
-        <div className="prerequis-box">
-          <ul className="prerequis-list">
-            {prerequisitesList.map((item, i) => (
-              <li key={i}>{item}</li>
-            ))}
-          </ul>
+        <div className="fd-section-header">
+          <span className="fd-section-eyebrow">Avant de commencer</span>
+          {prerequisitesTitle ? (
+            <h2 className="fd-section-title" dangerouslySetInnerHTML={{ __html: prerequisitesTitle }} />
+          ) : (
+            <h2 className="fd-section-title">Les <em>pré-requis</em></h2>
+          )}
         </div>
+        <ul className="fd-prereqs__list">
+          {prerequisitesList.map((item, i) => (
+            <li key={i}>{item}</li>
+          ))}
+        </ul>
       </div>
     </section>
   )

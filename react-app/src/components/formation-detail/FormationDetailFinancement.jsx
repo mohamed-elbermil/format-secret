@@ -1,28 +1,36 @@
 import React from 'react'
-import Button from '../ui/Button'
 
 export default function FormationDetailFinancement({ financementTitle, financementContent, financementItems }) {
   if (!financementTitle && !financementContent && !financementItems?.length) return null
   return (
-    <section className="formation-ref-financement">
+    <section className="fd-financement">
       <div className="container">
-        <h2>{financementTitle}</h2>
+        <div className="fd-section-header">
+          <span className="fd-section-eyebrow">Accessibilité financière</span>
+          <h2 className="fd-section-title">
+            {financementTitle || <>Modes de <em>financement</em></>}
+          </h2>
+        </div>
+
         {financementContent && (
-          <div className="formation-ref-financement-content" dangerouslySetInnerHTML={{ __html: financementContent }} />
+          <div
+            className="fd-financement__intro"
+            dangerouslySetInnerHTML={{ __html: financementContent }}
+          />
         )}
+
         {financementItems?.length ? (
-          <div className="financement-grid">
+          <div className="fd-financement__grid">
             {financementItems.map((item, i) => (
-              <div key={i} className="financement-card">
-                {item.icon && <div className="financement-icon"><i className={item.icon} /></div>}
-                <div className="financement-body">
+              <div key={i} className="fd-financement-card">
+                {item.icon && (
+                  <div className="fd-financement-card__icon">
+                    <i className={item.icon} aria-hidden="true" />
+                  </div>
+                )}
+                <div>
                   <h3>{item.title}</h3>
                   {item.description && <p>{item.description}</p>}
-                  {(item.ctaText && (item.ctaHref || item.ctaTo)) && (
-                    <div className="financement-cta">
-                      <Button href={item.ctaHref} to={item.ctaTo} variant="primary" size="sm">{item.ctaText}</Button>
-                    </div>
-                  )}
                 </div>
               </div>
             ))}

@@ -1,26 +1,29 @@
 import React from 'react'
 
-export default function FormationDetailIntro({ tags, introTitle, introDescription }) {
+export default function FormationDetailIntro({ introTitle, introDescription }) {
+  if (!introTitle && !introDescription) return null
   return (
-    <section className="formation-ref-intro">
+    <section className="fd-objectives" style={{ background: '#fff', paddingBottom: '2rem' }}>
       <div className="container">
-        <div className="formation-ref-intro-grid">
-          <div className="formation-ref-intro-text">
-            {tags && tags.length > 0 && (
-              <div className="formation-ref-tags">
-                {tags.map((tag, i) => (
-                  <span key={i} className="formation-ref-tag">{tag}</span>
-                ))}
-              </div>
-            )}
-            <h2 dangerouslySetInnerHTML={{ __html: introTitle }} />
-            <p>{introDescription}</p>
-          </div>
-          <div className="formation-ref-intro-card">
-            <div className="formation-ref-intro-card-inner">
-              <i className="fas fa-graduation-cap" />
-            </div>
-          </div>
+        <div className="fd-section-header">
+          {introTitle && (
+            <h2
+              className="fd-section-title"
+              dangerouslySetInnerHTML={{ __html: introTitle }}
+            />
+          )}
+          {introDescription && (
+            <p style={{
+              fontFamily: 'var(--font-body)',
+              fontSize: '1.05rem',
+              lineHeight: '1.8',
+              color: '#4a5568',
+              maxWidth: '680px',
+              margin: '1rem auto 0',
+            }}>
+              {introDescription}
+            </p>
+          )}
         </div>
       </div>
     </section>

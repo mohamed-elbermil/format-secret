@@ -10,9 +10,7 @@ import FormationDetailMissions from '../components/formation-detail/FormationDet
 import FormationDetailProgram from '../components/formation-detail/FormationDetailProgram'
 import FormationDetailPrerequisites from '../components/formation-detail/FormationDetailPrerequisites'
 import FormationDetailDebouches from '../components/formation-detail/FormationDetailDebouches'
-import FormationDetailFinancement from '../components/formation-detail/FormationDetailFinancement'
 import FormationDetailTestimonials from '../components/formation-detail/FormationDetailTestimonials'
-import FormationDetailFooter from '../components/formation-detail/FormationDetailFooter'
 
 /**
  * Page générique calquée sur la maquette de référence.
@@ -40,6 +38,7 @@ export default function FormationNtcPage() {
         heroCtaText={formation.heroCtaText}
         heroImage={formation.heroImage || formation.image}
         heroImageAlt={formation.imageAlt}
+        tags={formation.tags}
       />
 
       <FormationDetailIntro
@@ -77,18 +76,10 @@ export default function FormationNtcPage() {
         debouchesCards={formation.debouchesCards}
       />
 
-      <FormationDetailFinancement
-        financementTitle={formation.financementTitle}
-        financementContent={formation.financementContent}
-        financementItems={formation.financementItems}
-      />
-
       <FormationDetailTestimonials
         testimonialsTitle={formation.testimonialsTitle}
         testimonials={formation.testimonials}
       />
-
-      <FormationDetailFooter footerLinks={formation.footerLinks} />
 
     </>
   )

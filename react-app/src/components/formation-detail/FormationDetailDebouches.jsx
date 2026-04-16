@@ -3,18 +3,32 @@ import React from 'react'
 export default function FormationDetailDebouches({ debouchesTitle, debouchesContent, debouchesList, debouchesCards }) {
   if (!debouchesTitle && !debouchesContent && !debouchesList?.length && !debouchesCards?.length) return null
   return (
-    <section className="formation-ref-debouches">
+    <section className="fd-debouches">
       <div className="container">
-        <h2>{debouchesTitle}</h2>
+        <div className="fd-section-header">
+          <span className="fd-section-eyebrow">Perspectives professionnelles</span>
+          <h2 className="fd-section-title">
+            {debouchesTitle || <><em>Débouchés</em> & opportunités</>}
+          </h2>
+        </div>
+
         {debouchesContent && (
-          <div className="formation-ref-debouches-content" dangerouslySetInnerHTML={{ __html: debouchesContent }} />
+          <div
+            className="fd-debouches__intro"
+            dangerouslySetInnerHTML={{ __html: debouchesContent }}
+          />
         )}
+
         {debouchesCards?.length ? (
-          <div className="debouches-grid">
+          <div className="fd-debouches__grid">
             {debouchesCards.map((c, i) => (
-              <div key={i} className="debouche-card">
-                {c.icon && <div className="debouche-icon"><i className={c.icon} /></div>}
-                <div className="debouche-content">
+              <div key={i} className="fd-debouche-card">
+                {c.icon && (
+                  <div className="fd-debouche-card__icon">
+                    <i className={c.icon} aria-hidden="true" />
+                  </div>
+                )}
+                <div>
                   {c.title && <h3>{c.title}</h3>}
                   {c.text && <p>{c.text}</p>}
                 </div>
@@ -22,10 +36,11 @@ export default function FormationDetailDebouches({ debouchesTitle, debouchesCont
             ))}
           </div>
         ) : null}
+
         {debouchesList?.length > 0 && (
-          <ul className="formation-ref-debouches-list with-icons">
+          <ul className="fd-debouches__list">
             {debouchesList.map((item, i) => (
-              <li key={i}><i className="fas fa-check-circle" aria-hidden="true" /> <span>{item}</span></li>
+              <li key={i}>{item}</li>
             ))}
           </ul>
         )}

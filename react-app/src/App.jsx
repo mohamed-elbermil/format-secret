@@ -8,6 +8,7 @@ import AcademiePage from './pages/AcademiePage'
 import CguPage from './pages/CguPage'
 import CgvPage from './pages/CgvPage'
 import FormationNtcPage from './pages/FormationNtcPage'
+import TitresProPage from './pages/TitresProPage'
 
 function App() {
   return (
@@ -17,6 +18,7 @@ function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/formations" element={<FormationsPage />} />
           <Route path="/formation-ntc/:slug" element={<FormationNtcPage />} />
+          <Route path="/titres-professionnels" element={<TitresProPage />} />
           <Route path="/a-propos" element={<AProposPage />} />
           <Route path="/academie" element={<AcademiePage />} />
           <Route path="/cgu" element={<CguPage />} />

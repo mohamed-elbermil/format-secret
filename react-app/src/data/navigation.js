@@ -6,6 +6,7 @@ export const navLinks = [
   { label: 'Accueil', path: '/' },
   { label: 'À propos', path: '/a-propos' },
   { label: 'Formations', path: '/formations' },
+  { label: 'Titres Pro', path: '/titres-professionnels' },
   { label: 'Académie', path: '/academie' },
   { label: 'Contact', path: '/#contact', isHash: true },
 ]

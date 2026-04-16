@@ -9,8 +9,8 @@ export const formationNtcData = [
     id: 'ntc-1',
     slug: 'negociateur-technico-commercial-1',
     // Carte (grille formations)
-    image: "/assets/images/negociateur-technico-commercial.png",
-    imageAlt: 'Formation NTC - Négociateur Technico Commercial',
+    image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
+    imageAlt: 'Négociateur technico-commercial en réunion client',
     label: 'FORMATION CERTIFIANTE',
     title: 'NTC - Négociateur Technico Commercial',
     infoItems: [
@@ -21,7 +21,7 @@ export const formationNtcData = [
     heroTitle: 'Votre métier d’avenir en tant que Négociateur Technico Commercial ',
     heroSubtitle: 'Commencer votre carrière de Négociateur Technico-Commercial',
     heroCtaText: 'Je m\'inscris à cette formation',
-    heroImage: '/assets/images/negociateur-technico-commercial.png',
+    heroImage: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=960',
     // Intro (tags + titre + description)
     tags: ['12 mois en alternance', '750h en formation continue', '740h en centre + 210h en stage'],
     introTitle: 'Titre professionnel <br><span>Négociateur technico-commercial</span>',
@@ -111,7 +111,7 @@ export const formationNtcData = [
   {
     id: 'ntc-2',
     slug: 'assistant-direction',
-    image: '/assets/images/assistant-de-direction.png',
+    image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
     imageAlt: 'Formation d\'Assistant de direction',
     label: 'FORMATION CERTIFIANTE',
     title: 'Assistant de direction',
@@ -119,7 +119,7 @@ export const formationNtcData = [
     heroTitle: 'Formation d\'Assistant de direction',
     heroSubtitle: 'Développez votre expertise en vente B2B',
     heroCtaText: 'Je me lance dans ma formation',
-    heroImage: '/assets/images/assistant-de-direction.png',
+    heroImage: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=960',
     tags: ['FORMATION', 'CERTIFIANTE', 'TITRE RNCP'],
     introTitle: 'Assistant de direction',
     introDescription: 'Un parcours intensif pour maîtriser la vente technique et la négociation en contexte B2B, de la prospection à la fidélisation client.',
@@ -184,7 +184,7 @@ export const formationNtcData = [
   {
     id: 'ntc-3',
     slug: 'rpms',
-    image: '/assets/images/rpms.png',
+    image: 'https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=800',
     imageAlt: 'Formation NTC - Négociateur Technico Commercial',
     label: 'FORMATION CERTIFIANTE',
     title: 'RPMS',
@@ -192,7 +192,7 @@ export const formationNtcData = [
     heroTitle: 'Formation Négociateur Technico-Commercial - Digital & Vente à distance',
     heroSubtitle: 'Maîtrisez la vente digitale et à distance',
     heroCtaText: 'Je me lance dans ma formation',
-    heroImage: '/assets/images/rpms.png',
+    heroImage: 'https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=960',
     tags: ['FORMATION', 'CERTIFIANTE', 'DIGITAL'],
     introTitle: 'RPMS',
     introDescription: 'Une formation adaptée aux enjeux du commerce digital et de la vente à distance : outils, CRM, visioconférence et relation client en remote.',
