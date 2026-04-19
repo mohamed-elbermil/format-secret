@@ -27,7 +27,6 @@ export function useSessions(formationKey) {
 
       if (cancelled) return
 
-      console.log('[useSessions]', { formationKey, data, err })
       if (err) {
         setError(err.message)
       } else {

@@ -96,6 +96,15 @@ export default function FormationModal({ formationKey, onClose }) {
     }
   }, [formation, handleKeyDown])
 
+  /* Scroll le conteneur modal jusqu'en bas dès que les sessions s'affichent */
+  useEffect(() => {
+    if (calendarVisible && modalRef.current) {
+      setTimeout(() => {
+        modalRef.current.scrollTo({ top: modalRef.current.scrollHeight, behavior: 'smooth' })
+      }, 80)
+    }
+  }, [calendarVisible])
+
   const toggleCalendar = () => setCalendarVisible(v => !v)
 
   if (!formation) return null
