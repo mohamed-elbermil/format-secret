@@ -137,7 +137,6 @@
 /* ── Corps : description HTML (contenu existant) ── */
 .fm-modal__body {
   padding: 1.75rem 2rem;
-  flex: 1;
 }
 
 /* Styles pour le HTML injecté via dangerouslySetInnerHTML */

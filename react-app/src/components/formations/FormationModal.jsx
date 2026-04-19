@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react'
 import { formations } from '../../data/formations'
+import SessionCalendar from '@/components/sessions/SessionCalendar'
 import '@/assets/css/components/formation-modal.css'
 
 /* ── Couleur badge par catégorie (correspond aux cards) ── */
@@ -65,7 +66,6 @@ export default function FormationModal({ formationKey, onClose }) {
   const closeRef = useRef(null)
 
   const formation = formationKey ? formations[formationKey] : null
-  const isMobile  = typeof window !== 'undefined' && window.innerWidth < 768
   const catId     = keyCat[formationKey] || 'management'
   const badgeColor = catColors[catId] || catColors.management
 
@@ -96,18 +96,7 @@ export default function FormationModal({ formationKey, onClose }) {
     }
   }, [formation, handleKeyDown])
 
-  /* Logique calendrier inchangée */
-  const toggleCalendar = () => {
-    if (isMobile) {
-      const calIdMatch = formation.calendar.match(/src=([^&]+)/)
-      if (calIdMatch?.[1]) {
-        const calendarId = decodeURIComponent(calIdMatch[1])
-        window.open(`https://calendar.google.com/calendar/u/0/r?cid=${calendarId}`, '_blank')
-      }
-    } else {
-      setCalendarVisible(v => !v)
-    }
-  }
+  const toggleCalendar = () => setCalendarVisible(v => !v)
 
   if (!formation) return null
 
@@ -156,28 +145,17 @@ export default function FormationModal({ formationKey, onClose }) {
             className="fm-modal__desc"
             dangerouslySetInnerHTML={{ __html: formation.description }}
           />
-        </div>
 
-        {/* ── Calendrier Google (logique originale inchangée) ── */}
-        {calendarVisible && !isMobile && (
-          <>
-            <div className="fm-modal__calendar" id="calendarContainer">
-              <iframe
-                src={formation.calendar}
-                title="Calendrier des sessions"
-                frameBorder="0"
-                scrolling="no"
+          {/* ── Sessions Supabase ── */}
+          {calendarVisible && (
+            <div style={{ marginTop: '1.5rem', borderTop: '1px solid rgba(200,146,42,0.2)', paddingTop: '1.25rem' }}>
+              <SessionCalendar
+                formationKey={formationKey}
+                formationTitle={formation.title}
               />
             </div>
-            <a
-              href="/#contact"
-              className="fm-modal__calendar-cta"
-              onClick={onClose}
-            >
-              Je m'inscris à cette session de formation →
-            </a>
-          </>
-        )}
+          )}
+        </div>
 
         {/* ── Pied : boutons d'action ── */}
         <div className="fm-modal__foot">
@@ -192,16 +170,14 @@ export default function FormationModal({ formationKey, onClose }) {
             Télécharger le PDF
           </a>
 
-          {formation.calendar && (
-            <button
-              type="button"
-              className={`fm-modal__cta fm-modal__cta--secondary${calendarVisible ? ' is-active' : ''}`}
-              onClick={toggleCalendar}
-            >
-              <IconCalendar />
-              {calendarVisible ? 'Masquer les sessions' : 'Voir les sessions'}
-            </button>
-          )}
+          <button
+            type="button"
+            className={`fm-modal__cta fm-modal__cta--secondary${calendarVisible ? ' is-active' : ''}`}
+            onClick={toggleCalendar}
+          >
+            <IconCalendar />
+            {calendarVisible ? 'Masquer les sessions' : 'Voir les sessions'}
+          </button>
         </div>
 
       </div>
