@@ -8,6 +8,7 @@ import HeroSection from "../components/sections/HeroSection";
 import useScrollToTop from "../hooks/useScrollToTop";
 import GoogleReviews from "../google-review";
 import LeadMagnet from "../components/marketing/LeadMagnet";
+import ConsentGate from "../components/ui/ConsentGate";
 
 const structuredData = {
   "@context": "https://schema.org",
@@ -66,17 +67,19 @@ export default function HomePage() {
             <span className="title-style">{"Qui sommes "}</span>
             {"nous ?"}
           </h3>
-          <iframe
-            width="560"
-            height="315"
-            src="https://www.youtube.com/embed/xiUDHScv1QY?si=6UO6GMfZRvFF41J3"
-            title="YouTube video player"
-            frameBorder="0"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerPolicy="strict-origin-when-cross-origin"
-            allowFullScreen
-            loading="lazy"
-          ></iframe>
+          <ConsentGate label="vidéo YouTube">
+            <iframe
+              width="560"
+              height="315"
+              src="https://www.youtube.com/embed/xiUDHScv1QY?si=6UO6GMfZRvFF41J3"
+              title="YouTube video player"
+              frameBorder="0"
+              allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+              referrerPolicy="strict-origin-when-cross-origin"
+              allowFullScreen
+              loading="lazy"
+            ></iframe>
+          </ConsentGate>
         </Container>
       </section>
 

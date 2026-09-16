@@ -76,6 +76,11 @@ export default function Footer() {
                   Conditions Générales de Vente
                 </Link>
               </li>
+              <li>
+                <Link to="/mentions-legales" className="list-link">
+                  Mentions légales
+                </Link>
+              </li>
             </ul>
           </div>
           <div className="footer-contact">

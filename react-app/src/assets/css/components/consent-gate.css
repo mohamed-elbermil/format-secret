@@ -1,0 +1,58 @@
+/* ============================================================
+   CONSENT GATE – placeholder pour contenus tiers bloqués
+   FormaSecret 2026
+   ============================================================ */
+
+.consent-gate {
+  width: 100%;
+  min-height: 220px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 0.9rem;
+  text-align: center;
+  background: var(--clr-bg-alt);
+  border: 1.5px dashed rgba(51, 50, 73, 0.25);
+  border-radius: var(--radius-lg);
+  padding: 2rem 1.5rem;
+}
+
+.consent-gate__text {
+  font-family: var(--font-body);
+  font-size: 0.92rem;
+  color: var(--clr-text-muted);
+  margin: 0;
+  max-width: 40ch;
+}
+
+.consent-gate__btn {
+  font-family: var(--font-body);
+  font-size: 0.86rem;
+  font-weight: 600;
+  color: var(--clr-navy);
+  background: var(--clr-gold);
+  border: none;
+  border-radius: var(--radius-pill);
+  padding: 0.6rem 1.4rem;
+  cursor: pointer;
+  transition: background var(--transition-fast);
+}
+
+.consent-gate__btn:hover {
+  background: var(--clr-gold-light);
+}
+
+/* Emplacement vidéo (section .presentation) */
+.presentation .consent-gate {
+  height: 69vh;
+  min-height: 280px;
+}
+
+/* Emplacement carte (bandeau .map-banner) */
+.map-banner .consent-gate {
+  height: 420px;
+  border-radius: 0;
+  border-left: none;
+  border-right: none;
+}

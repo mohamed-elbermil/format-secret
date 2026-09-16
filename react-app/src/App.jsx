@@ -7,6 +7,7 @@ import AProposPage from './pages/AProposPage'
 import AcademiePage from './pages/AcademiePage'
 import CguPage from './pages/CguPage'
 import CgvPage from './pages/CgvPage'
+import MentionsLegalesPage from './pages/MentionsLegalesPage'
 import FormationNtcPage from './pages/FormationNtcPage'
 import TitresProPage from './pages/TitresProPage'
 import AdminPage from './pages/AdminPage'
@@ -27,6 +28,7 @@ function App() {
               <Route path="/academie" element={<AcademiePage />} />
               <Route path="/cgu" element={<CguPage />} />
               <Route path="/cgv" element={<CgvPage />} />
+              <Route path="/mentions-legales" element={<MentionsLegalesPage />} />
             </Routes>
           </Layout>
         } />
