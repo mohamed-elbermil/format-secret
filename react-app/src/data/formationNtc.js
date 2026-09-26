@@ -8,6 +8,7 @@ export const formationNtcData = [
   {
     id: 'ntc-1',
     slug: 'negociateur-technico-commercial-1',
+    pdf: '/assets/pdf/Titre-pro-NTC.pdf',
     // Carte (grille formations)
     image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
     imageAlt: 'Négociateur technico-commercial en réunion client',
@@ -111,6 +112,7 @@ export const formationNtcData = [
   {
     id: 'ntc-2',
     slug: 'assistant-direction',
+    pdf: '/assets/pdf/Titre-pro-Assistant-Direction.pdf',
     image: 'https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800',
     imageAlt: 'Formation d\'Assistant de direction',
     label: 'FORMATION CERTIFIANTE',
@@ -184,6 +186,7 @@ export const formationNtcData = [
   {
     id: 'ntc-3',
     slug: 'rpms',
+    pdf: '/assets/pdf/Titre-pro-RPMS.pdf',
     image: 'https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=800',
     imageAlt: 'Formation NTC - Négociateur Technico Commercial',
     label: 'FORMATION CERTIFIANTE',

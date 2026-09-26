@@ -110,7 +110,7 @@ export default function TitresProPage() {
 
           <p className="tp-hero__eyebrow">
             <span aria-hidden="true">●</span>
-            Certifié Qualiopi · Reconnus par l'État
+            Reconnus par l'État
           </p>
 
           <h1 className="tp-hero__title">

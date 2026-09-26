@@ -10,6 +10,7 @@ import FormationDetailMissions from '../components/formation-detail/FormationDet
 import FormationDetailProgram from '../components/formation-detail/FormationDetailProgram'
 import FormationDetailPrerequisites from '../components/formation-detail/FormationDetailPrerequisites'
 import FormationDetailDebouches from '../components/formation-detail/FormationDetailDebouches'
+import FormationDetailPdf from '../components/formation-detail/FormationDetailPdf'
 import GoogleReviews from '../google-review'
 
 /**
@@ -75,6 +76,8 @@ export default function FormationNtcPage() {
         debouchesList={formation.debouchesList}
         debouchesCards={formation.debouchesCards}
       />
+
+      <FormationDetailPdf pdf={formation.pdf} title={formation.title} />
 
       <GoogleReviews />
 
