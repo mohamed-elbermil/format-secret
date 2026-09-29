@@ -207,6 +207,33 @@ export default function MentionsLegalesPage() {
                 <span className="legal-article__num">Article 6</span>
                 <h2 className="legal-article__title">Données personnelles</h2>
                 <p>
+                  FormaSecret traite des données personnelles pour deux
+                  finalités distinctes : répondre aux demandes adressées via
+                  le formulaire de contact ou le téléchargement de documents
+                  (base légale : intérêt légitime à répondre à une demande
+                  entrante ; conservation 12 mois à compter du traitement de
+                  la demande), et gérer administrativement et
+                  pédagogiquement le dossier des stagiaires inscrits (base
+                  légale : exécution du contrat de formation ; conservation
+                  pendant la durée nécessaire à cette gestion, augmentée des
+                  durées légales applicables en matière comptable et de
+                  justification auprès des financeurs et organismes de
+                  contrôle).
+                </p>
+                <p>
+                  Ces données sont accessibles aux personnes habilitées de
+                  FormaSecret et, selon le cas, transmises aux destinataires
+                  nécessaires au traitement (prestataires techniques,
+                  financeurs de la formation, certificateur du titre
+                  professionnel), dans la limite de ce qui est utile à leur
+                  mission. Elles ne sont utilisées à des fins de prospection
+                  commerciale qu'avec le consentement exprès de la personne
+                  concernée, qui peut être retiré à tout moment. Pour le
+                  détail de chaque traitement, voir les{" "}
+                  <a href="/cgu#art6">CGU</a> et les{" "}
+                  <a href="/cgv#art8">CGV</a>.
+                </p>
+                <p>
                   Conformément au Règlement Général sur la Protection des
                   Données (RGPD – UE 2016/679) et à la loi Informatique et
                   Libertés du 6 janvier 1978 modifiée, l'Utilisateur dispose
