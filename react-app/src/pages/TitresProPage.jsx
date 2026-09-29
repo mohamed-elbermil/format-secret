@@ -33,9 +33,9 @@ const TITRES = [
     typeLabel: "Alternance",
     label: "Titre Professionnel – Niveau 5 (Bac+2)",
     title: "Négociateur Technico-Commercial",
-    duration: "12 mois",
+    duration: "12 mois — 1 820h",
     image: "https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800",
-    desc: "Maîtrisez l'art de la vente technique : prospection, négociation, gestion de portefeuille client. Un titre reconnu par l'État pour construire une carrière commerciale solide.",
+    desc: "Élaborez une stratégie de prospection et négociez des solutions technico-commerciales. Un titre RNCP niveau 5 (Bac+2) reconnu par l'État pour construire une carrière commerciale solide.",
   },
   {
     slug: "rpms",
@@ -43,9 +43,9 @@ const TITRES = [
     typeLabel: "Alternance",
     label: "Titre Professionnel – Niveau 5 (Bac+2)",
     title: "Responsable Petite et Moyenne Structure",
-    duration: "12 mois",
+    duration: "12 mois — 1 607h",
     image: "https://images.pexels.com/photos/1181533/pexels-photo-1181533.jpeg?auto=compress&cs=tinysrgb&w=800",
-    desc: "Développez une vision globale de la gestion d'entreprise : pilotage opérationnel, management d'équipe, gestion commerciale et administrative d'une structure.",
+    desc: "Dirigez une structure avec une équipe, mettez en œuvre son objet social et pilotez son activité. Un titre RNCP niveau 5 (Bac+2) ouvert à tous les secteurs.",
   },
   {
     slug: "assistant-direction",
@@ -53,9 +53,9 @@ const TITRES = [
     typeLabel: "Formation initiale",
     label: "Titre Professionnel – Niveau 5 (Bac+2)",
     title: "Assistant de Direction",
-    duration: "810h totales",
+    duration: "5 mois — 810h",
     image: "https://images.pexels.com/photos/3184291/pexels-photo-3184291.jpeg?auto=compress&cs=tinysrgb&w=800",
-    desc: "Devenez le bras droit indispensable d'un dirigeant : organisation, communication, gestion de projet et coordination administrative au plus haut niveau.",
+    desc: "Devenez le bras droit indispensable d'une équipe de direction : support administratif, pilotage de projets et communication, en français et en anglais.",
   },
 ];
 
