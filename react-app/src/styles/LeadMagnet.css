@@ -33,6 +33,19 @@
   box-shadow: 0 0 0 2px rgba(231, 76, 60, 0.2) !important;
 }
 
+/* Mention RGPD sous le champ email */
+.lead-magnet-privacy {
+  font-size: 0.78rem;
+  color: rgba(255, 255, 255, 0.65);
+  margin-top: 0.6rem;
+  line-height: 1.5;
+}
+
+.lead-magnet-privacy a {
+  color: inherit;
+  text-decoration: underline;
+}
+
 /* Bouton désactivé */
 .cta-button-picto:disabled {
   opacity: 0.6;

@@ -318,7 +318,7 @@ export default function FormationsCatalogue({ onOpenModal }) {
             <em>disponible{filtered.length > 1 ? "s" : ""}</em> */}
             Découvrez nos formations
           </h2>
-          <p className="fcat-header__count">Toutes certifiées Qualiopi</p>
+          <p className="fcat-header__count">Formations dispensées par un organisme certifié Qualiopi</p>
         </div>
 
         {/* ── Barre de filtres sticky ── */}

@@ -359,9 +359,25 @@ export default function CgvPage() {
                 <p>
                   Les données personnelles collectées lors de l'inscription et
                   du suivi des formations font l'objet d'un traitement
-                  informatique par <strong>FormaSecret</strong>, responsable de
-                  traitement, aux fins de gestion administrative et de
-                  prospection commerciale.
+                  informatique par <strong>FormaSecret</strong>, responsable
+                  de traitement, aux fins de gestion administrative et
+                  pédagogique du dossier de formation (base légale :
+                  exécution du contrat de formation). Elles sont conservées
+                  pendant la durée nécessaire à cette gestion, augmentée des
+                  durées de conservation légales applicables (obligations
+                  comptables, justificatifs vis-à-vis des financeurs et des
+                  organismes de contrôle).
+                </p>
+                <p>
+                  Ces données ne sont utilisées à des fins de prospection
+                  commerciale que si la personne concernée y a expressément
+                  consenti ; ce consentement peut être retiré à tout moment.
+                  Elles sont accessibles aux personnes habilitées de
+                  FormaSecret et, selon le dossier, transmises aux
+                  destinataires nécessaires au suivi de la formation
+                  (financeur — OPCO, France Travail, CPF —, certificateur du
+                  titre professionnel, prestataires techniques), dans la
+                  limite de ce qui est nécessaire à leur mission.
                 </p>
                 <p>
                   Conformément au RGPD et à la loi Informatique et Libertés du 6
@@ -376,8 +392,9 @@ export default function CgvPage() {
                   <strong>FormaSecret</strong> met en œuvre des mesures
                   administratives, physiques et techniques appropriées pour
                   garantir la confidentialité et la sécurité des données
-                  personnelles. Aucune divulgation à des tiers n'est effectuée,
-                  sauf contrainte légale.
+                  personnelles. Aucune divulgation à des tiers n'est effectuée
+                  en dehors des destinataires mentionnés ci-dessus ou d'une
+                  contrainte légale.
                 </p>
               </article>
 

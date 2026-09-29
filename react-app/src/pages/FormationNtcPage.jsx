@@ -10,6 +10,7 @@ import FormationDetailMissions from '../components/formation-detail/FormationDet
 import FormationDetailProgram from '../components/formation-detail/FormationDetailProgram'
 import FormationDetailPrerequisites from '../components/formation-detail/FormationDetailPrerequisites'
 import FormationDetailDebouches from '../components/formation-detail/FormationDetailDebouches'
+import FormationDetailQualiopi from '../components/formation-detail/FormationDetailQualiopi'
 import FormationDetailPdf from '../components/formation-detail/FormationDetailPdf'
 import GoogleReviews from '../google-review'
 
@@ -40,6 +41,7 @@ export default function FormationNtcPage() {
         heroImage={formation.heroImage || formation.image}
         heroImageAlt={formation.imageAlt}
         tags={formation.tags}
+        intituleExact={formation.intituleExact}
       />
 
       <FormationDetailIntro
@@ -76,6 +78,8 @@ export default function FormationNtcPage() {
         debouchesList={formation.debouchesList}
         debouchesCards={formation.debouchesCards}
       />
+
+      <FormationDetailQualiopi formation={formation} />
 
       <FormationDetailPdf pdf={formation.pdf} title={formation.title} />
 

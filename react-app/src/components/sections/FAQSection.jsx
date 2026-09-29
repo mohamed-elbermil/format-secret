@@ -21,7 +21,7 @@ const IconChevron = () => (
 const faqs = [
   {
     q: "Comment financer une formation FormaSecret ?",
-    a: "FormaSecret est certifié Qualiopi. Cette certification ouvre l'accès à différents dispositifs de financement de la formation professionnelle continue. Nos équipes vous accompagnent dans vos démarches.",
+    a: "FormaSecret est certifié Qualiopi pour son organisation en tant qu'organisme de formation. Selon votre situation, cette certification peut faciliter l'accès à certains dispositifs de financement (CPF, OPCO, France Travail...), sous réserve d'éligibilité et de l'accord du financeur. Nos équipes vous accompagnent dans vos démarches.",
   },
   {
     q: "Quelle est la durée moyenne d'une formation ?",

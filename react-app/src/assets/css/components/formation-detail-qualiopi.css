@@ -1,0 +1,113 @@
+/* ============================================================
+   FORMATION DETAIL – Informations clés & indicateurs Qualiopi
+   ============================================================ */
+.fd-qual {
+  padding: 5rem 0;
+  background: var(--clr-bg-alt);
+}
+
+.fd-qual__grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 1.5rem;
+}
+
+.fd-qual-card {
+  background: #fff;
+  border-radius: 14px;
+  padding: 1.75rem;
+  box-shadow: 0 2px 14px rgba(27, 47, 78, 0.06);
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.fd-qual-card__icon {
+  width: 42px;
+  height: 42px;
+  border-radius: 10px;
+  background: rgba(200, 146, 42, 0.15);
+  color: var(--clr-gold);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.05rem;
+  margin-bottom: 0.4rem;
+}
+
+.fd-qual-card__title {
+  font-family: var(--font-title);
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: var(--clr-navy);
+  margin: 0 0 0.3rem;
+}
+
+.fd-qual-card__body {
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #4a5568;
+}
+
+.fd-qual-card__body p {
+  margin: 0 0 0.65rem;
+}
+
+.fd-qual-card__body p:last-child {
+  margin-bottom: 0;
+}
+
+.fd-qual-card__body ul {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 0.75rem;
+}
+
+.fd-qual-card__body ul:last-child {
+  margin-bottom: 0;
+}
+
+.fd-qual-card__body li {
+  position: relative;
+  padding-left: 1.1rem;
+  margin-bottom: 0.4rem;
+}
+
+.fd-qual-card__body li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0.6em;
+  width: 5px;
+  height: 5px;
+  border-radius: 50%;
+  background: var(--clr-gold);
+}
+
+.fd-qual-card__body a {
+  color: var(--clr-navy);
+  font-weight: 600;
+  text-decoration: underline;
+  text-decoration-color: rgba(200, 146, 42, 0.5);
+}
+
+.fd-qual-card__body a:hover {
+  color: var(--clr-gold);
+}
+
+.fd-qual-card__caveat {
+  font-size: 0.78rem;
+  font-style: italic;
+  color: #8a8a8a;
+}
+
+.fd-qual-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.5rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--clr-navy);
+}

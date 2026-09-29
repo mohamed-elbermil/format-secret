@@ -15,7 +15,9 @@ import { useState, useEffect, useRef } from 'react'
 export function useCountUp(target, duration = 2000, options = {}) {
   const { threshold = 0.4 } = options
 
-  const [count, setCount]       = useState(0)
+  // Affiche la valeur finale dès le premier rendu (avant tout scroll/JS) :
+  // le compteur ne doit jamais montrer 0 comme valeur "au repos".
+  const [count, setCount]       = useState(target)
   const [triggered, setTriggered] = useState(false)
   const ref = useRef(null)
 
@@ -41,6 +43,7 @@ export function useCountUp(target, duration = 2000, options = {}) {
   useEffect(() => {
     if (!triggered) return
 
+    setCount(0)
     let startTime = null
     let raf
 

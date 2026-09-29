@@ -275,9 +275,23 @@ export default function CguPage() {
                   2016/679).
                 </p>
                 <p>
-                  Les données collectées sont utilisées exclusivement dans le
-                  but de traiter les demandes de l'Utilisateur et, le cas
-                  échéant, à des fins de prospection commerciale.
+                  Les données collectées via le formulaire de contact du site
+                  sont utilisées par <strong>FormaSecret</strong>, responsable
+                  de traitement, pour traiter la demande de l'Utilisateur et
+                  le recontacter à ce sujet (base légale : intérêt légitime à
+                  répondre à une demande entrante). Elles sont conservées 12
+                  mois à compter du traitement de la demande, et sont
+                  accessibles aux personnes habilitées de FormaSecret ainsi
+                  qu'à ses prestataires techniques (notamment son prestataire
+                  d'envoi d'emails), dans la limite nécessaire à
+                  l'accomplissement de leur mission.
+                </p>
+                <p>
+                  Ces données ne sont utilisées à des fins de prospection
+                  commerciale que si l'Utilisateur y a expressément consenti
+                  (par exemple via une case à cocher dédiée, non cochée par
+                  défaut). Ce consentement est distinct de l'envoi d'une
+                  simple demande de contact et peut être retiré à tout moment.
                 </p>
                 <p>
                   Conformément à la réglementation, l'Utilisateur dispose des

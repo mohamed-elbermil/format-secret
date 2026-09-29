@@ -320,8 +320,19 @@ export default function ContactSection() {
                 )}
 
                 <p className="ctc-form__rgpd">
-                  En soumettant ce formulaire, vous acceptez que vos données soient
-                  utilisées uniquement pour répondre à votre demande.
+                  Les informations recueillies par FormaSecret via ce formulaire
+                  servent à traiter votre demande et à vous recontacter à ce
+                  sujet. Les champs marqués d'un astérisque sont nécessaires
+                  pour pouvoir vous répondre. Elles sont accessibles aux
+                  personnes habilitées de FormaSecret et, si nécessaire, à ses
+                  prestataires techniques (dont notre prestataire d'envoi
+                  d'emails). Elles sont conservées 12 mois à compter du
+                  traitement de votre demande. Vous pouvez exercer vos droits
+                  à <a href="mailto:stephanie@formasecret.fr">stephanie@formasecret.fr</a>.
+                  Pour en savoir plus, consultez nos{' '}
+                  <a href="/cgu#art6" target="_blank" rel="noopener noreferrer">
+                    conditions relatives aux données personnelles
+                  </a>.
                 </p>
               </div>
 

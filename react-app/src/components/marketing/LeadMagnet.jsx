@@ -187,6 +187,13 @@ const LeadMagnet = ({
                 </>
               )}
             </button>
+            <p className="lead-magnet-privacy">
+              Votre email est utilisé uniquement pour vous envoyer le document
+              demandé. Voir notre{' '}
+              <a href="/cgu#art6" target="_blank" rel="noopener noreferrer">
+                politique de confidentialité
+              </a>.
+            </p>
           </form>
         </div>
       </Container>

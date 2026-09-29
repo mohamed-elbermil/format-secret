@@ -219,6 +219,7 @@
 
 /* ── Card review ── */
 .review-card {
+  height: 100%;
   background: #ffffff;
   border-radius: var(--radius-md);
   overflow: hidden;

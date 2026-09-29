@@ -139,7 +139,7 @@ export default function HomePage() {
 
       <LeadMagnet
         title="Téléchargez notre catalogue complet"
-        subtitle="Recevez toutes nos formations certifiées et nos tarifs préférentiels directement par email."
+        subtitle="Recevez notre catalogue de formations et nos tarifs préférentiels directement par email."
         buttonText="Télécharger le catalogue"
         placeholder="Votre adresse email"
         successMessage="Catalogue envoyé !"

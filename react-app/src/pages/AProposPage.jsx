@@ -28,7 +28,7 @@ const statistics = [
     label: "Ans d'expérience",
     desc: "Au service de l'excellence",
   },
-  { number: "8", label: "Formations certifiées", desc: "Programmes Qualiopi" },
+  { number: "8", label: "Formations proposées", desc: "Organisme certifié Qualiopi" },
   { number: "98%", label: "Satisfaction client", desc: "Témoignages vérifiés" },
 ];
 

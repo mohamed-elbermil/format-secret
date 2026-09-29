@@ -69,7 +69,7 @@ const modalites = [
     details: [
       "Sessions planifiées sur le calendrier annuel",
       "6 à 12 participants par session",
-      "Financement professionnel facilité",
+      "Financement possible selon votre situation et les critères du financeur",
     ],
   },
   {

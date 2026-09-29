@@ -10,8 +10,8 @@ const statistics = [
   },
   {
     number: "8",
-    label: "Formations certifiées",
-    description: "Programmes qualifiopi",
+    label: "Formations proposées",
+    description: "Organisme certifié Qualiopi",
   },
   {
     number: "2000+",
