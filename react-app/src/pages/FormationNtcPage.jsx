@@ -41,7 +41,6 @@ export default function FormationNtcPage() {
         heroImage={formation.heroImage || formation.image}
         heroImageAlt={formation.imageAlt}
         tags={formation.tags}
-        intituleExact={formation.intituleExact}
       />
 
       <FormationDetailIntro

@@ -19,6 +19,7 @@ export default function FormationDetailQualiopi({ formation }) {
 
   const {
     title,
+    intituleExact,
     rncpCode,
     rncpNiveau,
     rncpDateEnregistrement,
@@ -33,7 +34,6 @@ export default function FormationDetailQualiopi({ formation }) {
     financementContent,
     tauxObtention,
     tauxObtentionPublication,
-    examPartner,
     debouchesList,
   } = formation
 
@@ -107,9 +107,7 @@ export default function FormationDetailQualiopi({ formation }) {
             <ul>
               {c.evaluation.map((e, i) => <li key={i}>{e}</li>)}
             </ul>
-            {examPartner && (
-              <p>Formation assurée par FormaSecret ; session d'examen organisée par {examPartner}, sous réserve des modalités convenues.</p>
-            )}
+            <p>Session d'examen organisée par FormaSecret, dans le respect des modalités de certification du titre professionnel {intituleExact || title}.</p>
             <p>En cas de validation partielle, seul(s) le ou les blocs de compétences (CCP) validés sont acquis : ils restent valables et peuvent être complétés lors d'une session ultérieure pour obtenir le titre complet.</p>
           </QualiopiCard>
 

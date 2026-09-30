@@ -23,8 +23,6 @@ export const formationNtcData = [
     // Indicateur Qualiopi 24 (taux d'obtention) : première session, pas encore de résultats
     tauxObtention: null,
     tauxObtentionPublication: 'après la session d\'examen de janvier 2028',
-    // Session d'examen : à confirmer/compléter avec le nom du partenaire habilité
-    examPartner: null,
     // Carte (grille formations)
     image: 'https://images.pexels.com/photos/3184465/pexels-photo-3184465.jpeg?auto=compress&cs=tinysrgb&w=800',
     imageAlt: 'Négociateur technico-commercial en réunion client',

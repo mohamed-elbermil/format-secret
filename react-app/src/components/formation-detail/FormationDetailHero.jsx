@@ -13,7 +13,7 @@ const IconArrow = () => (
   </svg>
 )
 
-export default function FormationDetailHero({ heroTitle, heroSubtitle, heroCtaText, heroImage, heroImageAlt, tags, intituleExact }) {
+export default function FormationDetailHero({ heroTitle, heroSubtitle, heroCtaText, heroImage, heroImageAlt, tags }) {
   return (
     <section className="fd-hero" aria-label={heroTitle}>
       <div className="fd-hero__inner container">
@@ -30,9 +30,7 @@ export default function FormationDetailHero({ heroTitle, heroSubtitle, heroCtaTe
 
           <p className="fd-hero__eyebrow">
             <span aria-hidden="true">●</span>
-            {intituleExact
-              ? `Formation préparant au titre professionnel ${intituleExact} · FormaSecret certifié Qualiopi`
-              : 'Titre professionnel · FormaSecret certifié Qualiopi'}
+            Titre professionnel
           </p>
 
           <h1 className="fd-hero__title">{heroTitle}</h1>
