@@ -36,13 +36,6 @@ export default function Footer() {
                   <span>Lun-Ven :</span> 09:00 - 18:00
                 </p>
               </div>
-              <div>
-                <img
-                  src="/assets/images/logo-qualiopi-valide-400x179.png"
-                  alt="Formation Qualiopi"
-                  className="qualiopi"
-                />
-              </div>
             </div>
           </div>
           <div className="footer-links">
